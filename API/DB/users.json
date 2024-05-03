@@ -1,0 +1,12 @@
+{
+    "users":[
+        {
+            "id":0,
+            "name": "dev",
+            "password": "admin",
+            "profilePicture": "profilePictures/_0_pfp.jpg",
+            "score": 900000,
+            "friends": []
+        }
+    ]
+}
