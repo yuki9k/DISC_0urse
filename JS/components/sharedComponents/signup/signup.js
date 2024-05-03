@@ -1,21 +1,55 @@
-function signupForm(event) {
-    event.preventDefault();
-  
-    let form = document.querySelector("form");
-    form.innerHTML = `
-      <div class="login_container">
-      <div id="form_header">
-           <p id="form_title">DISC_Ourse</p>
-          <p id="form_text">Create User</p>
+function renderSignupForm() {
+  const modalContainer = document.createElement("div");
+  modalContainer.classList.add("modal_container");
+  modalContainer.innerHTML = `
+    <div class="modal_content">
+      <div class="form_container">
+        <div id="form_header">
+          <p id="form_title">Sign Up</p>
+          <p id="form_text">Create a new account</p>
         </div>
-          <input id="signup_user" type="text" placeholder="create username">
-          <input id="signup_password" type="password" placeholder="create password">
-          <input id="rewrite_signup_password" type="password" placeholder="confirm password">
-          <button id="signup_button">Sign up</button>
-          <button id="back_to_login_button">Already have a account? <span>Log in here</span></button>
+        <input id="signup_user" type="text" placeholder="Username">
+        <input id="signup_password" type="password" placeholder="Password">
+        <input id="rewrite_signup_password" type="password" placeholder="Confirm Password">
+        <button id="signup_button">Sign up</button>
+        <button id="switch_to_login">Already a user? Log in here</button>
       </div>
-      `;
-  
-    let signupButton = document.querySelector("#signup_button");
-    signupButton.addEventListener("click", doSignup);
-  }
+    </div>
+  `;
+
+  let wrapper = document.querySelector("#wrapper");
+  wrapper.appendChild(modalContainer);
+
+  // Prevent scrolling of the underlying content while modal is open
+  document.body.style.overflow = "hidden";
+
+  // Function to handle closing the modal when clicking outside the form
+  function handleCloseModal() {
+    modalContainer.remove();
+    // Restore scrolling of the underlying content
+    document.body.style.overflow = "";
+  };
+
+  // Add event listener to close modal when clicking outside the form
+  modalContainer.addEventListener("click", (event) => {
+    if (event.target === modalContainer) {
+      handleCloseModal();
+    }
+  });
+
+  // Event listener for switching back to login form
+  const switchToLoginButton = modalContainer.querySelector("#switch_to_login");
+  switchToLoginButton.addEventListener("click", () => {
+    handleCloseModal(); // Close the current signup modal
+    renderLoginForm(); // Render the login form
+  });
+
+  // Event listener for signup button (you can implement signup logic here)
+  const signupButton = modalContainer.querySelector("#signup_button");
+  signupButton.addEventListener("click", () => {
+    // Perform signup logic (e.g., validate inputs, submit data, etc.)
+    // After signup logic is complete, you can close the modal if needed
+    handleCloseModal();
+  });
+}
+
