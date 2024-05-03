@@ -1,7 +1,7 @@
 <?php 
 // https://github.com/thephpleague/color-extractor
 
-require_once(__DIR__."/../vendor/autoload.php");
+require_once(__DIR__."/vendor/autoload.php");
 
 use League\ColorExtractor\Color;
 use League\ColorExtractor\ColorExtractor;
@@ -24,5 +24,3 @@ function getTopHexColors($imgFilePath, $n) {
   }
   return $topColors;
 }
-
-// getTopFiveHexColors('./php/520012.jpg');
