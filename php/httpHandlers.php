@@ -1,4 +1,5 @@
 <?php
+require_once("timeHandlers.php");
 
 function sendHttpRequest($url, $method, $headers, $body) {
   $opts = [
@@ -19,7 +20,7 @@ function sendHttpRequest($url, $method, $headers, $body) {
     ],
     "response" => $res
   ], JSON_PRETTY_PRINT);
-  $logFile = "logsHttp/" . time() . ".json";
+  $logFile = "logsHttp/" . getCurrentTimeStamp() . ".json";
   file_put_contents($logFile, $log);
 
   return res;
