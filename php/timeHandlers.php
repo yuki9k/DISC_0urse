@@ -2,8 +2,12 @@
 
 date_default_timezone_set("Europe/Stockholm");
 
-function getCurrentTimeStamp() {
-  return date("d-m-y_H:i:s");
+function getCurrentTimeStamp($unix) {
+  if ($unix) {
+    return date("d-m-y_H:i:s_" . time());
+  } else {
+    return date("d-m-y_H:i:s");
+  }
 }
 
 function fetchTimer() {
