@@ -19,30 +19,21 @@ function generateRandomQueryStr() {
 }
 
 function spotifyGetToken($auth) {
-  $id = $auth["id"];
-  $secret = $auth["secret"];
-
+  ["id" => $id, "secret" => $secret] = $auth;
   $url = "https://accounts.spotify.com/api/token";
   $method = "POST";
   $headers = ["Content-Type: application/x-www-form-urlencoded"];
   $body = "grant_type=client_credentials&client_id={$id}&client_secret={$secret}";
 
-  $tokenRes = sendHttpRequest($url, $method, $headers, $body);
-
   [
     "token_type" => $tokenType,
     "access_token" => $accessToken
-  ] = $tokenRes;
+  ] = sendHttpRequest($url, $method, $headers, $body);
 
-  $token = "{$tokenType} {$accessToken}";
-  return $token;
+  return "{$tokenType} {$accessToken}";
 }
 
 function spotifyGetRandomAlbums($auth, $n) {
-  // Request token
-  $token = spotifyGetToken($auth);
-
-  // Request albums
   $queryStr = generateRandomQueryStr();
   $randomOffset = random_int(0, 1000);
 
@@ -53,6 +44,7 @@ function spotifyGetRandomAlbums($auth, $n) {
     "limit" => $n
   ]);
 
+  $token = spotifyGetToken($auth);
   $url = "https://api.spotify.com/v1/search?{$urlQuery}";
   $method = "GET";
   $headers = ["Authorization: {$token}"];
@@ -87,9 +79,8 @@ function spotifyGetAlbumDetails($token, $albumId) {
   $headers = ["Authorization: {$token}"];
   $body = "";
 
-  $albumRes = sendHttpRequest($url, $method, $headers, $body);
-
-  return $albumRes;
+  echo "album url: {$url} \n";
+  return sendHttpRequest($url, $method, $headers, $body);
 }
 
 spotifyGetRandomAlbums($demoAuth, 5);
