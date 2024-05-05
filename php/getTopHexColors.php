@@ -18,9 +18,11 @@ function getTopHexColors($imgFilePath, $n) {
 
   $palette = Palette::fromFilename($imgFilePath);
   $extractor = new ColorExtractor($palette);
-  $topColors = $extractor->extract(n);
+  $topColors = $extractor->extract($n);
+
   foreach($topColors as &$color) {
     $color = Color::fromIntToHex($color);
   }
+  
   return $topColors;
 }

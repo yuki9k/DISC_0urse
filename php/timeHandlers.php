@@ -2,6 +2,16 @@
 
 date_default_timezone_set("Europe/Stockholm");
 
+function msToSeconds($ms) {
+  return floor($ms / 1000);
+}
+
+function secondsToTrackTime($seconds) {
+  $minutes = (floor($seconds / 60) < 1) ? 0 : floor($seconds / 60);
+  $seconds = $seconds % 60;
+  return ($seconds < 10) ? "{$minutes}:0{$seconds}" : "{$minutes}:$seconds";
+}
+
 function getCurrentTimeStamp($unix) {
   if ($unix) {
     return date("d-m-y_H:i:s_" . time());

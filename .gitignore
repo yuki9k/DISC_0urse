@@ -120,3 +120,4 @@ $RECYCLE.BIN/
 
 php/vendor/
 php/logsHttp/
+php/demoAuth.php
