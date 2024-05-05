@@ -4,7 +4,7 @@ require_once("httpHandlers.php");
 //REMOVE THIS, ONLY FOR DEMO TESTING
 require_once("demoAuth.php");
 
-function generateQueryStr() {
+function generateRandomQueryStr() {
   $chars = str_split("abcdefghijklmnopqrstuvwxyz");
   $ranChar = $chars[random_int(0, count($chars) - 1)];
 
@@ -22,19 +22,10 @@ function spotifyGetToken($auth) {
   $id = $auth["id"];
   $secret = $auth["secret"];
 
-  $tokenReq = [
-    "url" => "https://accounts.spotify.com/api/token",
-    "method" => "POST",
-    "headers" => ["Content-Type: application/x-www-form-urlencoded"],
-    "body" => "grant_type=client_credentials&client_id={$id}&client_secret={$secret}"
-  ];
-
-  [
-    "url" => $url,
-    "method" => $method,
-    "headers" => $headers,
-    "body" => $body
-  ] = $tokenReq;
+  $url = "https://accounts.spotify.com/api/token";
+  $method = "POST";
+  $headers = ["Content-Type: application/x-www-form-urlencoded"];
+  $body = "grant_type=client_credentials&client_id={$id}&client_secret={$secret}";
 
   $tokenRes = sendHttpRequest($url, $method, $headers, $body);
 
@@ -52,7 +43,7 @@ function spotifyGetRandomAlbums($auth, $n) {
   $token = spotifyGetToken($auth);
 
   // Request albums
-  $queryStr = generateQueryStr();
+  $queryStr = generateRandomQueryStr();
   $randomOffset = random_int(0, 1000);
 
   $urlQuery = http_build_query([
@@ -62,19 +53,10 @@ function spotifyGetRandomAlbums($auth, $n) {
     "limit" => $n
   ]);
 
-  $albumsReq = [
-    "url" => "https://api.spotify.com/v1/search?{$urlQuery}",
-    "method" => "GET",
-    "headers" => ["Authorization: {$token}"],
-    "body" => ""
-  ];
-
-  [
-    "url" => $url,
-    "method" => $method,
-    "headers" => $headers,
-    "body" => $body
-  ] = $albumsReq;
+  $url = "https://api.spotify.com/v1/search?{$urlQuery}";
+  $method = "GET";
+  $headers = ["Authorization: {$token}"];
+  $body = "";
 
   // This is here because of reasons dont question it
   sleep(5);
@@ -100,19 +82,10 @@ function spotifyGetRandomAlbums($auth, $n) {
 
 
 function spotifyGetAlbumDetails($token, $albumId) {
-  $albumReq = [
-    "url" => "https://api.spotify.com/v1/albums/{$albumId}",
-    "method" => "GET",
-    "headers" => ["Authorization: {$token}"],
-    "body" => ""
-  ];
-
-  [
-    "url" => $url,
-    "method" => $method,
-    "headers" => $headers,
-    "body" => $body
-  ] = $albumReq;
+  $url = "https://api.spotify.com/v1/albums/{$albumId}";
+  $method = "GET";
+  $headers = ["Authorization: {$token}"];
+  $body = "";
 
   $albumRes = sendHttpRequest($url, $method, $headers, $body);
 
