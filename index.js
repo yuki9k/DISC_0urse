@@ -1,0 +1,2 @@
+renderHompageContainer(document.querySelector("#wrapper"));
+
