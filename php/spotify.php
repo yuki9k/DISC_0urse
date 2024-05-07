@@ -1,8 +1,6 @@
 <?php
 require_once("httpHandlers.php");
-
-//REMOVE THIS, ONLY FOR DEMO TESTING
-require_once("demoAuth.php");
+require_once("demoAuth.php"); // <-- REMOVE THIS LATER, ONLY FOR DEV TESTING
 
 function generateRandomQueryStr() {
   $chars = str_split("abcdefghijklmnopqrstuvwxyz");
@@ -20,6 +18,7 @@ function generateRandomQueryStr() {
 
 function spotifyGetToken($auth) {
   ["id" => $id, "secret" => $secret] = $auth;
+
   $url = "https://accounts.spotify.com/api/token";
   $method = "POST";
   $headers = ["Content-Type: application/x-www-form-urlencoded"];
@@ -33,54 +32,133 @@ function spotifyGetToken($auth) {
   return "{$tokenType} {$accessToken}";
 }
 
-function spotifyGetRandomAlbums($auth, $n) {
-  $queryStr = generateRandomQueryStr();
-  $randomOffset = random_int(0, 1000);
-
-  $urlQuery = http_build_query([
-    "q" => $queryStr,
-    "type" => "album",
-    "offset" => $randomOffset,
-    "limit" => $n
-  ]);
-
+function spotifyGetRandomArtists($auth) {
   $token = spotifyGetToken($auth);
-  $url = "https://api.spotify.com/v1/search?{$urlQuery}";
-  $method = "GET";
-  $headers = ["Authorization: {$token}"];
-  $body = "";
+  $genres = ['Pop', 'Rock', 'Electronic', 'Hip Hop', 'Indie Pop'];
+  $artistsArr = [];
 
-  // This is here because of reasons dont question it
-  sleep(5);
-  $albumsRes = sendHttpRequest($url, $method, $headers, $body);
+  foreach($genres as $genre) {
+    $queryStr = generateRandomQueryStr();
+    
+    $urlQuery = http_build_query([
+      "q" => "{$queryStr}%20genre:'{$genre}'",
+      "type" => "artist",
+      "limit" => 5
+    ]);
 
-  // Request detailed albums
-  $albumsDetailed = [];
-  $albumItems = $albumsRes["albums"]["items"];
-  foreach($albumItems as $albumItem) {
-    $albumDetailed = spotifyGetAlbumDetails($token, $albumItem["id"]);
-    array_push($albumsDetailed, $albumDetailed);
+    $url = "https://api.spotify.com/v1/search?{$urlQuery}";
+    $method = "GET";
+    $headers = ["Authorization: {$token}"];
+    $body = "";
+
+    // This is here because of reasons dont question it
+    sleep(1);
+
+    $artistsRes = sendHttpRequest($url, $method, $headers, $body);
+    $randomIdx = random_int(0,4);
+    $artistItem = $artistsRes["artists"]["items"][$randomIdx];
+
+    ["id" => $artistId, "name" => $artistName] = $artistItem;
+
+    echo "artist id: {$artistId}\nartist name: {$artistName}\n";
+
+    $artistsArr[$genre] = ["id" => $artistId, "name" => $artistName];
   }
 
-  // return $albumsRes;
-
-  // Should we handle the saving or return?
-
-  // $albumsJson = json_encode($albumsRes, JSON_PRETTY_PRINT);
-  // file_put_contents("albums.json", $albumsJson);
-
-  // return $albumsJson;
+  return $artistsArr;
 }
 
+function spotifyGetArtistsRandomAlbum($token, $artistsArr) {
+  $albumsArr = [];
 
-function spotifyGetAlbumDetails($token, $albumId) {
+  foreach ($artistsArr as $genre => $artist) {
+    ["id" => $artistId] = $artist;
+
+    $url = "https://api.spotify.com/v1/artists/{$artistId}/albums?include_groups=album";
+    $method = "GET";
+    $headers = ["Authorization: {$token}"];
+    $body = "";
+
+    // This is here because of reasons dont question it
+    sleep(1);
+ 
+    $albumsRes = sendHttpRequest($url, $method, $headers, $body);
+    $albumItem = $albumsRes["items"][random_int(0, count($albumsRes["items"]) - 1)];
+
+    ["id" => $tempAlbumId] = $albumItem;
+
+    $detailedAlbumItem = spotifyGetDetailedAlbum($token, $tempAlbumId);
+
+    [
+      "id" => $albumId,
+      "label" => $albumLabel,
+      "name" => $albumName,
+      "external_urls" => $albumUrls,
+      "uri" => $albumUri,
+      "release_date" => $albumReleaseDate,
+      "genres" => $albumGenres,
+      "artists" => $albumArtists,
+      "total_tracks" => $albumTotalTracks,
+      // Should we maybe fetch the image files here as well instead of just having them linked?
+      "images" => $albumImages,
+      "tracks" => $tempAlbumTracks,
+      "popularity" => $albumPopularity
+    ] = $detailedAlbumItem;
+
+    $albumTracks = [];
+
+    ["items" => $tempAlbumTrackItems] = $tempAlbumTracks;
+
+    foreach ($tempAlbumTrackItems as $tempAlbumTrackItem) {
+      [
+        "id" => $trackId,
+        "name" => $trackName,
+        "artists" => $trackArtists,
+        "duration_ms" => $trackDurationMs,
+        "track_number" => $trackNumber,
+        "external_urls" => $trackUrls,
+        "preview_url" => $trackPreviewUrl,
+        "uri" => $trackUri
+      ] = $tempAlbumTrackItem;
+
+      $albumTrack = [
+        "trackId" => $trackId,
+        "trackName" => $trackName,
+        "trackArtists" => $trackArtists,
+        "trackDurationMs" => $trackDurationMs,
+        "trackNumber" => $trackNumber,
+        "trackUrls" => $trackUrls,
+        "trackPreviewUrl" => $trackPreviewUrl,
+        "trackUri" => $trackUri
+      ];
+
+      array_push($albumTracks, $albumTrack);
+    }
+
+    $albumsArr[$genre] = [
+      "albumId" => $albumId,
+      "albumLabel" => $albumLabel,
+      "albumName" => $albumName,
+      "albumUrls" => $albumUrls,
+      "albumUri" => $albumUri,
+      "albumReleaseDate" => $albumReleaseDate,
+      "albumGenres" => $albumGenres,
+      "albumArtists" => $albumArtists,
+      "albumTotalTracks" => $albumTotalTracks,
+      "albumImages" => $albumImages,
+      "albumTracks" => $albumTracks,
+      "albumPopularity" => $albumPopularity
+    ];
+  }
+
+  return $albumsArr;
+}
+
+function spotifyGetDetailedAlbum($token, $albumId) {
   $url = "https://api.spotify.com/v1/albums/{$albumId}";
   $method = "GET";
   $headers = ["Authorization: {$token}"];
   $body = "";
 
-  echo "album url: {$url} \n";
   return sendHttpRequest($url, $method, $headers, $body);
 }
-
-spotifyGetRandomAlbums($demoAuth, 5);
