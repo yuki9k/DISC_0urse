@@ -1,3 +1,5 @@
+
+/* Login and signup CSS */
 .modal_container {
     display: flex;
     position: fixed;
@@ -107,7 +109,7 @@
     font-size: 14px;
 }
 
-/* Additional Styling for Header */
+/* Header CSS */
 header {
     display: grid;
     grid-template-columns: 60px 80px 1fr;
@@ -120,7 +122,6 @@ header .home_button {
     align-self: center;
     color: black;
     text-decoration: none;
-    text-shadow: 0px 0px 2px rgb(133, 133, 133);
 }
 
 header .buttons_container {
@@ -128,9 +129,14 @@ header .buttons_container {
     gap: 16px;
     justify-self: end;
     align-self: center;
-    text-decoration: underline;
     font-family: sans-serif;
     font-size: 18px;
+    cursor: pointer;
+}
+
+header .buttons_container .login_button:hover,
+header .buttons_container .signup_button:hover {
+    text-decoration: underline;
 }
 
 .menu {
@@ -152,36 +158,145 @@ header .buttons_container {
     transition: 0.4s;
 }
 
-.change .bar1 {
-    transform: translate(0, 11px) rotate(-45deg);
-}
+.change .bar1 {transform: translate(0, 9px) rotate(-45deg);}
 
-.change .bar2 {
-    opacity: 0;
-}
+.change .bar2 {opacity: 0;}
 
-.change .bar3 {
-    transform: translate(0, -11px) rotate(45deg);
-}
+.change .bar3 {transform: translate(0,-9px) rotate(45deg);}
 
+/* dropdown CSS */
 .dropdown {
     position: absolute;
-    top: 45px; 
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: none;
+    top: 45px;
+    left: -20%; 
+    background-color: rgb(240, 240, 240);
+    display: block; 
     z-index: 999;
     padding: 20px;
+    height: 100%;
+    transition: left 0.3s ease; 
+  }
+  
+  .dropdown.active {
+    left: 0;
+  }
+  
+
+.dropdown_friends {
+    display: grid;
+    grid-template-columns: 245px;
+    grid-auto-rows: 40px;
+    gap: 5px;
+
+    margin-bottom: 30px;
+}
+
+.friend_image {
+    background-image: url(../css/profile.png);
+    background-position: center;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.friend_username {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.room_title_one,
+.room_title_two {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.create_room_button,
+.add_friend_button {
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+
+    cursor: pointer;
+    border: .5px solid black;
+}
+
+.dropdown_rooms {
+    display: grid;
+    grid-template-columns: 120px 120px;
+    grid-auto-rows: 40px;
+    gap: 5px;
+    margin-bottom: 20px;
 }
 
 .dropdown.active {
     display: block;
 }
 
-.dropdown_box {
-    width: 90px;
-    height: 20px;
-    border: 1px solid black;
+.dropdown_title {
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.dropdown_title_two {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+    font-style: italic;
+}
+
+.dropdown_box_friends {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px 0;
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.dropdown_box_rooms {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dropdown_box_rooms:hover,
+.dropdown_box_friends:hover,
+.create_room_button:hover,
+.add_friend_button:hover {
+    background-color: rgb(203, 203, 203);
+}
+
+.dropdown_box_rooms p {
+    color: rgb(47, 47, 47);
+    font-family: sans-serif;
+    font-size: 16px;
 }
 
