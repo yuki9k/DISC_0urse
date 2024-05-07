@@ -1,3 +1,5 @@
+// import { PubSub } from "../../../logic/PubSub";
+
 function renderLoginForm() {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
@@ -52,4 +54,5 @@ function renderLoginForm() {
     // Example: simulate successful login (replace with actual logic)
     alert("Login successful!");
   });
+
 }
