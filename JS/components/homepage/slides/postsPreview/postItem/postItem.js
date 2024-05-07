@@ -1,3 +1,5 @@
+import { PubSub } from "../../../../../logic/PubSub.js";
+
 function renderPostItem(parent, data){
     const postItem = document.createElement("li");
     parent.appendChild(postItem);
@@ -5,7 +7,15 @@ function renderPostItem(parent, data){
     postItem.innerHTML = data;
 
     if(postItem.offsetWidth >= 400){
-        postItem.style.width = `${postItem.offsetWidth - 100}px`;
+        postItem.style.width = `${postItem.offsetWidth - 300}px`;
     }
 }
+
+PubSub.subscribe({
+    event: "renderPost",
+    listener: (details) => {
+        const {parent, data} = details;
+        renderPostItem(parent, data);
+    }
+});
 

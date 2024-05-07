@@ -1,3 +1,6 @@
+import { PubSub } from "../../../../logic/PubSub.js";
+import * as post from "./postItem/postItem.js";
+
 function renderPostsPreview(parent, posts){
     parent.innerHTML = `<h1 class="album_title"></h1>
                         <ul class="posts_container"></ul>`;
@@ -7,6 +10,17 @@ function renderPostsPreview(parent, posts){
     //get copy of state
 
     for(let post of posts){
-        renderPostItem(postsContainer, post.content); 
+        PubSub.publish({
+            event: "renderPost",
+            details: {"parent": postsContainer, "data": post.content}
+        })
     }; 
 }
+
+PubSub.subscribe({
+    event: "renderPosts",
+    listener: (details) => {
+        const {parent, data} = details;
+        renderPostsPreview(parent, data);
+    }
+});

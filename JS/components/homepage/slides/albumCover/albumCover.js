@@ -1,3 +1,5 @@
+import { PubSub } from "../../../../logic/PubSub.js";
+
 function renderAlbumCover(parent, data){
     const albumCover = document.createElement("img");
     
@@ -6,3 +8,11 @@ function renderAlbumCover(parent, data){
 
     parent.appendChild(albumCover);
 }
+
+PubSub.subscribe({
+    event: "renderAlbum",
+    listener: (details) => {
+        const {parent, data} = details;
+        renderAlbumCover(parent, data);
+    }
+})

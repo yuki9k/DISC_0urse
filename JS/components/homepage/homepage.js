@@ -1,3 +1,7 @@
+import {PubSub} from "../../logic/PubSub.js";
+import * as carousellScroll from "./carousellScroll/carousellScroll.js";
+import * as slide from "./slides/slide.js";
+
 function renderHompageContainer(parent){
     const homepageContainer = document.createElement("div");
     const slidesContainer = document.createElement("div");
@@ -14,15 +18,27 @@ function renderHompageContainer(parent){
         const chats = dataBase.chats;
         const image = dataBase.images[i];
 
-        renderSlide(slidesContainer, {chats, image});
+        PubSub.publish({
+            event: "renderSlide",
+            details: {"parent": slidesContainer, chats, image}
+        });
     }
 
     const carousellScroll = document.createElement("div");
     carousellScroll.id = "carousell_scroll";
     homepageContainer.appendChild(carousellScroll);
 
-    renderCarousellScroll(carousellScroll);
+    PubSub.publish({
+        event: "renderCarouselScroll",
+        details: carousellScroll
+    });
 }
+
+
+PubSub.subscribe({
+    event:"renderHomepage",
+    listener: renderHompageContainer
+})
 
 
 const dataBase = {
@@ -34,10 +50,10 @@ const dataBase = {
             "content": "Etiam pulvinar sit amet velit vitae faucibus. Nunc vel condimentum felis. Vestibulum sed laoreet risus."
         },
         {
-            "content": "Morbi tincidunt dapibus enim."
+            "content": "Nullam ac tellus sit amet urna posuere volutpat non eu tellus. Donec ex justo, bibendum vitae tincidunt sit amet, dictum ut urna."
         },
         {
-            "content": "Nullam ac tellus sit amet urna posuere volutpat non eu tellus. Donec ex justo, bibendum vitae tincidunt sit amet, dictum ut urna."
+            "content": "Morbi tincidunt dapibus enim."
         },
         {
             "content": "Praesent tincidunt auctor libero et laoreet."
