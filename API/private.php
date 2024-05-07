@@ -69,6 +69,19 @@ if($requestMehod == "PATCH"){
 }
 //DELETE ROOM
 if($requestMehod == "DELETE"){
-
+    if (empty($requestData)) {
+        sendError(400, "empty request");
+    }
+    if(!isset($requestData["token"])){
+        sendError(400, "bad request, need token to delete rooms");
+    }
+    $room = findItemByKey("privRooms", "id", $requestData["id"]);
+    $user = getUserFromToken($requestData["token"]);
+    if($room["hostID"] != $user["id"]){
+        $deletedItem = deleteItemByType("privRooms", $room);
+        send(200, $deletedItem);
+    } else {
+        sendError(400, "wrong userID, only the host of roomID_" . $room["id"]. " can delete");
+    }
 }
 ?>
