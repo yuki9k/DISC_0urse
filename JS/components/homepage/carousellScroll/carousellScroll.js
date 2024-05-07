@@ -14,7 +14,7 @@ function renderCarousellScroll(parent, data){
             const everyScrollBall = parent.querySelectorAll("div");
             
             everyScrollBall.forEach(ball => { ball.classList.remove("current"); });
-            
+
             scrollBall.classList.add("current");
 
             PubSub.publish({
