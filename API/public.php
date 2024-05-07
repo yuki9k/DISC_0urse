@@ -8,9 +8,7 @@ if(!in_array($requestMethod, $allowedMethods)){
 $requestData = getRequestData();
 //get ROOMS
 if($requestMethod == "GET"){
-    //if(!isset($requestData["id"])){
-    //    sendError(400, "missing so")
-    //}
+    //maybe add getting rooms based on user memberships?
     $rooms =  getDatabase("pubRooms");
     if(empty($rooms)){
         sendError(400, "no rooms found, something wrong with DB");

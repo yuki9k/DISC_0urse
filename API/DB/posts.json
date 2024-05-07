@@ -6,11 +6,6 @@
         "time": 1317030524,
         "score": 42,
         "content": "hej hej, jag tycker s\u00e5 h\u00e4r om dena saken :)",
-        "style": {
-            "font": "Times New Roman",
-            "bgColor": "green",
-            "color": "black"
-        },
         "likedBy": [
             3
         ],
@@ -28,11 +23,6 @@
         "time": 1317030524,
         "score": 42,
         "content": "hej hej, HELT annorlunda woah crazy hur \u00e5sikter kan vara s\u00e5",
-        "style": {
-            "font": "Times New Roman",
-            "bgColor": "green",
-            "color": "black"
-        },
         "likedBy": [
             2,
             3
@@ -49,11 +39,6 @@
         "roomID": 2,
         "time": 1423030524,
         "content": "dev test post",
-        "style": [
-            "test",
-            "test",
-            "test"
-        ],
         "likedBy": [
             0
         ],

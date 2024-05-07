@@ -36,7 +36,7 @@ if($requestMethod == "POST"){//TOKEN REQUIRED
     if(empty($requestData)){
         sendError(400, "empty request");
     }
-    $reqPostKeys = ["token", "roomID", "time", "content", "style"];
+    $reqPostKeys = ["token", "roomID", "time", "content"];
     if(requestContainsSomeKeys($requestData, $reqPostKeys) == false){
         send(400, "missing keys");
     }
@@ -45,7 +45,7 @@ if($requestMethod == "POST"){//TOKEN REQUIRED
     if(!$user){
         sendError(404, "user not found");
     }
-    $postKeys = ["userID", "roomID", "time", "content", "style", "likedBy", "dislikedBy"];
+    $postKeys = ["userID", "roomID", "time", "content", "likedBy", "dislikedBy"];
     $requestData["userID"] = $user["id"];
     $requestData["likedBy"] = [$user["id"]];
     $requestData["dislikedBy"] = [];

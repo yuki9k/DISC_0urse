@@ -26,5 +26,25 @@ if($requestMehod == "POST"){
     unset($newUser["password"]);
     send(201, $newUser);
 }
+if($requestMehod == "DELETE"){
+    if(empty($requestData)){
+        sendError(400, "empty req");
+    }
+    if(!isset($requestData["token"])){
+        sendError(400, "missing token");
+    }
 
+    $user = getUserFromToken($requestData["token"]);
+
+    if(!$user){
+        sendError("bad request(invalid token)");
+    }
+
+    //remove users posts??
+    //how do we deal with deleted users?
+
+    $deletedUser = deleteItemByType("users", $user);
+    unset($deletedUser["password"]);
+    send(200, $deletedUser);
+}
 ?>
