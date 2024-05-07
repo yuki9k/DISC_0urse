@@ -40,6 +40,7 @@ PubSub.subscribe({
     listener: (ballIndex) => {
         const slides_container = document.querySelector("#slides_container");
         slides_container.style.transform = `translate(-${ ballIndex * (100/6)}%)`;
+        
     }
 });
 

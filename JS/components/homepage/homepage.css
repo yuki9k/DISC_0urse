@@ -40,6 +40,12 @@ body:has(#homepage_container){
     border-radius: 50%;
 
     cursor: pointer;
+    position: relative;
+}
+
+#homepage_container #carousell_scroll > div.current{
+    border:2px solid var(--text_color);
+    background-color: var(--back_color);
 }
 
 #homepage_container #slides_container{

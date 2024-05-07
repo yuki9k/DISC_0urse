@@ -5,8 +5,18 @@ function renderCarousellScroll(parent, data){
 
     for(let i = 0; i < scrollBallsAmounts; i++){
         const scrollBall = document.createElement("div");
+
+        if(i === 0){
+            scrollBall.classList.add("current");
+        }
+
         scrollBall.addEventListener("click", function onClickChangeSlide(event){
+            const everyScrollBall = parent.querySelectorAll("div");
             
+            everyScrollBall.forEach(ball => { ball.classList.remove("current"); });
+            
+            scrollBall.classList.add("current");
+
             PubSub.publish({
                 event: "changeSlide",
                 details: i
