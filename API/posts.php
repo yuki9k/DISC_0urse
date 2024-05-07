@@ -56,9 +56,41 @@ if($requestMethod == "POST"){//TOKEN REQUIRED
 if($requestMethod == "PATCH"){
     //THIS METHOD SHOULD CHECK IF THE POST IS LIKED or DISLIKED
     //CHANGE IT DEPENDING
+    if(empty($requestData)){
+        sendError(400, "empty request");
+    }
+    $post;
+    if(in_array(["id"], $requestData) && in_array(["userID"])){
+        if(in_array(["likedBy"]) || in_array(["dislikedBy"])){
+            $post = findItemByKey("posts", "id", $requestData["id"]);
+        }else{sendError(400, "no patchable data");}
+    }
+    else{sendError(400, "missing userID or id of post");}
+    if(in_array($requestData["id"], $post["likedBy"])){
+        //dislike and remove like
+        foreach($like as $index => $post["likedBy"]){
+            if($like == $ $requestData["id"]){
+                array_splice($post["likedBy"], $index, 1);
+            }
+        }
+        $post["dislikedBy"][] = $requestData["id"];
+    } else if(in_array($requestData["id"], $post["dislikedBy"])){
+        //like and remove dislike
+        foreach($like as $index => $post["dislikedBy"]){
+            if($like == $ $requestData["id"]){
+                array_splice($post["dislikedBy"], $index, 1);
+            }
+        }
+        $post["likedBy"][] = $requestData["id"];
+    }
+
 }
 //POST HAS BEEN DELETED
 if($requestMethod == "DELETE"){
+    $deleteKeys = ["id"];
 
+    $post = findItemByKey("posts", "id", $requestData["id"]);
+    $return = deleteItemByType("posts", $post);
+    send(200, $return);
 }
 ?>
