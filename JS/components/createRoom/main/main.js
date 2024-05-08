@@ -38,7 +38,9 @@ function render_create () {
                 </div>
                 <div class="placeholders">
                     <div class="one"></div>
-                    <div class="two"></div>
+                    <div class="two">
+                        <p class="album_title_in_div">Genre here</p>
+                    </div>
                     <div class="three"></div>
                 </div>
             </div>
