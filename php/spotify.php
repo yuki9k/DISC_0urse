@@ -18,6 +18,7 @@ function generateRandomQueryStr() {
 
 function spotifyGetToken($auth) {
   ["id" => $id, "secret" => $secret] = $auth;
+  echo "Getting token for client_id: {$id} and client_secret: {$secret}\n";
 
   $url = "https://accounts.spotify.com/api/token";
   $method = "POST";
@@ -29,21 +30,31 @@ function spotifyGetToken($auth) {
     "access_token" => $accessToken
   ] = sendHttpRequest($url, $method, $headers, $body);
 
+  echo "Token: {$tokenType} {$accessToken}\n";
+
   return "{$tokenType} {$accessToken}";
 }
 
-function spotifyGetRandomArtists($auth) {
+function spotifyGetAllGenreAlbums($auth){
   $token = spotifyGetToken($auth);
+  $selectedGenreArtists = spotifyGetRandomArtists($token);
+  $selectedGenreAlbums = spotifyGetArtistsRandomAlbum($token, $selectedGenreArtists);
+  $selectedGenreAlbumsJson = json_encode($selectedGenreAlbums, JSON_PRETTY_PRINT);
+  file_put_contents("selectedGenreAlbums.json", $selectedGenreAlbumsJson);
+}
+
+function spotifyGetRandomArtists($token) {
   $genres = ['Pop', 'Rock', 'Electronic', 'Hip Hop', 'Indie Pop'];
   $artistsArr = [];
 
   foreach($genres as $genre) {
+    echo "Getting random artists for genre: {$genre}\n";
     $queryStr = generateRandomQueryStr();
     
     $urlQuery = http_build_query([
       "q" => "{$queryStr}%20genre:'{$genre}'",
       "type" => "artist",
-      "limit" => 5
+      "limit" => 10
     ]);
 
     $url = "https://api.spotify.com/v1/search?{$urlQuery}";
@@ -55,24 +66,56 @@ function spotifyGetRandomArtists($auth) {
     sleep(1);
 
     $artistsRes = sendHttpRequest($url, $method, $headers, $body);
-    $randomIdx = random_int(0,4);
-    $artistItem = $artistsRes["artists"]["items"][$randomIdx];
 
-    ["id" => $artistId, "name" => $artistName] = $artistItem;
+    $validGenreArtists = [];
 
-    echo "artist id: {$artistId}\nartist name: {$artistName}\n";
+    foreach($artistsRes["artists"]["items"] as $key => $artist) {
+      echo "Potential artist {$key}: {$artist['name']}\n";
 
+      if (spotifyArtistHasAlbums($token, $artist["id"])) {
+        echo "Albums found\n";
+        array_push($validGenreArtists, $artist);
+        continue;
+      }
+
+      echo "No albums found\n";
+    }
+
+    $randomIdx = random_int(0, count($validGenreArtists) - 1);
+    $selectedGenreArtist = $validGenreArtists[$randomIdx];
+
+    echo "Selected artist for {$genre}: {$selectedGenreArtist['name']}\n";
+
+
+    ["id" => $artistId, "name" => $artistName] = $selectedGenreArtist;
     $artistsArr[$genre] = ["id" => $artistId, "name" => $artistName];
   }
 
   return $artistsArr;
 }
 
+function spotifyArtistHasAlbums($token, $artistId) {
+  $url = "https://api.spotify.com/v1/artists/{$artistId}/albums?include_groups=album";
+  $method = "GET";
+  $headers = ["Authorization: {$token}"];
+  $body = "";
+
+ ["items" => $albumItems] = sendHttpRequest($url, $method, $headers, $body);
+
+  if(count($albumItems) == 0) {
+    return false;
+  } else {
+    
+    return true;
+  }
+}
+
 function spotifyGetArtistsRandomAlbum($token, $artistsArr) {
   $albumsArr = [];
 
   foreach ($artistsArr as $genre => $artist) {
-    ["id" => $artistId] = $artist;
+    ["id" => $artistId, "name" => $artistName] = $artist;
+    echo "Albums for artist: {$artistName} ({$genre})\n";
 
     $url = "https://api.spotify.com/v1/artists/{$artistId}/albums?include_groups=album";
     $method = "GET";
@@ -82,12 +125,18 @@ function spotifyGetArtistsRandomAlbum($token, $artistsArr) {
     // This is here because of reasons dont question it
     sleep(1);
  
-    $albumsRes = sendHttpRequest($url, $method, $headers, $body);
-    $albumItem = $albumsRes["items"][random_int(0, count($albumsRes["items"]) - 1)];
+    ["items" => $potentialAlbums] = sendHttpRequest($url, $method, $headers, $body);
 
-    ["id" => $tempAlbumId] = $albumItem;
+    foreach($potentialAlbums as $potentialAlbum) {
+      echo "Potential album: {$potentialAlbum['name']}\n";
+    }
 
-    $detailedAlbumItem = spotifyGetDetailedAlbum($token, $tempAlbumId);
+    $randomIdx = random_int(0, count($potentialAlbums) - 1);
+    $selectedAlbum = $potentialAlbums[$randomIdx];
+    
+    echo "Selected album: {$selectedAlbum['name']}\n";
+
+    $selectedAlbumDetailed = spotifyGetDetailedAlbum($token, $selectedAlbum["id"]);
 
     [
       "id" => $albumId,
@@ -103,7 +152,7 @@ function spotifyGetArtistsRandomAlbum($token, $artistsArr) {
       "images" => $albumImages,
       "tracks" => $tempAlbumTracks,
       "popularity" => $albumPopularity
-    ] = $detailedAlbumItem;
+    ] = $selectedAlbumDetailed;
 
     $albumTracks = [];
 
@@ -162,3 +211,5 @@ function spotifyGetDetailedAlbum($token, $albumId) {
 
   return sendHttpRequest($url, $method, $headers, $body);
 }
+
+spotifyGetAllGenreAlbums($demoAuth);

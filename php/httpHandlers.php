@@ -35,8 +35,10 @@ function sendHttpRequest($url, $method, $headers, $body) {
     "request" => [$url, $opts]
   ], JSON_PRETTY_PRINT);
 
-  $resLogFile = "logsHttp/{$minTimestamp}/{$secTimestamp}_response.json";
-  $reqLogFile = "logsHttp/{$minTimestamp}/{$secTimestamp}_request.json";
+  $uniqueId = uniqid('', true);
+
+  $resLogFile = "logsHttp/{$minTimestamp}/{$secTimestamp}_response_{$uniqueId}.json";
+  $reqLogFile = "logsHttp/{$minTimestamp}/{$secTimestamp}_request_{$uniqueId}.json";
   file_put_contents($resLogFile, $resJson);
   file_put_contents($reqLogFile, $reqJson);
 
