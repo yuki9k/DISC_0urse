@@ -67,6 +67,8 @@ if($requestMethod == "PATCH"){
         $room["genre"] = $requestData["genre"];
         //make room get new album
     }
+    updateItemByType("privRooms", $room);
+    send(201, $room);
 }
 //DELETE ROOM
 if($requestMethod == "DELETE"){

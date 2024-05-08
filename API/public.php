@@ -26,6 +26,7 @@ if($requestMehod == "PATCH"){
     }
     $patchedRoom = findItemByKey("pubRooms", "id", $requestData["id"]);
     $patchedRoom["genre"] = $requestData["genre"];
+    updateItemByType("pubRooms", $patchedRoom);
     send(200, $patchedRoom);
 }
 ?>

@@ -83,7 +83,8 @@ if($requestMethod == "PATCH"){
         }
         $post["likedBy"][] = $requestData["id"];
     }
-
+    updateItemByType("posts", $post);
+    send(201, $post);
 }
 //POST HAS BEEN DELETED
 if($requestMethod == "DELETE"){

@@ -50,4 +50,51 @@ if($requestMethod == "DELETE"){
     unset($deletedUser["password"]);
     send(200, $deletedUser);
 }
+if($requestMethod == "PATCH"){
+    //method should handle, added friends, removed friends, change password, change profile picture, updatescore
+    if(empty($requestData)){
+        sendError(400, "empty req");
+    }
+    if(!isset($requestData["token"])){
+        sendError(400, "missing token");
+    }
+    $user = getUserFromToken($requestData["token"]);
+
+    if(!$user){
+        sendError("bad request(invalid token)");
+    }
+    if(isset($requestData["friendID"])){
+        //if friend ID is in friend array remove said friend
+        if(in_array($user["friends"], $requestData["friendID"])){
+            foreach($user["friends"] as $index => $id){
+                if($id == $requestData["friendID"]){
+                    array_splice($user["friends"], $index, 1);
+                }
+            }
+        } else { //ID not in friend array, add friend to array
+            $user["friends"][] = $requestData["friendID"];
+        }
+    }
+    if(isset($requestData["password"])){
+        //change password
+        $user["password"] = $requestData["password"];
+    }
+    if(isset($requestData["profilePicture"])){
+        $user["profilePicture"] = $requestData["profilePicture"];
+    }
+    if(isset($requestData["score"])){
+        $globalPosts = getDatabase("posts");
+        $userPosts;
+        foreach($globalPosts as $index => $post){
+            if($post["userID"] == $user["id"]){
+                $userPosts[] = $post;
+            }
+        }
+        foreach($userPosts as $index => $post){
+            $user["score"] + count($post["likedBy"]);
+            $user["score"] - count($post["dislikedBy"]);
+        }
+    }
+    updateItemByType("users", $users);
+}
 ?>
