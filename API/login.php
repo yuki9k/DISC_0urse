@@ -1,13 +1,14 @@
 <?php 
 require_once("auxFunctions.php");
+$allowedMethods = ["GET", "POST", "PATCH", "DELETE"];
 
-$requestMehod = $_SERVER["REQUEST_METHOD"];
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 if(!in_array($requestMethod, $allowedMethods)){
     sendError(400, "METHOD NOT ALLOWED");
 }
 $requestData = getRequestData();
-//reg new user
-if($requestMehod == "POST"){
+//login as new user
+if($requestMethod == "POST"){
     if(empty($requestData)){
         sendError(400, "empty req");
     }

@@ -1,13 +1,14 @@
 <?php 
 require_once("auxFunctions.php");
+$allowedMethods = ["GET", "POST", "PATCH", "DELETE"];
 
-$requestMehod = $_SERVER["REQUEST_METHOD"];
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 if(!in_array($requestMethod, $allowedMethods)){
     sendError(400, "METHOD NOT ALLOWED");
 }
 $requestData = getRequestData();
 //reg new user
-if($requestMehod == "POST"){
+if($requestMethod == "POST"){
     if(empty($requestData)){
         sendError(400, "empty req");
     }
@@ -21,12 +22,14 @@ if($requestMehod == "POST"){
     if($user != false){
         sendError(400, "Bad req, username taken");
     }
+    $userKeys = ["name", "password", "profilePicture", "score", "friends"];
+    $userValues = ["name" => $name, "password" => $requestData["password"], "profilePicture" => "placeholder", "score" => 0, "friends" => []];
 
-    $newUser = addItemByType("users", $userPostKeys, $requestData);
+    $newUser = addItemByType("users", $userKeys, $userValues);
     unset($newUser["password"]);
     send(201, $newUser);
 }
-if($requestMehod == "DELETE"){
+if($requestMethod == "DELETE"){
     if(empty($requestData)){
         sendError(400, "empty req");
     }

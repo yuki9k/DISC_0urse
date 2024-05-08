@@ -1,12 +1,18 @@
-{
-    "users":[
-        {
-            "id":0,
-            "name": "dev",
-            "password": "admin",
-            "profilePicture": "profilePictures/_0_pfp.jpg",
-            "score": 900000,
-            "friends": []
-        }
-    ]
-}
+[
+    {
+        "name": "ronja",
+        "password": "admin",
+        "profilePicture": "placeholder",
+        "score": 0,
+        "friends": [],
+        "id": 1
+    },
+    {
+        "name": "freja",
+        "password": "admin",
+        "profilePicture": "placeholder",
+        "score": 0,
+        "friends": [],
+        "id": 2
+    }
+]

@@ -1,7 +1,8 @@
 <?php
 require_once("auxFunctions.php");
+$allowedMethods = ["GET", "POST", "PATCH", "DELETE"];
 
-$requestMehod = $_SERVER["REQUEST_METHOD"];
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 if(!in_array($requestMethod, $allowedMethods)){
     sendError(400, "METHOD NOT ALLOWED");
 }
@@ -22,7 +23,7 @@ if($requestMehod == "GET"){
     }
     send(200, $rooms);
 }
-if($requestMehod == "POST"){
+if($requestMethod == "POST"){
     if(empty($requestData)){
         sendError(400, "empty request");
     }
@@ -41,7 +42,7 @@ if($requestMehod == "POST"){
     send(200, $newRoom);
 }
 //INVITE NEW MEMBERS, CHANGE STYLE, CHANGE ALBUM/GENRE??
-if($requestMehod == "PATCH"){
+if($requestMethod == "PATCH"){
     if (empty($requestData)) {
         sendError(400, "empty request");
     }
@@ -68,7 +69,7 @@ if($requestMehod == "PATCH"){
     }
 }
 //DELETE ROOM
-if($requestMehod == "DELETE"){
+if($requestMethod == "DELETE"){
     if (empty($requestData)) {
         sendError(400, "empty request");
     }

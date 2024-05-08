@@ -30,7 +30,7 @@ function getDatabase($type){
 
     $returnContent =  file_get_contents($DB);
     $returnData = json_decode($returnContent, true);
-    return $returnData[$type];
+    return $returnData;
 }
 function findItemByKey($type, $key, $value){
 
