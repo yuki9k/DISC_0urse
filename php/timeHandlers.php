@@ -9,6 +9,7 @@ function msToSeconds($ms) {
 function secondsToTrackTime($seconds) {
   $minutes = (floor($seconds / 60) < 1) ? 0 : floor($seconds / 60);
   $seconds = $seconds % 60;
+
   return ($seconds < 10) ? "{$minutes}:0{$seconds}" : "{$minutes}:$seconds";
 }
 
@@ -38,7 +39,6 @@ function getCurrentDateAndTime($spec) {
 
 function fetchTimer() {
   // Initial fetch of albums here
-  // $albums = getRandomAlbums();
 
   while (true) {
     $timeLeftToMidnight = strtotime("tomorrow") - strtotime("now");
@@ -50,6 +50,5 @@ function fetchTimer() {
       sleep(24 * 60 * 60);
     }
     // Subsequent fetch
-    // $albums = getRandomAlbums();
   }
 }
