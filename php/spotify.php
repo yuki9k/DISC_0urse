@@ -211,5 +211,3 @@ function spotifyGetDetailedAlbum($token, $albumId) {
 
   return sendHttpRequest($url, $method, $headers, $body);
 }
-
-spotifyGetAllGenreAlbums($demoAuth);
