@@ -1,3 +1,15 @@
+import * as login from "../login/login.js";
+import * as signup from "../signup/signup.js";
+import * as createRoom from "../../createRoom/main/main.js";
+import { PubSub } from "../../../logic/PubSub.js";
+
+PubSub.subscribe({
+  event: "renderHomepage",
+  listener: (details) => {
+    renderHeader();
+  },
+});
+
 function renderHeader() {
   const header = document.createElement("header");
   let wrapper = document.querySelector("#wrapper");
@@ -57,7 +69,7 @@ function renderHeader() {
                   </div>
                   <div class="room_title_two">
                     <div class="dropdown_title_two">Private Rooms</div>
-                    <div class="add_friend_button">
+                    <div class="create_private_room_button">
                         <div>+</div>
                     </div>
                   </div>
@@ -98,6 +110,7 @@ function renderHeader() {
   const dropdown = document.querySelector(".dropdown");
   const loginButton = document.querySelector(".login_button");
   const signupButton = document.querySelector(".signup_button");
+  const createPrivateRoom = document.querySelector(".create_private_room_button");
 
   menuIcon.addEventListener("click", () => {
     menuIcon.classList.toggle("change");
@@ -105,10 +118,27 @@ function renderHeader() {
   });
 
   loginButton.addEventListener("click", () => {
-    renderLoginForm(); 
+    PubSub.publish({
+      event: "renderLogin",
+      details: null,
+    });
   });
 
   signupButton.addEventListener("click", () => {
-    renderSignupForm(); 
+    PubSub.publish({
+      event: "renderSignup",
+      details: null,
+    });
+  });
+
+  createPrivateRoom.addEventListener("click", () => {
+    menuIcon.classList.toggle("change");
+    dropdown.classList.toggle("active");
+    
+    PubSub.publish({
+      event: "renderCreateRoom",
+      details: null,
+    });
   });
 }
+

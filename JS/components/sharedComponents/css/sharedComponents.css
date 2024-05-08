@@ -22,6 +22,7 @@
     width: 80%;
     max-width: 400px;
     overflow: auto; 
+    box-shadow: 0px 0px 5px rgb(162, 162, 162);
 }
 
 .form_container.login_container {
@@ -114,6 +115,7 @@ header {
     display: grid;
     grid-template-columns: 60px 80px 1fr;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 header .home_button {
@@ -167,20 +169,22 @@ header .buttons_container .signup_button:hover {
 /* dropdown CSS */
 .dropdown {
     position: absolute;
-    top: 45px;
+    top: 50px;
     left: -20%; 
     background-color: rgb(240, 240, 240);
     display: block; 
     z-index: 999;
     padding: 20px;
-    height: 100%;
     transition: left 0.3s ease; 
+    box-sizing: border-box;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0px 0px 5px rgb(88, 88, 88);
+    /* Height should take 100% of what is left*/
   }
   
   .dropdown.active {
     left: 0;
   }
-  
 
 .dropdown_friends {
     display: grid;
@@ -213,7 +217,7 @@ header .buttons_container .signup_button:hover {
     margin: 10px 0;
 }
 
-.create_room_button,
+.create_private_room_button,
 .add_friend_button {
     font-size: 20px;
     background-color: rgb(255, 255, 255);

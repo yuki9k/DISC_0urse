@@ -5,7 +5,8 @@
     justify-content: center;
     align-items: center;
     
-    padding: 100px 0;
+    padding: 50px 0 0 0;
+    box-sizing: border-box;
 }
 
 .container_main {
@@ -47,7 +48,7 @@
     height: 30px;
     border-radius: 10px;
     border: none;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 5px rgb(101, 101, 101);
     background-color: transparent;
 }
 
@@ -101,3 +102,35 @@
     margin: 20px 0;
     background-color: black;
 }
+
+/* Friends Include CSS */
+
+.added_friends {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.added_friends_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 50vw;
+}
+
+.added_friends_container .add_container,
+.added_friends_container .friend_container {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}   

@@ -1,5 +1,12 @@
 import * as login from "../login/login.js";
-import { PubSub } from "../../../logic/PubSub";
+import { PubSub } from "../../../logic/PubSub.js";
+
+PubSub.subscribe({
+  event: "renderSignup",
+  listener: (details) => {
+    renderSignupForm();
+  },
+});
 
 function renderSignupForm() {
   const modalContainer = document.createElement("div");
@@ -44,7 +51,10 @@ function renderSignupForm() {
   const switchToLoginButton = modalContainer.querySelector("#switch_to_login");
   switchToLoginButton.addEventListener("click", () => {
     handleCloseModal();
-    renderLoginForm();
+    PubSub.publish({
+      event: "renderLogin",
+      details: null
+    });
   });
 
   // Event listener for signup button (you can implement signup logic here)
@@ -54,4 +64,3 @@ function renderSignupForm() {
   });
 
 }
-

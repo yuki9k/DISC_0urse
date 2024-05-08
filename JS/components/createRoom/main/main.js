@@ -1,9 +1,16 @@
-// import { PubSub } from "../../../logic/PubSub";
+import * as addedFriends from "../friendsIncluded/friendsIncluded.js";
+import { PubSub } from "../../../logic/PubSub.js";
 
-function render_create () {
+PubSub.subscribe({
+    event: "renderCreateRoom",
+    listener: (event) => {
+        renderCreate();
+    }
+});
+
+function renderCreate () {
     let main = document.createElement("main");
     main.className = "main_container_create_room";
-    let wrapper = document.querySelector("#wrapper");
     wrapper.appendChild(main);
 
     main.innerHTML = `
@@ -47,4 +54,9 @@ function render_create () {
             <div class="underline"></div>
         </div>
     `;
+
+    PubSub.publish({
+        event: "renderAddedFriends",
+        details: null
+    });
 }
