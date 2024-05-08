@@ -1,4 +1,5 @@
-// import { PubSub } from "../../../logic/PubSub";
+import * as signup from "../signup/signup.js"
+import { PubSub } from "../../../logic/PubSub";
 
 function renderLoginForm() {
   const modalContainer = document.createElement("div");
