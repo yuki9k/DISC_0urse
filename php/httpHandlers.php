@@ -18,6 +18,10 @@ function sendHttpRequest($url, $method, $headers, $body) {
   $resDecoded = json_decode($res, true);
 
   // Logs requests and responses
+  if (!file_exists("logsHttp")) {
+    mkdir("logsHttp");
+  }
+
   if (!file_exists("logsHttp/{$minTimestamp}")) {
     mkdir("logsHttp/{$minTimestamp}");
   }
