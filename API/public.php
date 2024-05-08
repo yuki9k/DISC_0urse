@@ -15,8 +15,6 @@ if($requestMethod == "GET"){
     }
     send(200, $rooms);
 }
-//ROOM has ["id", "genre", "album"]
-//can patch album??
 if($requestMehod == "PATCH"){
     if(!isset($requestData["hostToken"])){
         sendError(450, "no access");
