@@ -1,19 +1,22 @@
 <?php
 require_once("httpHandlers.php");
+require_once("getTopHexColors.php");
 require_once("demoAuth.php"); // <-- REMOVE THIS LATER, ONLY FOR DEV TESTING
 
 function generateRandomQueryStr() {
   $chars = str_split("abcdefghijklmnopqrstuvwxyz");
   $ranChar = $chars[random_int(0, count($chars) - 1)];
 
-  switch(random_int(0,1)) {
-    case 0:
-      return "{$ranChar}%";
-      break;
-    case 1:
-      return "%{$ranChar}";
-      break;
-  }
+  return $ranChar;
+
+  // switch(random_int(0,1)) {
+  //   case 0:
+  //     return "{$ranChar}";
+  //     break;
+  //   case 1:
+  //     return "{$ranChar}";
+  //     break;
+  // }
 }
 
 function spotifyGetToken($auth) {
@@ -37,24 +40,28 @@ function spotifyGetToken($auth) {
 
 function spotifyGetAllGenreAlbums($auth){
   $token = spotifyGetToken($auth);
-  $selectedGenreArtists = spotifyGetRandomArtists($token);
-  $selectedGenreAlbums = spotifyGetArtistsRandomAlbum($token, $selectedGenreArtists);
-  $selectedGenreAlbumsJson = json_encode($selectedGenreAlbums, JSON_PRETTY_PRINT);
-  file_put_contents("selectedGenreAlbums.json", $selectedGenreAlbumsJson);
+  $selectedArtists = spotifyGetRandomArtists($token);
+  $selectedAlbums = spotifyGetArtistsRandomAlbum($token, $selectedArtists);
+  $selectedAlbumsJson = json_encode($selectedAlbums, JSON_PRETTY_PRINT);
+  file_put_contents("genres.json", $selectedAlbumsJson);
+  return $selectedAlbumsJson;
 }
 
 function spotifyGetRandomArtists($token) {
-  $genres = ['Pop', 'Rock', 'Electronic', 'Hip Hop', 'Indie Pop'];
+  $genres = ['Indie Pop', 'Indie Rock', 'Indie Singer-songwriter', 'Indie Folk', 'Indie R&b', 'Indie Post-punk'];
+  // $genres = ['Pop', 'Rock', 'Singer-songwriter', 'Folk', 'R&b', 'Electronic'];
   $artistsArr = [];
 
   foreach($genres as $genre) {
     echo "Getting random artists for genre: {$genre}\n";
     $queryStr = generateRandomQueryStr();
     
+    // artist%3A
     $urlQuery = http_build_query([
-      "q" => "{$queryStr}%20genre:'{$genre}'",
+      "q" => "{$queryStr}%20genre%3A{$genre}",
       "type" => "artist",
-      "limit" => 10
+      "limit" => 10,
+      "offset" => random_int(10, 40),
     ]);
 
     $url = "https://api.spotify.com/v1/search?{$urlQuery}";
@@ -62,23 +69,31 @@ function spotifyGetRandomArtists($token) {
     $headers = ["Authorization: {$token}"];
     $body = "";
 
+    echo "Query URL: {$url}\n";
     // This is here because of reasons dont question it
-    sleep(1);
+    sleep(2);
 
-    $artistsRes = sendHttpRequest($url, $method, $headers, $body);
+    ["artists" => $artistsRes] = sendHttpRequest($url, $method, $headers, $body);
 
     $validGenreArtists = [];
 
-    foreach($artistsRes["artists"]["items"] as $key => $artist) {
-      echo "Potential artist {$key}: {$artist['name']}\n";
+    echo "Potential artists:\n";
+    foreach($artistsRes["items"] as $key => $artist) {
+      echo "{$key}: {$artist['name']} ";
 
-      if (spotifyArtistHasAlbums($token, $artist["id"])) {
-        echo "Albums found\n";
-        array_push($validGenreArtists, $artist);
+      if (str_contains($artist["name"], $genre) || str_contains($artist["name"], "Indie") ||!spotifyArtistHasAlbums($token, $artist["id"])) {
+        echo "SKIPPING\n";
         continue;
       }
 
-      echo "No albums found\n";
+      echo "VALID\n";
+      array_push($validGenreArtists, $artist);
+    }
+
+    // This is shit code
+    if(!count($validGenreArtists)) {
+      echo "Skipping genre: {$genre}\n";
+      continue;
     }
 
     $randomIdx = random_int(0, count($validGenreArtists) - 1);
@@ -127,8 +142,9 @@ function spotifyGetArtistsRandomAlbum($token, $artistsArr) {
  
     ["items" => $potentialAlbums] = sendHttpRequest($url, $method, $headers, $body);
 
-    foreach($potentialAlbums as $potentialAlbum) {
-      echo "Potential album: {$potentialAlbum['name']}\n";
+    echo "Potential albums:\n";
+    foreach($potentialAlbums as $key => $potentialAlbum) {
+      echo "{$key}: {$potentialAlbum['name']}\n";
     }
 
     $randomIdx = random_int(0, count($potentialAlbums) - 1);
@@ -148,11 +164,27 @@ function spotifyGetArtistsRandomAlbum($token, $artistsArr) {
       "genres" => $albumGenres,
       "artists" => $albumArtists,
       "total_tracks" => $albumTotalTracks,
-      // Should we maybe fetch the image files here as well instead of just having them linked?
+      // Album images are fetched from the internal API when it receives the POST request
       "images" => $albumImages,
       "tracks" => $tempAlbumTracks,
       "popularity" => $albumPopularity
     ] = $selectedAlbumDetailed;
+
+    ["url" => $albumImageUrl] = $albumImages[0];
+
+    $albumImageFile = file_get_contents($albumImageUrl, false);
+    $albumImageFilename = "albumCovers/" . strtolower($genre) . ".jpeg";
+    
+    file_put_contents($albumImageFilename, $albumImageFile);
+
+    $albumImageHexColors = getTopHexColors($albumImageFilename, 5);
+
+    echo "Album image: {$albumImageUrl}\n";
+    echo "Album image hex colors:\n";
+
+    foreach ($albumImageHexColors as $key => $albumImageHexColor) {
+      echo "{$key}: {$albumImageHexColor}\n";
+    }
 
     $albumTracks = [];
 
@@ -196,7 +228,8 @@ function spotifyGetArtistsRandomAlbum($token, $artistsArr) {
       "albumTotalTracks" => $albumTotalTracks,
       "albumImages" => $albumImages,
       "albumTracks" => $albumTracks,
-      "albumPopularity" => $albumPopularity
+      "albumPopularity" => $albumPopularity,
+      "albumImageHexColors" => $albumImageHexColors
     ];
   }
 
