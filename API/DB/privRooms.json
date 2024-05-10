@@ -1,0 +1,36 @@
+[
+    {
+        "hostID": 2,
+        "style": [
+            "test",
+            "test",
+            "test"
+        ],
+        "genre": "rock",
+        "users": [
+            3,
+            10,
+            2
+        ],
+        "id": 1
+    },
+    {
+        "hostID": 2,
+        "style": [
+            "Times New Roman",
+            "green",
+            "purple"
+        ],
+        "genre": "hiphop",
+        "users": [
+            3,
+            10,
+            5,
+            12,
+            69,
+            2,
+            14
+        ],
+        "id": 2
+    }
+]

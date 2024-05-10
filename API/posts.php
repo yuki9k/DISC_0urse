@@ -60,37 +60,50 @@ if($requestMethod == "PATCH"){
         sendError(400, "empty request");
     }
     $post;
-    if(in_array(["id"], $requestData) && in_array(["userID"])){
-        if(in_array(["likedBy"]) || in_array(["dislikedBy"])){
-            $post = findItemByKey("posts", "id", $requestData["id"]);
-        }else{sendError(400, "no patchable data");}
+    //id, token, likedBy
+    $user = getUserFromToken($requestData["token"]);
+    if(isset($requestData["id"]) && isset($requestData["token"])){
+        $post = findItemByKey("posts", "id", $requestData["id"]);
     }
-    else{sendError(400, "missing userID or id of post");}
+    else{sendError(400, "missing token or id of post");}
+
     if(in_array($requestData["id"], $post["likedBy"])){
-        //dislike and remove like
-        foreach($like as $index => $post["likedBy"]){
-            if($like == $ $requestData["id"]){
+        //remove like
+        foreach($post["likedBy"] as $index => $like){
+            if($like == $requestData["id"]){
                 array_splice($post["likedBy"], $index, 1);
             }
         }
-        $post["dislikedBy"][] = $requestData["id"];
     } else if(in_array($requestData["id"], $post["dislikedBy"])){
-        //like and remove dislike
-        foreach($like as $index => $post["dislikedBy"]){
-            if($like == $ $requestData["id"]){
+        //remove dislike
+        foreach($post["dislikedBy"] as $index => $like){
+            if($like == $requestData["id"]){
                 array_splice($post["dislikedBy"], $index, 1);
             }
         }
-        $post["likedBy"][] = $requestData["id"];
+    }
+    if(isset($requestData["like"])){
+        $post["likedBy"][] = $user["id"];
+    } else if (isset($requestData["dislike"])){
+        $post["dislikedBy"][] = $user["id"];
     }
     updateItemByType("posts", $post);
     send(201, $post);
 }
 //POST HAS BEEN DELETED
 if($requestMethod == "DELETE"){
-    $deleteKeys = ["id"];
-
+    $deleteKeys = ["id", "token"];
+    if(isset($requestData["adminToken"])){
+        //add delete possibilties for admins?
+    }
+    if(!isset($requestData["id"]) || !isset($requestData["token"])){
+        sendError(400, "missing keys");
+    }
+    $user = getUserFromToken($requestData["token"]);
     $post = findItemByKey("posts", "id", $requestData["id"]);
+    if($user["id"] != $requestData["id"]){
+        sendError(400, "only post owner can delete post");
+    }
     $return = deleteItemByType("posts", $post);
     send(200, $return);
 }

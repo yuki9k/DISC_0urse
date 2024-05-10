@@ -65,6 +65,14 @@ function addItemByType($type, $keys, $data){
     //JSONencode + fileputcontents
     //return newitem
 }
+function requestContainsAllKeys($data, $keys) {
+    foreach ($keys as $key) {
+        if (isset($data[$key]) == false) {
+            return false;
+        }
+    }
+    return true;
+}
 function updateItemByType($type, $updatedItem){
     $DB = getDatabase($type);
     //for loop finding updated item and then setting that index to the updated item

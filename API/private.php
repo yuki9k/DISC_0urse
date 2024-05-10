@@ -9,7 +9,7 @@ if(!in_array($requestMethod, $allowedMethods)){
 $requestData = getRequestData();
 
 //GET ROOMS, BASED ON HOSTID OR ALL ROOMS
-if($requestMehod == "GET"){
+if($requestMethod == "GET"){
     $rooms = getDatabase("privRooms");
     if(isset($requestData["hostID"])){
         foreach($rooms as $index => $room){
@@ -28,7 +28,7 @@ if($requestMethod == "POST"){
         sendError(400, "empty request");
     }
     $reqPostKeys = ["token", "style", "genre", "users"];
-    if(requestContainsSomeKeys($requestData, $reqPostKeys) == false){
+    if(requestContainsAllKeys($requestData, $reqPostKeys) == false){
         send(400, "missing keys");
     }
     $user = getUserFromToken($requestData["token"]);
@@ -37,6 +37,7 @@ if($requestMethod == "POST"){
     }
     $postKeys = ["hostID", "style", "genre", "users"];
     $requestData["hostID"] = $user["id"];
+    $requestData["users"][] = $requestData["hostID"];
     unset($requestData["token"]);
     $newRoom = addItemByType("privRooms", $postKeys, $requestData);
     send(200, $newRoom);
@@ -46,7 +47,14 @@ if($requestMethod == "PATCH"){
     if (empty($requestData)) {
         sendError(400, "empty request");
     }
+    if(!isset($requestData["token"]) || !isset($requestData["id"])){
+        sendError(400, "bad request, missing keys");
+    }
     $room = findItemByKey("privRooms", "id", $requestData["id"]);
+    $user = getUserFromToken($requestData["token"]);
+    if($user["id"] != $room["hostID"]){
+        sendError(402, "invalid token, not host");
+    }
     //add or remove user
     if(isset($requestData["userID"])){
         //user is in room so request is for the removal of user from room
