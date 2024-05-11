@@ -89,6 +89,7 @@ if($requestMethod == "DELETE"){
     $room = findItemByKey("privRooms", "id", $requestData["id"]);
     $user = getUserFromToken($requestData["token"]);
     if($room["hostID"] != $user["id"]){
+        removeRoomPosts($room);
         $deletedItem = deleteItemByType("privRooms", $room);
         send(200, $deletedItem);
     } else {

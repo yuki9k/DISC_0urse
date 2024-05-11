@@ -45,7 +45,7 @@ if($requestMethod == "DELETE"){
 
     //remove users posts??
     //how do we deal with deleted users?
-
+    removeUserRoomsLikesPosts($user);
     $deletedUser = deleteItemByType("users", $user);
     unset($deletedUser["password"]);
     send(200, $deletedUser);
