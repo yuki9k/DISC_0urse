@@ -137,41 +137,44 @@ function removeUserRoomsLikesPosts($user){
     $privateRooms = getDatabase("privRooms");
     $posts = getDatabase("posts");
     $userID = $user["id"];
-    //delete users hosted room
-    //if user does host rooms otherwise we should skip, this needs to be introduced
-    foreach($privateRooms as $index => $room){
-        if($room["hostID"] == $userID){
-            //remove all posts in the room
-            foreach($posts as $j_index => $post){
-                if($post["roomID"] == $room["id"]){
-                    array_splice($posts, $j_index, 1);
+
+    if($privateRooms){
+        foreach($privateRooms as $index => $room){
+            if($room["hostID"] == $userID){
+                //remove all posts in the room
+                foreach($posts as $j_index => $post){
+                    if($post["roomID"] == $room["id"]){
+                        array_splice($posts, $j_index, 1);
+                    }
                 }
+                //remove the room
+                array_splice($privateRooms, $index, 1);
             }
-            //remove the room
-            array_splice($privateRooms, $index, 1);
         }
+        $jsonRooms = json_encode($privateRooms, JSON_PRETTY_PRINT);
+        file_put_contents("DB/privRooms.json", $jsonRooms);
+        
     }
     //delete users posted posts and likes/dislikes to posts
-    foreach($posts as $index => $post){
-        if($post["userID"] == $userID){
-            array_splice($posts, $index, 1);
-        } else {
-            foreach($post["likedBy"] as $j_index => $id){
-                if($id == $userID){
-                    array_splice($post["likedBy"], $j_index, 1);
+    if($posts){
+        foreach($posts as $index => $post){
+            if($post["userID"] == $userID){
+                array_splice($posts, $index, 1);
+            } else {
+                foreach($post["likedBy"] as $j_index => $id){
+                    if($id == $userID){
+                        array_splice($post["likedBy"], $j_index, 1);
+                    }
+                }
+                foreach($post["dislikedBy"] as $j_index => $id){
+                    if($id == $userID){
+                        array_splice($post["dislikedBy"], $j_index, 1);
+                    }
                 }
             }
-            foreach($post["dislikedBy"] as $j_index => $id){
-                if($id == $userID){
-                    array_splice($post["dislikedBy"], $j_index, 1);
-                }
-            }
-        }
+        } 
     }
-
     $jsonPosts = json_encode($posts, JSON_PRETTY_PRINT);
     file_put_contents("DB/posts.json", $jsonPosts);
-    $jsonRooms = json_encode($privateRooms, JSON_PRETTY_PRINT);
-    file_put_contents("DB/privRooms.json", $jsonRooms);
 }
 ?>
