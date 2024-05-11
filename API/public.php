@@ -1,7 +1,7 @@
 <?php
 require_once("auxFunctions.php");
-
-$requestMehod = $_SERVER["REQUEST_METHOD"];
+$allowedMethods = ["GET", "PATCH"];
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 if(!in_array($requestMethod, $allowedMethods)){
     sendError(400, "METHOD NOT ALLOWED");
 }
@@ -15,7 +15,7 @@ if($requestMethod == "GET"){
     }
     send(200, $rooms);
 }
-if($requestMehod == "PATCH"){
+if($requestMethod == "PATCH"){
     if(!isset($requestData["hostToken"])){
         sendError(450, "no access");
     }

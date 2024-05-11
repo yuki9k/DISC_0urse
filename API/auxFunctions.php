@@ -49,6 +49,9 @@ function addItemByType($type, $keys, $data){
         $newItem[$key] = $data[$key];
     }
     $id = 0;
+    if($type == "privRooms"){
+        $id = 6;
+    }
     foreach ($DB as $item){
         if(isset($item["id"]) && $item["id"] > $id){
             $id = $item["id"];
@@ -135,6 +138,7 @@ function removeUserRoomsLikesPosts($user){
     $posts = getDatabase("posts");
     $userID = $user["id"];
     //delete users hosted room
+    //if user does host rooms otherwise we should skip, this needs to be introduced
     foreach($privateRooms as $index => $room){
         if($room["hostID"] == $userID){
             //remove all posts in the room
@@ -167,7 +171,7 @@ function removeUserRoomsLikesPosts($user){
 
     $jsonPosts = json_encode($posts, JSON_PRETTY_PRINT);
     file_put_contents("DB/posts.json", $jsonPosts);
-    $jsonRooms = json_encode($provateRooms, JSON_PRETTY_PRINT);
+    $jsonRooms = json_encode($privateRooms, JSON_PRETTY_PRINT);
     file_put_contents("DB/privRooms.json", $jsonRooms);
 }
 ?>

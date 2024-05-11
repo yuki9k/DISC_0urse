@@ -1,22 +1,5 @@
 [
     {
-        "id": 0,
-        "userID": 3,
-        "roomID": 2,
-        "time": 1317030524,
-        "score": 42,
-        "content": "hej hej, jag tycker s\u00e5 h\u00e4r om dena saken :)",
-        "likedBy": [
-            3
-        ],
-        "dislikedBy": [
-            1,
-            4,
-            5,
-            10
-        ]
-    },
-    {
         "id": 1,
         "userID": 2,
         "roomID": 2,
