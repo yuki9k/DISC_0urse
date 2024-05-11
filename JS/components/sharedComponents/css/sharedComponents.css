@@ -1,5 +1,4 @@
-
-/* Login and signup CSS */
+/* Modal Common CSS */
 .modal_container {
     display: flex;
     position: fixed;
@@ -17,7 +16,7 @@
     position: relative;
     background-color: #fff;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: var(--default_border_radius);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     width: 80%;
     max-width: 400px;
@@ -25,11 +24,13 @@
     box-shadow: 0px 0px 5px rgb(162, 162, 162);
 }
 
+/* Login and signup CSS */
+
 .form_container.login_container {
     text-align: center;
-    font-family: sans-serif;
+    font-family: var(--font_family);
     box-shadow: 0px 0px 10px rgb(146, 146, 146);
-    border-radius: 12px;
+    border-radius: var(--default_border_radius);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,9 +43,9 @@
 
 .form_container.signup_container {
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: Arial, var(--font_family);
     box-shadow: 0px 0px 10px rgb(146, 146, 146);
-    border-radius: 12px;
+    border-radius: var(--default_border_radius);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,7 +62,7 @@
     color: #efc364;
     text-shadow: 0px 0px 1px #937432;
     text-align: center;
-    font-family: sans-serif;
+    font-family: var(--font_family);
     margin: 10px 0 30px 0;
 }
 
@@ -69,7 +70,7 @@
     font-style: italic;
     margin-top: -16px;
     text-align: center;
-    font-family: sans-serif;
+    font-family: var(--font_family);
 }
 
 .form_container input {
@@ -78,7 +79,7 @@
     padding: 0 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: var(--default_border_radius);
     box-sizing: border-box;
 }
 
@@ -88,7 +89,7 @@
     background-color: #24a0ed;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: var(--default_border_radius);
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 16px;
@@ -119,7 +120,7 @@ header {
 }
 
 header .home_button {
-    font-family: sans-serif;
+    font-family: var(--font_family);
     font-size: 24px;
     align-self: center;
     color: black;
@@ -131,7 +132,7 @@ header .buttons_container {
     gap: 16px;
     justify-self: end;
     align-self: center;
-    font-family: sans-serif;
+    font-family: var(--font_family);
     font-size: 18px;
     cursor: pointer;
 }
@@ -205,7 +206,7 @@ header .buttons_container .signup_button:hover {
 }
 
 .friend_username {
-    font-family: sans-serif;
+    font-family: var(--font_family);
     font-size: 16px;
 }
 
@@ -230,7 +231,7 @@ header .buttons_container .signup_button:hover {
     justify-content: center;
     align-items: center;
 
-    font-family: sans-serif;
+    font-family: var(--font_family);
 
     cursor: pointer;
     border: .5px solid black;
@@ -250,11 +251,11 @@ header .buttons_container .signup_button:hover {
 
 .dropdown_title {
     font-size: 24px;
-    font-family: sans-serif;
+    font-family: var(--font_family);
 }
 
 .dropdown_title_two {
-    font-family: sans-serif;
+    font-family: var(--font_family);
     font-size: 14px;
     margin: 5px 0;
     font-style: italic;
@@ -263,7 +264,7 @@ header .buttons_container .signup_button:hover {
 .dropdown_box_friends {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: var(--default_border_radius);
     background-color: rgb(255, 255, 255);
     margin: 5px 0;
     padding: 0 5px;
@@ -279,7 +280,7 @@ header .buttons_container .signup_button:hover {
 .dropdown_box_rooms {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: var(--default_border_radius);
     background-color: rgb(255, 255, 255);
     margin: 5px 0;
 
@@ -300,7 +301,66 @@ header .buttons_container .signup_button:hover {
 
 .dropdown_box_rooms p {
     color: rgb(47, 47, 47);
-    font-family: sans-serif;
+    font-family: var(--font_family);
     font-size: 16px;
 }
 
+/* Show Friend Profile CSS */
+
+.upper_section,
+.middle_section,
+.post_container .upper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_picture {
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+    border: 1px solid black;
+
+    background-image: url(../css/profile.png);
+    background-size: cover;
+}
+
+.profile_info .username {
+    font-size: 24px;
+    font-family: var(--font_family);
+    margin-bottom: 0;
+}
+
+.profile_info .status {
+    font-size: 22px;
+    font-family: var(--font_family);
+    color: rgb(56, 56, 56);
+}
+
+.middle_section_left, 
+.middle_section_right {
+    font-size: 18px;
+    font-family: var(--font_family);
+}
+
+.bottom_section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.post_container {
+    background-color: rgb(190, 190, 190);
+    padding: 10px;
+    border-radius: var(--default_border_radius);
+}
+
+.post_container_genre,
+.post_container_timestamp {
+    font-family: var(--font_family);
+    font-size: 12px;
+}

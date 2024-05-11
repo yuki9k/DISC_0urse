@@ -1,5 +1,4 @@
 
-
 .main_container_create_room {
     display: flex;
     justify-content: center;
@@ -30,7 +29,7 @@
 
 .create_room_title {
     font-size: 40px;
-    font-family: sans-serif;
+    font-family: var(--font_family);
     letter-spacing: 1px;
     text-align: center;
 }
@@ -39,7 +38,7 @@
 .room_genre,
 .room_theme {
     font-size: 28px;
-    font-family: sans-serif;
+    font-family: var(--font_family);
     margin: 16px 0;
 }
 
@@ -53,7 +52,7 @@
 }
 
 .album_title_in_div {
-    font-family: sans-serif;
+    font-family: var(--font_family);
     font-size: 32px;
     letter-spacing: 1px;
 }

@@ -1,6 +1,7 @@
 import * as login from "../login/login.js";
 import * as signup from "../signup/signup.js";
 import * as createRoom from "../../createRoom/main/main.js";
+import * as showProfile from "../showProfile/showProfile.js";
 import { PubSub } from "../../../logic/PubSub.js";
 
 PubSub.subscribe({
@@ -111,6 +112,7 @@ function renderHeader() {
   const loginButton = document.querySelector(".login_button");
   const signupButton = document.querySelector(".signup_button");
   const createPrivateRoom = document.querySelector(".create_private_room_button");
+  const showFriendProfile = document.querySelector(".dropdown_box_friends");
 
   menuIcon.addEventListener("click", () => {
     menuIcon.classList.toggle("change");
@@ -137,6 +139,16 @@ function renderHeader() {
     
     PubSub.publish({
       event: "renderCreateRoom",
+      details: null,
+    });
+  });
+
+  showFriendProfile.addEventListener("click", () => {
+    menuIcon.classList.toggle("change");
+    dropdown.classList.toggle("active");
+    
+    PubSub.publish({
+      event: "renderFriendProfile",
       details: null,
     });
   });

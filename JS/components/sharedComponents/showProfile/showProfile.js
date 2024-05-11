@@ -1,12 +1,23 @@
+import { PubSub } from "../../../logic/PubSub.js";
+
+PubSub.subscribe ({
+  event: "renderFriendProfile",
+  listener: (details) => {
+    renderShowProfile();
+  }
+});
+
 function renderShowProfile() {
   const modalContainer = document.createElement("div");
-  modalContainer.classList.add("modal_profile_container");
+  modalContainer.classList.add("modal_container");
+  let wrapper = document.querySelector("#wrapper");
+  wrapper.appendChild(modalContainer);
   modalContainer.innerHTML = `
-    <div class="modal_profile_content">  
+    <div class="modal_content">  
         <div class="upper_section">
             <div class="profile_info">
                 <p class="username">Name Here</p>
-                <p class="status">Status Here</p>
+                <p class="status">Hello! This my status :)</p>
             </div>
             <div class="profile_picture"></div>
         </div>
@@ -27,8 +38,6 @@ function renderShowProfile() {
     </div>
   `;
 
-  let wrapper = document.querySelector("#wrapper");
-  wrapper.appendChild(modalContainer);
 
   // Prevent scrolling of the underlying content while modal is open
   document.body.style.overflow = "hidden";
