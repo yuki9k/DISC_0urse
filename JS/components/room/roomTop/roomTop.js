@@ -1,3 +1,5 @@
+import {PubSub} from "../../../logic/PubSub.js";
+
 function renderRoomTop(parent, data){
     parent.innerHTML = `<div id="album_container"> 
                             <div id="album_cover">
@@ -24,3 +26,8 @@ function renderRoomTop(parent, data){
         album_tracks.appendChild(album_track);
     }
 }
+
+PubSub.subscribe({
+    event: "renderRoomTop",
+    listener: renderRoomTop
+});

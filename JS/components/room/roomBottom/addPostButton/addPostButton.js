@@ -1,3 +1,5 @@
+import {PubSub} from "../../../../logic/PubSub.js";
+
 function renderAddPostButton(parent){
     parent.innerHTML = `<div id="add_post_button">
                             <span id="plus_sign">+</span>
@@ -31,3 +33,8 @@ function renderAddPostButton(parent){
         })
     }); */
 }
+
+PubSub.subscribe({
+    event: "renderAddPostButton",
+    listener: renderAddPostButton
+})
