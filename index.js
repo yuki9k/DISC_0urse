@@ -1,0 +1,2 @@
+renderRoom(document.querySelector("#wrapper"));
+

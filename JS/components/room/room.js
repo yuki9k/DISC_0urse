@@ -6,4 +6,6 @@ function renderRoom(parent){
 
     const room_top = parent.querySelector("#room_top");
     const room_bottom = parent.querySelector("#room_bottom");
+
+    renderRoomTop(room_top);
 }

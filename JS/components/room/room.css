@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+}
+
+body:has(#room_container){
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#room_top{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to left, #97233e, #f33864);
+} 
+
+#room_top #album_container{
+    display: flex;
+    justify-content: center;
+    gap:2vw;
+}
+
+#room_top #album_container img{
+    width: 250px;
+    height: 250px;
+    box-shadow: 0px 0px 6px 3px black;
+}
+
+#room_top #album_container span{
+    display: block;
+}
+
+#room_top #album_container h1{
+    display: block;
+    margin: 0;
+}
+
+#room_top #album_container #album_data{
+    height: 250px;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr 3fr;
+}
+
+#room_top #album_container #album_tracks_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap:2.5vw;
+    row-gap: 5px;
+    padding:8px 15px;
+    margin: 0;
+    list-style-position: inside;
+    background-color: #d43056;
+    border-radius: 5px;
+
+ /*    box-shadow: inset 0px 0px 4px 2px black; */
+}
+
+#room_top #album_container #album_tracks_container li{
+    width:fit-content;
+}
+
+#room_bottom #add_post_button{
+    width: 50px;
+    height: 50px;
+
+    background-color: rgb(193, 193, 193);
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition-duration: 300ms;
+    transition-property: width, height, border-radius;
+    transition-timing-function: ease-in-out;
+}
+
+#room_bottom #add_post_button.border_rad_change{
+    border-radius: 15px;
+}
+
+#room_bottom #add_post_button:has(textarea.display){
+    width: 300px;
+    height: 250px;
+    padding:15px;
+    align-items:end;
+    cursor: default;
+} 
+
+#room_bottom #add_post_button textarea{
+    position: absolute;
+    z-index: -1;
+
+    width: 0;
+    height: 0;
+    border: 0;
+    padding:10px;
+    border-radius: 10px;
+
+    resize: none;
+    opacity:0;
+
+    transition-duration: 300ms;
+    transition-property: opacity, width;
+    transition-timing-function: ease-in-out;
+}
+
+#room_bottom #add_post_button textarea.display{
+    position: static;
+    opacity: 1;
+    z-index: 0;
+
+    width: 100%;
+    height: 200px;
+}
+
+#room_bottom #add_post_button #plus_sign{
+    opacity: 1;
+    transition-duration: 300ms;
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+}
+
+#room_bottom #add_post_button #plus_sign.undisplay{
+    opacity: 0;
+}
+
+#room_bottom #add_post_button .display_none{
+    display: none;
+}
