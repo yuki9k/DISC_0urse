@@ -6,25 +6,56 @@ body:has(#room_container){
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #121212;
+    overflow-anchor: none;
+}
+
+#room_container{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    position: relative;
 }
 
 #room_top{
+    position: sticky;
+    top:0;
+    z-index: 3;
+
     height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
     background: linear-gradient(to left, #97233e, #f33864);
+
+    transition-property: height;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
 } 
+
+#room_top.makeSmall{
+    height: 150px;
+
+}
 
 #room_top #album_container{
     display: flex;
     justify-content: center;
     gap:2vw;
+    height: 250px;
+    
+    transition-property: transform;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+#room_top #album_container.makeSmall{
+    transform: scale(0.5);
+    font-size: 30px;
 }
 
 #room_top #album_container img{
     width: 250px;
-    height: 250px;
     box-shadow: 0px 0px 6px 3px black;
 }
 
@@ -58,11 +89,24 @@ body:has(#room_container){
  /*    box-shadow: inset 0px 0px 4px 2px black; */
 }
 
+#room_top #album_container #album_tracks_container.display_none{
+    display: none;
+}
+
 #room_top #album_container #album_tracks_container li{
     width:fit-content;
 }
 
+#room_bottom{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
 #room_bottom #add_post_button{
+    position: fixed;
+    bottom:20px;
+
     width: 50px;
     height: 50px;
 
@@ -80,6 +124,10 @@ body:has(#room_container){
     transition-duration: 300ms;
     transition-property: width, height, border-radius;
     transition-timing-function: ease-in-out;
+}
+
+#room_bottom #filter_input{
+    position: fixed;
 }
 
 #room_bottom #add_post_button.border_rad_change{
@@ -134,4 +182,77 @@ body:has(#room_container){
 
 #room_bottom #add_post_button .display_none{
     display: none;
+}
+
+
+
+#room_bottom ul#postsListContainer{
+    columns: 3;
+    column-fill: balance;
+
+    list-style-type: none;
+
+    padding:0 10px 0 0;
+    margin:0;
+
+}
+
+#room_bottom ul#postsListContainer > li{
+    color:white;
+    max-width: 300px;
+    background-color: #97233e;
+
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+
+    padding:10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+#room_bottom .post_content_box .post_top{
+    display: flex;
+    justify-content: space-between;
+}
+
+#room_bottom .post_content_box .profile_pic_name{
+    display: flex;
+    gap:3px;
+}
+
+#room_bottom .post_content_box .profile_pic_name img{
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#room_bottom .post_content_box .profile_pic_name span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#room_bottom .post_content_box .post_content{
+    margin:10px 0;
+    line-height: 1.4;
+}
+
+#room_bottom .post_content_box .post_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+#room_bottom .post_content_box .react_box{
+    display: flex;
+    gap:2px;
+}
+
+#room_bottom .post_content_box .positive{
+    color: lime;
+}
+
+#room_bottom .post_content_box .negative{
+    color: tomato;
 }
