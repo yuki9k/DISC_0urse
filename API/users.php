@@ -40,7 +40,7 @@ if($requestMethod == "DELETE"){
     $user = getUserFromToken($requestData["token"]);
 
     if(!$user){
-        sendError("bad request(invalid token)");
+        sendError(400,"bad request(invalid token)");
     }
     //remove users posts??
     //how do we deal with deleted users?

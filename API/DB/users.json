@@ -6,13 +6,5 @@
         "score": 0,
         "friends": [],
         "id": 1
-    },
-    {
-        "name": "freja",
-        "password": "admin",
-        "profilePicture": "placeholder",
-        "score": 0,
-        "friends": [],
-        "id": 2
     }
 ]

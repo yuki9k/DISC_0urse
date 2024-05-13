@@ -1,23 +1,5 @@
 [
     {
-        "id": 1,
-        "userID": 2,
-        "roomID": 2,
-        "time": 1317030524,
-        "score": 42,
-        "content": "hej hej, HELT annorlunda woah crazy hur \u00e5sikter kan vara s\u00e5",
-        "likedBy": [
-            2,
-            3
-        ],
-        "dislikedBy": [
-            1,
-            4,
-            5,
-            10
-        ]
-    },
-    {
         "userID": 2,
         "roomID": 2,
         "time": 10052024,
