@@ -14,6 +14,9 @@ if($requestMethod == "POST"){
 if($requestMethod == "GET"){
     //this method sends genre information to the client.
     $DBinfo = getDatabase("genres");
+    if(!$DBInfo){
+        sendError("genre DB empty");
+    }
     send(200, $DBInfo);
 }
 ?>

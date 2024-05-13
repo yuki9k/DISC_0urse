@@ -42,7 +42,6 @@ if($requestMethod == "DELETE"){
     if(!$user){
         sendError("bad request(invalid token)");
     }
-
     //remove users posts??
     //how do we deal with deleted users?
     removeUserRoomsLikesPosts($user);

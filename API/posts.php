@@ -37,7 +37,7 @@ if($requestMethod == "POST"){//TOKEN REQUIRED
         sendError(400, "empty request");
     }
     $reqPostKeys = ["token", "roomID", "time", "content"];
-    if(requestContainsSomeKeys($requestData, $reqPostKeys) == false){
+    if(requestContainsAllKeys($requestData, $reqPostKeys) == false){
         send(400, "missing keys");
     }
 
@@ -62,8 +62,14 @@ if($requestMethod == "PATCH"){
     $post;
     //id, token, likedBy
     $user = getUserFromToken($requestData["token"]);
+    if(!$user){
+        sendError(404, "no user found");
+    }
     if(isset($requestData["id"]) && isset($requestData["token"])){
         $post = findItemByKey("posts", "id", $requestData["id"]);
+        if($post == false){
+            sendError(404, "post not found");
+        }
     }
     else{sendError(400, "missing token or id of post");}
 
