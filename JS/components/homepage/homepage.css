@@ -1,0 +1,157 @@
+:root{
+    --album_width: 500px;
+    --back_color: #121212;
+    --text_color: #dadada;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body:has(#homepage_container){
+    margin:0;
+    overflow-x: hidden;
+    background-color: var(--back_color); 
+
+  /*   background:linear-gradient(to bottom, black 60%, #822448) ; */
+  /*   background-color: #822448; */
+
+}
+
+
+
+
+
+#homepage_container{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:30px;
+}
+
+#homepage_container #carousell_scroll{
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+
+#homepage_container #carousell_scroll > div{
+    width: 15px;
+    height: 15px;
+
+    background-color: var(--text_color);
+    border-radius: 50%;
+
+    cursor: pointer;
+    position: relative;
+}
+
+#homepage_container #carousell_scroll > div.current{
+    border:2px solid var(--text_color);
+    background-color: var(--back_color);
+}
+
+#homepage_container #slides_container{
+    display: flex;
+    width: 600%;
+}
+
+#homepage_container #slides_container.transition{
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    transition-property: transform;
+}
+
+#homepage_container #slides_container > div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#homepage_container .album_cover_container img{
+    width: var(--album_width);
+    height: auto;
+    box-shadow: #000000 -20px 20px 20px 0px;
+
+    position: relative;
+    left: 0;
+    z-index: 2;
+
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    transition-property: left;
+
+    cursor: pointer;
+}
+
+#homepage_container .album_cover_container img.closed{
+    left: 60%;
+}
+
+#homepage_container .posts_preview{
+
+   position: relative;
+   left:0;
+   opacity: 1;
+
+   transition-duration: 300ms;
+   transition-timing-function: ease-in-out;
+   transition-property: left opacity;
+}
+
+#homepage_container .posts_preview.closed{
+    position: relative;
+    left: -10%;
+    z-index: -1;
+    opacity: 0;
+}
+
+#homepage_container .posts_preview .posts_container{
+    list-style-type: none;
+    columns: 3;
+    column-fill: balance;
+    vertical-align: middle;
+    display: inline-block;
+
+    margin:0;
+    width: 600px;
+}
+
+#homepage_container .posts_container li{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:var(--text_color);
+
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    
+    padding: 15px;
+    margin-bottom: 10px;
+
+    display: flex;
+    border-radius: 5px;
+}
+
+/* #homepage_container .posts_container li:nth-child(1){
+
+} */
+
+#homepage_container .slide:nth-child(1) .posts_container li{background-color: #822448;}
+
+#homepage_container .slide:nth-child(2) .posts_container li{background-color: #ce4a28;}
+#homepage_container .slide:nth-child(3) .posts_container li{background-color: #012464;}
+#homepage_container .slide:nth-child(4) .posts_container li{background-color: #ffffff; color: black;}
+#homepage_container .slide:nth-child(5) .posts_container li{background-color: #6f5e58; color: black;}
+#homepage_container .slide:nth-child(6) .posts_container li{background-color: #75522b;}
+
+
+
+
+
+
+
+
