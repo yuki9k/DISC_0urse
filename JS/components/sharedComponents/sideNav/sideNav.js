@@ -42,7 +42,7 @@ const friendsItem = document.createElement("div");
         <p>Rock</p>
       </div>
       <div class="dropdown_box_rooms room_singer">
-        <p>Indie Singer Songwriter</p>
+        <p>Singer Songwriter</p>
       </div>
       <div class="dropdown_box_rooms room_folk">
         <p>Folk</p>
