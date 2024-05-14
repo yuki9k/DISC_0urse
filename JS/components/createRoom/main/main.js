@@ -27,12 +27,12 @@ function renderCreate () {
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
                             <option>Choose genre</option>
-                            <option value="one">Rock</option>  
-                            <option value="two">HipHop</option>  
-                            <option value="three">Jazz</option>  
-                            <option value="four">Blues</option>  
-                            <option value="five">Country</option>  
-                            <option value="six">Pop</option>  
+                            <option value="Indie Pop">Indie Pop</option>  
+                            <option value="Indie Pop">Indie Rock</option>  
+                            <option value="Indie Singer Songwriter">Indie Singer & Songwriter</option>  
+                            <option value="Indie Folk">Indie Folk</option>  
+                            <option value="Indie R&B">Indie R&B</option>  
+                            <option value="Indie Post Punk">Indie Post Punk</option>  
                         </select> 
                     <p class="room_theme">Theme</p>
                         <select class="choose_theme">  
@@ -56,6 +56,12 @@ function renderCreate () {
             <div class="underline"></div>
         </div>
     `;
+
+    const genre = document.querySelector(".choose_genre");
+    genre.addEventListener("click", (e) => {
+        const genrePlaceholder = document.querySelector(".album_title_in_div");
+        genrePlaceholder.textContent = genre.value;
+    })
 
     PubSub.publish({
         event: "renderAddedFriends",
