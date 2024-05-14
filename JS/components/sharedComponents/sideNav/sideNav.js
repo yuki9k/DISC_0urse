@@ -36,22 +36,22 @@ const friendsItem = document.createElement("div");
     <div class="dropdown_title_two">Public Rooms</div>
     <div class="dropdown_rooms">
       <div class="dropdown_box_rooms room_pop">
-        <p>Indie Pop</p>
+        <p>Pop</p>
       </div>
       <div class="dropdown_box_rooms room_rock">
-        <p>Indie Rock</p>
+        <p>Rock</p>
       </div>
       <div class="dropdown_box_rooms room_singer">
         <p>Indie Singer Songwriter</p>
       </div>
       <div class="dropdown_box_rooms room_folk">
-        <p>Indie Folk</p>
+        <p>Folk</p>
       </div>
       <div class="dropdown_box_rooms room_rb">
-        <p>Indie R&B</p>
+        <p>R&B</p>
       </div>
       <div class="dropdown_box_rooms room_pp">
-        <p>Indie Post-punk</p>
+        <p>Post Punk</p>
       </div>
     </div>
     <div class="room_title_two">

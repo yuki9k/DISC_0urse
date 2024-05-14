@@ -27,12 +27,12 @@ function renderCreate () {
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
                             <option>Choose genre</option>
-                            <option value="Indie Pop">Indie Pop</option>  
-                            <option value="Indie Pop">Indie Rock</option>  
-                            <option value="Indie Singer Songwriter">Indie Singer & Songwriter</option>  
-                            <option value="Indie Folk">Indie Folk</option>  
-                            <option value="Indie R&B">Indie R&B</option>  
-                            <option value="Indie Post Punk">Indie Post Punk</option>  
+                            <option value="Pop">Pop</option>  
+                            <option value="Pop">Rock</option>  
+                            <option value="Singer Songwriter">Singer & Songwriter</option>  
+                            <option value="Folk">Folk</option>  
+                            <option value="R&B">R&B</option>  
+                            <option value="Post Punk">Post Punk</option>  
                         </select> 
                     <p class="room_theme">Theme</p>
                         <select class="choose_theme">  
