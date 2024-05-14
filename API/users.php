@@ -19,23 +19,29 @@ $requestData = getRequestData();
 //reg new user
 if($requestMethod == "GET"){
     $users = getDatabase("users");
-    $responsUsers = [];
-    foreach($users as $index => $user){
-        $responseUser = $user;
-        unset($responseUser["password"]);
-        $responsUsers[] = $responseUser;
-    }
+
     if(isset($requestData["id"])){
-        foreach($responsUsers as $index => $user){
+        foreach($users as $user){
             if($user["id"] == $requestData["id"]){
-                send(200, $user);
+                $singleUser = $user;
+                unset($singleUser["password"]);
+                unset($singleUser["friends"]);
+                send(200, $singleUser);
             }
         }
         send(404, "user not found");
-    } else {
-        send(200, $responsUsers);
     }
-}
+
+    $multipleUsers = [];
+    foreach($users as $user){
+        $singleUser = $user;
+        unset($singleUser["password"]);
+        unset($singleUser["friends"]);
+        $multipleUsers[] = $singleUser;
+    }
+    send(200, $multipleUsers);
+
+    }
 if($requestMethod == "POST"){
     if(empty($requestData)){
         sendError(400, "empty req");

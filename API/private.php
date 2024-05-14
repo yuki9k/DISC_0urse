@@ -28,7 +28,7 @@ if($requestMethod == "GET"){
         }
     }
     if(empty($rooms)){
-        sendError(400, "no rooms found");
+        sendError(404, "no rooms found");
     }
     send(200, $rooms);
 }
