@@ -40,7 +40,7 @@ function spotifyGetAllGenreAlbums($auth)
         $selectedAlbums,
         JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT
     );
-    file_put_contents("genres.json", $selectedAlbumsJson);
+    file_put_contents("res/genres.json", $selectedAlbumsJson);
     return $selectedAlbumsJson;
 }
 
@@ -195,7 +195,10 @@ function spotifyGetArtistsRandomAlbum($token, $artistsArr)
         ["url" => $albumImageUrl] = $albumImages[0];
 
         $albumImageFile = file_get_contents($albumImageUrl, false);
-        $albumImageFilename = "albumCovers/" . strtolower($genre) . ".jpeg";
+        $albumImageFilename =
+            "res/albumCovers/" .
+            str_replace(" ", "_", strtolower($genre)) .
+            ".jpeg";
 
         file_put_contents($albumImageFilename, $albumImageFile);
 
