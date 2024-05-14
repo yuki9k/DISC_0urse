@@ -1,1853 +1,1664 @@
 {
     "Indie Pop": {
-        "albumId": "5N9OrPMq2eHKwNq2sLYCjY",
-        "albumLabel": "Boom.Records",
-        "albumName": "LSTN!!!",
+        "albumId": "2Xe1nlx2wjagcKa5ijMM9b",
+        "albumLabel": "bushturkey records",
+        "albumName": "classic andie (live)",
         "albumUrls": {
-            "spotify": "https:\/\/open.spotify.com\/album\/5N9OrPMq2eHKwNq2sLYCjY"
+            "spotify": "https://open.spotify.com/album/2Xe1nlx2wjagcKa5ijMM9b"
         },
-        "albumUri": "spotify:album:5N9OrPMq2eHKwNq2sLYCjY",
-        "albumReleaseDate": "2024-03-29",
+        "albumUri": "spotify:album:2Xe1nlx2wjagcKa5ijMM9b",
+        "albumReleaseDate": "2019-02-12",
         "albumGenres": [],
         "albumArtists": [
             {
                 "external_urls": {
-                    "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
+                    "spotify": "https://open.spotify.com/artist/1Uxt9rwMK1taBTGLS2SZkr"
                 },
-                "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                "id": "0MOQB6FzT4cx60yzXhtj9h",
-                "name": "3ee",
+                "href": "https://api.spotify.com/v1/artists/1Uxt9rwMK1taBTGLS2SZkr",
+                "id": "1Uxt9rwMK1taBTGLS2SZkr",
+                "name": "Andie",
                 "type": "artist",
-                "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
+                "uri": "spotify:artist:1Uxt9rwMK1taBTGLS2SZkr"
             }
         ],
-        "albumTotalTracks": 15,
+        "albumTotalTracks": 7,
         "albumImages": [
             {
                 "height": 640,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d0000b2731d6f1baad2b3e8c97277c1f5",
+                "url": "https://i.scdn.co/image/ab67616d0000b273f496067c41fdd47cce4d1fdf",
                 "width": 640
             },
             {
                 "height": 300,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00001e021d6f1baad2b3e8c97277c1f5",
+                "url": "https://i.scdn.co/image/ab67616d00001e02f496067c41fdd47cce4d1fdf",
                 "width": 300
             },
             {
                 "height": 64,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d000048511d6f1baad2b3e8c97277c1f5",
+                "url": "https://i.scdn.co/image/ab67616d00004851f496067c41fdd47cce4d1fdf",
                 "width": 64
             }
         ],
         "albumTracks": [
             {
-                "trackId": "5N2LKOVtvcWevJuvzVjJjC",
-                "trackName": "INTRO",
+                "trackId": "7AXyoXnK1xNpkpgIqCJFqS",
+                "trackName": "edinburgh - live",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
+                            "spotify": "https://open.spotify.com/artist/1Uxt9rwMK1taBTGLS2SZkr"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
+                        "href": "https://api.spotify.com/v1/artists/1Uxt9rwMK1taBTGLS2SZkr",
+                        "id": "1Uxt9rwMK1taBTGLS2SZkr",
+                        "name": "Andie",
                         "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
+                        "uri": "spotify:artist:1Uxt9rwMK1taBTGLS2SZkr"
                     }
                 ],
-                "trackDurationMs": 25500,
+                "trackDurationMs": 305213,
                 "trackNumber": 1,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/5N2LKOVtvcWevJuvzVjJjC"
+                    "spotify": "https://open.spotify.com/track/7AXyoXnK1xNpkpgIqCJFqS"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/d00263ff1cfa3743db12f653c7d6b7b4e6779f6b?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:5N2LKOVtvcWevJuvzVjJjC"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/b64136bf4134f52d1909a8ac2f1810c13d9594b1?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:7AXyoXnK1xNpkpgIqCJFqS"
             },
             {
-                "trackId": "0ngOVYnLqKdBimGrvEILxH",
-                "trackName": "CARE4ME",
+                "trackId": "5YcJYepM3YybtrnZMDdUXH",
+                "trackName": "freezing home - live",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
+                            "spotify": "https://open.spotify.com/artist/1Uxt9rwMK1taBTGLS2SZkr"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
+                        "href": "https://api.spotify.com/v1/artists/1Uxt9rwMK1taBTGLS2SZkr",
+                        "id": "1Uxt9rwMK1taBTGLS2SZkr",
+                        "name": "Andie",
                         "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
+                        "uri": "spotify:artist:1Uxt9rwMK1taBTGLS2SZkr"
                     }
                 ],
-                "trackDurationMs": 114166,
+                "trackDurationMs": 293280,
                 "trackNumber": 2,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/0ngOVYnLqKdBimGrvEILxH"
+                    "spotify": "https://open.spotify.com/track/5YcJYepM3YybtrnZMDdUXH"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/4c81c05123de2be6709ac2ce0a8101c0f5856dde?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:0ngOVYnLqKdBimGrvEILxH"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/d7d54f0c5a8b28f568941f015b685db01e082da0?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:5YcJYepM3YybtrnZMDdUXH"
             },
             {
-                "trackId": "1qd5fqJl0os1VAfMkQaXdQ",
-                "trackName": "NRG",
+                "trackId": "1kr7UkPevpJYh6ZI6Sw50f",
+                "trackName": "uncomfortable - live",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
+                            "spotify": "https://open.spotify.com/artist/1Uxt9rwMK1taBTGLS2SZkr"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
+                        "href": "https://api.spotify.com/v1/artists/1Uxt9rwMK1taBTGLS2SZkr",
+                        "id": "1Uxt9rwMK1taBTGLS2SZkr",
+                        "name": "Andie",
                         "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
+                        "uri": "spotify:artist:1Uxt9rwMK1taBTGLS2SZkr"
                     }
                 ],
-                "trackDurationMs": 179000,
+                "trackDurationMs": 282333,
                 "trackNumber": 3,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1qd5fqJl0os1VAfMkQaXdQ"
+                    "spotify": "https://open.spotify.com/track/1kr7UkPevpJYh6ZI6Sw50f"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/94f637dddc0635222364b82c88923f0fc03c4d42?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1qd5fqJl0os1VAfMkQaXdQ"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/3abe9563a9803732a4ee99f7cd51e7d9840e93ec?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:1kr7UkPevpJYh6ZI6Sw50f"
             },
             {
-                "trackId": "6YW7RfJC6NqLZBukd5Ms70",
-                "trackName": "SETITOFF",
+                "trackId": "5a3rP5G3v6dHjo2shLklHb",
+                "trackName": "if i spat on you - live",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
+                            "spotify": "https://open.spotify.com/artist/1Uxt9rwMK1taBTGLS2SZkr"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
+                        "href": "https://api.spotify.com/v1/artists/1Uxt9rwMK1taBTGLS2SZkr",
+                        "id": "1Uxt9rwMK1taBTGLS2SZkr",
+                        "name": "Andie",
                         "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
+                        "uri": "spotify:artist:1Uxt9rwMK1taBTGLS2SZkr"
                     }
                 ],
-                "trackDurationMs": 144708,
+                "trackDurationMs": 298946,
                 "trackNumber": 4,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/6YW7RfJC6NqLZBukd5Ms70"
+                    "spotify": "https://open.spotify.com/track/5a3rP5G3v6dHjo2shLklHb"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/b08ff09d032ba1f2ef48aa09ca3284901fb13daf?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:6YW7RfJC6NqLZBukd5Ms70"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/75cb0d79c2e529702994f2c40b048fb1c9e5cc62?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:5a3rP5G3v6dHjo2shLklHb"
             },
             {
-                "trackId": "3ZjZiA6AufjoMtUWhOZWsN",
-                "trackName": "INTERLUDE",
+                "trackId": "6u7RonVGVD27LmJxpVUJY7",
+                "trackName": "power - live",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
+                            "spotify": "https://open.spotify.com/artist/1Uxt9rwMK1taBTGLS2SZkr"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
+                        "href": "https://api.spotify.com/v1/artists/1Uxt9rwMK1taBTGLS2SZkr",
+                        "id": "1Uxt9rwMK1taBTGLS2SZkr",
+                        "name": "Andie",
                         "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
+                        "uri": "spotify:artist:1Uxt9rwMK1taBTGLS2SZkr"
                     }
                 ],
-                "trackDurationMs": 30208,
+                "trackDurationMs": 304546,
                 "trackNumber": 5,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3ZjZiA6AufjoMtUWhOZWsN"
+                    "spotify": "https://open.spotify.com/track/6u7RonVGVD27LmJxpVUJY7"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/564f1f7544ef4864c63571b4c8605aa17f972ec0?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3ZjZiA6AufjoMtUWhOZWsN"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/c4779a8d830d64564fcaca3393b573f145ba60ee?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:6u7RonVGVD27LmJxpVUJY7"
             },
             {
-                "trackId": "4urkbyE4KnEB8ajmPcQXru",
-                "trackName": "MNTNS",
+                "trackId": "2NmgZ7dW0kswCFpNjkvnxH",
+                "trackName": "one toe in the gravey - live",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
+                            "spotify": "https://open.spotify.com/artist/1Uxt9rwMK1taBTGLS2SZkr"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
+                        "href": "https://api.spotify.com/v1/artists/1Uxt9rwMK1taBTGLS2SZkr",
+                        "id": "1Uxt9rwMK1taBTGLS2SZkr",
+                        "name": "Andie",
                         "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
+                        "uri": "spotify:artist:1Uxt9rwMK1taBTGLS2SZkr"
                     }
                 ],
-                "trackDurationMs": 173291,
+                "trackDurationMs": 279093,
                 "trackNumber": 6,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/4urkbyE4KnEB8ajmPcQXru"
+                    "spotify": "https://open.spotify.com/track/2NmgZ7dW0kswCFpNjkvnxH"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/32c64463e930f5102cf411ae53882b0ad89ec42f?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:4urkbyE4KnEB8ajmPcQXru"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/1548ff63f1321de4af0660342280baac31070b43?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:2NmgZ7dW0kswCFpNjkvnxH"
             },
             {
-                "trackId": "3i6DimqYuhXbCCsRI8qFNn",
-                "trackName": "SLIDE (INTRO)",
+                "trackId": "5j0lOTApmBNqzla39WVMjR",
+                "trackName": "Redbone - live",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
+                            "spotify": "https://open.spotify.com/artist/1Uxt9rwMK1taBTGLS2SZkr"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
+                        "href": "https://api.spotify.com/v1/artists/1Uxt9rwMK1taBTGLS2SZkr",
+                        "id": "1Uxt9rwMK1taBTGLS2SZkr",
+                        "name": "Andie",
                         "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
+                        "uri": "spotify:artist:1Uxt9rwMK1taBTGLS2SZkr"
                     }
                 ],
-                "trackDurationMs": 35046,
+                "trackDurationMs": 276866,
                 "trackNumber": 7,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3i6DimqYuhXbCCsRI8qFNn"
+                    "spotify": "https://open.spotify.com/track/5j0lOTApmBNqzla39WVMjR"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/7c78da0641a5d3ea0023a86c52f6cdb2311e41fd?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3i6DimqYuhXbCCsRI8qFNn"
-            },
-            {
-                "trackId": "5cRzC5D0PnFgf4fetKduQl",
-                "trackName": "SLIDE",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
-                        "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
-                    }
-                ],
-                "trackDurationMs": 147286,
-                "trackNumber": 8,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/5cRzC5D0PnFgf4fetKduQl"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/6eccfe7afc445c2a01ce3d15f32fbbc14a9cb435?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:5cRzC5D0PnFgf4fetKduQl"
-            },
-            {
-                "trackId": "1CKHgpmCcB4hsVTYoNsc8c",
-                "trackName": "VIRGIN MARY",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
-                        "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
-                    },
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3sAk2ECmW1UmPMf6Q94Llu"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3sAk2ECmW1UmPMf6Q94Llu",
-                        "id": "3sAk2ECmW1UmPMf6Q94Llu",
-                        "name": "Kenji",
-                        "type": "artist",
-                        "uri": "spotify:artist:3sAk2ECmW1UmPMf6Q94Llu"
-                    }
-                ],
-                "trackDurationMs": 124947,
-                "trackNumber": 9,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1CKHgpmCcB4hsVTYoNsc8c"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/ad2db6f9fbdf4f65c253a3903a3389acc4718b87?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1CKHgpmCcB4hsVTYoNsc8c"
-            },
-            {
-                "trackId": "2VVubQ5IJUqNXgqBIDCx5S",
-                "trackName": "HDN's REFRAIN",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
-                        "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
-                    },
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/79nYBIUkfdh2KsqMBqHIAP"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/79nYBIUkfdh2KsqMBqHIAP",
-                        "id": "79nYBIUkfdh2KsqMBqHIAP",
-                        "name": "hdnroots.",
-                        "type": "artist",
-                        "uri": "spotify:artist:79nYBIUkfdh2KsqMBqHIAP"
-                    }
-                ],
-                "trackDurationMs": 43760,
-                "trackNumber": 10,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/2VVubQ5IJUqNXgqBIDCx5S"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/b114f164d7b8e516ac8f09572147f34d731821ea?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:2VVubQ5IJUqNXgqBIDCx5S"
-            },
-            {
-                "trackId": "3tDuplyy8DkoqnFiJESlvM",
-                "trackName": "LSTN!",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
-                        "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
-                    }
-                ],
-                "trackDurationMs": 205666,
-                "trackNumber": 11,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3tDuplyy8DkoqnFiJESlvM"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/adf62714f44340f29305bf6c744bbe13bcbaca54?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3tDuplyy8DkoqnFiJESlvM"
-            },
-            {
-                "trackId": "0kg7696gUQjONRtyjczj50",
-                "trackName": "WHERE UR HEART GO",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
-                        "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
-                    }
-                ],
-                "trackDurationMs": 170212,
-                "trackNumber": 12,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/0kg7696gUQjONRtyjczj50"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/cb9724634659ccec15c397996d64365d4c15695b?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:0kg7696gUQjONRtyjczj50"
-            },
-            {
-                "trackId": "1AJKL67CmfggxjupoZsoYE",
-                "trackName": "NRG (ACOUSTIC DEMO)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
-                        "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
-                    }
-                ],
-                "trackDurationMs": 129166,
-                "trackNumber": 13,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1AJKL67CmfggxjupoZsoYE"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/6c9cba6c048d07cfdf934636f29cc84c20cace39?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1AJKL67CmfggxjupoZsoYE"
-            },
-            {
-                "trackId": "53Bt5wpZYAqRvtpqID5OxK",
-                "trackName": "KYOTO",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
-                        "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
-                    },
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/79nYBIUkfdh2KsqMBqHIAP"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/79nYBIUkfdh2KsqMBqHIAP",
-                        "id": "79nYBIUkfdh2KsqMBqHIAP",
-                        "name": "hdnroots.",
-                        "type": "artist",
-                        "uri": "spotify:artist:79nYBIUkfdh2KsqMBqHIAP"
-                    }
-                ],
-                "trackDurationMs": 152192,
-                "trackNumber": 14,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/53Bt5wpZYAqRvtpqID5OxK"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/22b133ea137eb1a409fd6045773ae0bedffb875c?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:53Bt5wpZYAqRvtpqID5OxK"
-            },
-            {
-                "trackId": "2Aq2ENKCEQdtHk001AQNcB",
-                "trackName": "WAITING!",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/0MOQB6FzT4cx60yzXhtj9h"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/0MOQB6FzT4cx60yzXhtj9h",
-                        "id": "0MOQB6FzT4cx60yzXhtj9h",
-                        "name": "3ee",
-                        "type": "artist",
-                        "uri": "spotify:artist:0MOQB6FzT4cx60yzXhtj9h"
-                    },
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3sAk2ECmW1UmPMf6Q94Llu"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3sAk2ECmW1UmPMf6Q94Llu",
-                        "id": "3sAk2ECmW1UmPMf6Q94Llu",
-                        "name": "Kenji",
-                        "type": "artist",
-                        "uri": "spotify:artist:3sAk2ECmW1UmPMf6Q94Llu"
-                    }
-                ],
-                "trackDurationMs": 150002,
-                "trackNumber": 15,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/2Aq2ENKCEQdtHk001AQNcB"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/f3d18acc89c190e19846a2703cc7d11b7a8b1bfd?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:2Aq2ENKCEQdtHk001AQNcB"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/a434e4276490d41e2f9e57e8f36fab0d92f54e86?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:5j0lOTApmBNqzla39WVMjR"
             }
         ],
-        "albumPopularity": 26,
+        "albumPopularity": 19,
         "albumImageHexColors": [
-            "#10A70E",
-            "#F39AF4",
-            "#954115",
-            "#F77112",
-            "#00C1FF"
+            "#000000",
+            "#FFFFFF",
+            "#A5A5A5",
+            "#5F5F5F"
         ]
     },
     "Indie Rock": {
-        "albumId": "6LgmZBM57coSvszAaAcHa9",
-        "albumLabel": "FC OWN",
-        "albumName": "Mambo",
+        "albumId": "43KH8khjvsAqqKz6t3M1k3",
+        "albumLabel": "Killing Moon",
+        "albumName": "Jumpstart Hope",
         "albumUrls": {
-            "spotify": "https:\/\/open.spotify.com\/album\/6LgmZBM57coSvszAaAcHa9"
+            "spotify": "https://open.spotify.com/album/43KH8khjvsAqqKz6t3M1k3"
         },
-        "albumUri": "spotify:album:6LgmZBM57coSvszAaAcHa9",
-        "albumReleaseDate": "2022-12-09",
+        "albumUri": "spotify:album:43KH8khjvsAqqKz6t3M1k3",
+        "albumReleaseDate": "2020-01-03",
         "albumGenres": [],
         "albumArtists": [
             {
                 "external_urls": {
-                    "spotify": "https:\/\/open.spotify.com\/artist\/5m7y9KArW8BrTZLE4sepuY"
+                    "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                 },
-                "href": "https:\/\/api.spotify.com\/v1\/artists\/5m7y9KArW8BrTZLE4sepuY",
-                "id": "5m7y9KArW8BrTZLE4sepuY",
-                "name": "OWN",
+                "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                "id": "6EXjdbEiqhPzodtf7MtVos",
+                "name": "InMe",
                 "type": "artist",
-                "uri": "spotify:artist:5m7y9KArW8BrTZLE4sepuY"
-            }
-        ],
-        "albumTotalTracks": 7,
-        "albumImages": [
-            {
-                "height": 640,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d0000b273711d67e0f657e9f925bf5346",
-                "width": 640
-            },
-            {
-                "height": 300,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00001e02711d67e0f657e9f925bf5346",
-                "width": 300
-            },
-            {
-                "height": 64,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00004851711d67e0f657e9f925bf5346",
-                "width": 64
-            }
-        ],
-        "albumTracks": [
-            {
-                "trackId": "3QJC9pDoQKvhOUp3DNlVg6",
-                "trackName": "A Walk on the Moon",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/5m7y9KArW8BrTZLE4sepuY"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/5m7y9KArW8BrTZLE4sepuY",
-                        "id": "5m7y9KArW8BrTZLE4sepuY",
-                        "name": "OWN",
-                        "type": "artist",
-                        "uri": "spotify:artist:5m7y9KArW8BrTZLE4sepuY"
-                    }
-                ],
-                "trackDurationMs": 166719,
-                "trackNumber": 1,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3QJC9pDoQKvhOUp3DNlVg6"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/ef5d5938ca8a082e2ef31c844082c780b4dba8d5?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3QJC9pDoQKvhOUp3DNlVg6"
-            },
-            {
-                "trackId": "1YvlehvZWBbx5Box5U5wB8",
-                "trackName": "Skinny Boy",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/5m7y9KArW8BrTZLE4sepuY"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/5m7y9KArW8BrTZLE4sepuY",
-                        "id": "5m7y9KArW8BrTZLE4sepuY",
-                        "name": "OWN",
-                        "type": "artist",
-                        "uri": "spotify:artist:5m7y9KArW8BrTZLE4sepuY"
-                    }
-                ],
-                "trackDurationMs": 204406,
-                "trackNumber": 2,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1YvlehvZWBbx5Box5U5wB8"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/5ae535f753e0b4566864db49f2c5375bdb99c20d?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1YvlehvZWBbx5Box5U5wB8"
-            },
-            {
-                "trackId": "4HoryjoxvaKZBSIxlohwmZ",
-                "trackName": "The Keys of My House",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/5m7y9KArW8BrTZLE4sepuY"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/5m7y9KArW8BrTZLE4sepuY",
-                        "id": "5m7y9KArW8BrTZLE4sepuY",
-                        "name": "OWN",
-                        "type": "artist",
-                        "uri": "spotify:artist:5m7y9KArW8BrTZLE4sepuY"
-                    }
-                ],
-                "trackDurationMs": 175403,
-                "trackNumber": 3,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/4HoryjoxvaKZBSIxlohwmZ"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/2d27173cdf17052da1679df31610b6f5bc08b0c6?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:4HoryjoxvaKZBSIxlohwmZ"
-            },
-            {
-                "trackId": "2bTSNiklylixqgQAIc2nqr",
-                "trackName": "Known by You",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/5m7y9KArW8BrTZLE4sepuY"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/5m7y9KArW8BrTZLE4sepuY",
-                        "id": "5m7y9KArW8BrTZLE4sepuY",
-                        "name": "OWN",
-                        "type": "artist",
-                        "uri": "spotify:artist:5m7y9KArW8BrTZLE4sepuY"
-                    }
-                ],
-                "trackDurationMs": 163021,
-                "trackNumber": 4,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/2bTSNiklylixqgQAIc2nqr"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/589708fa0ab99c04f938ffa94f34301f72a25c63?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:2bTSNiklylixqgQAIc2nqr"
-            },
-            {
-                "trackId": "1IpaCtYNcE9FcyAHul73Qa",
-                "trackName": "Broken Heart \/ Pop Song Night Club",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/5m7y9KArW8BrTZLE4sepuY"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/5m7y9KArW8BrTZLE4sepuY",
-                        "id": "5m7y9KArW8BrTZLE4sepuY",
-                        "name": "OWN",
-                        "type": "artist",
-                        "uri": "spotify:artist:5m7y9KArW8BrTZLE4sepuY"
-                    }
-                ],
-                "trackDurationMs": 180329,
-                "trackNumber": 5,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1IpaCtYNcE9FcyAHul73Qa"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/18eb2cc6dc8d3fc5642ffe817b686b0319304dc0?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1IpaCtYNcE9FcyAHul73Qa"
-            },
-            {
-                "trackId": "1NHTjF2nb3Czw0bTmr2Ui1",
-                "trackName": "My Bike",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/5m7y9KArW8BrTZLE4sepuY"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/5m7y9KArW8BrTZLE4sepuY",
-                        "id": "5m7y9KArW8BrTZLE4sepuY",
-                        "name": "OWN",
-                        "type": "artist",
-                        "uri": "spotify:artist:5m7y9KArW8BrTZLE4sepuY"
-                    }
-                ],
-                "trackDurationMs": 163464,
-                "trackNumber": 6,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1NHTjF2nb3Czw0bTmr2Ui1"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/b4bc0c3f11033d2485315356188a83e955744854?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1NHTjF2nb3Czw0bTmr2Ui1"
-            },
-            {
-                "trackId": "0gCEsT1aKbWjsdix4jYFYt",
-                "trackName": "Little Eye",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/5m7y9KArW8BrTZLE4sepuY"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/5m7y9KArW8BrTZLE4sepuY",
-                        "id": "5m7y9KArW8BrTZLE4sepuY",
-                        "name": "OWN",
-                        "type": "artist",
-                        "uri": "spotify:artist:5m7y9KArW8BrTZLE4sepuY"
-                    }
-                ],
-                "trackDurationMs": 240222,
-                "trackNumber": 7,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/0gCEsT1aKbWjsdix4jYFYt"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/0c15891739e6a80a80cf70ac827bd489ebae63d7?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:0gCEsT1aKbWjsdix4jYFYt"
-            }
-        ],
-        "albumPopularity": 3,
-        "albumImageHexColors": [
-            "#071214",
-            "#4D2F13",
-            "#005D7F",
-            "#9E7A48",
-            "#B84001"
-        ]
-    },
-    "Indie Singer-songwriter": {
-        "albumId": "1sWqsFgXLh865lSvQ2g14z",
-        "albumLabel": "INDIE.INDIGO*",
-        "albumName": "Puffy",
-        "albumUrls": {
-            "spotify": "https:\/\/open.spotify.com\/album\/1sWqsFgXLh865lSvQ2g14z"
-        },
-        "albumUri": "spotify:album:1sWqsFgXLh865lSvQ2g14z",
-        "albumReleaseDate": "2023-02-07",
-        "albumGenres": [],
-        "albumArtists": [
-            {
-                "external_urls": {
-                    "spotify": "https:\/\/open.spotify.com\/artist\/4BmRT61qcLy06eDsa3CjsN"
-                },
-                "href": "https:\/\/api.spotify.com\/v1\/artists\/4BmRT61qcLy06eDsa3CjsN",
-                "id": "4BmRT61qcLy06eDsa3CjsN",
-                "name": "INDIE.INDIGO*",
-                "type": "artist",
-                "uri": "spotify:artist:4BmRT61qcLy06eDsa3CjsN"
-            }
-        ],
-        "albumTotalTracks": 7,
-        "albumImages": [
-            {
-                "height": 640,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d0000b273a5ac7f8511a9f7dee966671f",
-                "width": 640
-            },
-            {
-                "height": 300,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00001e02a5ac7f8511a9f7dee966671f",
-                "width": 300
-            },
-            {
-                "height": 64,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00004851a5ac7f8511a9f7dee966671f",
-                "width": 64
-            }
-        ],
-        "albumTracks": [
-            {
-                "trackId": "4K2fcK8m4KfOwDCZfTJUpv",
-                "trackName": "Purple Stuff",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/4BmRT61qcLy06eDsa3CjsN"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/4BmRT61qcLy06eDsa3CjsN",
-                        "id": "4BmRT61qcLy06eDsa3CjsN",
-                        "name": "INDIE.INDIGO*",
-                        "type": "artist",
-                        "uri": "spotify:artist:4BmRT61qcLy06eDsa3CjsN"
-                    }
-                ],
-                "trackDurationMs": 103327,
-                "trackNumber": 1,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/4K2fcK8m4KfOwDCZfTJUpv"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/cf55679f2740741260ef73e1b7a3a6148d87e760?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:4K2fcK8m4KfOwDCZfTJUpv"
-            },
-            {
-                "trackId": "6ai2Vbf91KDeokZkHx3J1Q",
-                "trackName": "Scooby Doo",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/4BmRT61qcLy06eDsa3CjsN"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/4BmRT61qcLy06eDsa3CjsN",
-                        "id": "4BmRT61qcLy06eDsa3CjsN",
-                        "name": "INDIE.INDIGO*",
-                        "type": "artist",
-                        "uri": "spotify:artist:4BmRT61qcLy06eDsa3CjsN"
-                    }
-                ],
-                "trackDurationMs": 96013,
-                "trackNumber": 2,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/6ai2Vbf91KDeokZkHx3J1Q"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/b80d8004ffea20f6aa20962f21dd3485593e549b?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:6ai2Vbf91KDeokZkHx3J1Q"
-            },
-            {
-                "trackId": "3wUnSTP2r9mNiXdn1M4Y41",
-                "trackName": "Miss Daisy",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/4BmRT61qcLy06eDsa3CjsN"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/4BmRT61qcLy06eDsa3CjsN",
-                        "id": "4BmRT61qcLy06eDsa3CjsN",
-                        "name": "INDIE.INDIGO*",
-                        "type": "artist",
-                        "uri": "spotify:artist:4BmRT61qcLy06eDsa3CjsN"
-                    }
-                ],
-                "trackDurationMs": 112468,
-                "trackNumber": 3,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3wUnSTP2r9mNiXdn1M4Y41"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/12c6822f57af3cac1a1347b42e767b18fc274519?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3wUnSTP2r9mNiXdn1M4Y41"
-            },
-            {
-                "trackId": "3Ljytu0yFn7Yh1IvAVdv8K",
-                "trackName": "Rock Paper Scissors",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/4BmRT61qcLy06eDsa3CjsN"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/4BmRT61qcLy06eDsa3CjsN",
-                        "id": "4BmRT61qcLy06eDsa3CjsN",
-                        "name": "INDIE.INDIGO*",
-                        "type": "artist",
-                        "uri": "spotify:artist:4BmRT61qcLy06eDsa3CjsN"
-                    }
-                ],
-                "trackDurationMs": 76810,
-                "trackNumber": 4,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3Ljytu0yFn7Yh1IvAVdv8K"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/9dd799e75a3d934868cdcdaf07bc71038c79fc2b?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3Ljytu0yFn7Yh1IvAVdv8K"
-            },
-            {
-                "trackId": "36UOyhWQjjXDBb2kNhi3P2",
-                "trackName": "Puffy",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/4BmRT61qcLy06eDsa3CjsN"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/4BmRT61qcLy06eDsa3CjsN",
-                        "id": "4BmRT61qcLy06eDsa3CjsN",
-                        "name": "INDIE.INDIGO*",
-                        "type": "artist",
-                        "uri": "spotify:artist:4BmRT61qcLy06eDsa3CjsN"
-                    }
-                ],
-                "trackDurationMs": 74443,
-                "trackNumber": 5,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/36UOyhWQjjXDBb2kNhi3P2"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/0bef535041a9249053ecbe014cd3cfe7229fd65e?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:36UOyhWQjjXDBb2kNhi3P2"
-            },
-            {
-                "trackId": "4g6DhrA1immJBqp2E3Nlrp",
-                "trackName": "Rick James",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/4BmRT61qcLy06eDsa3CjsN"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/4BmRT61qcLy06eDsa3CjsN",
-                        "id": "4BmRT61qcLy06eDsa3CjsN",
-                        "name": "INDIE.INDIGO*",
-                        "type": "artist",
-                        "uri": "spotify:artist:4BmRT61qcLy06eDsa3CjsN"
-                    }
-                ],
-                "trackDurationMs": 110136,
-                "trackNumber": 6,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/4g6DhrA1immJBqp2E3Nlrp"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/0464112b32496f7194bfcbcdd114d633fb8b97f3?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:4g6DhrA1immJBqp2E3Nlrp"
-            },
-            {
-                "trackId": "7ftfoSX5mkQgEc8YI2NEvY",
-                "trackName": "Last One",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/4BmRT61qcLy06eDsa3CjsN"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/4BmRT61qcLy06eDsa3CjsN",
-                        "id": "4BmRT61qcLy06eDsa3CjsN",
-                        "name": "INDIE.INDIGO*",
-                        "type": "artist",
-                        "uri": "spotify:artist:4BmRT61qcLy06eDsa3CjsN"
-                    }
-                ],
-                "trackDurationMs": 105533,
-                "trackNumber": 7,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/7ftfoSX5mkQgEc8YI2NEvY"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/0068b2c77ea84b9e7d638dc98a9a3ee5d44b74c5?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:7ftfoSX5mkQgEc8YI2NEvY"
-            }
-        ],
-        "albumPopularity": 0,
-        "albumImageHexColors": [
-            "#8006E3",
-            "#13046D",
-            "#FAC950",
-            "#C663FB",
-            "#011804"
-        ]
-    },
-    "Indie Folk": {
-        "albumId": "4oHuS5z1Ea8ZA3YTYKnxsJ",
-        "albumLabel": "Folk Uke Records",
-        "albumName": "Folk Uke",
-        "albumUrls": {
-            "spotify": "https:\/\/open.spotify.com\/album\/4oHuS5z1Ea8ZA3YTYKnxsJ"
-        },
-        "albumUri": "spotify:album:4oHuS5z1Ea8ZA3YTYKnxsJ",
-        "albumReleaseDate": "2005-05-03",
-        "albumGenres": [],
-        "albumArtists": [
-            {
-                "external_urls": {
-                    "spotify": "https:\/\/open.spotify.com\/artist\/01kwpdxNuOyzbfJ0ET7osn"
-                },
-                "href": "https:\/\/api.spotify.com\/v1\/artists\/01kwpdxNuOyzbfJ0ET7osn",
-                "id": "01kwpdxNuOyzbfJ0ET7osn",
-                "name": "Folk Uke",
-                "type": "artist",
-                "uri": "spotify:artist:01kwpdxNuOyzbfJ0ET7osn"
-            }
-        ],
-        "albumTotalTracks": 8,
-        "albumImages": [
-            {
-                "height": 640,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d0000b273aa182f7bc92301856d59d2bb",
-                "width": 640
-            },
-            {
-                "height": 300,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00001e02aa182f7bc92301856d59d2bb",
-                "width": 300
-            },
-            {
-                "height": 64,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00004851aa182f7bc92301856d59d2bb",
-                "width": 64
-            }
-        ],
-        "albumTracks": [
-            {
-                "trackId": "56KdSwbAJm3tBeMWEZXgQc",
-                "trackName": "Tonight You Belong to Me",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/01kwpdxNuOyzbfJ0ET7osn"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/01kwpdxNuOyzbfJ0ET7osn",
-                        "id": "01kwpdxNuOyzbfJ0ET7osn",
-                        "name": "Folk Uke",
-                        "type": "artist",
-                        "uri": "spotify:artist:01kwpdxNuOyzbfJ0ET7osn"
-                    }
-                ],
-                "trackDurationMs": 125120,
-                "trackNumber": 1,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/56KdSwbAJm3tBeMWEZXgQc"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/e7e9871c3a8e02ddb6ec060ba98dd2b29c354a35?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:56KdSwbAJm3tBeMWEZXgQc"
-            },
-            {
-                "trackId": "5oAeRfEVuUpuBIv1BbJmpZ",
-                "trackName": "Shit Makes the Flowers Grow",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/01kwpdxNuOyzbfJ0ET7osn"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/01kwpdxNuOyzbfJ0ET7osn",
-                        "id": "01kwpdxNuOyzbfJ0ET7osn",
-                        "name": "Folk Uke",
-                        "type": "artist",
-                        "uri": "spotify:artist:01kwpdxNuOyzbfJ0ET7osn"
-                    }
-                ],
-                "trackDurationMs": 172506,
-                "trackNumber": 2,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/5oAeRfEVuUpuBIv1BbJmpZ"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/b582ef1bb2d7e86790fd8949dea8bf2064645343?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:5oAeRfEVuUpuBIv1BbJmpZ"
-            },
-            {
-                "trackId": "676nJ9macPZfaDpqGF1aG9",
-                "trackName": "Knock Me Up",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/01kwpdxNuOyzbfJ0ET7osn"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/01kwpdxNuOyzbfJ0ET7osn",
-                        "id": "01kwpdxNuOyzbfJ0ET7osn",
-                        "name": "Folk Uke",
-                        "type": "artist",
-                        "uri": "spotify:artist:01kwpdxNuOyzbfJ0ET7osn"
-                    }
-                ],
-                "trackDurationMs": 184080,
-                "trackNumber": 3,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/676nJ9macPZfaDpqGF1aG9"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/07c086960de749f1ddbc01a8251c708d48aaba78?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:676nJ9macPZfaDpqGF1aG9"
-            },
-            {
-                "trackId": "0eJe1q7SMfmaK4Cj1fDlqV",
-                "trackName": "Fences",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/01kwpdxNuOyzbfJ0ET7osn"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/01kwpdxNuOyzbfJ0ET7osn",
-                        "id": "01kwpdxNuOyzbfJ0ET7osn",
-                        "name": "Folk Uke",
-                        "type": "artist",
-                        "uri": "spotify:artist:01kwpdxNuOyzbfJ0ET7osn"
-                    }
-                ],
-                "trackDurationMs": 266893,
-                "trackNumber": 4,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/0eJe1q7SMfmaK4Cj1fDlqV"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/b10134b5f34a60a9b2222fb59fdcfaa5d0f59e8a?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:0eJe1q7SMfmaK4Cj1fDlqV"
-            },
-            {
-                "trackId": "65uhWeENa6YgIkPdBYlFAu",
-                "trackName": "Try to Say Goodbye",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/01kwpdxNuOyzbfJ0ET7osn"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/01kwpdxNuOyzbfJ0ET7osn",
-                        "id": "01kwpdxNuOyzbfJ0ET7osn",
-                        "name": "Folk Uke",
-                        "type": "artist",
-                        "uri": "spotify:artist:01kwpdxNuOyzbfJ0ET7osn"
-                    }
-                ],
-                "trackDurationMs": 260600,
-                "trackNumber": 5,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/65uhWeENa6YgIkPdBYlFAu"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/3c87717ca776f28bc1d940a6730be8d0f02eae15?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:65uhWeENa6YgIkPdBYlFAu"
-            },
-            {
-                "trackId": "1onY8FcD3nHpuug48BF6YR",
-                "trackName": "I Still Miss Someone",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/01kwpdxNuOyzbfJ0ET7osn"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/01kwpdxNuOyzbfJ0ET7osn",
-                        "id": "01kwpdxNuOyzbfJ0ET7osn",
-                        "name": "Folk Uke",
-                        "type": "artist",
-                        "uri": "spotify:artist:01kwpdxNuOyzbfJ0ET7osn"
-                    }
-                ],
-                "trackDurationMs": 246533,
-                "trackNumber": 6,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1onY8FcD3nHpuug48BF6YR"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/827fc35c30fc24d441a1f30604050a85942d2805?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1onY8FcD3nHpuug48BF6YR"
-            },
-            {
-                "trackId": "1ORzvdJst5eqIDZQ8S4Vl0",
-                "trackName": "In Case We Die",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/01kwpdxNuOyzbfJ0ET7osn"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/01kwpdxNuOyzbfJ0ET7osn",
-                        "id": "01kwpdxNuOyzbfJ0ET7osn",
-                        "name": "Folk Uke",
-                        "type": "artist",
-                        "uri": "spotify:artist:01kwpdxNuOyzbfJ0ET7osn"
-                    }
-                ],
-                "trackDurationMs": 201746,
-                "trackNumber": 7,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1ORzvdJst5eqIDZQ8S4Vl0"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/2a88f5ccefd0604bb8a5794dc285de5970dda0b4?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1ORzvdJst5eqIDZQ8S4Vl0"
-            },
-            {
-                "trackId": "3KD51YetMdgdPRSF42E35w",
-                "trackName": "Motherfucker Got Fucked Up",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/01kwpdxNuOyzbfJ0ET7osn"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/01kwpdxNuOyzbfJ0ET7osn",
-                        "id": "01kwpdxNuOyzbfJ0ET7osn",
-                        "name": "Folk Uke",
-                        "type": "artist",
-                        "uri": "spotify:artist:01kwpdxNuOyzbfJ0ET7osn"
-                    }
-                ],
-                "trackDurationMs": 137626,
-                "trackNumber": 8,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3KD51YetMdgdPRSF42E35w"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/8e1412eb69737fb753538aced164d325648b448d?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3KD51YetMdgdPRSF42E35w"
-            }
-        ],
-        "albumPopularity": 17,
-        "albumImageHexColors": [
-            "#AA936A",
-            "#000000",
-            "#73603F",
-            "#68291A",
-            "#BB6954"
-        ]
-    },
-    "Indie R&b": {
-        "albumId": "1gu4Savreiw1AGcDcZeoD3",
-        "albumLabel": "Pretty Records",
-        "albumName": "The Instrumentals",
-        "albumUrls": {
-            "spotify": "https:\/\/open.spotify.com\/album\/1gu4Savreiw1AGcDcZeoD3"
-        },
-        "albumUri": "spotify:album:1gu4Savreiw1AGcDcZeoD3",
-        "albumReleaseDate": "2020-03-27",
-        "albumGenres": [],
-        "albumArtists": [
-            {
-                "external_urls": {
-                    "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                },
-                "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                "id": "6ioOEWNNGK40H8xrGj6XPW",
-                "name": "XYL\u00d8",
-                "type": "artist",
-                "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-            }
-        ],
-        "albumTotalTracks": 18,
-        "albumImages": [
-            {
-                "height": 640,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d0000b273bb1832fce3fabc1d6c5955be",
-                "width": 640
-            },
-            {
-                "height": 300,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00001e02bb1832fce3fabc1d6c5955be",
-                "width": 300
-            },
-            {
-                "height": 64,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00004851bb1832fce3fabc1d6c5955be",
-                "width": 64
-            }
-        ],
-        "albumTracks": [
-            {
-                "trackId": "5xLKTHmkLNUexIlUWiJYfj",
-                "trackName": "American Sadness (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 232340,
-                "trackNumber": 1,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/5xLKTHmkLNUexIlUWiJYfj"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/170a9741babcb5f57345ca4518940e5cf8dfd498?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:5xLKTHmkLNUexIlUWiJYfj"
-            },
-            {
-                "trackId": "5K5nBG2eiswijwraClp8Mv",
-                "trackName": "Have You Ever Been In Love? (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 214250,
-                "trackNumber": 2,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/5K5nBG2eiswijwraClp8Mv"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/1e32accafb6c5fb9c4a9f5aa3af737d2da5e510d?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:5K5nBG2eiswijwraClp8Mv"
-            },
-            {
-                "trackId": "52BpKXffTEoftc8b3zXDWs",
-                "trackName": "Tongue In The Bag (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 231818,
-                "trackNumber": 3,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/52BpKXffTEoftc8b3zXDWs"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/d66148543bb72a013cd3c308492221a917fb67f2?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:52BpKXffTEoftc8b3zXDWs"
-            },
-            {
-                "trackId": "0FXnOgy2J9VdjvUbIMh4ZM",
-                "trackName": "Goodfellas (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 226153,
-                "trackNumber": 4,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/0FXnOgy2J9VdjvUbIMh4ZM"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/d44364771ee8c637fbd23b06d783ed1c57ad8d0e?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:0FXnOgy2J9VdjvUbIMh4ZM"
-            },
-            {
-                "trackId": "2PvevxhfhXqAdwGljUYRoF",
-                "trackName": "Masterpiece (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 211764,
-                "trackNumber": 5,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/2PvevxhfhXqAdwGljUYRoF"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/24a3707f1685bdcd7cde00bb03d4e0d434ab4027?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:2PvevxhfhXqAdwGljUYRoF"
-            },
-            {
-                "trackId": "1FZhBlDZHCTuQIfqf5sbIn",
-                "trackName": "Neon Crucifix (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 188936,
-                "trackNumber": 6,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1FZhBlDZHCTuQIfqf5sbIn"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/cbd50d0c97d008655048301bbcf48e27e949d5c3?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1FZhBlDZHCTuQIfqf5sbIn"
-            },
-            {
-                "trackId": "3hUdhrUlesmC9QgauiGC0L",
-                "trackName": "yes & no (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 178983,
-                "trackNumber": 7,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3hUdhrUlesmC9QgauiGC0L"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/dc0fe37fb637fc0b5ebdb944c959f8668e86724f?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3hUdhrUlesmC9QgauiGC0L"
-            },
-            {
-                "trackId": "0nktBQx2p5xM3hdNi4M008",
-                "trackName": "ride or die (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 165517,
-                "trackNumber": 8,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/0nktBQx2p5xM3hdNi4M008"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/82fb502c64a2de1d2baa68c5dad469c7e5e965e6?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:0nktBQx2p5xM3hdNi4M008"
-            },
-            {
-                "trackId": "58hW1lRZNRtfwUK1P2laAs",
-                "trackName": "the end (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 246371,
-                "trackNumber": 9,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/58hW1lRZNRtfwUK1P2laAs"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/14b9d14dce80ff24851d6c5786741dde25a391c4?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:58hW1lRZNRtfwUK1P2laAs"
-            },
-            {
-                "trackId": "4vbcd3Y28VCkAx2pzHPA8q",
-                "trackName": "ordinary (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 197647,
-                "trackNumber": 10,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/4vbcd3Y28VCkAx2pzHPA8q"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/fbe5549c191e1d7e064495d87e6dcffbbd6ae0d3?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:4vbcd3Y28VCkAx2pzHPA8q"
-            },
-            {
-                "trackId": "6IkjFu6zmvmeSHQwA9nLxo",
-                "trackName": "bad habit (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 192000,
-                "trackNumber": 11,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/6IkjFu6zmvmeSHQwA9nLxo"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/6ce51869f0ac276f552bb34c4b926127afc336d7?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:6IkjFu6zmvmeSHQwA9nLxo"
-            },
-            {
-                "trackId": "7vhi2ZctOiwLwuViGPr1op",
-                "trackName": "illusion (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 213600,
-                "trackNumber": 12,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/7vhi2ZctOiwLwuViGPr1op"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/a543dea000d3bb7a882836fdd2c8eea4e0bb4d84?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:7vhi2ZctOiwLwuViGPr1op"
-            },
-            {
-                "trackId": "1EnXQYw5j21oyrm1y1AWvm",
-                "trackName": "Miracle (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 237750,
-                "trackNumber": 13,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1EnXQYw5j21oyrm1y1AWvm"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/8f8a6e3a65430061de84ff43fcacad093575ec7a?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1EnXQYw5j21oyrm1y1AWvm"
-            },
-            {
-                "trackId": "1azO028XHuAOFc7pUwkDWt",
-                "trackName": "Pretty Sad (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 201600,
-                "trackNumber": 14,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1azO028XHuAOFc7pUwkDWt"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/200014b3d5af33c9e8dd9b3243757f54f377a03f?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1azO028XHuAOFc7pUwkDWt"
-            },
-            {
-                "trackId": "2gxuhKn1inYYNVjzsVVydb",
-                "trackName": "Nothing Left To Say (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 209361,
-                "trackNumber": 15,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/2gxuhKn1inYYNVjzsVVydb"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/a71df8e6fdc06e281c159ae5e2bd43ee7cdbe451?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:2gxuhKn1inYYNVjzsVVydb"
-            },
-            {
-                "trackId": "43pP3TFgVpRrcgBzCNNK4V",
-                "trackName": "Blue Light (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 198400,
-                "trackNumber": 16,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/43pP3TFgVpRrcgBzCNNK4V"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/8d8b4288330a6486f73364a054d8c87ec923d821?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:43pP3TFgVpRrcgBzCNNK4V"
-            },
-            {
-                "trackId": "3eAjfcpCb2n6MilyQp421S",
-                "trackName": "Should Have Known (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 186923,
-                "trackNumber": 17,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3eAjfcpCb2n6MilyQp421S"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/ffb79f0a22e8eb64af2aa457fffef160d761d20a?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3eAjfcpCb2n6MilyQp421S"
-            },
-            {
-                "trackId": "2J29LvDwaGP16GAcK1NxFu",
-                "trackName": "Fireworks (Instrumental)",
-                "trackArtists": [
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/6ioOEWNNGK40H8xrGj6XPW"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/6ioOEWNNGK40H8xrGj6XPW",
-                        "id": "6ioOEWNNGK40H8xrGj6XPW",
-                        "name": "XYL\u00d8",
-                        "type": "artist",
-                        "uri": "spotify:artist:6ioOEWNNGK40H8xrGj6XPW"
-                    }
-                ],
-                "trackDurationMs": 220740,
-                "trackNumber": 18,
-                "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/2J29LvDwaGP16GAcK1NxFu"
-                },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/40da4ab260aa3de1a80385e7f0cb18de70a60418?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:2J29LvDwaGP16GAcK1NxFu"
-            }
-        ],
-        "albumPopularity": 8,
-        "albumImageHexColors": [
-            "#000000",
-            "#E979B4",
-            "#9BB77C",
-            "#0183F5",
-            "#498047"
-        ]
-    },
-    "Indie Post-punk": {
-        "albumId": "6iPwxJs64BTp3DDkqn1Mr7",
-        "albumLabel": "\u041b\u0415\u0419\u0411\u041b",
-        "albumName": "\u041a\u0440\u0430\u0439\u043d\u043e\u0441\u0442\u0438",
-        "albumUrls": {
-            "spotify": "https:\/\/open.spotify.com\/album\/6iPwxJs64BTp3DDkqn1Mr7"
-        },
-        "albumUri": "spotify:album:6iPwxJs64BTp3DDkqn1Mr7",
-        "albumReleaseDate": "2019-06-28",
-        "albumGenres": [],
-        "albumArtists": [
-            {
-                "external_urls": {
-                    "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
-                },
-                "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                "id": "3HwEfkNx5ctU4j60GyhmWD",
-                "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
-                "type": "artist",
-                "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
             }
         ],
         "albumTotalTracks": 10,
         "albumImages": [
             {
                 "height": 640,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d0000b2732fb392f36a74674089279317",
+                "url": "https://i.scdn.co/image/ab67616d0000b273268b1e26dbd45352e4c41429",
                 "width": 640
             },
             {
                 "height": 300,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d00001e022fb392f36a74674089279317",
+                "url": "https://i.scdn.co/image/ab67616d00001e02268b1e26dbd45352e4c41429",
                 "width": 300
             },
             {
                 "height": 64,
-                "url": "https:\/\/i.scdn.co\/image\/ab67616d000048512fb392f36a74674089279317",
+                "url": "https://i.scdn.co/image/ab67616d00004851268b1e26dbd45352e4c41429",
                 "width": 64
             }
         ],
         "albumTracks": [
             {
-                "trackId": "7p6FJELdULi3lfrMbaCGfJ",
-                "trackName": "\u0413\u043e\u0440\u044f\u0447\u043e \u0445\u043e\u043b\u043e\u0434\u043d\u043e",
+                "trackId": "1jQUMLFHJ9EQbcq4yvOc63",
+                "trackName": "Blood Orange Lake",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 200000,
+                "trackDurationMs": 295217,
                 "trackNumber": 1,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/7p6FJELdULi3lfrMbaCGfJ"
+                    "spotify": "https://open.spotify.com/track/1jQUMLFHJ9EQbcq4yvOc63"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/8ea41af8a292a9de348990d5d8cc9f294eac98b8?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:7p6FJELdULi3lfrMbaCGfJ"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/dbddec265560ff391bb7414a3dd500a651164b28?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:1jQUMLFHJ9EQbcq4yvOc63"
             },
             {
-                "trackId": "0FavGbTEip3Vhjps9auRbl",
-                "trackName": "\u042f\u0440\u0447\u0435",
+                "trackId": "3g1aXdEN2T7wEhUPjSMEzh",
+                "trackName": "The Next Song",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 207500,
+                "trackDurationMs": 221144,
                 "trackNumber": 2,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/0FavGbTEip3Vhjps9auRbl"
+                    "spotify": "https://open.spotify.com/track/3g1aXdEN2T7wEhUPjSMEzh"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/c6fff038eb1cda121e73a244b15418d6593b1448?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:0FavGbTEip3Vhjps9auRbl"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/fc51cea76ad8cf7d665d780382d10c10125a9028?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:3g1aXdEN2T7wEhUPjSMEzh"
             },
             {
-                "trackId": "0VQOEzRQEQ4oDedNSh3wGV",
-                "trackName": "\u041c\u0443\u0437\u0435\u0439 \u043a\u043e\u0441\u043c\u043e\u043d\u0430\u0432\u0442\u0438\u043a\u0438",
+                "trackId": "2mEYAshCsYKFz0M2UijMnf",
+                "trackName": "For Something To Happen",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 100000,
+                "trackDurationMs": 224463,
                 "trackNumber": 3,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/0VQOEzRQEQ4oDedNSh3wGV"
+                    "spotify": "https://open.spotify.com/track/2mEYAshCsYKFz0M2UijMnf"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/c98d40de8132963e492ac00d5563e02b689a1f9e?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:0VQOEzRQEQ4oDedNSh3wGV"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/2b51a39b41be3436433522e679fc03743d78e7db?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:2mEYAshCsYKFz0M2UijMnf"
             },
             {
-                "trackId": "1otAj2dKWiogROj0RnUDLg",
-                "trackName": "\u041b\u0443\u043d\u0430",
+                "trackId": "5eLqkuhN4cd5Y9vnONz5bk",
+                "trackName": "I Swear",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 172235,
+                "trackDurationMs": 207901,
                 "trackNumber": 4,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1otAj2dKWiogROj0RnUDLg"
+                    "spotify": "https://open.spotify.com/track/5eLqkuhN4cd5Y9vnONz5bk"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/ae2ac101da7862c7ca70cf51daa2ae30fdf5ee3c?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1otAj2dKWiogROj0RnUDLg"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/a1a4631659fd512a8fd07a7062b8b9c5a4628a54?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:5eLqkuhN4cd5Y9vnONz5bk"
             },
             {
-                "trackId": "4tkgKgX2JE5aH17gQBT8vR",
-                "trackName": "\u0427\u0430\u0441 \u043f\u0438\u043a",
+                "trackId": "2M1FPNvnrTy7ebVVSlsEXy",
+                "trackName": "Clear History",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 89600,
+                "trackDurationMs": 230076,
                 "trackNumber": 5,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/4tkgKgX2JE5aH17gQBT8vR"
+                    "spotify": "https://open.spotify.com/track/2M1FPNvnrTy7ebVVSlsEXy"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/e9cb4b810f40b19b519afd694ca2bfea7633d355?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:4tkgKgX2JE5aH17gQBT8vR"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/76511a9e579f837d91077b717f7f71af43676363?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:2M1FPNvnrTy7ebVVSlsEXy"
             },
             {
-                "trackId": "4GuxlK2pWnf8onR73nGkIx",
-                "trackName": "\u041d\u0435 \u0443\u0434\u0438\u0432\u043b\u044f\u0439\u0441\u044f",
+                "trackId": "23dFXGuAFnIcx3W4RfcP3N",
+                "trackName": "The Leopard",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 241600,
+                "trackDurationMs": 215778,
                 "trackNumber": 6,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/4GuxlK2pWnf8onR73nGkIx"
+                    "spotify": "https://open.spotify.com/track/23dFXGuAFnIcx3W4RfcP3N"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/0c6937537a338e3e628922f7abd6409717550d15?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:4GuxlK2pWnf8onR73nGkIx"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/5bc9e6972b7fd8502db341519eb57a200c483b99?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:23dFXGuAFnIcx3W4RfcP3N"
             },
             {
-                "trackId": "6uiHA0X7YrZFVYSAgCEzFh",
-                "trackName": "\u041c\u0430\u0439",
+                "trackId": "39oEddrUcyluDDfZ3hOS6l",
+                "trackName": "Alone",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
-                    },
-                    {
-                        "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/5WHJfoTokwvuwzgJBWIHEi"
-                        },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/5WHJfoTokwvuwzgJBWIHEi",
-                        "id": "5WHJfoTokwvuwzgJBWIHEi",
-                        "name": "Rouxo",
-                        "type": "artist",
-                        "uri": "spotify:artist:5WHJfoTokwvuwzgJBWIHEi"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 187800,
+                "trackDurationMs": 226957,
                 "trackNumber": 7,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/6uiHA0X7YrZFVYSAgCEzFh"
+                    "spotify": "https://open.spotify.com/track/39oEddrUcyluDDfZ3hOS6l"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/7713bf8eb4f6f66d9d2e24a83cd6f3d20ff33e06?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:6uiHA0X7YrZFVYSAgCEzFh"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/8a96cb9872121baa45147aaa471f196c0ead8c9c?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:39oEddrUcyluDDfZ3hOS6l"
             },
             {
-                "trackId": "7kKWGB0vb1yblBTm44WnDg",
-                "trackName": "\u041a\u0440\u0430\u0439\u043d\u043e\u0441\u0442\u0438",
+                "trackId": "4RIc5eqCl84Zyc3wchuCK0",
+                "trackName": "Rogue Waves",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 212467,
+                "trackDurationMs": 274652,
                 "trackNumber": 8,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/7kKWGB0vb1yblBTm44WnDg"
+                    "spotify": "https://open.spotify.com/track/4RIc5eqCl84Zyc3wchuCK0"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/596c3b3f4f7af5550f42dc14983ab32d03af218b?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:7kKWGB0vb1yblBTm44WnDg"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/314b2c1238c388c78ed380e53260fa16ac8bb9f1?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:4RIc5eqCl84Zyc3wchuCK0"
             },
             {
-                "trackId": "1CwFGbUAIO9mJMXYy2fGk0",
-                "trackName": "\u041d\u0430 \u0441\u0442\u0430\u0434\u0438\u043e\u043d\u0435",
+                "trackId": "68aMyHEBeLgn34Cxi8N5Mm",
+                "trackName": "Ancestry",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 61666,
+                "trackDurationMs": 215031,
                 "trackNumber": 9,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/1CwFGbUAIO9mJMXYy2fGk0"
+                    "spotify": "https://open.spotify.com/track/68aMyHEBeLgn34Cxi8N5Mm"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/072a014d10ba5c85f3878b6a16af8697d45b3abb?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:1CwFGbUAIO9mJMXYy2fGk0"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/119686df3584feb9840cb44d4568d4f22d88b35c?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:68aMyHEBeLgn34Cxi8N5Mm"
             },
             {
-                "trackId": "3JFsI1RKNieK52737nA7Ru",
-                "trackName": "\u041d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0443\u0436\u043d\u043e",
+                "trackId": "6W9r24yYncKPEVZiYZIOvV",
+                "trackName": "Shame",
                 "trackArtists": [
                     {
                         "external_urls": {
-                            "spotify": "https:\/\/open.spotify.com\/artist\/3HwEfkNx5ctU4j60GyhmWD"
+                            "spotify": "https://open.spotify.com/artist/6EXjdbEiqhPzodtf7MtVos"
                         },
-                        "href": "https:\/\/api.spotify.com\/v1\/artists\/3HwEfkNx5ctU4j60GyhmWD",
-                        "id": "3HwEfkNx5ctU4j60GyhmWD",
-                        "name": "\u0412\u0442\u043e\u0440\u043e\u0439 \u044d\u0442\u0430\u0436 \u043f\u043e\u0440\u0430\u0436\u0430\u0435\u0442",
+                        "href": "https://api.spotify.com/v1/artists/6EXjdbEiqhPzodtf7MtVos",
+                        "id": "6EXjdbEiqhPzodtf7MtVos",
+                        "name": "InMe",
                         "type": "artist",
-                        "uri": "spotify:artist:3HwEfkNx5ctU4j60GyhmWD"
+                        "uri": "spotify:artist:6EXjdbEiqhPzodtf7MtVos"
                     }
                 ],
-                "trackDurationMs": 237258,
+                "trackDurationMs": 282898,
                 "trackNumber": 10,
                 "trackUrls": {
-                    "spotify": "https:\/\/open.spotify.com\/track\/3JFsI1RKNieK52737nA7Ru"
+                    "spotify": "https://open.spotify.com/track/6W9r24yYncKPEVZiYZIOvV"
                 },
-                "trackPreviewUrl": "https:\/\/p.scdn.co\/mp3-preview\/8ef368672a05f4485bb22b0a27382357c203350e?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
-                "trackUri": "spotify:track:3JFsI1RKNieK52737nA7Ru"
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/f2313333aeedf968c14e89d5cd42ae3653dc04b3?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:6W9r24yYncKPEVZiYZIOvV"
+            }
+        ],
+        "albumPopularity": 14,
+        "albumImageHexColors": [
+            "#30394A",
+            "#566F98",
+            "#1B1D07",
+            "#8AA8C2",
+            "#2C1414"
+        ]
+    },
+    "Indie Singer-songwriter": {
+        "albumId": "1w1O31zMm56YF5o6WMxpPB",
+        "albumLabel": "The Two Hundred Seventy",
+        "albumName": "ShineLove Paradise",
+        "albumUrls": {
+            "spotify": "https://open.spotify.com/album/1w1O31zMm56YF5o6WMxpPB"
+        },
+        "albumUri": "spotify:album:1w1O31zMm56YF5o6WMxpPB",
+        "albumReleaseDate": "2023-06-09",
+        "albumGenres": [],
+        "albumArtists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                },
+                "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                "id": "76abiW4qlXgaXhvV0Wsi3L",
+                "name": "The Two Hundred Seventy",
+                "type": "artist",
+                "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+            }
+        ],
+        "albumTotalTracks": 10,
+        "albumImages": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b273ccc21235931469983ab7ad66",
+                "width": 640
+            },
+            {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e02ccc21235931469983ab7ad66",
+                "width": 300
+            },
+            {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d00004851ccc21235931469983ab7ad66",
+                "width": 64
+            }
+        ],
+        "albumTracks": [
+            {
+                "trackId": "3kE3rV5wVdfgeG7DoINasM",
+                "trackName": "ShineLove Paradise",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 246040,
+                "trackNumber": 1,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/3kE3rV5wVdfgeG7DoINasM"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/cdb726b077fa932c3629485e4146f7344ca70bd4?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:3kE3rV5wVdfgeG7DoINasM"
+            },
+            {
+                "trackId": "6ZIpnrabgtddqIZVAd08cK",
+                "trackName": "MHCDN",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 216906,
+                "trackNumber": 2,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/6ZIpnrabgtddqIZVAd08cK"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/0bbcecf137037530eb5dda823e340cf143d9852c?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:6ZIpnrabgtddqIZVAd08cK"
+            },
+            {
+                "trackId": "58gp3YaeFJAluFvF9Oo9Dc",
+                "trackName": "Tokyo's Dream",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 238093,
+                "trackNumber": 3,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/58gp3YaeFJAluFvF9Oo9Dc"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/fd8b213d53a5d47904da15cc3a318d7ad5f74ffe?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:58gp3YaeFJAluFvF9Oo9Dc"
+            },
+            {
+                "trackId": "6iogpEttpIVa2KRVw4meOA",
+                "trackName": "Third Wheel",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 227840,
+                "trackNumber": 4,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/6iogpEttpIVa2KRVw4meOA"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/f5f3709433e0fd2e52aa8d9968e8c9362a9b0ba2?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:6iogpEttpIVa2KRVw4meOA"
+            },
+            {
+                "trackId": "001a0ixm6X6biHJbEUYcoQ",
+                "trackName": "Still Around You Now",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 302293,
+                "trackNumber": 5,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/001a0ixm6X6biHJbEUYcoQ"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/a1ee4e5bdabb8bed5aa6da02bf66d9079ffccff9?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:001a0ixm6X6biHJbEUYcoQ"
+            },
+            {
+                "trackId": "02YBD9x45Z3rPOl8fhGc7H",
+                "trackName": "Talk To Me",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 217533,
+                "trackNumber": 6,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/02YBD9x45Z3rPOl8fhGc7H"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/8f72920812a93045132b6169e1331b730125db8f?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:02YBD9x45Z3rPOl8fhGc7H"
+            },
+            {
+                "trackId": "1JwYkXtgF35GxpnxlqKnUh",
+                "trackName": "The One You Like",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 215066,
+                "trackNumber": 7,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/1JwYkXtgF35GxpnxlqKnUh"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/ad091225aeb50a30e1952ea2f1d923fa6d8d2696?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:1JwYkXtgF35GxpnxlqKnUh"
+            },
+            {
+                "trackId": "6BzqAbOnQwts2fDJbib202",
+                "trackName": "Seagulls & Goats",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 56160,
+                "trackNumber": 8,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/6BzqAbOnQwts2fDJbib202"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/24c4eeac2f9f4d98b7755557717fb91e20d2f940?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:6BzqAbOnQwts2fDJbib202"
+            },
+            {
+                "trackId": "0EQuZgc3cNl0EqLesVwRPQ",
+                "trackName": "Lost Without Your Love",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 213346,
+                "trackNumber": 9,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/0EQuZgc3cNl0EqLesVwRPQ"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/67448abd27a4c788f4d14f73731b56419e100415?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:0EQuZgc3cNl0EqLesVwRPQ"
+            },
+            {
+                "trackId": "0Ksut8up07mYJePWOBg3N3",
+                "trackName": "Take The Time",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/76abiW4qlXgaXhvV0Wsi3L"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/76abiW4qlXgaXhvV0Wsi3L",
+                        "id": "76abiW4qlXgaXhvV0Wsi3L",
+                        "name": "The Two Hundred Seventy",
+                        "type": "artist",
+                        "uri": "spotify:artist:76abiW4qlXgaXhvV0Wsi3L"
+                    }
+                ],
+                "trackDurationMs": 264680,
+                "trackNumber": 10,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/0Ksut8up07mYJePWOBg3N3"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/fdeffd08d18eb990088676685973bf812caf0e3e?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:0Ksut8up07mYJePWOBg3N3"
             }
         ],
         "albumPopularity": 29,
         "albumImageHexColors": [
-            "#C73F17",
-            "#12171A",
-            "#907E4C",
-            "#6A281A",
-            "#534F36"
+            "#EB7456",
+            "#1D3A72",
+            "#764D79",
+            "#9D1F13",
+            "#280B10"
+        ]
+    },
+    "Indie Folk": {
+        "albumId": "34CG7UEVbHHgpmbYJQru7p",
+        "albumLabel": "Carpark",
+        "albumName": "Mind Palace Music",
+        "albumUrls": {
+            "spotify": "https://open.spotify.com/album/34CG7UEVbHHgpmbYJQru7p"
+        },
+        "albumUri": "spotify:album:34CG7UEVbHHgpmbYJQru7p",
+        "albumReleaseDate": "2023-02-17",
+        "albumGenres": [],
+        "albumArtists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                },
+                "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                "name": "@",
+                "type": "artist",
+                "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+            }
+        ],
+        "albumTotalTracks": 11,
+        "albumImages": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b273f9fa0d7c435ae4e47c383883",
+                "width": 640
+            },
+            {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e02f9fa0d7c435ae4e47c383883",
+                "width": 300
+            },
+            {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d00004851f9fa0d7c435ae4e47c383883",
+                "width": 64
+            }
+        ],
+        "albumTracks": [
+            {
+                "trackId": "2wvzPFg0jFdzZpd3lAUN8v",
+                "trackName": "Parapet",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 90750,
+                "trackNumber": 1,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/2wvzPFg0jFdzZpd3lAUN8v"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/21aa14085314b6a07375283ff5b29908e237f99c?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:2wvzPFg0jFdzZpd3lAUN8v"
+            },
+            {
+                "trackId": "2YkQrRE9DddMkb4ZGnOm8H",
+                "trackName": "Star Game",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 122482,
+                "trackNumber": 2,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/2YkQrRE9DddMkb4ZGnOm8H"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/e8f3952ce4ebb217e34f2dd016bb9617be893a1d?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:2YkQrRE9DddMkb4ZGnOm8H"
+            },
+            {
+                "trackId": "6IrfhO8WryAM3zdXt9sIJR",
+                "trackName": "Letters",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 146750,
+                "trackNumber": 3,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/6IrfhO8WryAM3zdXt9sIJR"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/034c68f5b8c73d89ea1d07cea4365702d8165b5f?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:6IrfhO8WryAM3zdXt9sIJR"
+            },
+            {
+                "trackId": "0TtZqHS6uEO0pLQPSAXAL7",
+                "trackName": "Friendship is Frequency",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 129000,
+                "trackNumber": 4,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/0TtZqHS6uEO0pLQPSAXAL7"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/8c66e1423dcd3ebce1455ff9af4a028a1ca9d34b?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:0TtZqHS6uEO0pLQPSAXAL7"
+            },
+            {
+                "trackId": "6r1Z1eLBA5Ihg0t1XervhI",
+                "trackName": "Boxwood Lane",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 171340,
+                "trackNumber": 5,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/6r1Z1eLBA5Ihg0t1XervhI"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/765150c8ae1f7edd269411a69d6519a2b28d9798?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:6r1Z1eLBA5Ihg0t1XervhI"
+            },
+            {
+                "trackId": "2rRysuBq19i5HMtoKXlxLc",
+                "trackName": "Where'd You Put Me",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 72000,
+                "trackNumber": 6,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/2rRysuBq19i5HMtoKXlxLc"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/39928882a4e1919693931767c3f54ee6a3aa8720?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:2rRysuBq19i5HMtoKXlxLc"
+            },
+            {
+                "trackId": "0Y0s9WTsSRDVuMx1rXwRtX",
+                "trackName": "Major Blue Empty",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 228750,
+                "trackNumber": 7,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/0Y0s9WTsSRDVuMx1rXwRtX"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/42dc1b9c33674162e25e2eb3333e8564d66107c6?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:0Y0s9WTsSRDVuMx1rXwRtX"
+            },
+            {
+                "trackId": "28oQrIE4KGH34TmrRxuNVD",
+                "trackName": "First Journal",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 84799,
+                "trackNumber": 8,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/28oQrIE4KGH34TmrRxuNVD"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/022c19866a83e83a24732b5e293a7af3a427cd4a?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:28oQrIE4KGH34TmrRxuNVD"
+            },
+            {
+                "trackId": "1KBhUThC0P46GKvXAFha9q",
+                "trackName": "Cut From Toxic Cloth",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 192077,
+                "trackNumber": 9,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/1KBhUThC0P46GKvXAFha9q"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/47a97514ed88d4cc6648fe5f964ea1fd0fed3efe?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:1KBhUThC0P46GKvXAFha9q"
+            },
+            {
+                "trackId": "5gDKuhiocFfl41KVkrQQmR",
+                "trackName": "Camera Phone",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 262000,
+                "trackNumber": 10,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/5gDKuhiocFfl41KVkrQQmR"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/d08719acdbf7bd3be8a4e355940e20810feeaa14?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:5gDKuhiocFfl41KVkrQQmR"
+            },
+            {
+                "trackId": "0QFCtnmm0hs2Osqlj0vtxL",
+                "trackName": "My Garden",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HMQ8Ndq4fhuLwhealQFO3"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HMQ8Ndq4fhuLwhealQFO3",
+                        "id": "5HMQ8Ndq4fhuLwhealQFO3",
+                        "name": "@",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HMQ8Ndq4fhuLwhealQFO3"
+                    }
+                ],
+                "trackDurationMs": 241935,
+                "trackNumber": 11,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/0QFCtnmm0hs2Osqlj0vtxL"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/db797f9407888a4c3891387e8cc8ef39cb719ebe?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:0QFCtnmm0hs2Osqlj0vtxL"
+            }
+        ],
+        "albumPopularity": 33,
+        "albumImageHexColors": [
+            "#5062AE",
+            "#3A94E2",
+            "#A24744",
+            "#320001",
+            "#340C41"
+        ]
+    },
+    "Indie R&b": {
+        "albumId": "6EbvhU7n4PDP8u17BTggJP",
+        "albumLabel": "LargerThanLife",
+        "albumName": "N E B U L A (Extended)",
+        "albumUrls": {
+            "spotify": "https://open.spotify.com/album/6EbvhU7n4PDP8u17BTggJP"
+        },
+        "albumUri": "spotify:album:6EbvhU7n4PDP8u17BTggJP",
+        "albumReleaseDate": "2024-01-12",
+        "albumGenres": [],
+        "albumArtists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/13wBNPUEHHtM5rjD9u6BYW"
+                },
+                "href": "https://api.spotify.com/v1/artists/13wBNPUEHHtM5rjD9u6BYW",
+                "id": "13wBNPUEHHtM5rjD9u6BYW",
+                "name": "OSA",
+                "type": "artist",
+                "uri": "spotify:artist:13wBNPUEHHtM5rjD9u6BYW"
+            }
+        ],
+        "albumTotalTracks": 7,
+        "albumImages": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b27348cbdc6a3f141669cb15a83f",
+                "width": 640
+            },
+            {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e0248cbdc6a3f141669cb15a83f",
+                "width": 300
+            },
+            {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d0000485148cbdc6a3f141669cb15a83f",
+                "width": 64
+            }
+        ],
+        "albumTracks": [
+            {
+                "trackId": "2GBsM5xHFfubo4PTajvTVf",
+                "trackName": "Nuclear Reactor",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/13wBNPUEHHtM5rjD9u6BYW"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/13wBNPUEHHtM5rjD9u6BYW",
+                        "id": "13wBNPUEHHtM5rjD9u6BYW",
+                        "name": "OSA",
+                        "type": "artist",
+                        "uri": "spotify:artist:13wBNPUEHHtM5rjD9u6BYW"
+                    }
+                ],
+                "trackDurationMs": 195498,
+                "trackNumber": 1,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/2GBsM5xHFfubo4PTajvTVf"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/9e9d4b45c8cc64ee3cc72e9106d57329786f1ac9?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:2GBsM5xHFfubo4PTajvTVf"
+            },
+            {
+                "trackId": "5tkk0zv01KrapenThvqkFa",
+                "trackName": "Diamonds 'n' Pearls",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/13wBNPUEHHtM5rjD9u6BYW"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/13wBNPUEHHtM5rjD9u6BYW",
+                        "id": "13wBNPUEHHtM5rjD9u6BYW",
+                        "name": "OSA",
+                        "type": "artist",
+                        "uri": "spotify:artist:13wBNPUEHHtM5rjD9u6BYW"
+                    }
+                ],
+                "trackDurationMs": 193784,
+                "trackNumber": 2,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/5tkk0zv01KrapenThvqkFa"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/be8bacb7f4a2b5e2898dc9065497535d395c992c?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:5tkk0zv01KrapenThvqkFa"
+            },
+            {
+                "trackId": "0sEoT6L9hv54zDVIQ6mOP2",
+                "trackName": "Soul",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/13wBNPUEHHtM5rjD9u6BYW"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/13wBNPUEHHtM5rjD9u6BYW",
+                        "id": "13wBNPUEHHtM5rjD9u6BYW",
+                        "name": "OSA",
+                        "type": "artist",
+                        "uri": "spotify:artist:13wBNPUEHHtM5rjD9u6BYW"
+                    }
+                ],
+                "trackDurationMs": 106500,
+                "trackNumber": 3,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/0sEoT6L9hv54zDVIQ6mOP2"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/c3405b9a0c0c6a022acfb5dd796eb78bc5fb88df?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:0sEoT6L9hv54zDVIQ6mOP2"
+            },
+            {
+                "trackId": "0AFAzrZyXB39V5FnbxzyEb",
+                "trackName": "Intermission",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/13wBNPUEHHtM5rjD9u6BYW"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/13wBNPUEHHtM5rjD9u6BYW",
+                        "id": "13wBNPUEHHtM5rjD9u6BYW",
+                        "name": "OSA",
+                        "type": "artist",
+                        "uri": "spotify:artist:13wBNPUEHHtM5rjD9u6BYW"
+                    }
+                ],
+                "trackDurationMs": 63000,
+                "trackNumber": 4,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/0AFAzrZyXB39V5FnbxzyEb"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/7587d093acadba277801abdd947571655d1f64b9?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:0AFAzrZyXB39V5FnbxzyEb"
+            },
+            {
+                "trackId": "3ZdaOUhWqnFFwrQdceQyXB",
+                "trackName": "Ink Stain",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/13wBNPUEHHtM5rjD9u6BYW"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/13wBNPUEHHtM5rjD9u6BYW",
+                        "id": "13wBNPUEHHtM5rjD9u6BYW",
+                        "name": "OSA",
+                        "type": "artist",
+                        "uri": "spotify:artist:13wBNPUEHHtM5rjD9u6BYW"
+                    }
+                ],
+                "trackDurationMs": 208124,
+                "trackNumber": 5,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/3ZdaOUhWqnFFwrQdceQyXB"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/6bc4365edd7fb20acce3abba6dcf5bc937f537d8?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:3ZdaOUhWqnFFwrQdceQyXB"
+            },
+            {
+                "trackId": "4i2KnBItN5UqSpj3v9vNrU",
+                "trackName": "Breaking Point",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/13wBNPUEHHtM5rjD9u6BYW"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/13wBNPUEHHtM5rjD9u6BYW",
+                        "id": "13wBNPUEHHtM5rjD9u6BYW",
+                        "name": "OSA",
+                        "type": "artist",
+                        "uri": "spotify:artist:13wBNPUEHHtM5rjD9u6BYW"
+                    }
+                ],
+                "trackDurationMs": 237964,
+                "trackNumber": 6,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/4i2KnBItN5UqSpj3v9vNrU"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/c6084cfa050aa8d65b2a52fcc4c7163cb1e8ab17?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:4i2KnBItN5UqSpj3v9vNrU"
+            },
+            {
+                "trackId": "2U7Alf7ypYbkf9EnBwLuUF",
+                "trackName": "Intermission - Extended",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/13wBNPUEHHtM5rjD9u6BYW"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/13wBNPUEHHtM5rjD9u6BYW",
+                        "id": "13wBNPUEHHtM5rjD9u6BYW",
+                        "name": "OSA",
+                        "type": "artist",
+                        "uri": "spotify:artist:13wBNPUEHHtM5rjD9u6BYW"
+                    }
+                ],
+                "trackDurationMs": 147000,
+                "trackNumber": 7,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/2U7Alf7ypYbkf9EnBwLuUF"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/2fbafbb1ccc827bd21c494a52fd0a5ab79537d6a?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:2U7Alf7ypYbkf9EnBwLuUF"
+            }
+        ],
+        "albumPopularity": 38,
+        "albumImageHexColors": [
+            "#0A0942",
+            "#620CA3",
+            "#F708BB",
+            "#F90D00",
+            "#FF9CFF"
+        ]
+    },
+    "Indie Post-punk": {
+        "albumId": "7kJHHPZHVGdy3tdqcjxD4W",
+        "albumLabel": "Overthrow",
+        "albumName": "Music As Weaponry",
+        "albumUrls": {
+            "spotify": "https://open.spotify.com/album/7kJHHPZHVGdy3tdqcjxD4W"
+        },
+        "albumUri": "spotify:album:7kJHHPZHVGdy3tdqcjxD4W",
+        "albumReleaseDate": "2008-10-09",
+        "albumGenres": [],
+        "albumArtists": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                },
+                "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                "id": "3WuFxAh2kZnM6bux1shAv8",
+                "name": "Post Death Soundtrack",
+                "type": "artist",
+                "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+            }
+        ],
+        "albumTotalTracks": 14,
+        "albumImages": [
+            {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b273e069550c866a99befcfce396",
+                "width": 640
+            },
+            {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e02e069550c866a99befcfce396",
+                "width": 300
+            },
+            {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d00004851e069550c866a99befcfce396",
+                "width": 64
+            }
+        ],
+        "albumTracks": [
+            {
+                "trackId": "1wCcX9Nb4KCxqZlb4pBaEr",
+                "trackName": "Axe Of Fiction",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 210000,
+                "trackNumber": 1,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/1wCcX9Nb4KCxqZlb4pBaEr"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/410d1324b149a6856c0ed658376c400430a73fd0?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:1wCcX9Nb4KCxqZlb4pBaEr"
+            },
+            {
+                "trackId": "7LnqdEcjP5U7j74g0SCa5L",
+                "trackName": "Decentralize",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 241586,
+                "trackNumber": 2,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/7LnqdEcjP5U7j74g0SCa5L"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/d60591de16390d3f22ab0677c5f5c823871b5e15?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:7LnqdEcjP5U7j74g0SCa5L"
+            },
+            {
+                "trackId": "18oFHqbAQK3AUxURQK7Msv",
+                "trackName": "The Preemptive Art, Striking First & Hardest",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 232693,
+                "trackNumber": 3,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/18oFHqbAQK3AUxURQK7Msv"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/baf4779246958d6c284cb786cf88c9fad5595d3b?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:18oFHqbAQK3AUxURQK7Msv"
+            },
+            {
+                "trackId": "5GwGKHpjqX9YrLw4e4qUqY",
+                "trackName": "Life Gone Solitary",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 100093,
+                "trackNumber": 4,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/5GwGKHpjqX9YrLw4e4qUqY"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/34b751edbfcf9d15fde563f47bac56852fded4c6?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:5GwGKHpjqX9YrLw4e4qUqY"
+            },
+            {
+                "trackId": "5YheA7cdQHMEmGBHlof57n",
+                "trackName": "Long Cold Night",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 334986,
+                "trackNumber": 5,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/5YheA7cdQHMEmGBHlof57n"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/3ce0aa1c23f07ed9bb0f27d81306450cf9f8f925?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:5YheA7cdQHMEmGBHlof57n"
+            },
+            {
+                "trackId": "3Pp4KXdmGsc5FwM2s8K0lQ",
+                "trackName": "War Song",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 306720,
+                "trackNumber": 6,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/3Pp4KXdmGsc5FwM2s8K0lQ"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/2635d33a2d48a35729e35c7cb1784169bd0ffccf?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:3Pp4KXdmGsc5FwM2s8K0lQ"
+            },
+            {
+                "trackId": "4YTaRiSZUoA7R6AE9IF00j",
+                "trackName": "Euchreist",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 259146,
+                "trackNumber": 7,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/4YTaRiSZUoA7R6AE9IF00j"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/4fd2b9ca7a3c9ca679e5b510818b7970e8bd3e1a?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:4YTaRiSZUoA7R6AE9IF00j"
+            },
+            {
+                "trackId": "0WUkMUezlJiDWHNBxiM2VU",
+                "trackName": "We're Going Hunting",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 315800,
+                "trackNumber": 8,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/0WUkMUezlJiDWHNBxiM2VU"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/c02fe4405ecbd4c970018c04b078f1621ff39831?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:0WUkMUezlJiDWHNBxiM2VU"
+            },
+            {
+                "trackId": "4A9CoDth3rFpVV6PF4Lk2J",
+                "trackName": "Simulatuon & Simulacra",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 168640,
+                "trackNumber": 9,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/4A9CoDth3rFpVV6PF4Lk2J"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/2439c7fa19d644c40e2c101506718bf3c7e93c34?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:4A9CoDth3rFpVV6PF4Lk2J"
+            },
+            {
+                "trackId": "5nbNq0H33uvHfToy5Izn4H",
+                "trackName": "Killing Time",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 259373,
+                "trackNumber": 10,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/5nbNq0H33uvHfToy5Izn4H"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/2884505acc5cc903934748566c963cd5b7402883?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:5nbNq0H33uvHfToy5Izn4H"
+            },
+            {
+                "trackId": "7jBmVrnB02qb7ykO4vLhJR",
+                "trackName": "Serenade",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 306040,
+                "trackNumber": 11,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/7jBmVrnB02qb7ykO4vLhJR"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/cad86af88fac476e34f39c63801a8e6edd6f7fc4?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:7jBmVrnB02qb7ykO4vLhJR"
+            },
+            {
+                "trackId": "1jNN674zZ6TyrDXP8c7glG",
+                "trackName": "Fingerprints",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 101533,
+                "trackNumber": 12,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/1jNN674zZ6TyrDXP8c7glG"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/458ba7060a7f16a795f48d8a19ee602857e5572d?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:1jNN674zZ6TyrDXP8c7glG"
+            },
+            {
+                "trackId": "1q79PmE2C9Ea99XSQKKyHK",
+                "trackName": "Hegemonic Bastards Network - Hbn",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 330346,
+                "trackNumber": 13,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/1q79PmE2C9Ea99XSQKKyHK"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/941eec0d2097eb132e7f4823e0a413595e761b6a?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:1q79PmE2C9Ea99XSQKKyHK"
+            },
+            {
+                "trackId": "4JFtr5J4hp7U2N8n1T2RR0",
+                "trackName": "I'll Meet You At The End",
+                "trackArtists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3WuFxAh2kZnM6bux1shAv8"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3WuFxAh2kZnM6bux1shAv8",
+                        "id": "3WuFxAh2kZnM6bux1shAv8",
+                        "name": "Post Death Soundtrack",
+                        "type": "artist",
+                        "uri": "spotify:artist:3WuFxAh2kZnM6bux1shAv8"
+                    }
+                ],
+                "trackDurationMs": 276186,
+                "trackNumber": 14,
+                "trackUrls": {
+                    "spotify": "https://open.spotify.com/track/4JFtr5J4hp7U2N8n1T2RR0"
+                },
+                "trackPreviewUrl": "https://p.scdn.co/mp3-preview/f8a1b006964ad989b58c6d025e8ddd507d8870d3?cid=3fb6ee7afe8b4b0bb0d63b93940ed6ba",
+                "trackUri": "spotify:track:4JFtr5J4hp7U2N8n1T2RR0"
+            }
+        ],
+        "albumPopularity": 0,
+        "albumImageHexColors": [
+            "#14100D",
+            "#6B6626",
+            "#56524F",
+            "#9D9C8A",
+            "#FFFFFB"
         ]
     }
 }
