@@ -6,5 +6,13 @@
         "score": 0,
         "friends": [],
         "id": 1
+    },
+    {
+        "name": "theo",
+        "password": "arya",
+        "profilePicture": "placeholder",
+        "score": 0,
+        "friends": [],
+        "id": 2
     }
 ]

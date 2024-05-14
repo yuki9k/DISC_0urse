@@ -1,4 +1,5 @@
-import * as signup from "../signup/signup.js"
+import * as signup from "../signup/signup.js";
+import { fetcher } from "../../../logic/helpFunctions.js"
 import { PubSub } from "../../../logic/PubSub.js";
 
 PubSub.subscribe({
@@ -47,23 +48,37 @@ function renderLoginForm() {
   });
 
   // Event listener for switching to signup form
-  const switchToSignupButton = modalContainer.querySelector("#switch_to_signup");
+  const switchToSignupButton =
+    modalContainer.querySelector("#switch_to_signup");
   switchToSignupButton.addEventListener("click", () => {
     handleCloseModal(); // Close the current login modal
     PubSub.publish({
       event: "renderSignup",
-      details: null
+      details: null,
     }); // Render the signup form
   });
 
   // Event listener for login button (you can implement login logic here)
   const loginButton = modalContainer.querySelector("#login_button");
-  loginButton.addEventListener("click", () => {
-    // Perform login logic (e.g., validate credentials, authenticate, etc.)
-    // After login logic is complete, you can close the modal if needed
-    handleCloseModal();
-    // Example: simulate successful login (replace with actual logic)
-    alert("Login successful!");
-  });
 
+  loginButton.addEventListener("click", async () => {
+    let username = login_user.value;
+    let password = login_password.value;
+
+    let body = { name: username, password: password };
+
+    if (username.length > 1 && password.length > 1) {
+      let request = new Request("./api/login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      let resource = await fetcher(request);
+      let token = resource.token;
+      localStorage.setItem("token", token);
+      handleCloseModal();
+      console.log(token);
+    }
+  });
 }

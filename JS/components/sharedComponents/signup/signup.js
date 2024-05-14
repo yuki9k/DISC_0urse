@@ -1,4 +1,5 @@
 import * as login from "../login/login.js";
+import { fetcher } from "../../../logic/helpFunctions.js"
 import { PubSub } from "../../../logic/PubSub.js";
 
 PubSub.subscribe({
@@ -38,7 +39,7 @@ function renderSignupForm() {
     modalContainer.remove();
     // Restore scrolling of the underlying content
     document.body.style.overflow = "";
-  };
+  }
 
   // Add event listener to close modal when clicking outside the form
   modalContainer.addEventListener("click", (event) => {
@@ -53,14 +54,28 @@ function renderSignupForm() {
     handleCloseModal();
     PubSub.publish({
       event: "renderLogin",
-      details: null
+      details: null,
     });
   });
 
   // Event listener for signup button (you can implement signup logic here)
   const signupButton = modalContainer.querySelector("#signup_button");
-  signupButton.addEventListener("click", () => {
-    handleCloseModal();
-  });
+  signupButton.addEventListener("click", async () => {
+    let username = signup_user.value;
+    let password = signup_password.value;
 
+    let body = { name: username, password: password };
+
+    if (username.length > 1 && password.length > 1) {
+      let request = new Request("./api/users.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      let resource = await fetcher(request);
+      handleCloseModal();
+      console.log(resource);
+    }
+  });
 }
