@@ -8,8 +8,10 @@ if(!in_array($requestMethod, $allowedMethods)){
 }
 $requestData = getRequestData();
 if($requestMethod == "POST"){
-    $DBInfo = $requestData["data"];
-    file_put_contents("genres.json", $DBInfo);
+    if(empty($requestData)){
+        sendError(400, "bad request");
+    }
+    file_put_contents("genres.json", $requestData);
 }
 if($requestMethod == "GET"){
     //this method sends genre information to the client.
