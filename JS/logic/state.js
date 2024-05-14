@@ -6,6 +6,7 @@ PubSub.subscribe({
     event:"renderHomepage",
     listener: async () => {
         let url = "http://localhost:8080/";
+        
         let requestUsers = new Request(url + "users.php",{
             method: "GET",
             headers: {"Content-Type": "application/json"}

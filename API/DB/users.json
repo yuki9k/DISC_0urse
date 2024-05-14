@@ -5,7 +5,8 @@
         "profilePicture": "placeholder",
         "score": 0,
         "friends": [],
-        "id": 1
+        "id": 1,
+        "status": "hanging out"
     },
     {
         "name": "theo",
@@ -13,7 +14,8 @@
         "profilePicture": "placeholder",
         "score": 0,
         "friends": [],
-        "id": 2
+        "id": 2,
+        "status": "418"
     },
     {
         "name": "freja",
@@ -21,7 +23,8 @@
         "profilePicture": "placeholder",
         "score": 0,
         "friends": [],
-        "id": 3
+        "id": 3,
+        "status": 404
     },
     {
         "name": "leo",
@@ -29,6 +32,7 @@
         "profilePicture": "placeholder",
         "score": 0,
         "friends": [],
-        "id": 4
+        "id": 4,
+        "status": "jag vet inte"
     }
 ]
