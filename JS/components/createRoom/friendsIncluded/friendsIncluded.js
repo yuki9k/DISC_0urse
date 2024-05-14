@@ -31,4 +31,16 @@ function renderAddedFriends() {
 
     container.appendChild(friendDiv);
   });
+
+  const createButton = document.querySelector(".create_room_button");
+  const genre = document.querySelector(".choose_genre").value;
+  const theme = document.querySelector(".choose_theme").value;
+  createButton.addEventListener("click", (e) => {
+    PubSub.publish ({
+      event: "createNewRoom",
+      details: {genre: genre, theme: theme}
+    })
+
+    console.log(genre, theme);
+  })
 }

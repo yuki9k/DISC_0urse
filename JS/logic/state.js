@@ -31,7 +31,6 @@ PubSub.subscribe({
             _state["privRooms"] = responsePrivRooms.resource;
         }
         
-
         let requestPubRooms = new Request(url + "public.php",{
             method: "GET",
             headers: {"Content-Type": "application/json"}
