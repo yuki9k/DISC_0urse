@@ -1,5 +1,6 @@
 <?php 
 require_once("auxFunctions.php");
+require_once("../php/httpHandlers.php");
 $allowedMethods = ["GET", "POST"];
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
@@ -12,6 +13,11 @@ if($requestMethod == "POST"){
         sendError(400, "bad request");
     }
     file_put_contents("genres.json", $requestData);
+    $genres =  json_decode($requestData);
+    foreach($genre as $index => $genres){
+        $image = file_get_contents($genre["albumImages"][0]["url"], false);
+        file_put_contents("/albumPics/$index.jpeg", $image);
+    }
 }
 if($requestMethod == "GET"){
     //this method sends genre information to the client.
