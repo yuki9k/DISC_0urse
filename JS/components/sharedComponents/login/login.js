@@ -79,6 +79,11 @@ function renderLoginForm() {
       localStorage.setItem("token", token);
       console.log(token);
       handleCloseModal();
+
+      PubSub.publish ({
+        event: "loginComplete",
+        details: token
+      });
     }
   });
 }
