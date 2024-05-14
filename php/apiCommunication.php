@@ -1,15 +1,25 @@
 <?php
 
-require_once("httpHandlers.php");
+require_once "timeHandlers.php";
 
-function sendAlbumsToApi($filepath) {
-  $genresJson = file_get_contents($filepath);
-  $url = "localhost:8080/api/genres.json";
-  $method = "POST";
-  $headers = ["Content-Type: application/json"];
-  $body = $genresJson;
+function sendAlbumsToApi($fileJson)
+{
+    $url = "http://localhost:8080/genres.php";
+    $method = "POST";
+    $headers = ["Content-Type: application/json"];
+    $body = $fileJson;
 
-  $res = sendHttpRequest($url, $method, $headers, $body);
+    $opts = [
+        "http" => [
+            "method" => $method,
+            "header" => $headers,
+            "content" => $body,
+        ],
+    ];
 
-  return;
+    $req = stream_context_create($opts);
+    $res = file_get_contents($url, false, $req);
+
+    echo "Sent request to API at {$url}\n";
+    return $res;
 }
