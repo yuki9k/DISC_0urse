@@ -19,6 +19,7 @@ function renderAddedFriends() {
             <div class="plus_sign">+</div>
         </div>
     </div>
+    <button class="create_room_button">Submit</button>
   `;
 
   const addButton = document.querySelector(".add_container");
