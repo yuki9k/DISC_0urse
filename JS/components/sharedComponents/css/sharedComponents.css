@@ -1,3 +1,8 @@
+.display_none {
+    display: none;
+}
+
+
 /* Modal Common CSS */
 .modal_container {
     display: flex;
@@ -363,4 +368,32 @@ header .buttons_container .signup_button:hover {
 .post_container_timestamp {
     font-family: var(--font_family);
     font-size: 12px;
+}
+
+.edit_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.edit_user {
+    width: 40%;
+    width: 100%;
+    height: 40px;
+    background-color: #3e3e3e;
+    color: white;
+    border: none;
+    border-radius: var(--default_border_radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.change_username,
+.change_status {
+    height: 40px;
+    margin-top: 21px;
+    width: 130%;
 }
