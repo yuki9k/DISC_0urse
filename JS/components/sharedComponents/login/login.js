@@ -48,8 +48,7 @@ function renderLoginForm() {
   });
 
   // Event listener for switching to signup form
-  const switchToSignupButton =
-    modalContainer.querySelector("#switch_to_signup");
+  const switchToSignupButton = modalContainer.querySelector("#switch_to_signup");
   switchToSignupButton.addEventListener("click", () => {
     handleCloseModal(); // Close the current login modal
     PubSub.publish({
@@ -77,15 +76,12 @@ function renderLoginForm() {
       let resource = await fetcher(request);
       const token = resource.resource.token;
       localStorage.setItem("token", token);
-      console.log(token);
+      localStorage.setItem("username", username);
       handleCloseModal();
 
       PubSub.publish ({
         event: "loginComplete",
-        details: {
-          token: token,
-          username: username
-        }
+        details: { token, username }
       });
     }
   });
