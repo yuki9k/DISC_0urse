@@ -27,22 +27,22 @@ function renderCreate () {
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
                             <option>Choose genre</option>
-                            <option>Rock</option>  
-                            <option>HipHop</option>  
-                            <option>Jazz</option>  
-                            <option>Blues</option>  
-                            <option>Country</option>  
-                            <option>Pop</option>  
+                            <option value="one">Rock</option>  
+                            <option value="two">HipHop</option>  
+                            <option value="three">Jazz</option>  
+                            <option value="four">Blues</option>  
+                            <option value="five">Country</option>  
+                            <option value="six">Pop</option>  
                         </select> 
                     <p class="room_theme">Theme</p>
                         <select class="choose_theme">  
                             <option>Choose theme</option>  
-                            <option>Theme One</option>  
-                            <option>Theme Two</option>  
-                            <option>Theme Three</option>  
-                            <option>Theme Four</option>  
-                            <option>Theme Five</option>  
-                            <option>Theme Six</option>  
+                            <option value="one">Theme One</option>  
+                            <option value="two">Theme Two</option>  
+                            <option value="three">Theme Three</option>  
+                            <option value="four">Theme Four</option>  
+                            <option value="five">Theme Five</option>  
+                            <option value="six">Theme Six</option>  
                         </select> 
                 </div>
                 <div class="placeholders">
