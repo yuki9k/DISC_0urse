@@ -2,12 +2,40 @@
 require_once("auxFunctions.php");
 $allowedMethods = ["GET", "POST", "PATCH", "DELETE"];
 
+if ($_SERVER["REQUEST_METHOD"] == "OPTIONS") {
+    header("Access-Control-Allow-Headers: *");
+    header("Access-Control-Allow-Methods: *");
+    header("Access-Control-Allow-Origin: *");
+    exit();
+} else {
+    header("Access-Control-Allow-Origin: *");
+}
+
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 if(!in_array($requestMethod, $allowedMethods)){
     sendError(400, "METHOD NOT ALLOWED");
 }
 $requestData = getRequestData();
 //reg new user
+if($requestMethod == "GET"){
+    $users = getDatabase("users");
+    $responsUsers = [];
+    foreach($users as $index => $user){
+        $responseUser = $user;
+        unset($responseUser["password"]);
+        $responsUsers[] = $responseUser;
+    }
+    if(isset($requestData["id"])){
+        foreach($responsUsers as $index => $user){
+            if($user["id"] == $requestData["id"]){
+                send(200, $user);
+            }
+        }
+        send(404, "user not found");
+    } else {
+        send(200, $responsUsers);
+    }
+}
 if($requestMethod == "POST"){
     if(empty($requestData)){
         sendError(400, "empty req");
