@@ -75,10 +75,10 @@ function renderLoginForm() {
       });
 
       let resource = await fetcher(request);
-      let token = resource.token;
+      const token = resource.resource.token;
       localStorage.setItem("token", token);
-      handleCloseModal();
       console.log(token);
+      handleCloseModal();
     }
   });
 }
