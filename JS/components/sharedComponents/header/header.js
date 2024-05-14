@@ -11,7 +11,14 @@ PubSub.subscribe({
   },
 });
 
-function renderHeader() {
+PubSub.subscribe({
+  event: "loginComplete",
+  listener: (details) => {
+    renderHeader(details.token, details.username)
+  }
+});
+
+function renderHeader(token, username) {
   const header = document.createElement("header");
   let wrapper = document.querySelector("#wrapper");
   wrapper.appendChild(header);
@@ -113,6 +120,12 @@ function renderHeader() {
   const signupButton = document.querySelector(".signup_button");
   const createPrivateRoom = document.querySelector(".create_private_room_button");
   const showFriendProfile = document.querySelector(".dropdown_box_friends");
+  const buttons_container = document.querySelector(".buttons_container");
+
+  if (token) {
+    buttons_container.innerHTML = "";
+    buttons_container.textContent = username;
+  }
 
   menuIcon.addEventListener("click", () => {
     menuIcon.classList.toggle("change");
