@@ -1,4 +1,7 @@
 import { PubSub } from "../../../../logic/PubSub.js";
+import * as roomTop from "../roomTop.js";
+import * as room from "../../room.js";
+
 
 PubSub.subscribe({
     event: "initiateHeightToTopAnimation",
@@ -9,10 +12,15 @@ PubSub.subscribe({
             const htmlDomScroll = document.documentElement.scrollTop;
             const bodyDomScroll = document.body.scrollTop;
 
-            if (bodyDomScroll > 60 || htmlDomScroll > 60) {
+            if (bodyDomScroll > 80 || htmlDomScroll > 80) {
                 PubSub.publish({
                     event: "addRoomTopAnimation",
                     details: "add"
+                });
+
+                PubSub.publish({
+                    event: "roomHeight",
+                    details: orgHeight
                 });
             }
             else{

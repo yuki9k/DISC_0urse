@@ -34,5 +34,13 @@ PubSub.subscribe({
     listener: renderRoom
 });
 
+PubSub.subscribe({
+    event: "roomHeight",
+    listener: (orgHeight) => {
+        const roomContainer = document.querySelector("#room_container");
+        roomContainer.style.height = orgHeight + "px";
+    }
+})
+
 
 
