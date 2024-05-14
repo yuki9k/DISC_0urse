@@ -23,7 +23,7 @@ function renderAddedFriends() {
   `;
 
   const addButton = document.querySelector(".add_container");
-  addButton.addEventListener ("click", () => {
+  addButton.addEventListener("click", () => {
     let container = document.querySelector(".added_friends_container");
     let friendDiv = document.createElement("div");
     friendDiv.className = "friend_container";
@@ -33,14 +33,13 @@ function renderAddedFriends() {
   });
 
   const createButton = document.querySelector(".create_room_button");
-  const genre = document.querySelector(".choose_genre").value;
-  const theme = document.querySelector(".choose_theme").value;
-  createButton.addEventListener("click", (e) => {
-    PubSub.publish ({
-      event: "createNewRoom",
-      details: {genre: genre, theme: theme}
-    })
 
-    console.log(genre, theme);
-  })
+  createButton.addEventListener("click", (e) => {
+    const genre = document.querySelector(".choose_genre");
+    const theme = document.querySelector(".choose_theme");
+    PubSub.publish({
+      event: "createNewRoom",
+      details: { genre: genre.value, theme: theme.value },
+    });
+  });
 }
