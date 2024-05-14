@@ -11,6 +11,8 @@ PubSub.subscribe({
 function renderCreate () {
     let main = document.createElement("main");
     main.className = "main_container_create_room";
+    let wrapper = document.querySelector("#wrapper");
+    wrapper.innerHTML = "";
     wrapper.appendChild(main);
 
     main.innerHTML = `

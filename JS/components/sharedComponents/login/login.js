@@ -82,7 +82,10 @@ function renderLoginForm() {
 
       PubSub.publish ({
         event: "loginComplete",
-        details: token
+        details: {
+          token: token,
+          username: username
+        }
       });
     }
   });

@@ -3,6 +3,7 @@ import * as roomTop from "./roomTop/roomTop.js";
 import * as roomBottom from "./roomBottom/roomBottom.js";
 
 
+
 function renderRoom(parent){
     parent.innerHTML = `<div id="room_container"> 
                             <div id="room_top"></div>
@@ -27,5 +28,6 @@ PubSub.subscribe({
     event:"renderRoom",
     listener: renderRoom
 })
+
 
 
