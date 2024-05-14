@@ -1,6 +1,4 @@
-.display_none {
-    display: none;
-}
+
 
 
 /* Modal Common CSS */
@@ -31,24 +29,10 @@
 
 /* Login and signup CSS */
 
-.form_container.login_container {
-    text-align: center;
-    font-family: var(--font_family);
-    box-shadow: 0px 0px 10px rgb(146, 146, 146);
-    border-radius: var(--default_border_radius);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
-    background-color: white;
-    z-index: 99;
-}
-
+.form_container.login_container,
 .form_container.signup_container {
     text-align: center;
-    font-family: Arial, var(--font_family);
+    font-family: var(--font_family);
     box-shadow: 0px 0px 10px rgb(146, 146, 146);
     border-radius: var(--default_border_radius);
     display: flex;
@@ -185,7 +169,6 @@ header .buttons_container .signup_button:hover {
     box-sizing: border-box;
     border-radius: 0 10px 10px 0;
     box-shadow: 0px 0px 5px rgb(88, 88, 88);
-    /* Height should take 100% of what is left*/
   }
   
   .dropdown.active {
