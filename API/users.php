@@ -8,6 +8,22 @@ if(!in_array($requestMethod, $allowedMethods)){
 }
 $requestData = getRequestData();
 //reg new user
+if($requestMethod == "GET"){
+    $users = getDatabase("users");
+    foreach($users as $index => $user){
+        unset($user["password"]);
+    }
+    if(isset($requestData["id"])){
+        foreach($users as $index => $user){
+            if($user["id"] == $requestData["id"]){
+                send(200, $user);
+            }
+        }
+        send(404, "user not found");
+    } else {
+        send(200, $users);
+    }
+}
 if($requestMethod == "POST"){
     if(empty($requestData)){
         sendError(400, "empty req");
