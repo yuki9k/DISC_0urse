@@ -14,5 +14,6 @@ if($requestMethod == "POST"){
     $destination = $dir . $user["name"] . "_pfp.jpg";
     $source = $pfp["tmp_name"];
     move_uploaded_file($source, $destination);
+    send(200, $destination);
 }
 ?>
