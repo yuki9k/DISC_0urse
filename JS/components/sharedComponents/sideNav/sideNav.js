@@ -84,6 +84,11 @@ const friendsItem = document.createElement("div");
         event: "renderRoom",
         details: wrapper,
       });
+
+ /*      PubSub.publish({
+        event: "initiateHeightToTopAnimation",
+        details: null
+      }); */
     });
   });
 

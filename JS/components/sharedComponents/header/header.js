@@ -64,7 +64,6 @@ function renderHeader() {
 }
 
 
-
 PubSub.subscribe({
   event: "loginComplete",
   listener: (details) => {
