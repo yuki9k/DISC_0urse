@@ -28,6 +28,7 @@ if($requestMethod == "GET"){
     if(isset($requestData["id"]) || isset($requestData["token"])){
         if(isset($requestData["token"])){
             $user = getUserFromToken($requestData["token"]);
+            unset($user["password"]);
             send(200, $user);
         }
         foreach($responsUsers as $index => $user){
