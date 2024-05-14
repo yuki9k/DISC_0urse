@@ -1,0 +1,19 @@
+[
+    {
+        "hostID": 1,
+        "style": [
+            "test",
+            "test",
+            "test"
+        ],
+        "genre": "rock",
+        "users": [
+            3,
+            2,
+            10,
+            1
+        ],
+        "name": "my first room",
+        "id": 7
+    }
+]

@@ -36,7 +36,7 @@ if($requestMethod == "POST"){
     if(empty($requestData)){
         sendError(400, "empty request");
     }
-    $reqPostKeys = ["token", "style", "genre", "users"];
+    $reqPostKeys = ["token", "style", "genre", "users", "name"];
     if(requestContainsAllKeys($requestData, $reqPostKeys) == false){
         send(400, "missing keys");
     }
@@ -44,7 +44,7 @@ if($requestMethod == "POST"){
     if(!$user){
         sendError(404, "user not found");
     }
-    $postKeys = ["hostID", "style", "genre", "users"];
+    $postKeys = ["hostID", "style", "genre", "users", "name"];
     $requestData["hostID"] = $user["id"];
     $requestData["users"][] = $requestData["hostID"];
     unset($requestData["token"]);

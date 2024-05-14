@@ -25,7 +25,11 @@ if($requestMethod == "GET"){
         unset($responseUser["password"]);
         $responsUsers[] = $responseUser;
     }
-    if(isset($requestData["id"])){
+    if(isset($requestData["id"]) || isset($requestData["token"])){
+        if(isset($requestData["token"])){
+            $user = getUserFromToken($requestData["token"]);
+            send(200, $user);
+        }
         foreach($responsUsers as $index => $user){
             if($user["id"] == $requestData["id"]){
                 send(200, $user);
@@ -50,8 +54,8 @@ if($requestMethod == "POST"){
     if($user != false){
         sendError(400, "Bad req, username taken");
     }
-    $userKeys = ["name", "password", "profilePicture", "score", "friends"];
-    $userValues = ["name" => $name, "password" => $requestData["password"], "profilePicture" => "placeholder", "score" => 0, "friends" => []];
+    $userKeys = ["name", "password", "profilePicture", "score", "friends", "status"];
+    $userValues = ["name" => $name, "password" => $requestData["password"], "profilePicture" => "placeholder", "score" => 0, "friends" => [], "status" => ""];
 
     $newUser = addItemByType("users", $userKeys, $userValues);
     unset($newUser["password"]);
@@ -121,6 +125,9 @@ if($requestMethod == "PATCH"){
             $user["score"] + count($post["likedBy"]);
             $user["score"] - count($post["dislikedBy"]);
         }
+    }
+    if(isset($requestData["status"])){
+        $user["status"] = $requestData["status"];
     }
     updateItemByType("users", $users);
 }
