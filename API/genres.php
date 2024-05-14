@@ -22,7 +22,11 @@ if ($requestMethod == "POST") {
             $genreObject["albumImages"][0]["url"],
             false
         );
-        file_put_contents("db/albumPics/{$genreName}.jpeg", $albumImageFile);
+        $imageFileName = str_replace(" ", "_", strtolower($genreName));
+        file_put_contents(
+            "db/albumPics/{$imageFileName}.jpeg",
+            $albumImageFile
+        );
     }
 }
 if ($requestMethod == "GET") {
