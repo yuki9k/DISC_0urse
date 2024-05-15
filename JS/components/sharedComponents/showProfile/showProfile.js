@@ -4,14 +4,14 @@ import { PubSub } from "../../../logic/PubSub.js";
 PubSub.subscribe({
   event: "renderFriendProfile",
   listener: (details) => {
-    renderFriendProfile();
+    renderFriendProfile(details.name);
   },
 });
 
 PubSub.subscribe({
   event: "renderProfileInfo",
   listener: (details) => {
-    renderProfile(details.username);
+    renderProfile(details.name);
   },
 });
 
@@ -132,15 +132,20 @@ function renderProfile(username) {
       });
 
       let resource = await fetcher(request);
-      localStorage.setItem("username", username.value)
 
       PubSub.publish({
-        event: "editedProfileInformation",
-        details: { body }
+        event: "getThisUser",
+        details: body
       });
 
-      handleCloseModal();
-      renderProfile(username.value);
+      PubSub.subscribe({
+        event: "foundUserInfo",
+        listener: (details) => {
+          handleCloseModal();
+          renderProfile(details.username);
+        }
+      })
+
     } else {
       editButton.textContent = "Save changes";
 

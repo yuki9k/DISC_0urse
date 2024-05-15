@@ -11,7 +11,7 @@ PubSub.subscribe({
 });
 
 function renderDropdownItems(parent, icon) {
-const friendsItem = document.createElement("div");
+  const friendsItem = document.createElement("div");
   friendsItem.classList.add("dropdown_item");
   friendsItem.innerHTML = `
     <div class="room_title_one">
@@ -20,14 +20,23 @@ const friendsItem = document.createElement("div");
         <div>+</div>
       </div>
     </div>
-    <div class="dropdown_friends">
-      <div class="dropdown_box_friends">
-        <div class="friend_image"></div> 
-        <div class="friend_username">User23840232312</div> 
-      </div>
-    </div>
+    <div class="dropdown_friends"></div>
   `;
   parent.appendChild(friendsItem);
+
+  PubSub.publish({
+    event: "getFriends",
+    details: null,
+  });
+
+  PubSub.subscribe({
+    event: "foundFriends",
+    listener: (friends) => {
+      for (let friend of friends) {
+        renderFriends(parent, icon, friend);
+      }
+    },
+  });
 
   const roomsItem = document.createElement("div");
   roomsItem.classList.add("dropdown_item_rooms");
@@ -70,8 +79,9 @@ const friendsItem = document.createElement("div");
 
   const menuIcon = icon;
   const dropdown = parent;
-  const createPrivateRoom = document.querySelector(".create_private_room_button");
-  const showFriendProfile = document.querySelector(".dropdown_box_friends");
+  const createPrivateRoom = document.querySelector(
+    ".create_private_room_button"
+  );
   const rooms = document.querySelectorAll(".dropdown_box_rooms");
 
   rooms.forEach((room) => {
@@ -96,14 +106,32 @@ const friendsItem = document.createElement("div");
       details: null,
     });
   });
+}
 
-  showFriendProfile.addEventListener("click", () => {
+function renderFriends(dropdown, icon, friend) {
+  let parent = document.querySelector(".dropdown_friends");
+  let friendDom = document.createElement("div");
+  friendDom.className = "dropdown_box_friends";
+  parent.appendChild(friendDom);
+  friendDom.innerHTML = `
+      <img class="friend_image" src="${friend.profilePicture}">
+      <div class="friend_username">${friend.name}</div> 
+    `;
+
+  friendDom.addEventListener("click", () => {
+    const menuIcon = icon;
+    const parent = dropdown;
     menuIcon.classList.toggle("change");
-    dropdown.classList.toggle("active");
+    parent.classList.toggle("active");
 
-    PubSub.publish({
-      event: "renderFriendProfile",
-      details: null,
+    PubSub.subscribe({
+      event: "foundUserInfo",
+      listener: (details) => {
+        PubSub.publish({
+          event: "renderFriendProfile",
+          details: details,
+        });
+      },
     });
-  });  
+  });
 }
