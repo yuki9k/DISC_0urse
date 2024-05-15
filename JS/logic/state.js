@@ -8,7 +8,7 @@ const State = {
     const request = new Request(this.url + ent + ".php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: options.body,
+      body: JSON.stringify(options.body),
     });
     const response = await fetcher(request);
 
@@ -54,7 +54,7 @@ const State = {
     const request = new Request(this.url + ent + ".php", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
-      body: options.body,
+      body: JSON.stringify(options.body),
     });
     const response = await fetcher(request);
     let id = response.resource["id"];
@@ -354,5 +354,28 @@ PubSub.subscribe({
   listener: () => {
     State._state = {};
     localStorage.removeItem("token");
+  },
+});
+
+PubSub.subscribe({
+  event: "getAlbums",
+  listener: () => {
+    const albums = State._state.genres;
+    PubSub.publish({ listener: "foundAlbums", details: albums });
+  },
+});
+
+PubSub.subscribe({
+  event: "getTopPosts",
+  listener: async (roomId) => {
+    const allPosts = State.getPostsFromRoom(roomId);
+    const allPostsSorted = allPosts.sort(
+      (a, b) =>
+        a.likedBy.length -
+        a.dislikedBy.length -
+        (b.likedBy.length - b.dislikedBy.length)
+    );
+    const topSixPosts = allPostsSorted.splice(0, 6);
+    PubSub.publish({ event: "foundTopPosts", details: topSixPosts.reverse() });
   },
 });
