@@ -13,6 +13,7 @@ PubSub.subscribe({
   listener: async () => {
     const URL = "http://localhost:8080/";
 
+    // Gets token
     const username = null;
     const password = null;
     const reqToken = new Request(URL + "login.php", {
@@ -21,7 +22,6 @@ PubSub.subscribe({
       body: { name: username, password },
     });
 
-    // Gets token
     const resToken = await fetcher(reqToken);
     if (resToken.status !== 200) {
       return;
@@ -30,7 +30,7 @@ PubSub.subscribe({
       localStorage.setItem("token", token);
     }
 
-    // Get logged in user
+    // Get logged in user detals
     const reqThisUser = new Request(
       URL + `users.php?token=${localStorage.getItem("token")}`,
       {
@@ -45,8 +45,7 @@ PubSub.subscribe({
       State._state.thisUser = resThisUser.resource;
     }
 
-    // Gets private rooms
-    const privateRoomsObject = {};
+    // Get private rooms that user has access too
     const reqPrivateRooms = new Request(
       URL + `private.php?hostID=${State._state.thisUser.id}`,
       {
@@ -62,6 +61,7 @@ PubSub.subscribe({
     }
   },
 });
+
 PubSub.subscribe({
   event: "renderHomepage",
   listener: async () => {
@@ -70,7 +70,6 @@ PubSub.subscribe({
     // Get public users
     const reqUsers = new Request(URL + "users.php", {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
     });
     const resUsers = await fetcher(reqUsers);
     State._state.users = resUsers.resource;
@@ -78,7 +77,6 @@ PubSub.subscribe({
     // Get genres
     const reqGenres = new Request(URL + "genres.php", {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
     });
     const resGenres = await fetcher(reqGenres);
     State._state.genres = resGenres.resource;
