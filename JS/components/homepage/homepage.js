@@ -2,7 +2,10 @@ import {PubSub} from "../../logic/PubSub.js";
 import * as carousellScroll from "./carousellScroll/carousellScroll.js";
 import * as slide from "./slides/slide.js";
 
+
+
 function renderHompageContainer(parent){
+    parent.innerHTML = ""
     const homepageContainer = document.createElement("div");
     const slidesContainer = document.createElement("div");
 

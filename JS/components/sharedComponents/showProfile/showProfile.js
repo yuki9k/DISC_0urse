@@ -122,21 +122,21 @@ function renderProfile(username, status) {
     let username = document.querySelector(".change_username");
     let status = document.querySelector(".change_status");
 
-    const body = {username: username.value, status: status.value}
-
+    
     if (editButton.textContent === "Save changes") {
       const token = localStorage.getItem("token");
-
+      
       prompt("Write your password for changing info")
       const userPassword = prompt.value;
-
+      const body = {username: username.value, status: status.value, password: userPassword}
+      
       PubSub.publish ({
         event: "confirmPassword",
         details: userPassword
       });
-
+      
       PubSub.subscribe ({
-        event: "confirmedPassword",
+        event: "passwordConfirmed",
         listener: (details) => {
           PubSub.publish({
             event: "patchThisUser",

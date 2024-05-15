@@ -11,8 +11,9 @@ PubSub.subscribe({
 });
 
 function renderHeader() {
-  const header = document.createElement("header");
   let wrapper = document.querySelector("#header");
+  wrapper.innerHTML = "";
+  const header = document.createElement("header");
   wrapper.appendChild(header);
   header.innerHTML = `
     <div class="menu">
