@@ -1,6 +1,5 @@
 import * as login from "../login/login.js";
 import * as signup from "../signup/signup.js";
-
 import * as sideNav from "../sideNav/sideNav.js"
 import { PubSub } from "../../../logic/PubSub.js";
 
@@ -56,10 +55,9 @@ function renderHeader() {
     });
   });
 
-  // Publish renderSideNav event to render dropdown menu
   PubSub.publish({
     event: "renderSideNav",
-    details: {parent: dropdown, menuIcon: menuIcon} // Pass the dropdown element as the parent
+    details: {parent: dropdown, menuIcon: menuIcon} 
   });
 }
 
