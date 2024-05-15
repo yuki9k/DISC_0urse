@@ -20,14 +20,17 @@ const State = {
   },
   patch: async function (ent, options) {
     const endpoint = ent === "thisUser" ? "users" : ent;
+    console.log(options);
+    console.log(JSON.stringify(options.body));
 
     const request = new Request(this.url + endpoint + ".php", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: options.body,
+      body: JSON.stringify(options.body),
     });
 
     const response = await fetcher(request);
+    console.log(response.resource);
 
     if (ent === "thisUser") {
       this._state.thisUser = response.resource;
@@ -306,5 +309,30 @@ PubSub.subscribe({
   event: "patchThisUserRender",
   listener: (thisUser) => {
     PubSub.publish({ event: "foundUserInfo", details: thisUser });
+  },
+});
+
+PubSub.subscribe({
+  event: "confirmPassword",
+  listener: async (password) => {
+    const reqToken = new Request(URL + "login.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: username, password }),
+    });
+
+    const { success } = await fetcher(reqToken);
+
+    if (success.ok) {
+      PubSub.publish({ event: "passwordConfirmed", details: null });
+    }
+  },
+});
+
+PubSub.subscribe({
+  event: "userLogout",
+  listener: () => {
+    State._state = {};
+    localStorage.removeItem("token");
   },
 });
