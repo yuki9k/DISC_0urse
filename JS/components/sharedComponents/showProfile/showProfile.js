@@ -1,3 +1,4 @@
+import { fetcher } from "../../../logic/helpFunctions.js";
 import { PubSub } from "../../../logic/PubSub.js";
 
 PubSub.subscribe({
@@ -117,15 +118,27 @@ function renderProfile(username) {
   });
 
   let editButton = document.querySelector(".edit_user");
-  editButton.addEventListener("click", (e) => {
-    let username = document.querySelector(".username");
-    let status = document.querySelector(".status");
+  editButton.addEventListener("click", async (e) => {
+    let username = document.querySelector(".change_username");
+    let status = document.querySelector(".change_status");
 
     if (editButton.textContent === "Save changes") {
-      PubSub.publish({
-        event: "editedProfileInformation",
-        details: {username: username, status: status}
+      const token = localStorage.getItem("token");
+      let body = { token: token, status: status.value, username: username.value };
+      let request = new Request("./api/users.php", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
       });
+
+      let resource = await fetcher(request);
+
+
+      // Pubsub for later
+      // PubSub.publish({
+      //   event: "editedProfileInformation",
+      //   details: {body}
+      // });
 
       handleCloseModal();
       renderProfile();
