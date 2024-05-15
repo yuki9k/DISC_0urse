@@ -11,24 +11,24 @@ PubSub.subscribe({
 });
 
 PubSub.subscribe({
-  event: "renderSideNavFriends",
+  event: "loginComplete",
   listener: () => {
     PubSub.publish({
       event: "getFriends",
       details: null,
     });
+  },
+});
 
-    PubSub.subscribe({
-      event: "foundFriends",
-      listener: (friends) => {
-        const parent = document.querySelector(".dropdown");
-        const icon = document.querySelector(".menu_icon_container");
+PubSub.subscribe({
+  event: "foundFriends",
+  listener: (friends) => {
+    const parent = document.querySelector(".dropdown");
+    const icon = document.querySelector(".menu_icon_container");
 
-        for (let friend of friends) {
-          renderFriends(parent, icon, friend);
-        }
-      },
-    });
+    for (let friend of friends) {
+      renderFriends(parent, icon, friend);
+    }
   },
 });
 

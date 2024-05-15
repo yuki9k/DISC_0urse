@@ -1,8 +1,7 @@
 import * as login from "../login/login.js";
 import * as signup from "../signup/signup.js";
-import * as sideNav from "../sideNav/sideNav.js"
+import * as sideNav from "../sideNav/sideNav.js";
 import { PubSub } from "../../../logic/PubSub.js";
-
 
 PubSub.subscribe({
   event: "renderHomepage",
@@ -57,7 +56,7 @@ function renderHeader() {
 
   PubSub.publish({
     event: "renderSideNav",
-    details: {parent: dropdown, menuIcon: menuIcon} 
+    details: { parent: dropdown, menuIcon: menuIcon },
   });
 }
 
@@ -70,11 +69,12 @@ PubSub.subscribe({
       buttons_container.textContent = details.username;
 
       buttons_container.addEventListener("click", (e) => {
-        PubSub.publish ({
+        PubSub.publish({
           event: "renderProfileInfo",
-          details: {username: details.username}
-        })
-      })
+          details: { username: details.username },
+        });
+      });
     }
+    PubSub.publish({ event: "closeLoginModal", details: null });
   },
 });

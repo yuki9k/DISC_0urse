@@ -7,21 +7,14 @@ const token = localStorage.getItem("token");
 const username = localStorage.getItem("username");
 
 if (token) {
-    PubSub.publish({
-        event: "userLogin",
-        details: null
-    });
-    PubSub.publish({
-        event: "loginComplete",
-        details: {token, username}
-    });
-    PubSub.publish({
-        event: "renderHomepage",
-        details: document.querySelector("#wrapper")
-    });
+  PubSub.publish({
+    event: "renderHomepage",
+    details: document.querySelector("#wrapper"),
+  });
+  PubSub.publish({ event: "userLoggedIn", details: null });
 } else {
-    PubSub.publish({
-        event: "renderHomepage",
-        details: document.querySelector("#wrapper")
-    });
+  PubSub.publish({
+    event: "renderHomepage",
+    details: document.querySelector("#wrapper"),
+  });
 }

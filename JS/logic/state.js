@@ -140,38 +140,18 @@ const State = {
 };
 
 PubSub.subscribe({
-  event: "userLogin",
+  event: "userLoggedIn",
   listener: async () => {
     const URL = "http://localhost:8080/api/";
 
-    // Gets token
-    const username = null;
-    const password = null;
-    const reqToken = new Request(URL + "login.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: { name: username, password },
+    // Get logged in user detals
+    const token = localStorage.getItem("token");
+    const reqThisUser = new Request(URL + `users.php?token=${token}`, {
+      method: "GET",
     });
 
-    const resToken = await fetcher(reqToken);
-    console.log(resToken);
-    if (!resToken.success.ok) {
-      return;
-    } else {
-      const token = resToken.resource;
-      localStorage.setItem("token", token);
-    }
-
-    // Get logged in user detals
-    const reqThisUser = new Request(
-      URL + `users.php?token=${localStorage.getItem("token")}`,
-      {
-        method: "GET",
-      }
-    );
-
     const resThisUser = await fetcher(reqThisUser);
-    if (!resToken.success.ok) {
+    if (!resThisUser.success.ok) {
       return;
     } else {
       State._state.thisUser = resThisUser.resource;
@@ -186,11 +166,47 @@ PubSub.subscribe({
     );
 
     const resPrivateRooms = await fetcher(reqPrivateRooms);
+    State._state.privateRooms = resPrivateRooms.resource;
+    PubSub.publish({
+      event: "loginComplete",
+      details: {
+        token: localStorage.getItem("token"),
+        username: State._state.thisUser.name,
+      },
+    });
+    console.log(State._state);
+    PubSub.publish({
+      event: "loginComplete",
+      details: {
+        token: localStorage.getItem("token"),
+        username: State._state.thisUser.name,
+      },
+    });
+  },
+});
+
+PubSub.subscribe({
+  event: "userLogin",
+  listener: async (details) => {
+    const URL = "http://localhost:8080/api/";
+
+    // Gets token
+    const username = details.name;
+    const password = details.password;
+    const reqToken = new Request(URL + "login.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: username, password }),
+    });
+
+    const resToken = await fetcher(reqToken);
     if (!resToken.success.ok) {
       return;
     } else {
-      State._state.privateRooms = resPrivateRooms.resource;
+      const token = resToken.resource.token;
+      localStorage.setItem("token", token);
     }
+    PubSub.publish({ event: "userLoggedIn", details: null });
   },
 });
 
