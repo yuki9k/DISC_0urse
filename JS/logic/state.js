@@ -296,12 +296,30 @@ PubSub.subscribe({
 
 PubSub.subscribe({
   event: "patchThisUser",
-  listener: (newThisUserInfo) => {
-    const { username, status } = newThisUserInfo;
+  listener: async (newThisUserInfo) => {
+    const URL = "http://localhost:8080/api/";
     const token = localStorage.getItem("token");
+    const { username, status } = newThisUserInfo;
+
     State.patch("thisUser", {
       body: { token, name: username, status },
     });
+
+    if (newThisUserInfo.password) {
+      const { password } = newThisUserInfo;
+      console.log(password);
+      console.log(newThisUserInfo);
+      const reqToken = new Request(URL + "login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: username, password }),
+      });
+
+      const { resource } = await fetcher(reqToken);
+      const token = resource.token;
+      localStorage.removeItem("token");
+      localStorage.setItem("token", token);
+    }
   },
 });
 
@@ -315,6 +333,8 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "confirmPassword",
   listener: async (password) => {
+    const URL = "http://localhost:8080/api/";
+    const username = State._state.thisUser.name;
     const reqToken = new Request(URL + "login.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

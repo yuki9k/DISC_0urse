@@ -122,25 +122,27 @@ function renderProfile(username, status) {
     let username = document.querySelector(".change_username");
     let status = document.querySelector(".change_status");
 
-    
     if (editButton.textContent === "Save changes") {
       const token = localStorage.getItem("token");
-      
-      prompt("Write your password for changing info")
-      const userPassword = prompt.value;
-      const body = {username: username.value, status: status.value, password: userPassword}
-      
-      PubSub.publish ({
+
+      const userPassword = prompt("Write your password for changing info");
+      const body = {
+        username: username.value,
+        status: status.value,
+        password: userPassword,
+      };
+
+      PubSub.publish({
         event: "confirmPassword",
-        details: userPassword
+        details: userPassword,
       });
-      
-      PubSub.subscribe ({
+
+      PubSub.subscribe({
         event: "passwordConfirmed",
         listener: (details) => {
           PubSub.publish({
             event: "patchThisUser",
-            details: body
+            details: body,
           });
 
           PubSub.subscribe({
@@ -148,14 +150,10 @@ function renderProfile(username, status) {
             listener: (details) => {
               handleCloseModal();
               renderProfile(details.name, details.status);
-            }
-          })
-        }
-      })
-
-
-      
-
+            },
+          });
+        },
+      });
     } else {
       editButton.textContent = "Save changes";
 
