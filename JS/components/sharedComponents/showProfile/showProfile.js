@@ -133,21 +133,28 @@ function renderProfile(username, status) {
       PubSub.publish ({
         event: "confirmPassword",
         details: userPassword
-      
-      })
-
-      PubSub.publish({
-        event: "patchThisUser",
-        details: body
       });
 
-      PubSub.subscribe({
-        event: "foundUserInfo",
+      PubSub.subscribe ({
+        event: "confirmedPassword",
         listener: (details) => {
-          handleCloseModal();
-          renderProfile(details.name, details.status);
+          PubSub.publish({
+            event: "patchThisUser",
+            details: body
+          });
+
+          PubSub.subscribe({
+            event: "foundUserInfo",
+            listener: (details) => {
+              handleCloseModal();
+              renderProfile(details.name, details.status);
+            }
+          })
         }
       })
+
+
+      
 
     } else {
       editButton.textContent = "Save changes";
