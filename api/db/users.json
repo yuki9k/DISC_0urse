@@ -9,13 +9,13 @@
     "status": "hanging out"
   },
   {
-    "name": "theo",
+    "name": "Theo",
     "password": "admin",
     "profilePicture": "placeholder",
     "score": 0,
     "friends": [1, 3, 4],
     "id": 2,
-    "status": "theo123"
+    "status": "418 teapot"
   },
   {
     "name": "freja",
