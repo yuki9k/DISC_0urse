@@ -3,53 +3,9 @@ import { fetcher } from "./helpFunctions.js";
 
 const State = {
   _state: {},
-  patch: function () {},
-  post: function () {},
-  delete: function () {},
-  getData: async function (type, options) {
-    const URL = "http://localhost:8080/";
-    const token = localStorage.getItem("token");
-
-    // GENRES, FRIENDS, USERS, POSTS, ROOM
-    switch (type) {
-      case "genres":
-        const genresData = this._state["genres"];
-        return JSON.parse(JSON.stringify(genresData));
-
-      case "genre":
-        const { genreName } = options;
-        const genreData = this._state["genres"][genreName];
-        return JSON.parse(JSON.stringify(genreData));
-
-      case "posts":
-        if (options["postsRoom"]) {
-          const { roomId } = options;
-          const reqPosts = new Request(URL + `posts.php?roomID=${roomId}`, {
-            method: "GET",
-          });
-
-          const resPosts = await fetcher(reqPosts);
-          return JSON.parse(JSON.stringify(resPosts.resource));
-        }
-
-        if (options["postsUser"]) {
-          const { userId } = options;
-          const reqPosts = new Request(URL + `posts.php?userID=${userId}`, {
-            method: "GET",
-          });
-
-          const resPosts = await fetcher(reqPosts);
-          return JSON.parse(JSON.stringify(resPosts.resource));
-        }
-        break;
-
-      case "user":
-        break;
-
-      default:
-        break;
-    }
-  },
+  patch: async function () {},
+  post: async function () {},
+  delete: async function () {},
 };
 
 PubSub.subscribe({
