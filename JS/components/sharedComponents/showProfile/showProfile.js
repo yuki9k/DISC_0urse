@@ -11,11 +11,11 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "renderProfileInfo",
   listener: (details) => {
-    renderProfile(details.name);
+    renderProfile(details.name, details.status);
   },
 });
 
-function renderFriendProfile(username) {
+function renderFriendProfile(username, status) {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
@@ -25,7 +25,7 @@ function renderFriendProfile(username) {
         <div class="upper_section">
             <div class="profile_info">
                 <p class="username">${username}</p>
-                <p class="status">Hello! This my status :)</p>
+                <p class="status">${status}</p>
             </div>
             <div class="profile_picture"></div>
         </div>
@@ -46,16 +46,13 @@ function renderFriendProfile(username) {
     </div>
   `;
 
-  // Prevent scrolling of the underlying content while modal is open
   document.body.style.overflow = "hidden";
 
-  // Function to handle closing the modal when clicking outside the form
   const handleCloseModal = () => {
     modalContainer.remove();
     document.body.style.overflow = "";
   };
 
-  // Add event listener to close modal when clicking outside the form
   modalContainer.addEventListener("click", (event) => {
     if (event.target === modalContainer) {
       handleCloseModal();
@@ -63,7 +60,7 @@ function renderFriendProfile(username) {
   });
 }
 
-function renderProfile(username) {
+function renderProfile(username, status) {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
@@ -74,7 +71,7 @@ function renderProfile(username) {
             <div class="profile_info">
                 <p class="username">${username}</p>
                 <input class="change_username" placeholder="change username">
-                <p class="status">Hello! This my status :)</p>
+                <p class="status">${status}</p>
                 <input class="change_status" placeholder="change bio">
             </div>
             <div class="profile_picture"></div>
@@ -136,7 +133,7 @@ function renderProfile(username) {
         event: "foundUserInfo",
         listener: (details) => {
           handleCloseModal();
-          renderProfile(details.username);
+          renderProfile(details.name, details.status);
         }
       })
 
