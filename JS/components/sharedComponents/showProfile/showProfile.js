@@ -11,7 +11,6 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "renderProfileInfo",
   listener: (details) => {
-    console.log("your details:", details);
     renderProfile(details.username, details.status);
   },
 });
@@ -123,7 +122,7 @@ function renderProfile(username, status) {
     let username = document.querySelector(".change_username");
     let status = document.querySelector(".change_status");
 
-    const body = {username: username, status: status}
+    const body = {username: username.value, status: status.value}
 
     if (editButton.textContent === "Save changes") {
       const token = localStorage.getItem("token");
