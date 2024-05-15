@@ -13,7 +13,7 @@
         "password": "admin",
         "profilePicture": "placeholder",
         "score": 0,
-        "friends": [],
+        "friends": [1, 3, 4],
         "id": 2,
         "status": ""
     },
