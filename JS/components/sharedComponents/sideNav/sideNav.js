@@ -2,11 +2,11 @@ import * as createRoom from "../../createRoom/main/main.js";
 import * as showProfile from "../showProfile/showProfile.js";
 import * as renderRoom from "../../room/room.js";
 import { PubSub } from "../../../logic/PubSub.js";
-
+//HERE
 PubSub.subscribe({
   event: "renderSideNav",
   listener: (details) => {
-    renderDropdownItems(details.parent, details.menuIcon);
+    renderDropdownItems(details.parent, details.menuIcon, details.rooms);
   },
 });
 
@@ -32,7 +32,8 @@ PubSub.subscribe({
   },
 });
 
-function renderDropdownItems(parent, icon) {
+function renderDropdownItems(parent, icon, roomsToRender) {
+  console.log(roomsToRender);
   const friendsItem = document.createElement("div");
   friendsItem.classList.add("dropdown_item");
   friendsItem.innerHTML = `
@@ -48,11 +49,7 @@ function renderDropdownItems(parent, icon) {
 
   const roomsItem = document.createElement("div");
   roomsItem.classList.add("dropdown_item_rooms");
-  roomsItem.innerHTML = `
-    <div class="dropdown_title">Rooms</div>
-    <div class="dropdown_title_two">Public Rooms</div>
-    <div class="dropdown_rooms">
-      <div class="dropdown_box_rooms room_pop">
+/*   <div class="dropdown_box_rooms room_pop">
         <p>Pop</p>
       </div>
       <div class="dropdown_box_rooms room_rock">
@@ -69,7 +66,13 @@ function renderDropdownItems(parent, icon) {
       </div>
       <div class="dropdown_box_rooms room_pp">
         <p>Post Punk</p>
-      </div>
+      </div> */
+
+  roomsItem.innerHTML = `
+    <div class="dropdown_title">Rooms</div>
+    <div class="dropdown_title_two">Public Rooms</div>
+    <div class="dropdown_rooms" id="publicRoomDropdown">
+     
     </div>
     <div class="room_title_two">
       <div class="dropdown_title_two">Private Rooms</div>
@@ -77,33 +80,66 @@ function renderDropdownItems(parent, icon) {
         <div>+</div>
       </div>
     </div>
-    <div class="dropdown_rooms">
-      <div class="dropdown_box_rooms">
-        <p>Room</p>
-      </div>
+    <div class="dropdown_rooms" id="privateRoomDropdown">
+      
     </div>
   `;
   parent.appendChild(roomsItem);
+  const firstRoomDropDown = document.querySelector("#publicRoomDropdown");
+  const secondRoomDropDown = document.querySelector("#privateRoomDropdown");
+  console.log(firstRoomDropDown, secondRoomDropDown);
+  for(const room of roomsToRender.public){
+    let div = document.createElement("div");
+    div.classList.add(`dropdown_box_rooms`,`room_${room.id}`);
+    div.innerHTML = `<p>${room.genre}</p>`;
+    firstRoomDropDown.appendChild(div);
+    console.log(div);
+    div.addEventListener("click", () => {
+      console.log("hej");
+      const menuIcon = icon;
+      const dropdown = parent;
+      const wrapper = document.querySelector("#wrapper");
+      menuIcon.classList.toggle("change");
+      dropdown.classList.toggle("active");
+      PubSub.publish({
+        event: "renderRoom",
+        details: {
+          parent: wrapper,
+          room: room
+        }
+      });
+    });
+  }
+  if(roomsToRender.private.length > 0){
+    for(const room of roomsToRender.private){
+      secondRoomDropDown.innerHTML += `
+      <div class="dropdown_box_rooms room_${room.id}">
+        <p>${room.genre}</p>
+      </div>
+    `;
+    }
+  }
+  
 
-  const menuIcon = icon;
-  const dropdown = parent;
   const createPrivateRoom = document.querySelector(
     ".create_private_room_button"
   );
-  const rooms = document.querySelectorAll(".dropdown_box_rooms");
+  /* const rooms = document.querySelectorAll(".dropdown_box_rooms");
 
   rooms.forEach((room) => {
     room.addEventListener("click", () => {
-      menuIcon.classList.toggle("change");
-      dropdown.classList.toggle("active");
+      
       let wrapper = document.querySelector("#wrapper");
 
       PubSub.publish({
         event: "renderRoom",
-        details: wrapper,
+        details: {
+          parent: wrapper,
+          room: room
+        },
       });
     });
-  });
+  }); */
 
   createPrivateRoom.addEventListener("click", () => {
     menuIcon.classList.toggle("change");

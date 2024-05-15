@@ -137,6 +137,14 @@ const State = {
     const resGenres = await fetcher(reqGenres);
     this._state.genres = resGenres.resource;
   },
+  /* getUserRooms: async function () {
+    const token = localStorage.getItem("token");
+    const userRooms = new Request(URL + `private.php?token=${token}`, {
+      method: "GET",
+    });
+    const resUserRooms = await fetcher(userRooms);
+    return resUserRooms.resource;
+  } */
 };
 
 PubSub.subscribe({
@@ -247,6 +255,8 @@ PubSub.subscribe({
     });
     const resPublicRooms = await fetcher(reqPublicRooms);
     State._state.publicRooms = resPublicRooms.resource;
+    console.log(resPublicRooms.resource);
+    console.log("!!!!!!");
 
     // let requestPosts = new Request(url + "posts.php", {
     //   method: "GET",
@@ -256,6 +266,10 @@ PubSub.subscribe({
     // _state["posts"] = responsePosts.resource;
 
     // console.log(_state);
+    PubSub.publish({
+      event: "renderHeader",
+      details: null
+    });
   },
 });
 
@@ -276,4 +290,45 @@ PubSub.subscribe({
     }
     PubSub.publish({ event: "foundFriends", details: friendArr });
   },
+});
+
+PubSub.subscribe({
+  event: "getRoomInfo",
+  listener: (details)=>{
+    console.log("GETROOMINFO");
+    const token = localStorage.getItem("token");
+    let rooms = {
+      public: State._state.publicRooms,
+      private: []
+    };
+    console.log(State._state);
+    if(!token){
+      //publish with no private rooms
+      console.log(rooms);
+      PubSub.publish({
+        event: "renderSideNav",
+        details: {parent: details.parent, menuIcon: details.menuIcon, rooms: rooms}
+      });
+    } else {
+      //publish with private rooms
+      if(State._state.privateRooms.length > 0){
+        rooms.private = State._state.privateRooms;
+      }
+      console.log(rooms);
+      PubSub.publish({
+        event: "renderSideNav",
+        details: {parent: details.parent, menuIcon: details.menuIcon, rooms: rooms}
+      });
+    }
+  }
+});
+
+PubSub.subscribe({
+  event: "getAlbum",
+  listener: (details) => {
+    PubSub.publish({
+      event: "sendAlbum",
+      details: State._state.genres[details]
+    });
+  }
 });
