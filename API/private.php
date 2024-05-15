@@ -27,6 +27,13 @@ if($requestMethod == "GET"){
             }
         }
     }
+    if(isset($requestData["id"])){
+        foreach($rooms as $index => $room){
+            if($room["id"] == $requestData["id"]){
+                send(200, $room);
+            }
+        }
+    }
     if(empty($rooms)){
         sendError(404, "no rooms found");
     }
