@@ -10,31 +10,40 @@ function renderRoomBottom(parent, data){
                             <div id="add_posts"></div>
                         </div>`;
 
-    const posts_container = parent.querySelector("#posts_container");
-    const filter_posts = parent.querySelector("#filter_posts");
-    const add_posts = parent.querySelector("#add_posts");
+    const postsContainer = parent.querySelector("#posts_container");
+    const filterPosts = parent.querySelector("#filter_posts");
+    const addPosts = parent.querySelector("#add_posts");
 
     PubSub.publish({
         event: "renderAddPostButton",
-        details: add_posts
+        details: addPosts
     });
 
     
     PubSub.publish({
         event: "renderFilterButton",
-        details: filter_posts
+        details: filterPosts
     });
 
     PubSub.publish({
         event: "renderPostsContainer",
-        details: {"parent":posts_container, "data": dataBase.chats}
+        details: {"parent":postsContainer, "data": dataBase.chats}
     })
+
 }
 
 PubSub.subscribe({
     event: "renderRoomBottom",
     listener: renderRoomBottom
 });
+
+PubSub.subscribe({
+    event: "moveFilterAddPostContainer",
+    listener: (details) => {
+        const filterAddPostContainer = document.querySelector("#filter_add_post_container");
+        filterAddPostContainer.classList[details]("move");
+    }
+})
 
 
 const dataBase = {
