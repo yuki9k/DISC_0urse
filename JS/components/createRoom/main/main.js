@@ -28,7 +28,7 @@ function renderCreate () {
                         <select class="choose_genre">  
                             <option>Choose genre</option>
                             <option value="Pop">Pop</option>  
-                            <option value="Pop">Rock</option>  
+                            <option value="Rock">Rock</option>  
                             <option value="Singer Songwriter">Singer & Songwriter</option>  
                             <option value="Folk">Folk</option>  
                             <option value="R&B">R&B</option>  

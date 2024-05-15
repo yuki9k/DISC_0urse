@@ -30,7 +30,7 @@ function renderFriendProfile(username) {
             <div class="profile_picture"></div>
         </div>
         <div class="middle_section">
-            <p class="middle_section_left">Posts</p>
+            <p class="middle_section_left">Latest post:</p>
             <p class="middle_section_right">Points here</p>
         </div>
         <div class="bottom_section">
@@ -80,7 +80,7 @@ function renderProfile(username) {
             <div class="profile_picture"></div>
         </div>
         <div class="middle_section">
-            <p class="middle_section_left">Posts</p>
+            <p class="middle_section_left">Latest post:</p>
             <p class="middle_section_right">Points here</p>
         </div>
         <div class="bottom_section">
@@ -132,16 +132,15 @@ function renderProfile(username) {
       });
 
       let resource = await fetcher(request);
+      localStorage.setItem("username", username.value)
 
-
-      // Pubsub for later
-      // PubSub.publish({
-      //   event: "editedProfileInformation",
-      //   details: {body}
-      // });
+      PubSub.publish({
+        event: "editedProfileInformation",
+        details: { body }
+      });
 
       handleCloseModal();
-      renderProfile();
+      renderProfile(username.value);
     } else {
       editButton.textContent = "Save changes";
 
