@@ -1,26 +1,26 @@
 [
-    {
-        "genre": "rock",
-        "id": 1
-    },
-    {
-        "genre": "hiphop",
-        "id": 2
-    },
-    {
-        "genre": "electronic",
-        "id": 3
-    },
-    {
-        "genre": "soul",
-        "id": 4
-    },
-    {
-        "genre": "breakcore",
-        "id": 5
-    },
-    {
-        "genre": "hyperpop",
-        "id": 6
-    }
+  {
+    "genre": "Indie Pop",
+    "id": 1
+  },
+  {
+    "genre": "Indie Rock",
+    "id": 2
+  },
+  {
+    "genre": "Indie Singer-songwriter",
+    "id": 3
+  },
+  {
+    "genre": "Indie Folk",
+    "id": 4
+  },
+  {
+    "genre": "Indie R&b",
+    "id": 5
+  },
+  {
+    "genre": "Indie Post-punk",
+    "id": 6
+  }
 ]
