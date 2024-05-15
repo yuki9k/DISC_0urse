@@ -1,35 +1,35 @@
-// import { PubSub } from "../../../../logic/PubSub.js";
-
-// window.addEventListener("load", (event) => {
-//     const roomContainer = document.querySelector("#room_container");
-//     const orgHeight = roomContainer.offsetHeight;
-
-//     window.addEventListener("scroll", (event) => {
-
-//         const htmlDomScroll = document.documentElement.scrollTop;
-//         const bodyDomScroll = document.body.scrollTop;
-
-//         const roomContainer = document.querySelector("#room_container");
-//         const roomTop = document.querySelector("#room_top");
-//         const albumContainer = document.querySelector("#album_container");
-//         const albumTracks = document.querySelector("#album_tracks_container");
+import { PubSub } from "../../../../logic/PubSub.js";
+import * as roomTop from "../roomTop.js";
+import * as room from "../../room.js";
 
 
-//         if (bodyDomScroll > 80 || htmlDomScroll > 80) {
-//             roomTop.classList.add("makeSmall");
-//             albumContainer.classList.add("makeSmall");
-//             albumTracks.classList.add("display_none");
+PubSub.subscribe({
+    event: "initiateHeightToTopAnimation",
+    listener: (orgHeight) => {
 
-//             roomContainer.style.height =  orgHeight + "px";
+        window.addEventListener("scroll", (event) => {
 
-//         }
-//         else{
-//             roomTop.classList.remove("makeSmall");
-//             albumContainer.classList.remove("makeSmall");
-//             albumTracks.classList.remove("display_none");
-//         }
-//     });
-// });
+            const htmlDomScroll = document.documentElement.scrollTop;
+            const bodyDomScroll = document.body.scrollTop;
 
+            if (bodyDomScroll > 80 || htmlDomScroll > 80) {
+                PubSub.publish({
+                    event: "addRoomTopAnimation",
+                    details: "add"
+                });
 
+                PubSub.publish({
+                    event: "roomHeight",
+                    details: orgHeight
+                });
+            }
+            else{
+                PubSub.publish({
+                    event: "addRoomTopAnimation",
+                    details: "remove"
+                });
+            }
+        });
+    }
+})
 

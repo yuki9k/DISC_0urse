@@ -63,8 +63,6 @@ function renderHeader() {
   });
 }
 
-
-
 PubSub.subscribe({
   event: "loginComplete",
   listener: (details) => {
@@ -72,6 +70,13 @@ PubSub.subscribe({
     if (details.token) {
       buttons_container.innerHTML = "";
       buttons_container.textContent = details.username;
+
+      buttons_container.addEventListener("click", (e) => {
+        PubSub.publish ({
+          event: "renderProfileInfo",
+          details: {username: details.username}
+        })
+      })
     }
   },
 });

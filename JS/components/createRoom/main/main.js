@@ -27,12 +27,12 @@ function renderCreate () {
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
                             <option>Choose genre</option>
-                            <option value="one">Rock</option>  
-                            <option value="two">HipHop</option>  
-                            <option value="three">Jazz</option>  
-                            <option value="four">Blues</option>  
-                            <option value="five">Country</option>  
-                            <option value="six">Pop</option>  
+                            <option value="Pop">Pop</option>  
+                            <option value="Pop">Rock</option>  
+                            <option value="Singer Songwriter">Singer & Songwriter</option>  
+                            <option value="Folk">Folk</option>  
+                            <option value="R&B">R&B</option>  
+                            <option value="Post Punk">Post Punk</option>  
                         </select> 
                     <p class="room_theme">Theme</p>
                         <select class="choose_theme">  
@@ -56,6 +56,12 @@ function renderCreate () {
             <div class="underline"></div>
         </div>
     `;
+
+    const genre = document.querySelector(".choose_genre");
+    genre.addEventListener("click", (e) => {
+        const genrePlaceholder = document.querySelector(".album_title_in_div");
+        genrePlaceholder.textContent = genre.value;
+    })
 
     PubSub.publish({
         event: "renderAddedFriends",

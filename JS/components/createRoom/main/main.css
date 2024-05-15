@@ -55,6 +55,7 @@
     font-family: var(--font_family);
     font-size: 32px;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .input_room_name {

@@ -19,9 +19,14 @@ $requestData = getRequestData();
 //reg new user
 if($requestMethod == "GET"){
     $users = getDatabase("users");
+    if(isset($requestData["id"]) || isset($requestData["token"])){
+        if(isset($requestData["token"])){
+            $tokenUser = getUserFromToken($requestData["token"]);
+            unset($tokenUser["password"]);
+            send(200, $tokenUser);
+        }
 
-    if(isset($requestData["id"])){
-        foreach($users as $user){
+        foreach($responsUsers as $index => $user){
             if($user["id"] == $requestData["id"]){
                 $singleUser = $user;
                 unset($singleUser["password"]);
@@ -56,8 +61,8 @@ if($requestMethod == "POST"){
     if($user != false){
         sendError(400, "Bad req, username taken");
     }
-    $userKeys = ["name", "password", "profilePicture", "score", "friends"];
-    $userValues = ["name" => $name, "password" => $requestData["password"], "profilePicture" => "placeholder", "score" => 0, "friends" => []];
+    $userKeys = ["name", "password", "profilePicture", "score", "friends", "status"];
+    $userValues = ["name" => $name, "password" => $requestData["password"], "profilePicture" => "placeholder", "score" => 0, "friends" => [], "status" => ""];
 
     $newUser = addItemByType("users", $userKeys, $userValues);
     unset($newUser["password"]);
@@ -127,6 +132,9 @@ if($requestMethod == "PATCH"){
             $user["score"] + count($post["likedBy"]);
             $user["score"] - count($post["dislikedBy"]);
         }
+    }
+    if(isset($requestData["status"])){
+        $user["status"] = $requestData["status"];
     }
     updateItemByType("users", $users);
 }
