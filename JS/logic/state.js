@@ -6,24 +6,20 @@ const State = {
   patch: function () {},
   post: function () {},
   delete: function () {},
-  getData: async function (ent, options) {
-    if (!this._state[ent]) {
-      return;
-    }
-
+  getData: async function (type, options) {
     const URL = "http://localhost:8080/";
     const token = localStorage.getItem("token");
 
     // GENRES, FRIENDS, USERS, POSTS, ROOM
-    switch (ent) {
+    switch (type) {
       case "genres":
         const genresData = this._state["genres"];
-        return JSON.parse(JSON.stringify(data));
+        return JSON.parse(JSON.stringify(genresData));
 
       case "genre":
         const { genreName } = options;
         const genreData = this._state["genres"][genreName];
-        return JSON.parse(JSON.stringify(data));
+        return JSON.parse(JSON.stringify(genreData));
 
       case "posts":
         if (options["postsRoom"]) {
@@ -46,10 +42,6 @@ const State = {
           return JSON.parse(JSON.stringify(resPosts.resource));
         }
         break;
-
-      //   case "post":
-      //     const { postId } = options;
-      //     break;
 
       case "user":
         break;
