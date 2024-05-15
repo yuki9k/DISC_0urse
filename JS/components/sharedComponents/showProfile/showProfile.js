@@ -1,16 +1,17 @@
+import { fetcher } from "../../../logic/helpFunctions.js";
 import { PubSub } from "../../../logic/PubSub.js";
 
 PubSub.subscribe({
   event: "renderFriendProfile",
   listener: (details) => {
-    renderFriendProfile();
+    renderFriendProfile(details.name);
   },
 });
 
 PubSub.subscribe({
   event: "renderProfileInfo",
   listener: (details) => {
-    renderProfile(details.username);
+    renderProfile(details.name);
   },
 });
 
@@ -29,7 +30,7 @@ function renderFriendProfile(username) {
             <div class="profile_picture"></div>
         </div>
         <div class="middle_section">
-            <p class="middle_section_left">Posts</p>
+            <p class="middle_section_left">Latest post:</p>
             <p class="middle_section_right">Points here</p>
         </div>
         <div class="bottom_section">
@@ -79,7 +80,7 @@ function renderProfile(username) {
             <div class="profile_picture"></div>
         </div>
         <div class="middle_section">
-            <p class="middle_section_left">Posts</p>
+            <p class="middle_section_left">Latest post:</p>
             <p class="middle_section_right">Points here</p>
         </div>
         <div class="bottom_section">
@@ -117,18 +118,34 @@ function renderProfile(username) {
   });
 
   let editButton = document.querySelector(".edit_user");
-  editButton.addEventListener("click", (e) => {
-    let username = document.querySelector(".username");
-    let status = document.querySelector(".status");
+  editButton.addEventListener("click", async (e) => {
+    let username = document.querySelector(".change_username");
+    let status = document.querySelector(".change_status");
 
     if (editButton.textContent === "Save changes") {
-      PubSub.publish({
-        event: "editedProfileInformation",
-        details: {username: username, status: status}
+      const token = localStorage.getItem("token");
+      let body = { token: token, status: status.value, username: username.value };
+      let request = new Request("./api/users.php", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
       });
 
-      handleCloseModal();
-      renderProfile();
+      let resource = await fetcher(request);
+
+      PubSub.publish({
+        event: "getThisUser",
+        details: body
+      });
+
+      PubSub.subscribe({
+        event: "foundUserInfo",
+        listener: (details) => {
+          handleCloseModal();
+          renderProfile(details.username);
+        }
+      })
+
     } else {
       editButton.textContent = "Save changes";
 
