@@ -166,7 +166,9 @@ PubSub.subscribe({
     );
 
     const resPrivateRooms = await fetcher(reqPrivateRooms);
-    State._state.privateRooms = resPrivateRooms.resource;
+    State._state.privateRooms = resPrivateRooms.resource
+      ? resPrivateRooms.resource
+      : [];
     PubSub.publish({
       event: "loginComplete",
       details: {
@@ -175,13 +177,6 @@ PubSub.subscribe({
       },
     });
     console.log(State._state);
-    PubSub.publish({
-      event: "loginComplete",
-      details: {
-        token: localStorage.getItem("token"),
-        username: State._state.thisUser.name,
-      },
-    });
   },
 });
 
@@ -272,8 +267,10 @@ PubSub.subscribe({
     const friendIds = State.getFriendIds();
     const friendArr = [];
     for (const friendId of friendIds) {
-      friendArr.push(State.getExternalUser(friendId));
+      const friend = await State.getExternalUser(friendId);
+      friendArr.push(friend);
     }
+
     PubSub.publish({ event: "foundFriends", details: friendArr });
   },
 });
