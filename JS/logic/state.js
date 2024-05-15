@@ -19,18 +19,32 @@ const State = {
     this._state[ent].push(response.resource);
   },
   patch: async function (ent, options) {
-    const request = new Request(this.url + ent + ".php", {
+    const endpoint = ent === "thisUser" ? "users" : ent;
+
+    const request = new Request(this.url + endpoint + ".php", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: options.body,
     });
+
     const response = await fetcher(request);
+
+    if (ent === "thisUser") {
+      this._state.thisUser = response.resource;
+      PubSub.publish({
+        event: "patchThisUserRender",
+        details: this._state.thisUser,
+      });
+      return;
+    }
+
     let id = response.resource["id"];
     for (const obj of this._state[ent]) {
       if (obj["id"] === id) {
         obj = response.resource;
       }
     }
+
     //fire pubsub event for updating front end.
   },
   destruct: async function (ent, options) {
@@ -137,6 +151,7 @@ const State = {
     const resGenres = await fetcher(reqGenres);
     this._state.genres = resGenres.resource;
   },
+  updateFriends: async function () {},
 };
 
 PubSub.subscribe({
@@ -272,5 +287,23 @@ PubSub.subscribe({
     }
 
     PubSub.publish({ event: "foundFriends", details: friendArr });
+  },
+});
+
+PubSub.subscribe({
+  event: "patchThisUser",
+  listener: (newThisUserInfo) => {
+    const { username, status } = newThisUserInfo;
+    const token = localStorage.getItem("token");
+    State.patch("thisUser", {
+      body: { token, name: username, status },
+    });
+  },
+});
+
+PubSub.subscribe({
+  event: "patchThisUserRender",
+  listener: (thisUser) => {
+    PubSub.publish({ event: "foundUserInfo", details: thisUser });
   },
 });
