@@ -30,35 +30,29 @@ function renderLoginForm() {
   let wrapper = document.querySelector("#wrapper");
   wrapper.appendChild(modalContainer);
 
-  // Prevent scrolling of the underlying content while modal is open
   document.body.style.overflow = "hidden";
 
-  // Function to handle closing the modal when clicking outside the form
   const handleCloseModal = () => {
     modalContainer.remove();
-    // Restore scrolling of the underlying content
     document.body.style.overflow = "";
   };
 
-  // Add event listener to close modal when clicking outside the form
   modalContainer.addEventListener("click", (event) => {
     if (event.target === modalContainer) {
       handleCloseModal();
     }
   });
 
-  // Event listener for switching to signup form
   const switchToSignupButton =
     modalContainer.querySelector("#switch_to_signup");
   switchToSignupButton.addEventListener("click", () => {
-    handleCloseModal(); // Close the current login modal
+    handleCloseModal(); 
     PubSub.publish({
       event: "renderSignup",
       details: null,
-    }); // Render the signup form
+    }); 
   });
 
-  // Event listener for login button (you can implement login logic here)
   const loginButton = modalContainer.querySelector("#login_button");
 
   loginButton.addEventListener("click", async () => {
@@ -73,20 +67,6 @@ function renderLoginForm() {
         event: "closeLoginModal",
         listener: handleCloseModal,
       });
-      // let request = new Request("./api/login.php", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(body),
-      // });
-      // let resource = await fetcher(request);
-      // const token = resource.resource.token;
-      // localStorage.setItem("token", token);
-      // localStorage.setItem("username", username);
-      // handleCloseModal();
-      // PubSub.publish ({
-      //   event: "loginComplete",
-      //   details: { token, username }
-      // });
     }
   });
 }

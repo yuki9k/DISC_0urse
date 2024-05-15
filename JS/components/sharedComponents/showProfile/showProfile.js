@@ -75,7 +75,7 @@ function renderProfile(username) {
                 <p class="username">${username}</p>
                 <input class="change_username" placeholder="change username">
                 <p class="status">Hello! This my status :)</p>
-                <input class="change_status" placeholder="change status">
+                <input class="change_status" placeholder="change bio">
             </div>
             <div class="profile_picture"></div>
         </div>
@@ -100,6 +100,7 @@ function renderProfile(username) {
   `;
 
   const changeUsername = document.querySelector(".change_username");
+  console.log(changeUsername);
   changeUsername.classList.add("display_none");
   const changeStatus = document.querySelector(".change_status");
   changeStatus.classList.add("display_none");
@@ -125,16 +126,9 @@ function renderProfile(username) {
     if (editButton.textContent === "Save changes") {
       const token = localStorage.getItem("token");
       let body = { token: token, status: status.value, username: username.value };
-      let request = new Request("./api/users.php", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-
-      let resource = await fetcher(request);
 
       PubSub.publish({
-        event: "getThisUser",
+        event: "patchThisUser",
         details: body
       });
 
