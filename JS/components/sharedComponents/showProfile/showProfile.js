@@ -16,7 +16,7 @@ PubSub.subscribe({
   },
 });
 
-function renderFriendProfile(username) {
+function renderFriendProfile(username, status) {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
@@ -26,7 +26,7 @@ function renderFriendProfile(username) {
         <div class="upper_section">
             <div class="profile_info">
                 <p class="username">${username}</p>
-                <p class="status">Hello! This my status :)</p>
+                <p class="status">${status}</p>
             </div>
             <div class="profile_picture"></div>
         </div>
@@ -64,7 +64,7 @@ function renderFriendProfile(username) {
   });
 }
 
-function renderProfile(username) {
+function renderProfile(username, status) {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
@@ -75,7 +75,7 @@ function renderProfile(username) {
             <div class="profile_info">
                 <p class="username">${username}</p>
                 <input class="change_username" placeholder="change username">
-                <p class="status">Hello! This my status :)</p>
+                <p class="status">${status}</p>
                 <input class="change_status" placeholder="change status">
             </div>
             <div class="profile_picture"></div>
@@ -122,6 +122,8 @@ function renderProfile(username) {
   editButton.addEventListener("click", async (e) => {
     let username = document.querySelector(".change_username");
     let status = document.querySelector(".change_status");
+
+    const body = {username: username, status: status}
 
     if (editButton.textContent === "Save changes") {
       const token = localStorage.getItem("token");

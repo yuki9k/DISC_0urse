@@ -71,7 +71,7 @@ PubSub.subscribe({
       buttons_container.addEventListener("click", (e) => {
         PubSub.publish({
           event: "renderProfileInfo",
-          details: { username: details.username },
+          details: { username: details.username, status: details.status },
         });
       });
     }
