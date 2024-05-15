@@ -127,6 +127,15 @@ function renderProfile(username, status) {
     if (editButton.textContent === "Save changes") {
       const token = localStorage.getItem("token");
 
+      prompt("Write your password for changing info")
+      const userPassword = prompt.value;
+
+      PubSub.publish ({
+        event: "confirmPassword",
+        details: userPassword
+      
+      })
+
       PubSub.publish({
         event: "patchThisUser",
         details: body
