@@ -1,6 +1,7 @@
 import { PubSub } from "./PubSub.js";
 import { fetcher } from "./helpFunctions.js";
 
+
 const State = {
   url: "http://localhost:8080/",
   _state: {},
@@ -16,7 +17,7 @@ const State = {
         //throw error 
     }
     //request okayed push new entity to state.
-    _state[ent].push(response.resource);
+    this._state[ent].push(response.resource);
 },
 patch: async function (ent, options){
     const request = new Request(this.url + ent + ".php", {
@@ -26,7 +27,7 @@ patch: async function (ent, options){
     });
     const response = await fetcher(request);
     let id = response.resource["id"];
-    for(const obj of _state[ent]){
+    for(const obj of this._state[ent]){
         if(obj["id"] === id){
             obj = response.resource;
         }
@@ -34,7 +35,6 @@ patch: async function (ent, options){
     //fire pubsub event for updating front end.
 },
 destruct: async function (ent, options){
-    const url = "http://localhost:8080/";
     
     const request = new Request(this.url + ent + ".php", {
         method: "DELETE",
@@ -43,13 +43,48 @@ destruct: async function (ent, options){
     });
     const response = await fetcher(request);
     let id = response.resource["id"];
-    for(const [i, obj] of _state[ent].entries()){
+    for(const [i, obj] of this._state[ent].entries()){
         if(obj["id"] === id){
-            _state[ent].splice(i, 1);
+            this._state[ent].splice(i, 1);
         }
     }
     //fire pubsub event for updating front end.
-}
+	},
+	getCurretUser: async function (){
+		if(!this.thisUser){
+			return "no current user";
+		}
+		return this.thisUser;
+	},
+	getAllUsersInRoom: async function(options){
+		const request = new Request(this.url + "private.php?id=" + options.id, {
+			method: "GET",
+			headers: {"Content-Type": "application/json"}
+		});
+		const response = await fetcher(request);
+		let users = response.resource;
+		for(user of users){
+			if(!this._state["users"].includes(user)){
+				this._state["users"].push(user);
+			}
+		}
+		return users;
+	},
+	getUsersPosts: async function(options){
+		const request = new Request(this.url + "posts.php?userID=" + options.id, {
+			method: "GET",
+			headers: {"Content-Type": "application/json"}
+		});
+		const response = await fetcher(request);
+		let posts = response.resource;
+		for(post of posts){
+			if(!this._state["posts"].includes(post)){
+				this._state["posts"].push(post);
+			}
+		}
+		return posts;
+	}
+
 };
 
 PubSub.subscribe({

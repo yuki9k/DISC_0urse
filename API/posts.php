@@ -36,7 +36,7 @@ if($requestMethod == "GET"){//Get posts
         }
     }
     if(empty($posts)){
-        sendError(400, "no games found");
+        sendError(400, "no posts found");
     }
     send(200, $posts);
 }
