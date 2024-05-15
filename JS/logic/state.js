@@ -18,37 +18,37 @@ const State = {
     }
     //request okayed push new entity to state.
     this._state[ent].push(response.resource);
-},
-patch: async function (ent, options){
-    const request = new Request(this.url + ent + ".php", {
-        method: "PATCH",
-        headers: {"Content-Type": "application/json"},
-        body: options.body
-    });
-    const response = await fetcher(request);
-    let id = response.resource["id"];
-    for(const obj of this._state[ent]){
-        if(obj["id"] === id){
-            obj = response.resource;
-        }
-    }
-    //fire pubsub event for updating front end.
-},
-destruct: async function (ent, options){
-    
-    const request = new Request(this.url + ent + ".php", {
-        method: "DELETE",
-        headers: {"Content-Type": "application/json"},
-        body: options.body
-    });
-    const response = await fetcher(request);
-    let id = response.resource["id"];
-    for(const [i, obj] of this._state[ent].entries()){
-        if(obj["id"] === id){
-            this._state[ent].splice(i, 1);
-        }
-    }
-    //fire pubsub event for updating front end.
+	},
+	patch: async function (ent, options){
+			const request = new Request(this.url + ent + ".php", {
+					method: "PATCH",
+					headers: {"Content-Type": "application/json"},
+					body: options.body
+			});
+			const response = await fetcher(request);
+			let id = response.resource["id"];
+			for(const obj of this._state[ent]){
+					if(obj["id"] === id){
+							obj = response.resource;
+					}
+			}
+			//fire pubsub event for updating front end.
+	},
+	destruct: async function (ent, options){
+			
+		const request = new Request(this.url + ent + ".php", {
+				method: "DELETE",
+				headers: {"Content-Type": "application/json"},
+				body: options.body
+		});
+		const response = await fetcher(request);
+		let id = response.resource["id"];
+		for(const [i, obj] of this._state[ent].entries()){
+				if(obj["id"] === id){
+						this._state[ent].splice(i, 1);
+				}
+		}
+		//fire pubsub event for updating front end.
 	},
 	getCurretUser: async function (){
 		if(!this.thisUser){
@@ -62,7 +62,17 @@ destruct: async function (ent, options){
 			headers: {"Content-Type": "application/json"}
 		});
 		const response = await fetcher(request);
-		let users = response.resource;
+		let room = response.resource;
+		let roomUserIDs = room["users"];
+		let users = [];
+		for(user of roomUserIDs){
+			const request = new Request(this.url + "users.php?id=" + user, {
+				method: "GET",
+				headers: {"Content-Type": "application/json"}
+			});
+			const response = await fetcher(request);
+			users.push(response.resource);
+		}
 		for(user of users){
 			if(!this._state["users"].includes(user)){
 				this._state["users"].push(user);
@@ -84,7 +94,6 @@ destruct: async function (ent, options){
 		}
 		return posts;
 	}
-
 };
 
 PubSub.subscribe({
