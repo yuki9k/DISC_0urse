@@ -154,6 +154,7 @@ PubSub.subscribe({
     });
 
     const resToken = await fetcher(reqToken);
+    console.log(resToken);
     if (!resToken.success.ok) {
       return;
     } else {
