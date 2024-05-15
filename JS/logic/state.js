@@ -2,7 +2,7 @@ import { PubSub } from "./PubSub.js";
 import { fetcher } from "./helpFunctions.js";
 
 const State = {
-  url: "http://localhost:8080/",
+  url: "http://localhost:8080/api/",
   _state: {},
   post: async function (ent, options) {
     const request = new Request(this.url + ent + ".php", {
@@ -142,7 +142,7 @@ const State = {
 PubSub.subscribe({
   event: "userLogin",
   listener: async () => {
-    const URL = "http://localhost:8080/";
+    const URL = "http://localhost:8080/api/";
 
     // Gets token
     const username = null;
@@ -196,7 +196,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "renderHomepage",
   listener: async () => {
-    const URL = "http://localhost:8080/";
+    const URL = "http://localhost:8080/api/";
 
     // Get public users
     const reqUsers = new Request(URL + "users.php", {
