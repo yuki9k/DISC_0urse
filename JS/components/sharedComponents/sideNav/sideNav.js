@@ -10,6 +10,28 @@ PubSub.subscribe({
   },
 });
 
+PubSub.subscribe({
+  event: "renderSideNavFriends",
+  listener: () => {
+    PubSub.publish({
+      event: "getFriends",
+      details: null,
+    });
+
+    PubSub.subscribe({
+      event: "foundFriends",
+      listener: (friends) => {
+        const parent = document.querySelector(".dropdown");
+        const icon = document.querySelector(".menu_icon_container");
+
+        for (let friend of friends) {
+          renderFriends(parent, icon, friend);
+        }
+      },
+    });
+  },
+});
+
 function renderDropdownItems(parent, icon) {
   const friendsItem = document.createElement("div");
   friendsItem.classList.add("dropdown_item");
@@ -23,20 +45,6 @@ function renderDropdownItems(parent, icon) {
     <div class="dropdown_friends"></div>
   `;
   parent.appendChild(friendsItem);
-
-  PubSub.publish({
-    event: "getFriends",
-    details: null,
-  });
-
-  PubSub.subscribe({
-    event: "foundFriends",
-    listener: (friends) => {
-      for (let friend of friends) {
-        renderFriends(parent, icon, friend);
-      }
-    },
-  });
 
   const roomsItem = document.createElement("div");
   roomsItem.classList.add("dropdown_item_rooms");
