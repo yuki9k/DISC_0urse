@@ -1,4 +1,5 @@
 import { PubSub } from "../../../logic/PubSub.js";
+import { fetcher } from "../../../logic/helpFunctions.js";
 
 PubSub.subscribe({
   event: "renderAddedFriends",
@@ -36,10 +37,25 @@ function renderAddedFriends() {
 
   createButton.addEventListener("click", (e) => {
     const genre = document.querySelector(".choose_genre");
-    const theme = document.querySelector(".choose_theme");
-    PubSub.publish({
-      event: "createNewRoom",
-      details: { genre: genre.value, theme: theme.value },
-    });
+    const style = document.querySelector(".choose_theme");
+
+    const token = localStorage.getItem("token");
+    const name = document.querySelector(".input_room_name");
+    
+    const body = { token: token, genre: genre.value, style: style.value, name: name.value, users: [1] };
+    const request = new Request ("./api/private.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    })
+
+    let resource = fetcher(request);
+
+
+    // Pubsub for later
+    // PubSub.publish({
+    //   event: "createNewRoom",
+    //   details: { genre: genre.value, theme: theme.value },
+    // });
   });
 }
