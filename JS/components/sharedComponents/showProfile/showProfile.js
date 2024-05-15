@@ -4,14 +4,15 @@ import { PubSub } from "../../../logic/PubSub.js";
 PubSub.subscribe({
   event: "renderFriendProfile",
   listener: (details) => {
-    renderFriendProfile(details.name);
+    renderFriendProfile(details.username, details.status);
   },
 });
 
 PubSub.subscribe({
   event: "renderProfileInfo",
   listener: (details) => {
-    renderProfile(details.name);
+    console.log("your details:", details);
+    renderProfile(details.username, details.status);
   },
 });
 
@@ -124,17 +125,9 @@ function renderProfile(username) {
 
     if (editButton.textContent === "Save changes") {
       const token = localStorage.getItem("token");
-      let body = { token: token, status: status.value, username: username.value };
-      let request = new Request("./api/users.php", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-
-      let resource = await fetcher(request);
 
       PubSub.publish({
-        event: "getThisUser",
+        event: "patchThisUser",
         details: body
       });
 
@@ -142,7 +135,7 @@ function renderProfile(username) {
         event: "foundUserInfo",
         listener: (details) => {
           handleCloseModal();
-          renderProfile(details.username);
+          renderProfile(details.name, details.status);
         }
       })
 
