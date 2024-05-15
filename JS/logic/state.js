@@ -189,6 +189,7 @@ PubSub.subscribe({
       details: {
         token: localStorage.getItem("token"),
         username: State._state.thisUser.name,
+        status: State._state.thisUser.status,
       },
     });
     console.log(State._state);
