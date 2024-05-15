@@ -2,10 +2,54 @@ import { PubSub } from "./PubSub.js";
 import { fetcher } from "./helpFunctions.js";
 
 const State = {
+  url: "http://localhost:8080/",
   _state: {},
-  patch: async function () {},
-  post: async function () {},
-  delete: async function () {},
+	post: async function (ent, options){
+    const request = new Request(this.url + ent + ".php", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: options.body
+    });
+    const response = await fetcher(request);
+
+    if(!response.ok){
+        //throw error 
+    }
+    //request okayed push new entity to state.
+    _state[ent].push(response.resource);
+},
+patch: async function (ent, options){
+    const request = new Request(this.url + ent + ".php", {
+        method: "PATCH",
+        headers: {"Content-Type": "application/json"},
+        body: options.body
+    });
+    const response = await fetcher(request);
+    let id = response.resource["id"];
+    for(const obj of _state[ent]){
+        if(obj["id"] === id){
+            obj = response.resource;
+        }
+    }
+    //fire pubsub event for updating front end.
+},
+destruct: async function (ent, options){
+    const url = "http://localhost:8080/";
+    
+    const request = new Request(this.url + ent + ".php", {
+        method: "DELETE",
+        headers: {"Content-Type": "application/json"},
+        body: options.body
+    });
+    const response = await fetcher(request);
+    let id = response.resource["id"];
+    for(const [i, obj] of _state[ent].entries()){
+        if(obj["id"] === id){
+            _state[ent].splice(i, 1);
+        }
+    }
+    //fire pubsub event for updating front end.
+}
 };
 
 PubSub.subscribe({
