@@ -241,3 +241,22 @@ PubSub.subscribe({
     // console.log(_state);
   },
 });
+
+PubSub.subscribe({
+  event: "getThisUser",
+  listener: async () => {
+    State.getCurrentUser();
+  },
+});
+
+PubSub.subscribe({
+  event: "getFriends",
+  listener: async () => {
+    const friendIds = State.getFriendIds();
+    const friendArr = [];
+    for (const friendId of friendIds) {
+      friendArr.push(State.getExternalUser(friendId));
+    }
+    PubSub.publish({ event: "foundFriends", details: friendArr });
+  },
+});
