@@ -1,5 +1,5 @@
 import * as signup from "../signup/signup.js";
-import { fetcher } from "../../../logic/helpFunctions.js"
+import { fetcher } from "../../../logic/helpFunctions.js";
 import { PubSub } from "../../../logic/PubSub.js";
 
 PubSub.subscribe({
@@ -68,22 +68,25 @@ function renderLoginForm() {
     let body = { name: username, password: password };
 
     if (username.length > 1 && password.length > 1) {
-      let request = new Request("./api/login.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
+      PubSub.publish({ event: "userLogin", details: body });
+      PubSub.subscribe({
+        event: "closeLoginModal",
+        listener: handleCloseModal,
       });
-
-      let resource = await fetcher(request);
-      const token = resource.resource.token;
-      localStorage.setItem("token", token);
-      console.log(token);
-      handleCloseModal();
-
-      PubSub.publish ({
-        event: "loginComplete",
-        details: token
-      });
+      // let request = new Request("./api/login.php", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(body),
+      // });
+      // let resource = await fetcher(request);
+      // const token = resource.resource.token;
+      // localStorage.setItem("token", token);
+      // localStorage.setItem("username", username);
+      // handleCloseModal();
+      // PubSub.publish ({
+      //   event: "loginComplete",
+      //   details: { token, username }
+      // });
     }
   });
 }

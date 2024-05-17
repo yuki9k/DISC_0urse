@@ -32,3 +32,18 @@ PubSub.subscribe({
     event: "renderRoomTop",
     listener: renderRoomTop
 });
+
+
+PubSub.subscribe({
+    event: "addRoomTopAnimation",
+    listener:(detail) => {
+        const roomTop = document.querySelector("#room_top");
+        const albumContainer = document.querySelector("#album_container");
+        const albumTracks = document.querySelector("#album_tracks_container");
+
+        roomTop.classList[detail]("makeSmall");
+        albumContainer.classList[detail]("makeSmall");           
+        albumTracks.classList[detail]("display_none");
+    }
+});
+

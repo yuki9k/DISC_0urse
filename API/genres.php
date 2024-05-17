@@ -22,12 +22,16 @@ if ($requestMethod == "POST") {
             $genreObject["albumImages"][0]["url"],
             false
         );
-        file_put_contents("db/albumPics/{$genreName}.jpeg", $albumImageFile);
+        $imageFileName = str_replace(" ", "_", strtolower($genreName));
+        file_put_contents(
+            "db/albumPics/{$imageFileName}.jpeg",
+            $albumImageFile
+        );
     }
 }
 if ($requestMethod == "GET") {
     //this method sends genre information to the client.
-    $DBinfo = getDatabase("genres");
+    $DBInfo = getDatabase("genres");
     if (!$DBInfo) {
         sendError("genre DB empty");
     }

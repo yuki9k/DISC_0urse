@@ -11,6 +11,8 @@ PubSub.subscribe({
 function renderCreate () {
     let main = document.createElement("main");
     main.className = "main_container_create_room";
+    let wrapper = document.querySelector("#wrapper");
+    wrapper.innerHTML = "";
     wrapper.appendChild(main);
 
     main.innerHTML = `
@@ -25,22 +27,22 @@ function renderCreate () {
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
                             <option>Choose genre</option>
-                            <option>Rock</option>  
-                            <option>HipHop</option>  
-                            <option>Jazz</option>  
-                            <option>Blues</option>  
-                            <option>Country</option>  
-                            <option>Pop</option>  
+                            <option value="Pop">Pop</option>  
+                            <option value="Rock">Rock</option>  
+                            <option value="Singer Songwriter">Singer & Songwriter</option>  
+                            <option value="Folk">Folk</option>  
+                            <option value="R&B">R&B</option>  
+                            <option value="Post Punk">Post Punk</option>  
                         </select> 
                     <p class="room_theme">Theme</p>
                         <select class="choose_theme">  
                             <option>Choose theme</option>  
-                            <option>Theme One</option>  
-                            <option>Theme Two</option>  
-                            <option>Theme Three</option>  
-                            <option>Theme Four</option>  
-                            <option>Theme Five</option>  
-                            <option>Theme Six</option>  
+                            <option value="one">Theme One</option>  
+                            <option value="two">Theme Two</option>  
+                            <option value="three">Theme Three</option>  
+                            <option value="four">Theme Four</option>  
+                            <option value="five">Theme Five</option>  
+                            <option value="six">Theme Six</option>  
                         </select> 
                 </div>
                 <div class="placeholders">
@@ -54,6 +56,12 @@ function renderCreate () {
             <div class="underline"></div>
         </div>
     `;
+
+    const genre = document.querySelector(".choose_genre");
+    genre.addEventListener("click", (e) => {
+        const genrePlaceholder = document.querySelector(".album_title_in_div");
+        genrePlaceholder.textContent = genre.value;
+    })
 
     PubSub.publish({
         event: "renderAddedFriends",

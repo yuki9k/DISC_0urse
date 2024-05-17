@@ -58,8 +58,6 @@ PubSub.subscribe({
 PubSub.subscribe({
     event: "close|post_preview",
     listener: () => {
-        console.log("cum")
-
         const posts_preview = document.querySelector(".slide.current .posts_preview");
         posts_preview.classList.toggle("closed");
     }

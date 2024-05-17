@@ -2,6 +2,15 @@
 require_once("auxFunctions.php");
 $allowedMethods = ["GET", "POST", "PATCH", "DELETE"];
 
+if ($_SERVER["REQUEST_METHOD"] == "OPTIONS") {
+    header("Access-Control-Allow-Headers: *");
+    header("Access-Control-Allow-Methods: *");
+    header("Access-Control-Allow-Origin: *");
+    exit();
+} else {
+    header("Access-Control-Allow-Origin: *");
+}
+
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 if(!in_array($requestMethod, $allowedMethods)){
     sendError(400, "METHOD NOT ALLOWED");
@@ -18,8 +27,15 @@ if($requestMethod == "GET"){
             }
         }
     }
+    if(isset($requestData["id"])){
+        foreach($rooms as $index => $room){
+            if($room["id"] == $requestData["id"]){
+                send(200, $room);
+            }
+        }
+    }
     if(empty($rooms)){
-        sendError(400, "no rooms found");
+        sendError(404, "no rooms found");
     }
     send(200, $rooms);
 }
@@ -27,7 +43,7 @@ if($requestMethod == "POST"){
     if(empty($requestData)){
         sendError(400, "empty request");
     }
-    $reqPostKeys = ["token", "style", "genre", "users"];
+    $reqPostKeys = ["token", "style", "genre", "users", "name"];
     if(requestContainsAllKeys($requestData, $reqPostKeys) == false){
         send(400, "missing keys");
     }
@@ -35,7 +51,7 @@ if($requestMethod == "POST"){
     if(!$user){
         sendError(404, "user not found");
     }
-    $postKeys = ["hostID", "style", "genre", "users"];
+    $postKeys = ["hostID", "style", "genre", "users", "name"];
     $requestData["hostID"] = $user["id"];
     $requestData["users"][] = $requestData["hostID"];
     unset($requestData["token"]);
