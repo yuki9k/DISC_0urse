@@ -4,15 +4,16 @@ function renderPostBox(parent, data){
     const postBox = document.createElement("li");
     parent.appendChild(postBox);
   /*   postBox.id = ""; */
-    PubSub.publish({
+    /* PubSub.publish({
         event: "getUserForPost",
         details: {
             id: data.userID
         }
-    });
+    }); */
     PubSub.subscribe({
         event: "sendUserForPost",
         listener: (details)=>{
+            console.log(details.name);
             postBox.innerHTML = `<div class="post_content_box">
                             <div class="post_top">
                                 <div class="profile_pic_name">
