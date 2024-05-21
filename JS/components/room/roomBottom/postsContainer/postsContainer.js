@@ -6,13 +6,12 @@ function renderPostsContainer(parent, data){
     postsListContainer.id = "postsListContainer";
     parent.appendChild(postsListContainer);
 
-    for(let i = 0; i < 2; i++){
-        for(let chat of data){
-            PubSub.publish({
-                event: "renderPostBox",
-                details: {"parent": postsListContainer, "data": chat}
-            });
-        }
+    
+    for(let chat of data){
+        PubSub.publish({
+            event: "renderPostBox",
+            details: {"parent": postsListContainer, "data": chat}
+        });
     }
 }
 

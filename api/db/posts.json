@@ -9,5 +9,61 @@
         ],
         "dislikedBy": [],
         "id": 3
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": 10052024,
+        "content": "Nä asså det albumet var ju typ det värsta jag har hört, bandet borde ge upp, åk hem, sluta. USCH",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 4
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": 10052024,
+        "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 5
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": 10052024,
+        "content": "Jaha okej, jag kommer till skolan så fort jag kan!",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 6
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": 10052024,
+        "content": "I wanna hear you going psycho, if you're going psycho I wanna hear. every conversation ends with you screaming, not even word just AAAH AAAAAA AAAAAAAAAAHHHHHHHHHHH",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 7
+    },
+    {
+        "userID": 1,
+        "roomID": 2,
+        "time": 10052024,
+        "content": "I GET TO KNOW MYSELF EVERYWEEKEND, AND I'M WEAK. hangovers feel good when I know it's the last one. then I feel so good that I have another one.",
+        "likedBy": [
+            2,
+            3
+        ],
+        "dislikedBy": [4],
+        "id": 8
     }
 ]

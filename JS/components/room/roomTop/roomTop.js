@@ -52,7 +52,7 @@ function renderRoomTop(parent, data){
             for(let i = 0; i < albumInfo.albumTotalTracks; i++){
                 const albumTrack = document.createElement("li");
                 albumTrack.classList.add("album_track");
-                albumTrack.textContent = i + " " + albumInfo.albumTracks[i].trackName;
+                albumTrack.textContent = (i+1) + " " + albumInfo.albumTracks[i].trackName;
                 
                 albumTracks.appendChild(albumTrack);
             }

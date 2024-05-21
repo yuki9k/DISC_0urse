@@ -4,12 +4,20 @@ function renderPostBox(parent, data){
     const postBox = document.createElement("li");
     parent.appendChild(postBox);
   /*   postBox.id = ""; */
-
-    postBox.innerHTML = `<div class="post_content_box">
+    PubSub.publish({
+        event: "getUserForPost",
+        details: {
+            id: data.userID
+        }
+    });
+    PubSub.subscribe({
+        event: "sendUserForPost",
+        listener: (details)=>{
+            postBox.innerHTML = `<div class="post_content_box">
                             <div class="post_top">
                                 <div class="profile_pic_name">
                                     <img src="">
-                                    <span id="profile_name">Gnajor</span>
+                                    <span id="profile_name">${details.name}</span>
                                 </div>
                                 <div class="post_time">10 min ago</div>
                             </div>
@@ -22,10 +30,12 @@ function renderPostBox(parent, data){
                                     <div class="negative"> - </div>
                                 </div>
                                 <div class="reaction_counter_box">
-                                    <span class="total_count">8p </span>(<span class="positive">+10</span>/<span class="negative">-2</span>)
+                                    <span class="total_count">${data.likedBy.length - data.dislikedBy.length}p </span>(<span class="positive">+${data.likedBy.length}</span>/<span class="negative">-${data.dislikedBy.length}</span>)
                                 </div>
                             </div>
                         <div>`;
+        }
+    });
 }
 
 PubSub.subscribe({

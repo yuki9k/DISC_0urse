@@ -21,24 +21,25 @@ if($requestMethod == "GET"){//Get posts
     //we find either a post based on room and user
     //token not required
     $posts = getDatabase("posts");
+    $postsToSend = [];
     if(isset($requestData["roomID"])){
         foreach($posts as $index => $post){
-            if($post["roomID"] != $requestData["roomID"]){
-                array_splice($posts, $index, 1);
+            if($post["roomID"] == $requestData["roomID"]){
+                $postsToSend[] = $post;
             }
         }
     }
     if(isset($requestData["userID"])){
         foreach($posts as $index => $post){
-            if($post["userID"] != $requestData["userID"]){
-                array_splice($posts, $index, 1);
+            if($post["userID"] == $requestData["userID"]){
+                $postsToSend[] = $post;
             }
         }
     }
-    if(empty($posts)){
+    if(empty($postsToSend)){
         sendError(400, "no posts found");
     }
-    send(200, $posts);
+    send(200, $postsToSend);
 }
 if($requestMethod == "POST"){//TOKEN REQUIRED
     if(empty($requestData)){

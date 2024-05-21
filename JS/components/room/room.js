@@ -21,11 +21,15 @@ function renderRoom(details){
             data: roomInfo
         }
     });
-
     PubSub.publish({
+        event: "getRoomPosts",
+        details: details.room
+    });
+
+/*     PubSub.publish({
         event: "renderRoomBottom",
         details: roomBottom
-    });
+    }); */
 
     PubSub.publish({
         event: "initiateHeightToTopAnimation",

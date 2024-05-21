@@ -291,6 +291,30 @@ PubSub.subscribe({
     PubSub.publish({ event: "foundFriends", details: friendArr });
   },
 });
+PubSub.subscribe({
+  event: "getUserForPost",
+  listener: async (details) => {
+    const user = await State.getExternalUser(details.id);
+    PubSub.publish({
+      event: "sendUserForPost",
+      details: user
+    })
+  }
+})
+PubSub.subscribe({
+  event: "getRoomPosts",
+  listener: async (details) => {
+    const posts = await State.getPostsFromRoom(details.id);
+    console.log(posts);
+    console.log("hej awoooo =3");
+    PubSub.publish({
+      event: "sendRoomPosts",
+      details: {
+        posts
+      }
+    })
+  }
+});
 
 PubSub.subscribe({
   event: "getRoomInfo",
@@ -311,8 +335,10 @@ PubSub.subscribe({
       });
     } else {
       //publish with private rooms
-      if(State._state.privateRooms.length > 0){
-        rooms.private = State._state.privateRooms;
+      if(typeof State._state.privateRooms === "array"){
+        if(State._state.privateRooms.length > 0){
+          rooms.private = State._state.privateRooms;
+        }
       }
       console.log(rooms);
       PubSub.publish({
