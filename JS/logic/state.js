@@ -193,6 +193,7 @@ PubSub.subscribe({
         token: localStorage.getItem("token"),
         username: State._state.thisUser.name,
         status: State._state.thisUser.status,
+        score: State._state.thisUser.score
       },
     });
   },

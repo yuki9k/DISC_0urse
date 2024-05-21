@@ -70,9 +70,10 @@ PubSub.subscribe({
       buttons_container.textContent = details.username;
 
       buttons_container.addEventListener("click", (e) => {
+        console.log(details);
         PubSub.publish({
           event: "renderProfileInfo",
-          details: { username: details.username, status: details.status },
+          details: { username: details.username, status: details.status, score: details.score },
         });
       });
     }
