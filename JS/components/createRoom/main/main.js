@@ -50,7 +50,7 @@ function renderCreate () {
                     <div class="two">
                         <p class="album_title_in_div">Genre here</p>
                     </div>
-                    <div class="create_room_album_cover"></div>
+                    <div class="create_room_album_info"></div>
                 </div>
             </div>
             <div class="underline"></div>
