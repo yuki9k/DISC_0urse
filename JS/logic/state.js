@@ -255,17 +255,27 @@ PubSub.subscribe({
     });
     const resPublicRooms = await fetcher(reqPublicRooms);
     State._state.publicRooms = resPublicRooms.resource;
-    console.log(resPublicRooms.resource);
+    console.log(State._state);
     console.log("!!!!!!");
 
-    // let requestPosts = new Request(url + "posts.php", {
-    //   method: "GET",
-    //   headers: { "Content-Type": "application/json" },
-    // });
-    // let responsePosts = await fetcher(requestPosts);
-    // _state["posts"] = responsePosts.resource;
+    let requestPosts = new Request(URL + "posts.php", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    let responsePosts = await fetcher(requestPosts);
+    State._state.posts = responsePosts.resource;
 
     // console.log(_state);
+    PubSub.publish({
+      event: "renderHomepageInfoRecived",
+      details: {
+        parent: document.querySelector("#wrapper"),
+        users: State._state.users,
+        genres: State._state.genres,
+        pubRooms: State._state.publicRooms,
+        posts: State._state.posts
+      }
+    });
     PubSub.publish({
       event: "renderHeader",
       details: null

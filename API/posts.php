@@ -29,12 +29,15 @@ if($requestMethod == "GET"){//Get posts
             }
         }
     }
-    if(isset($requestData["userID"])){
+    else if(isset($requestData["userID"])){
         foreach($posts as $index => $post){
             if($post["userID"] == $requestData["userID"]){
                 $postsToSend[] = $post;
             }
         }
+    }
+    else {
+        $postsToSend = $posts;
     }
     if(empty($postsToSend)){
         sendError(400, "no posts found");
