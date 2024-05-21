@@ -1,10 +1,12 @@
-import { PubSub } from "./PubSub.js";
+import { PubSub, PubSub } from "./PubSub.js";
 import { fetcher } from "./helpFunctions.js";
 
 const State = {
-  url: "http://localhost:8080/api/",
-  _state: {},
-  post: async function (ent, options) {
+  url: "http://localhost:8080/",
+  _state: {
+      "posts": []
+  },
+	post: async function (ent, options){
     const request = new Request(this.url + ent + ".php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -17,6 +19,11 @@ const State = {
     }
     //request okayed push new entity to state.
     this._state[ent].push(response.resource);
+
+    PubSub.publish({
+      event: "sendToPostParent",
+      details: response.resource
+    });
   },
   patch: async function (ent, options) {
     const endpoint = ent === "thisUser" ? "users" : ent;
@@ -48,33 +55,21 @@ const State = {
       }
     }
 
-    //fire pubsub event for updating front end.
-  },
-  destruct: async function (ent, options) {
-    const request = new Request(this.url + ent + ".php", {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(options.body),
+    PubSub.publish({
+      event:"renderPostLikedCounter",
+      details: response.resource
     });
-    const response = await fetcher(request);
-    let id = response.resource["id"];
-    for (const [i, obj] of this._state[ent].entries()) {
-      if (obj["id"] === id) {
-        this._state[ent].splice(i, 1);
-      }
-    }
+
     //fire pubsub event for updating front end.
   },
-  getCurrentUser: async function () {
-    if (!this._state.thisUser) {
-      return "no current user";
-    }
-    return this._state.thisUser;
-  },
-  getAllUsersInRoom: async function (options) {
-    const request = new Request(this.url + "private.php?id=" + options.id, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
+  
+  destruct: async function (ent, options){
+    const url = "http://localhost:8080/";
+    
+    const request = new Request(this.url + ent + ".php", {
+        method: "DELETE",
+        headers: {"Content-Type": "application/json"},
+        body: options.body
     });
     const response = await fetcher(request);
     let users = response.resource;
@@ -388,5 +383,20 @@ PubSub.subscribe({
       event: "renderHomepage",
       details: document.querySelector("#wrapper"),
     });
+  }
+})
+PubSub.subscribe({
+  event: "addPostItem",
+  listener: (details) => {
+    const {ent, body} = details;
+    State.post(ent, {body: body});
+  }
+})
+
+PubSub.subscribe({
+  event: "patchPostItem",
+  listener: (details) => {
+    const {ent, body} = details;
+    State.patch(ent, {body: body})
   }
 })
