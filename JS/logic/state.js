@@ -1,4 +1,4 @@
-import { PubSub, PubSub } from "./PubSub.js";
+import { PubSub } from "./PubSub.js";
 import { fetcher } from "./helpFunctions.js";
 
 const State = {
