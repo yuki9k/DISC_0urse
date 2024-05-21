@@ -46,11 +46,11 @@ function renderCreate () {
                         </select> 
                 </div>
                 <div class="placeholders">
-                    <div class="one"></div>
+                    <div class="create_room_album_cover"></div>
                     <div class="two">
                         <p class="album_title_in_div">Genre here</p>
                     </div>
-                    <div class="three"></div>
+                    <div class="create_room_album_cover"></div>
                 </div>
             </div>
             <div class="underline"></div>
@@ -61,6 +61,10 @@ function renderCreate () {
     genre.addEventListener("click", (e) => {
         const genrePlaceholder = document.querySelector(".album_title_in_div");
         genrePlaceholder.textContent = genre.value;
+        
+        const albumCover = document.querySelector(".create_room_album_cover");
+        const albumInfo = document.querySelector(".create_room_album_info");
+
     })
 
     PubSub.publish({
