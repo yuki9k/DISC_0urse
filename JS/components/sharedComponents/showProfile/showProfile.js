@@ -96,6 +96,9 @@ function renderProfile(username, status) {
         <div class="edit_container">
           <button class="edit_user">Edit information</button>
         </div>
+        <div class="logout_container">
+          <button class="logout_user">Logout</button>
+        </div>
     </div>
   `;
 
@@ -165,5 +168,13 @@ function renderProfile(username, status) {
       changeUsername.classList.toggle("display_none");
       changeStatus.classList.toggle("display_none");
     }
+  });
+
+  const logoutButton = document.querySelector(".logout_user");
+  logoutButton.addEventListener("click", () => {
+    PubSub.publish({
+      event: "userLoggedOut",
+      details: null
+    })
   });
 }

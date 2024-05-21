@@ -379,3 +379,14 @@ PubSub.subscribe({
     PubSub.publish({ event: "foundTopPosts", details: topSixPosts.reverse() });
   },
 });
+
+PubSub.subscribe({
+  event: "userLoggedOut",
+  listener: () => {
+    localStorage.removeItem("token");
+    PubSub.publish({
+      event: "renderHomepage",
+      details: document.querySelector("#wrapper"),
+    });
+  }
+})
