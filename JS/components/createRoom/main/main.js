@@ -2,20 +2,21 @@ import * as addedFriends from "../friendsIncluded/friendsIncluded.js";
 import { PubSub } from "../../../logic/PubSub.js";
 
 PubSub.subscribe({
-    event: "renderCreateRoom",
-    listener: (event) => {
-        renderCreate();
-    }
+  event: "renderCreateRoom",
+  listener: (event) => {
+    renderCreate();
+  },
 });
 
-function renderCreate () {
-    let main = document.createElement("main");
-    main.className = "main_container_create_room";
-    let wrapper = document.querySelector("#wrapper");
-    wrapper.innerHTML = "";
-    wrapper.appendChild(main);
 
-    main.innerHTML = `
+function renderCreate() {
+  let main = document.createElement("main");
+  main.className = "main_container_create_room";
+  let wrapper = document.querySelector("#wrapper");
+  wrapper.innerHTML = "";
+  wrapper.appendChild(main);
+
+  main.innerHTML = `
         <div class="container_main">
             <h2 class="create_room_title">Create new room</h2>
             <div class="room_name_container">
@@ -27,12 +28,12 @@ function renderCreate () {
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
                             <option>Choose genre</option>
-                            <option value="Pop">Pop</option>  
-                            <option value="Rock">Rock</option>  
-                            <option value="Singer Songwriter">Singer & Songwriter</option>  
-                            <option value="Folk">Folk</option>  
-                            <option value="R&B">R&B</option>  
-                            <option value="Post Punk">Post Punk</option>  
+                            <option value="Indie Pop">Pop</option>  
+                            <option value="Indie Rock">Rock</option>  
+                            <option value="Indie Singer-songwriter">Singer & Songwriter</option>  
+                            <option value="Indie Folk">Folk</option>  
+                            <option value="Indie R&b">R&B</option>  
+                            <option value="Indie Post-punk">Post Punk</option>  
                         </select> 
                     <p class="room_theme">Theme</p>
                         <select class="choose_theme">  
@@ -57,18 +58,32 @@ function renderCreate () {
         </div>
     `;
 
-    const genre = document.querySelector(".choose_genre");
-    genre.addEventListener("click", (e) => {
-        const genrePlaceholder = document.querySelector(".album_title_in_div");
-        genrePlaceholder.textContent = genre.value;
-        
-        const albumCover = document.querySelector(".create_room_album_cover");
-        const albumInfo = document.querySelector(".create_room_album_info");
+  const genre = document.querySelector(".choose_genre");
+  genre.addEventListener("change", (e) => {
+    const genrePlaceholder = document.querySelector(".album_title_in_div");
+    genrePlaceholder.textContent = genre.value;
 
-    })
+    const albumCover = document.querySelector(".create_room_album_cover");
+    const albumInfo = document.querySelector(".create_room_album_info");
 
-    PubSub.publish({
-        event: "renderAddedFriends",
-        details: null
-    });
+    // PubSub.publish({
+    //   event: "getAlbum",
+    //   details: genre.value
+    // });
+
+    // PubSub.subscribe({
+    //     event: "foundAlbum",
+    //     listener: (details) => {
+    //         console.log(details); 
+    //         albumCover.style.backgroundImage = `url("${}.jpg")`;
+    //     }
+    //   })
+  });
+
+
+
+  PubSub.publish({
+    event: "renderAddedFriends",
+    details: null,
+  });
 }

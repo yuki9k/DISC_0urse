@@ -361,9 +361,19 @@ PubSub.subscribe({
   event: "getAlbums",
   listener: () => {
     const albums = State._state.genres;
-    PubSub.publish({ listener: "foundAlbums", details: albums });
+    PubSub.publish({ event: "foundAlbums", details: albums });
   },
 });
+
+// Returnerar specifikt album
+// PubSub.subscribe({
+//   event: "getAlbum",
+//   listener: (details) => {
+//     const genre = details;
+//     console.log(State._state.genres[genre]);
+//     PubSub.publish({ event: "foundAlbum", details: albums });
+//   },
+// });
 
 PubSub.subscribe({
   event: "getTopPosts",

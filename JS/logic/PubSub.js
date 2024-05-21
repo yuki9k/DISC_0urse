@@ -13,6 +13,7 @@ export const PubSub = {
 
     publish: function (data) {
         const {event, details} = data;
+
         if (listeners[event] === undefined) {
             return;
         }
