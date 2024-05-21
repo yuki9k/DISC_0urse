@@ -61,8 +61,6 @@ const dataBase = {
         {
             "content": "Fusce cursus velit in lectus lobortis gravida."
         },
-        
-
     ],
 
     "images": [

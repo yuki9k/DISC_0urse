@@ -81,17 +81,17 @@ if($requestMethod == "PATCH"){
     }
     else{sendError(400, "missing token or id of post");}
 
-    if(in_array($requestData["id"], $post["likedBy"])){
+    if(in_array($user["id"], $post["likedBy"])){
         //remove like
         foreach($post["likedBy"] as $index => $like){
-            if($like == $requestData["id"]){
+            if($like == $user["id"]){
                 array_splice($post["likedBy"], $index, 1);
             }
         }
-    } else if(in_array($requestData["id"], $post["dislikedBy"])){
+    } else if(in_array($user["id"], $post["dislikedBy"])){
         //remove dislike
         foreach($post["dislikedBy"] as $index => $like){
-            if($like == $requestData["id"]){
+            if($like == $user["id"]){
                 array_splice($post["dislikedBy"], $index, 1);
             }
         }

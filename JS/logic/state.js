@@ -3,7 +3,9 @@ import { fetcher } from "./helpFunctions.js";
 
 const State = {
   url: "http://localhost:8080/",
-  _state: {},
+  _state: {
+      "posts": []
+  },
 	post: async function (ent, options){
     const request = new Request(this.url + ent + ".php", {
         method: "POST",
@@ -16,8 +18,14 @@ const State = {
         //throw error 
     }
     //request okayed push new entity to state.
-    _state[ent].push(response.resource);
-},
+    this._state[ent].push(response.resource);
+
+
+    PubSub.publish({
+      event: "sendToPostParent",
+      details: response.resource
+    });
+  },
 patch: async function (ent, options){
     const request = new Request(this.url + ent + ".php", {
         method: "PATCH",
@@ -26,13 +34,18 @@ patch: async function (ent, options){
     });
     const response = await fetcher(request);
     let id = response.resource["id"];
-    for(const obj of _state[ent]){
+    for(let obj of this._state[ent]){
         if(obj["id"] === id){
             obj = response.resource;
         }
     }
+
+    PubSub.publish({
+      event:"renderPostLikedCounter",
+      details: response.resource
+    });
     //fire pubsub event for updating front end.
-},
+  },
 destruct: async function (ent, options){
     const url = "http://localhost:8080/";
     
@@ -154,3 +167,19 @@ PubSub.subscribe({
     // console.log(_state);
   },
 });
+
+PubSub.subscribe({
+  event: "addPostItem",
+  listener: (details) => {
+    const {ent, body} = details;
+    State.post(ent, {body: body});
+  }
+})
+
+PubSub.subscribe({
+  event: "patchPostItem",
+  listener: (details) => {
+    const {ent, body} = details;
+    State.patch(ent, {body: body})
+  }
+})
