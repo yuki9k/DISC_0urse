@@ -132,13 +132,12 @@ function renderFriends(dropdown, icon, friend) {
     menuIcon.classList.toggle("change");
     parent.classList.toggle("active");
 
-    console.log(friend.id);
-
     PubSub.publish({
       event: "renderFriendProfile",
       details: {
         username: friend.name,
         status: friend.status,
+        score: friend.score
       }
     });
 
