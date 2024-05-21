@@ -195,7 +195,6 @@ PubSub.subscribe({
         status: State._state.thisUser.status,
       },
     });
-    console.log(State._state);
   },
 });
 

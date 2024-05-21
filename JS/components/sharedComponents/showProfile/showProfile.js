@@ -4,6 +4,7 @@ import { PubSub } from "../../../logic/PubSub.js";
 PubSub.subscribe({
   event: "renderFriendProfile",
   listener: (details) => {
+    console.log(details);
     renderFriendProfile(details.username, details.status);
   },
 });

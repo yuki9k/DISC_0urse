@@ -126,11 +126,21 @@ function renderFriends(dropdown, icon, friend) {
       <div class="friend_username">${friend.name}</div> 
     `;
 
-  friendDom.addEventListener("click", () => {
+  friendDom.addEventListener("click", (e) => {
     const menuIcon = icon;
     const parent = dropdown;
     menuIcon.classList.toggle("change");
     parent.classList.toggle("active");
+
+    console.log(friend.id);
+
+    PubSub.publish({
+      event: "renderFriendProfile",
+      details: {
+        username: friend.name,
+        status: friend.status,
+      }
+    });
 
     PubSub.subscribe({
       event: "foundUserInfo",
