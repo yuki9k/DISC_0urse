@@ -1,13 +1,13 @@
 import {PubSub} from "../../../../logic/PubSub.js";
+import * as state from "../../../../logic/state.js";
 
 function renderAddPostButton(parent){
     parent.innerHTML = `<div id="add_post_button">
-                            <div id="plus_sign">
-                                <div id="vertical_line"></div>
-                                <div id="horisontal_line"></div>
-                            </div>
+                            <div id="plus_sign">+</div>
                             <textarea id="post_input"></textarea>
-                            <div id="send_post"></div>
+                            <div id="custom">
+                                <button id="send_post">send</button> 
+                            </div>
                         </div>`;
 
     const plusSign = parent.querySelector("#plus_sign");
@@ -15,44 +15,50 @@ function renderAddPostButton(parent){
     const input = parent.querySelector("#post_input");
     const sendPost = parent.querySelector("#send_post");
 
-    addPostButton.addEventListener("click", () => {
+    plusSign.addEventListener("click", (event) => {
         plusSign.classList.add("undisplay");
         addPostButton.classList.add("border_rad_change");
-    });
+        input.classList.add("display");
+        sendPost.classList.add("display");
 
-    window.addEventListener("click", function onWindowClickCloseInput(event){
-        if(event.target !== addPostButton && event.target !== input && event.target !== sendPost){
-            addPostButton.classList.remove("border_rad_change");
-            plusSign.classList.remove("undisplay");
-        }  
-    }, {ones: true});
- 
 
-    addPostButton.addEventListener("transitionend", () => {
-        if(input.className === "display"){
-            input.classList.remove("display");
-            plusSign.classList.remove("display_none");
-            sendPost.classList.remove("display");
+        PubSub.publish({
+            event: "moveFilterAddPostContainer",
+            details: "add"
+        })
 
-            PubSub.publish({
-                event: "moveFilterAddPostContainer",
-                details: "remove"
-            })
-        }
-        else{
-            input.classList.add("display");
-            plusSign.classList.add("display_none");
-            sendPost.classList.add("display");
+        window.addEventListener("click", function onWindowClickCloseInput(event){
 
-            PubSub.publish({
-                event: "moveFilterAddPostContainer",
-                details: "add"
-            })
-        }
+            if(event.target !== plusSign && event.target !== input && event.target && addPostButton){
+                plusSign.classList.remove("undisplay");
+                addPostButton.classList.remove("border_rad_change");
+                input.classList.remove("display");
+                sendPost.classList.remove("display");
+
+                PubSub.publish({
+                    event: "moveFilterAddPostContainer",
+                    details: "remove"
+                })
+            }
+        });
     });
 
     sendPost.addEventListener("click", () => {
+        const inputValue = input.value;
 
+        const body = {
+            "token": localStorage.getItem("token"),
+            "roomID": 2,
+            "time": "time",
+            "content": inputValue
+        }
+
+        PubSub.publish({
+            event: "addPostItem",
+            details: {ent: "posts", "body": JSON.stringify(body)}
+        });
+
+        input.value = "";
     });
 }
 
