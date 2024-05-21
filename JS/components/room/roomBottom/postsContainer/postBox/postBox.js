@@ -44,7 +44,7 @@ function renderPostBox(parent, data){
 
         PubSub.publish({
             event: "patchPostItem",
-            details: {"ent": "posts", "body": JSON.stringify(body)}
+            details: {"ent": "posts", "body": body}
         });
     });
 
@@ -57,7 +57,7 @@ function renderPostBox(parent, data){
 
         PubSub.publish({
             event: "patchPostItem",
-            details: {"ent": "posts", "body": JSON.stringify(body)}
+            details: {"ent": "posts", "body": body}
         });
     });
 }

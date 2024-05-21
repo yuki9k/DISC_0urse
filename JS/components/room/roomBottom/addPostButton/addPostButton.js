@@ -55,11 +55,8 @@ function renderAddPostButton(parent){
 
         PubSub.publish({
             event: "addPostItem",
-            details: {ent: "posts", "body": JSON.stringify(body)}
+            details: {ent: "posts", "body": body}
         });
-
-        console.log(body)
-
         input.value = "";
     });
 }

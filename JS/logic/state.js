@@ -28,8 +28,6 @@ const State = {
 
   patch: async function (ent, options) {
     const endpoint = ent === "thisUser" ? "users" : ent;
-    console.log(options);
-    console.log(JSON.stringify(options.body));
 
     const request = new Request(this.url + endpoint + ".php", {
       method: "PATCH",
@@ -38,7 +36,6 @@ const State = {
     });
 
     const response = await fetcher(request);
-    console.log(response.resource);
 
     if (ent === "thisUser") {
       this._state.thisUser = response.resource;
@@ -50,7 +47,7 @@ const State = {
     }
 
     let id = response.resource["id"];
-    for (const obj of this._state[ent]) {
+    for (let obj of this._state[ent]) {
       if (obj["id"] === id) {
         obj = response.resource;
       }
