@@ -153,7 +153,7 @@ function renderProfile(username, status, score) {
             event: "foundUserInfo",
             listener: (details) => {
               handleCloseModal();
-              renderProfile(details.name, details.status);
+              renderProfile(details.name, details.status, details.score);
             },
           });
         },
