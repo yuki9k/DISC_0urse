@@ -302,6 +302,20 @@ PubSub.subscribe({
   },
 });
 PubSub.subscribe({
+  event: "renderPostBox|getUserData",
+  listener: async (details) => {
+    console.log(details);
+    const user = await State.getExternalUser(details.data.userID);
+    PubSub.publish({
+      event: "renderPostBox",
+      details: {
+        chat: details,
+        user: user
+      }
+    });
+  }
+});
+PubSub.subscribe({
   event: "getUserForPost",
   listener: async (details) => {
     const user = await State.getExternalUser(details.id);

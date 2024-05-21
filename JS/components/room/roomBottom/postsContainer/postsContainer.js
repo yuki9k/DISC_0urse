@@ -11,7 +11,7 @@ function renderPostsContainer(parent, data){
     for(let chat of data){
         
         PubSub.publish({
-            event: "renderPostBox",
+            event: "renderPostBox|getUserData",
             details: {"parent": postsListContainer, "data": chat}
         });
     }
