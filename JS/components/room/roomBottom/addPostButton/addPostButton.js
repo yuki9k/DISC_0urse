@@ -58,6 +58,8 @@ function renderAddPostButton(parent){
             details: {ent: "posts", "body": JSON.stringify(body)}
         });
 
+        console.log(body)
+
         input.value = "";
     });
 }

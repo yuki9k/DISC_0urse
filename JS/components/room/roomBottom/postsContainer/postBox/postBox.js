@@ -4,7 +4,7 @@ import * as state from "../../../../../logic/state.js";
 function renderPostBox(parent, data){
     const postBox = document.createElement("li");
     parent.appendChild(postBox);
-    postBox.id = "post_"+ data.id; 
+    postBox.id = "post_" + data.id; 
 
     const likedCount = data.likedBy.length;
     const dislikedCount = data.dislikedBy.length;
@@ -39,7 +39,7 @@ function renderPostBox(parent, data){
         const body = {
             "token": localStorage.getItem("token"),
             "id": data.id,
-            "like": null
+            "like": "like"
         }
 
         PubSub.publish({
@@ -52,7 +52,7 @@ function renderPostBox(parent, data){
         const body = {
             "token": localStorage.getItem("token"),
             "id": data.id,
-            "dislike": null
+            "dislike": "dislike"
         }
 
         PubSub.publish({

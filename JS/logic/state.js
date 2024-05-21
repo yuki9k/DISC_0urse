@@ -2,7 +2,7 @@ import { PubSub } from "./PubSub.js";
 import { fetcher } from "./helpFunctions.js";
 
 const State = {
-  url: "http://localhost:8080/",
+  url: "http://localhost:8080/api/",
   _state: {
       "posts": []
   },
@@ -25,6 +25,7 @@ const State = {
       details: response.resource
     });
   },
+
   patch: async function (ent, options) {
     const endpoint = ent === "thisUser" ? "users" : ent;
     console.log(options);
@@ -64,7 +65,7 @@ const State = {
   },
   
   destruct: async function (ent, options){
-    const url = "http://localhost:8080/";
+    const url = "http://localhost:8080/api/";
     
     const request = new Request(this.url + ent + ".php", {
         method: "DELETE",
