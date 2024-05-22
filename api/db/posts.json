@@ -133,5 +133,170 @@
         ],
         "dislikedBy": [],
         "id": 15
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "Testing sending a post",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 16
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "sajdfl\u00f6kjdsalfjlksdfjlksdajflkasjdflksjadfl\u00f6kjsdalkfjsal\u00f6dfjalsdj",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 17
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "this is a new post",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 18
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "sadfjjsladfjlsk",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 19
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "sdf",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 20
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "sdafjlksajdflk",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 21
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "sadfjkl\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6\u00f6 asdkljf\u00f6lsakf",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 22
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "sadfjlk\u00f6sjadf\u00f6l",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 23
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "dfas",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 24
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "asdlflkasdflksadjfl sadlkfj asldlf dlks\u00f6aj fladf lasdjf las\u00f6d jksdla\u00f6fj las\u00f6 jsdaflk dsalkfkj jasklfd slafj  dsflak fdslak fd",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 25
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "dsafklasjdflafjd\u00f6",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 26
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "asdfjk\u00f6lsadfj",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 27
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "aslj\u00f6fd",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 28
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "asdf",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 29
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "dsaf",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 30
     }
 ]
