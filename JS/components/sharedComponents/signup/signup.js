@@ -16,7 +16,7 @@ function renderSignupForm() {
     <div class="modal_content">
       <div class="form_container">
         <div id="form_header">
-          <p id="form_title">Sign Up</p>
+          <p id="form_title">DISC_ourse</p>
           <p id="form_text">Create a new account</p>
         </div>
         <input id="signup_user" type="text" placeholder="Username">

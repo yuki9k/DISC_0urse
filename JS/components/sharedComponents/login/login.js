@@ -16,7 +16,7 @@ function renderLoginForm() {
     <div class="modal_content">
       <div class="form_container">
         <div id="form_header">
-          <p id="form_title">Login</p>
+          <p id="form_title">DISC_ourse</p>
           <p id="form_text">Welcome back!</p>
         </div>
         <input id="login_user" type="text" placeholder="Username">

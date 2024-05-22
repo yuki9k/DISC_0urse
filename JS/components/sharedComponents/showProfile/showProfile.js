@@ -91,11 +91,13 @@ function renderProfile(username, status, score) {
                 <p class="post_container_points">Points here</p>
             </div>
         </div>
-        <div class="edit_container">
-          <button class="edit_user">Edit information</button>
-        </div>
-        <div class="logout_container">
-          <button class="logout_user">Logout</button>
+        <div class="settings">
+          <div class="edit_container">
+            <button class="edit_user">Edit information</button>
+          </div>
+          <div class="logout_container">
+            <button class="logout_user">Logout</button>
+          </div>
         </div>
     </div>
   `;
