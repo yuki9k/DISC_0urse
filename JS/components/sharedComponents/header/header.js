@@ -4,7 +4,7 @@ import * as sideNav from "../sideNav/sideNav.js";
 import { PubSub } from "../../../logic/PubSub.js";
 
 PubSub.subscribe({
-  event: "renderHomepage",
+  event: "renderHeader",
   listener: () => {
     renderHeader();
   },
@@ -36,6 +36,21 @@ function renderHeader() {
   const loginButton = document.querySelector(".login_button");
   const signupButton = document.querySelector(".signup_button");
 
+  PubSub.publish({
+    event: "getRoomInfo",
+    details: {parent: dropdown, menuIcon: menuIcon},
+  });
+  /* PubSub.subscribe({
+    event: "sendRoomInfo",
+    listener: (details) => {
+      console.log("SENDROOMINFO");
+      PubSub.publish({
+        event: "renderSideNav",
+        details: {parent: dropdown, menuIcon: menuIcon, rooms: details.rooms}
+      });
+    }
+  }); */
+
   menuIcon.addEventListener("click", () => {
     menuIcon.classList.toggle("change");
     dropdown.classList.toggle("active");
@@ -49,17 +64,15 @@ function renderHeader() {
   });
 
   signupButton.addEventListener("click", () => {
+    console.log("hej");
+    
     PubSub.publish({
       event: "renderSignup",
       details: null,
     });
   });
-
-  PubSub.publish({
-    event: "renderSideNav",
-    details: { parent: dropdown, menuIcon: menuIcon },
-  });
 }
+
 
 PubSub.subscribe({
   event: "loginComplete",

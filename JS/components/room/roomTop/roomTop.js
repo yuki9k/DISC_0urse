@@ -2,39 +2,76 @@ import {PubSub} from "../../../logic/PubSub.js";
 import * as roomTop from "./roomTopAnimation/roomTopAnimation.js";
 
 function renderRoomTop(parent, data){
-    parent.innerHTML = `<div id="album_container"> 
-                            <div id="album_cover">
-                                <img src="https://i.scdn.co/image/ab67616d0000b273d400d27cba05bb0545533864">
-                            </div>
-                            <div id="album_data">
-                                <h1 id="album_name">Ten</h1>
-                                <span id="artist_name">Pearl Jam</span>
-                                <span id="release_year">1991</span>
-                                <ul id="album_tracks_container"></ul>
-                            </div>
-                        </div>
-                        <div id="time_left">
-                            <span> </span>
-                        </div>
-                        `;
+    let albumInfo;
+    PubSub.subscribe({
+        event: "sendAlbum",
+        listener: (details) => {
+            albumInfo = details;
+            switch (data.genre) {
+                case "Indie Pop":
+                  albumInfo.image = "../../../../API/db/albumPics/indie_pop.jpeg";
+                  break;
+                case "Indie Rock":
+                    albumInfo.image = "../../../../API/db/albumPics/indie_rock.jpeg";
+                    break;
+                case "Indie Singer-songwriter":
+                    albumInfo.image = "../../../../API/db/albumPics/indie_singer-songwriter.jpeg";
+                    break;
+                case "Indie Folk":
+                    albumInfo.image = "../../../../API/db/albumPics/indie_folk.jpeg";
+                    break;
+                case "Indie R&b":
+                    albumInfo.image = "../../../../API/db/albumPics/indie_r&b.jpeg";
+                    break;
+                case "Indie Post-punk":
+                    albumInfo.image = "../../../../API/db/albumPics/indie_post-punk.jpeg";
+                    break;
+                default:
+                  return;
+              }
 
-    const albumTracks = parent.querySelector("#album_tracks_container");
+            parent.innerHTML = `
+            <div id="album_container"> 
+            <div id="album_cover">
+                <img src="${albumInfo.image}">
+            </div>
+            <div id="album_data">
+                <h1>${albumInfo.albumName}</h1>
+                <span id="artist_name">${albumInfo.albumArtists[0].name}</span>
+                <span id="release_year">${albumInfo.albumReleaseDate}</span>
+                <ul id="album_tracks_container"></ul>
+            </div>
+            </div>
+            <div id="time_left">
+                <span> </span>
+            </div>
+            `;
+            const albumTracks = parent.querySelector("#album_tracks_container");
 
-    for(let i = 0; i < 10; i++){
-        const albumTrack = document.createElement("li");
-        albumTrack.classList.add("album_track");
-        albumTrack.textContent = "song" + (i + 1);
-        albumTracks.appendChild(albumTrack);
-    }
     PubSub.publish({
         event: "initiateHeightToTopAnimation",
         details: parent.offsetHeight
+    });
+            for(let i = 0; i < albumInfo.albumTotalTracks; i++){
+                const albumTrack = document.createElement("li");
+                albumTrack.classList.add("album_track");
+                albumTrack.textContent = (i+1) + " " + albumInfo.albumTracks[i].trackName;
+                
+                albumTracks.appendChild(albumTrack);
+            }
+        }
+    });
+    PubSub.publish({
+        event: "getAlbum",
+        details: data.genre
     });
 }
 
 PubSub.subscribe({
     event: "renderRoomTop",
-    listener: renderRoomTop
+    listener: (details) => {
+        renderRoomTop(details.parent, details.data);
+    }
 });
 
 

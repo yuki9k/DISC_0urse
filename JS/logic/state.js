@@ -148,6 +148,14 @@ const State = {
     this._state.genres = resGenres.resource;
   },
   updateFriends: async function () {},
+  /* getUserRooms: async function () {
+    const token = localStorage.getItem("token");
+    const userRooms = new Request(URL + `private.php?token=${token}`, {
+      method: "GET",
+    });
+    const resUserRooms = await fetcher(userRooms);
+    return resUserRooms.resource;
+  } */
 };
 
 PubSub.subscribe({
@@ -255,14 +263,28 @@ PubSub.subscribe({
     const resPublicRooms = await fetcher(reqPublicRooms);
     State._state.publicRooms = resPublicRooms.resource;
 
-    // let requestPosts = new Request(url + "posts.php", {
-    //   method: "GET",
-    //   headers: { "Content-Type": "application/json" },
-    // });
-    // let responsePosts = await fetcher(requestPosts);
-    // _state["posts"] = responsePosts.resource;
+    let requestPosts = new Request(URL + "posts.php", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    let responsePosts = await fetcher(requestPosts);
+    State._state.posts = responsePosts.resource;
 
     // console.log(_state);
+    PubSub.publish({
+      event: "renderHomepageInfoRecived",
+      details: {
+        parent: document.querySelector("#wrapper"),
+        users: State._state.users,
+        genres: State._state.genres,
+        pubRooms: State._state.publicRooms,
+        posts: State._state.posts
+      }
+    });
+    PubSub.publish({
+      event: "renderHeader",
+      details: null
+    });
   },
 });
 
@@ -408,3 +430,78 @@ PubSub.subscribe({
     State.patch(ent, {body: body})
   }
 })
+PubSub.subscribe({
+  event: "renderPostBox|getUserData",
+  listener: async (details) => {
+    const user = await State.getExternalUser(details.data.userID);
+    PubSub.publish({
+      event: "renderPostBox",
+      details: {
+        chat: details,
+        user: user
+      }
+    });
+  }
+});
+PubSub.subscribe({
+  event: "getUserForPost",
+  listener: async (details) => {
+    const user = await State.getExternalUser(details.id);
+    PubSub.publish({
+      event: "sendUserForPost",
+      details: user
+    })
+  }
+})
+PubSub.subscribe({
+  event: "getRoomPosts",
+  listener: async (details) => {
+    const posts = await State.getPostsFromRoom(details.id);
+    PubSub.publish({
+      event: "sendRoomPosts",
+      details: {
+        posts
+      }
+    })
+  }
+});
+
+PubSub.subscribe({
+  event: "getRoomInfo",
+  listener: (details)=>{
+    const token = localStorage.getItem("token");
+    let rooms = {
+      public: State._state.publicRooms,
+      private: []
+    };
+    if(!token){
+      //publish with no private rooms
+      
+      PubSub.publish({
+        event: "renderSideNav",
+        details: {parent: details.parent, menuIcon: details.menuIcon, rooms: rooms}
+      });
+    } else {
+      //publish with private rooms
+      if(typeof State._state.privateRooms === "array"){
+        if(State._state.privateRooms.length > 0){
+          rooms.private = State._state.privateRooms;
+        }
+      }
+      PubSub.publish({
+        event: "renderSideNav",
+        details: {parent: details.parent, menuIcon: details.menuIcon, rooms: rooms}
+      });
+    }
+  }
+});
+
+PubSub.subscribe({
+  event: "getAlbum",
+  listener: (details) => {
+    PubSub.publish({
+      event: "sendAlbum",
+      details: State._state.genres[details]
+    });
+  }
+});

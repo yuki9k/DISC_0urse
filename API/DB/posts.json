@@ -11,34 +11,34 @@
         "id": 3
     },
     {
-        "userID": 4,
+        "userID": 1,
         "roomID": 2,
-        "time": "time",
-        "content": "This is it",
+        "time": 10052024,
+        "content": "N\u00e4 ass\u00e5 det albumet var ju typ det v\u00e4rsta jag har h\u00f6rt, bandet borde ge upp, \u00e5k hem, sluta. USCH",
         "likedBy": [],
         "dislikedBy": [
-            4
+            2
         ],
         "id": 4
     },
     {
-        "userID": 4,
+        "userID": 3,
         "roomID": 2,
-        "time": "time",
-        "content": "Just trying some stuff",
+        "time": 10052024,
+        "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
         "likedBy": [
-            4
+            2
         ],
         "dislikedBy": [],
         "id": 5
     },
     {
-        "userID": 4,
+        "userID": 3,
         "roomID": 2,
-        "time": "time",
-        "content": "hello",
+        "time": 10052024,
+        "content": "Jaha okej, jag kommer till skolan s\u00e5 fort jag kan!",
         "likedBy": [
-            4
+            2
         ],
         "dislikedBy": [],
         "id": 6
@@ -46,125 +46,81 @@
     {
         "userID": 4,
         "roomID": 2,
-        "time": "time",
-        "content": "THis is it",
+        "time": 10052024,
+        "content": "I wanna hear you going psycho, if you're going psycho I wanna hear. every conversation ends with you screaming, not even word just AAAH AAAAAA AAAAAAAAAAHHHHHHHHHHH",
         "likedBy": [
-            4
+            2
         ],
         "dislikedBy": [],
         "id": 7
     },
     {
-        "userID": 4,
+        "userID": 1,
         "roomID": 2,
-        "time": "time",
-        "content": "Another one",
-        "likedBy": [],
+        "time": 10052024,
+        "content": "I GET TO KNOW MYSELF EVERYWEEKEND, AND I'M WEAK. hangovers feel good when I know it's the last one. then I feel so good that I have another one.",
+        "likedBy": [
+            3,
+            2
+        ],
         "dislikedBy": [
             4
         ],
         "id": 8
     },
     {
-        "userID": 4,
-        "roomID": 2,
-        "time": "time",
-        "content": "This another test",
-        "likedBy": [],
+        "userID": 2,
+        "roomID": 1,
+        "time": 10052024,
+        "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
+        "likedBy": [
+            2
+        ],
         "dislikedBy": [],
         "id": 9
     },
     {
-        "userID": 4,
-        "roomID": 2,
-        "time": "time",
-        "content": "",
-        "likedBy": [],
+        "userID": 2,
+        "roomID": 3,
+        "time": 10052024,
+        "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
+        "likedBy": [
+            2
+        ],
         "dislikedBy": [],
         "id": 10
     },
     {
-        "userID": 4,
-        "roomID": 2,
-        "time": "time",
-        "content": "This album is god damn beautiful!!!",
-        "likedBy": [],
+        "userID": 2,
+        "roomID": 4,
+        "time": 10052024,
+        "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
+        "likedBy": [
+            2
+        ],
         "dislikedBy": [],
         "id": 11
     },
     {
-        "userID": 4,
-        "roomID": 2,
-        "time": "time",
-        "content": "I fucking hate this album it is so shiet that I puke each time I see it or listen to it.",
-        "likedBy": [],
+        "userID": 2,
+        "roomID": 5,
+        "time": 10052024,
+        "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
+        "likedBy": [
+            2
+        ],
         "dislikedBy": [],
         "id": 12
     },
     {
-        "userID": 4,
-        "roomID": 2,
-        "time": "time",
-        "content": "testing",
+        "userID": 2,
+        "roomID": 6,
+        "time": 10052024,
+        "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
         "likedBy": [
-            4
+            2
         ],
         "dislikedBy": [],
         "id": 13
-    },
-    {
-        "userID": 4,
-        "roomID": 2,
-        "time": "time",
-        "content": "testing",
-        "likedBy": [],
-        "dislikedBy": [
-            4
-        ],
-        "id": 14
-    },
-    {
-        "userID": 4,
-        "roomID": 2,
-        "time": "time",
-        "content": "testing",
-        "likedBy": [
-            4
-        ],
-        "dislikedBy": [],
-        "id": 15
-    },
-    {
-        "userID": 2,
-        "roomID": 2,
-        "time": "time",
-        "content": "Test post",
-        "likedBy": [
-            2
-        ],
-        "dislikedBy": [],
-        "id": 16
-    },
-    {
-        "userID": 2,
-        "roomID": 2,
-        "time": "time",
-        "content": "Test post 2",
-        "likedBy": [
-            2
-        ],
-        "dislikedBy": [],
-        "id": 17
-    },
-    {
-        "userID": 2,
-        "roomID": 2,
-        "time": "time",
-        "content": "Nice album testing",
-        "likedBy": [
-            2
-        ],
-        "dislikedBy": [],
-        "id": 18
     }
 ]

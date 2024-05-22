@@ -13,7 +13,8 @@ function renderRoomBottom(parent, data){
     const postsContainer = parent.querySelector("#posts_container");
     const filterPosts = parent.querySelector("#filter_posts");
     const addPosts = parent.querySelector("#add_posts");
-
+   
+    console.log(data);
     PubSub.publish({
         event: "renderAddPostButton",
         details: addPosts
@@ -27,15 +28,34 @@ function renderRoomBottom(parent, data){
 
     PubSub.publish({
         event: "renderPostsContainer",
-        details: {"parent":postsContainer, "data": dataBase.chats}
-    })
+        details: {"parent":postsContainer, "data": data}
+    });
 
 }
 
 PubSub.subscribe({
-    event: "renderRoomBottom",
-    listener: renderRoomBottom
+    event: "sendRoomPosts",
+    listener: (details) => {
+        console.log("SEND ROOM POSTS!!!");
+        console.log("AWOOOOOOOOOOO", details);
+        const roomBottom = document.querySelector("#room_bottom");
+        renderRoomBottom(roomBottom, details.posts);
+        /* PubSub.publish({
+            event: "renderRoomBottom",
+            details: {
+                parent: roomBottom,
+                data: details.posts
+            }
+        }); */
+    }
 });
+/* PubSub.subscribe({
+    event: "renderRoomBottom",
+    listener: (details) => {
+        console.log("AWOOOOOOOOOOO", details);
+        renderRoomBottom(details.parent, details.data);
+    }
+}); */
 
 PubSub.subscribe({
     event: "moveFilterAddPostContainer",

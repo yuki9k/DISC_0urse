@@ -1,36 +1,37 @@
 import {PubSub} from "../../../../../logic/PubSub.js";
 import * as state from "../../../../../logic/state.js";
 
-function renderPostBox(parent, data){
+function renderPostBox(data, user){
     const postBox = document.createElement("li");
-    parent.appendChild(postBox);
-    postBox.id = "post_" + data.id; 
-
-    const likedCount = data.likedBy.length;
+    const DATA = data.data;
+    data.parent.appendChild(postBox);
+    postBox.id = "post_" + DATA.id; 
+    
+    /* const likedCount = data.likedBy.length;
     const dislikedCount = data.dislikedBy.length;
-    const sum = likedCount - dislikedCount;
+    const sum = likedCount - dislikedCount; */
 
     postBox.innerHTML = `<div class="post_content_box">
-                            <div class="post_top">
-                                <div class="profile_pic_name">
-                                    <img src="">
-                                    <span id="profile_name">Gnajor</span>
-                                </div>
-                                <div class="post_time">10 min ago</div>
-                            </div>
-                            <div class="post_middle">
-                                <p class="post_content">${data.content}</p>
-                            </div>
-                            <div class="post_bottom">
-                                <div class="react_box">
-                                    <div class="positive likeButton"> + </div>
-                                    <div class="negative dislikeButton"> - </div>
-                                </div>
-                                <div class="reaction_counter_box">
-                                    <span class="total_count">${sum} </span>(<span class="positive">${+likedCount}</span>/<span class="negative">${-dislikedCount}</span>)
-                                </div>
-                            </div>
-                        <div>`;
+                    <div class="post_top">
+                        <div class="profile_pic_name">
+                            <img src="">
+                            <span id="profile_name">${user.name}</span>
+                        </div>
+                        <div class="post_time">10 min ago</div>
+                    </div>
+                    <div class="post_middle">
+                        <p class="post_content">${DATA.content}</p>
+                    </div>
+                    <div class="post_bottom">
+                        <div class="react_box">
+                            <div class="positive likeButton"> + </div>
+                            <div class="negative dislikeButton"> - </div>
+                        </div>
+                        <div class="reaction_counter_box">
+                            <span class="total_count">${DATA.likedBy.length - DATA.dislikedBy.length}p </span>(<span class="positive">+${DATA.likedBy.length}</span>/<span class="negative">-${DATA.dislikedBy.length}</span>)
+                        </div>
+                    </div>
+                <div>`;
 
     const like = postBox.querySelector(".likeButton");
     const dislike = postBox.querySelector(".dislikeButton");
@@ -38,7 +39,7 @@ function renderPostBox(parent, data){
     like.addEventListener("click", (event) => {
         const body = {
             "token": localStorage.getItem("token"),
-            "id": data.id,
+            "id": DATA.id,
             "like": "like"
         }
 
@@ -51,7 +52,7 @@ function renderPostBox(parent, data){
     dislike.addEventListener("click", (event) => {
         const body = {
             "token": localStorage.getItem("token"),
-            "id": data.id,
+            "id": DATA.id,
             "dislike": "dislike"
         }
 
@@ -61,12 +62,12 @@ function renderPostBox(parent, data){
         });
     });
 }
+    
 
 PubSub.subscribe({
     event: "renderPostBox",
     listener: (details) => {
-        const {parent, data} = details;
-        renderPostBox(parent, data);
+        renderPostBox(details.chat, details.user);
     }
 });
 

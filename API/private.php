@@ -17,7 +17,7 @@ if(!in_array($requestMethod, $allowedMethods)){
 }
 $requestData = getRequestData();
 
-//GET ROOMS, BASED ON HOSTID OR ALL ROOMS
+//GET ROOMS, BASED ON HOSTID OR ALL ROOMS OR USERID
 if($requestMethod == "GET"){
     $rooms = getDatabase("privRooms");
     if(isset($requestData["hostID"])){
@@ -31,6 +31,14 @@ if($requestMethod == "GET"){
         foreach($rooms as $index => $room){
             if($room["id"] == $requestData["id"]){
                 send(200, $room);
+            }
+        }
+    }
+    if(isset($requestData["token"])){
+        $user = getUserFromToken($requestData["token"]);
+        foreach($rooms as $index => $room){
+            if(!in_array($user["id"], $room["users"])){
+                array_splice($rooms, $index, 1);
             }
         }
     }

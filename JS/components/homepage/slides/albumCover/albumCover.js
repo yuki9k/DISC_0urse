@@ -6,7 +6,8 @@ function renderAlbumCover(parent, data){
     
     albumCover.id = "album_cover";
     albumCover.classList.add("closed");
-    albumCover.setAttribute("src", data.src);
+    console.log(data);
+    albumCover.setAttribute("src", data);
     parent.appendChild(albumCover);
 
     albumCover.addEventListener("click", (event) => {
@@ -23,7 +24,7 @@ function renderAlbumCover(parent, data){
 PubSub.subscribe({
     event: "renderAlbum",
     listener: (details) => {
-        const {parent, data} = details;
-        renderAlbumCover(parent, data);
+        //const {parent, data} = details;
+        renderAlbumCover(details.parent, details.data);
     }
 })
