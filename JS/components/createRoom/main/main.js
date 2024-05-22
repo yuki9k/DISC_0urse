@@ -27,12 +27,12 @@ function renderCreate() {
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
                             <option>Choose genre</option>
-                            <option value="Indie Pop">Indie Pop</option>  
-                            <option value="Indie Rock">Indie Rock</option>  
-                            <option value="Indie Singer-songwriter">Indie Singer & Songwriter</option>  
-                            <option value="Indie Folk">Indie Folk</option>  
-                            <option value="Indie R&b">Indie R&B</option>  
-                            <option value="Indie Post-punk">Indie Post Punk</option>  
+                            <option value="1">Indie Pop</option>  
+                            <option value="2">Indie Rock</option>  
+                            <option value="3">Indie Singer & Songwriter</option>  
+                            <option value="4">Indie Folk</option>  
+                            <option value="5">Indie R&B</option>  
+                            <option value="6">Indie Post Punk</option>  
                         </select> 
                     <p class="room_theme">Theme</p>
                         <select class="choose_theme">  
@@ -50,7 +50,10 @@ function renderCreate() {
                     <div class="two">
                         <p class="album_title_in_div">Genre here</p>
                     </div>
-                    <div class="create_room_album_info"></div>
+                    <div class="create_room_album_info">
+                      <div class="album_info_title">Songs in the album:</div>
+                      <div class="album_information_create"></div>
+                    </div>
                 </div>
             </div>
             <div class="underline"></div>
@@ -58,26 +61,53 @@ function renderCreate() {
     `;
 
   const genre = document.querySelector(".choose_genre");
-  genre.addEventListener("change", (e) => {
+  genre.addEventListener("click", (e) => {
     const genrePlaceholder = document.querySelector(".album_title_in_div");
-    genrePlaceholder.textContent = genre.value;
-
     const albumCover = document.querySelector(".create_room_album_cover");
-    const albumInfo = document.querySelector(".create_room_album_info");
+    const albumInfo = document.querySelector(".album_information_create");
+    const number = Number(genre.value);
 
-    console.log(genre.value);
+    if(number === 1) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_pop.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 2) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_rock.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 3) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_singer-songwriter.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 4) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_folk.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 5) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_r&b.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 6) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_post-punk.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    }
 
-    // PubSub.publish({
-    //   event: "getAlbumInfo",
-    //   details: genre.value
-    // });
+    PubSub.publish({
+      event: "getAlbumInfo",
+      details: number
+    });
 
-    // PubSub.subscribe({
-    //     event: "foundAlbum",
-    //     listener: (details) => {
-    //         console.log(details); 
-    //     }
-    //   })
+    PubSub.subscribe({
+        event: "foundAlbumInfo",
+        listener: (details) => {
+          console.log(details);
+          albumInfo.innerHTML = "";
+          genrePlaceholder.textContent = details.albumLabel;
+          const songs = details.albumTracks;
+
+          for (let song of songs) {
+            const infoDom = document.createElement("div");
+            infoDom.className = "info_container";
+            albumInfo.appendChild(infoDom);
+            infoDom.textContent = song.trackName;
+          }
+        }
+      })
   });
 
 

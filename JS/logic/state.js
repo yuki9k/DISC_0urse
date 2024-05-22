@@ -554,3 +554,14 @@ PubSub.subscribe({
   }
 })
 
+PubSub.subscribe({
+  event: "getAlbumInfo",
+  listener: (details) => {
+    const albumInfo = State.getAlbumInformation(details);
+    console.log("album info:", albumInfo);
+    PubSub.publish({
+      event: "foundAlbumInfo",
+      details: albumInfo
+    });
+  }
+})

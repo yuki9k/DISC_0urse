@@ -49,9 +49,7 @@ body {
     transition: 300ms background-color ease-in-out;
 }
 
-p,
-a,
-div {
+p, a, div {
     font-family: var(--font_family);
 }
 
