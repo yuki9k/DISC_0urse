@@ -190,7 +190,7 @@ header .buttons_container .signup_button {
 
 header .buttons_container .login_button:hover,
 header .buttons_container .signup_button:hover {
-    text-decoration: underline;
+    opacity: .8;
 }
 
 .menu {
@@ -222,7 +222,7 @@ header .buttons_container .signup_button:hover {
 .dropdown {
     position: absolute;
     top: 60px;
-    left: -20%; 
+    left: -22%; 
     height: fit-content;
     bottom: 0;
     background-color: var(--background_color);
@@ -461,6 +461,12 @@ header .buttons_container .signup_button:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 16px;
+    font-family: var(--font_family);
+}
+
+.edit_user:hover,
+.logout_user:hover {
+    opacity: .8;
 }
 
 .change_username,

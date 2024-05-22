@@ -26,7 +26,7 @@ function renderCreate() {
                 <div class="genre_theme_container">
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
-                            <option>Choose genre</option>
+                            <option value="0">Choose genre</option>
                             <option value="1">Indie Pop</option>  
                             <option value="2">Indie Rock</option>  
                             <option value="3">Indie Singer & Songwriter</option>  
@@ -48,7 +48,7 @@ function renderCreate() {
                 <div class="placeholders">
                     <div class="create_room_album_cover"></div>
                     <div class="two">
-                        <p class="album_title_in_div">Genre here</p>
+                        <p class="album_title_in_div">Album here:</p>
                     </div>
                     <div class="create_room_album_info">
                       <div class="album_info_title">Songs in the album:</div>
@@ -85,6 +85,8 @@ function renderCreate() {
     } else if (number === 6) {
       albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_post-punk.jpeg)";
       albumCover.style.backgroundSize = "contain";
+    } else {
+      albumCover.style.backgroundImage = "";
     }
 
     PubSub.publish({
@@ -109,8 +111,6 @@ function renderCreate() {
         }
       })
   });
-
-
 
   PubSub.publish({
     event: "renderAddedFriends",
