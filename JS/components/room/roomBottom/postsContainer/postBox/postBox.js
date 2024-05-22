@@ -9,6 +9,15 @@ function renderPostBox(data, user) {
   postBox.dataset.time = time;
   data.parent.appendChild(postBox);
   postBox.id = "post_" + DATA.id;
+  const timeSincePost = function () {
+    const sTimeDiff = Math.floor(Date.now() / 1000) - time;
+    const mTimeDiff = sTimeDiff / 60;
+    const hPostTime = Math.floor(mTimeDiff / 60);
+    const mPostTime = Math.floor(mTimeDiff % 60);
+    return hPostTime > 0
+      ? `${hPostTime}h ${mPostTime}min ago`
+      : `${mPostTime}min ago`;
+  };
 
   /* const likedCount = data.likedBy.length;
     const dislikedCount = data.dislikedBy.length;
@@ -20,7 +29,7 @@ function renderPostBox(data, user) {
                             <img src="">
                             <span id="profile_name">${user.name}</span>
                         </div>
-                        <div class="post_time">10 min ago</div>
+                        <div class="post_time">${timeSincePost()}</div>
                     </div>
                     <div class="post_middle">
                         <p class="post_content">${DATA.content}</p>
