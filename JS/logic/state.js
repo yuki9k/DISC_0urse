@@ -13,20 +13,22 @@ const State = {
       body: JSON.stringify(options.body),
     });
     const response = await fetcher(request);
-
-    if (!response.ok) {
-      //throw error
-    }
-    //request okayed push new entity to state.
-    this._state[ent].push(response.resource);
     console.log(response);
-    PubSub.publish({
+    if (!response.success.ok) {
+      //throw error
+    } else {
+      this._state[ent].push(response.resource);
+      console.log(response);
+      PubSub.publish({
       event: "sendToPostParent",
       details: {
         post: response.resource,
         user: State._state.thisUser
       }
     });
+    }
+    //request okayed push new entity to state.
+    
   },
 
   patch: async function (ent, options) {
