@@ -30,8 +30,8 @@ function renderHeader() {
       <div id="ball"></div>
     </div> 
     <div class="buttons_container">
-      <div class="login_button">Log in</div>
-      <div class="signup_button">Sign up</div>
+      <div class="login_button">Sign in</div>
+      <div class="signup_button">Join here</div>
     </div>
   `;
 
