@@ -11,7 +11,7 @@
 
 .container_main {
     width: 50%;
-    background-color: var(--background_color_pop);
+    background-color: var(--add_friends_container_color);
     border-radius: 10px 10px 0 0;
     padding: 0 30px;
 }
@@ -36,6 +36,7 @@
     font-family: var(--font_family);
     letter-spacing: 1px;
     text-align: center;
+    color:var(--paragraph_color);
 }
 
 .room_name_text,
@@ -44,6 +45,7 @@
     font-size: 28px;
     font-family: var(--font_family);
     margin: 16px 0;
+    color:var(--paragraph_color);
 }
 
 .choose_theme,
@@ -51,8 +53,9 @@
     height: 30px;
     border-radius: 10px;
     border: none;
-    box-shadow: 0px 0px 5px rgb(101, 101, 101);
+    box-shadow: 0px 0px 5px var(--shadow_for_menu);
     background-color: transparent;
+    color: var(--paragraph_color);
 }
 
 .album_title_in_div {
@@ -107,7 +110,7 @@
     width: 100%;
     height: 2px;
     margin: 20px 0;
-    background-color: black;
+    background-color: var(--paragraph_color);
 }
 
 /* Friends Include CSS */
@@ -117,7 +120,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--background_color);
 }
 
 .added_friends_container {
@@ -126,7 +128,7 @@
     flex-wrap: wrap;
     gap: 10px;
     width: 50vw;
-    background-color: var(--background_color_pop);
+    background-color: var(--add_friends_container_color);
     border-radius: 0 0 10px 10px;
     padding: 0 30px 20px 30px;
 }
@@ -137,7 +139,8 @@
     height: 5vw;
     border-radius: 50%;
 
-    border: 1px solid black;
+    border: 2px solid var(--paragraph_color);
+    color: var(--paragraph_color);
 
     display: flex;
     justify-content: center;

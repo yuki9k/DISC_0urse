@@ -1,6 +1,3 @@
-
-
-
 /* Modal Common CSS */
 .modal_container {
     display: flex;
@@ -17,7 +14,7 @@
 
 .modal_content {
     position: relative;
-    background-color: #fff;
+    background-color: var(--background_color);
     padding: 20px;
     border-radius: var(--default_border_radius);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -29,7 +26,8 @@
 
 /* Login and signup CSS */
 
-.form_container.login_container,
+/* Används denna? */
+/* .form_container.login_container,
 .form_container.signup_container {
     text-align: center;
     font-family: var(--font_family);
@@ -41,9 +39,9 @@
     align-items: center;
     gap: 10px;
     padding: 20px;
-    background-color: white;
+    background-color: var(--background_color);
     z-index: 99;
-}
+} */
 
 .form_container #form_title {
     font-size: 32px;
@@ -60,6 +58,7 @@
     margin-top: -16px;
     text-align: center;
     font-family: var(--font_family);
+    color: var(--paragraph_color);
 }
 
 .form_container input {
@@ -70,6 +69,8 @@
     border: 1px solid #ccc;
     border-radius: var(--default_border_radius);
     box-sizing: border-box;
+    background-color: var(--background_color_pop);
+    color: var(--paragraph_color);
 }
 
 .form_container button {
@@ -95,7 +96,7 @@
 #switch_to_signup,
 #switch_to_login {
     background-color: transparent;
-    color: black;
+    color: var(--paragraph_color);
     text-decoration: underline;
     font-size: 14px;
 }
@@ -103,16 +104,61 @@
 /* Header CSS */
 header {
     display: grid;
-    grid-template-columns: 60px 80px 1fr;
+    grid-template-columns: 60px auto auto 1fr;
     padding: 10px;
     box-sizing: border-box;
+    align-items: center;
+}
+
+header #change_theme {
+    width: 50px;
+    height: 25px;
+    margin-left:20px;
+    padding:0 2px;
+    border-radius: 20px;
+    border: 2px solid black;
+
+    background-color: white;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    transition-property: background-color, border;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+
+header #change_theme #ball{
+    width:18px;
+    height: 18px;
+    border-radius: 50%;
+    right: 0;
+
+    background-color: black;
+    position: relative;
+    cursor: pointer;
+
+    transition-property: background-color, right;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
+}
+
+header #change_theme #ball.dark_mode{
+    background-color: var(--paragraph_color);
+    right:-58%;
+}
+
+header #change_theme:has(#ball.dark_mode){
+    background-color: black;
+    border-color: var(--paragraph_color);
+ 
 }
 
 header .home_button {
     font-family: var(--font_family);
     font-size: 24px;
-    align-self: center;
-    color: black;
+    color: var(--paragraph_color);
     text-decoration: none;
 }
 
@@ -120,10 +166,10 @@ header .buttons_container {
     display: flex;
     gap: 16px;
     justify-self: end;
-    align-self: center;
     font-family: var(--font_family);
     font-size: 18px;
     cursor: pointer;
+    color: var(--paragraph_color);
 }
 
 header .buttons_container .login_button:hover,
@@ -145,7 +191,7 @@ header .buttons_container .signup_button:hover {
 .bar1, .bar2, .bar3 {
     width: 24px;
     height: 3px;
-    background-color: #333;
+    background-color: var(--paragraph_color);
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -161,14 +207,16 @@ header .buttons_container .signup_button:hover {
     position: absolute;
     top: 50px;
     left: -20%; 
-    background-color: rgb(240, 240, 240);
+    height: 100%;
+    bottom: 0;
+    background-color: var(--background_color);
     display: block; 
     z-index: 999;
     padding: 20px;
     transition: left 0.3s ease; 
     box-sizing: border-box;
     border-radius: 0 10px 10px 0;
-    box-shadow: 0px 0px 5px rgb(88, 88, 88);
+    box-shadow: 0px 0px 5px var(--shadow_for_menu);
   }
   
   .dropdown.active {
@@ -204,12 +252,13 @@ header .buttons_container .signup_button:hover {
     align-items: center;
     gap: 15px;
     margin: 10px 0;
+    color: var(--paragraph_color);
 }
 
 .create_private_room_button,
 .add_friend_button {
     font-size: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--background_color);
 
     width: 24px;
     height: 24px;
@@ -222,7 +271,7 @@ header .buttons_container .signup_button:hover {
     font-family: var(--font_family);
 
     cursor: pointer;
-    border: .5px solid black;
+    border: 2px solid var(--paragraph_color);
 }
 
 .dropdown_rooms,
@@ -241,9 +290,11 @@ header .buttons_container .signup_button:hover {
 .dropdown_title {
     font-size: 24px;
     font-family: var(--font_family);
+    color: var(--paragraph_color);
 }
 
 .dropdown_title_two {
+    color: var(--paragraph_color);
     font-family: var(--font_family);
     font-size: 14px;
     margin: 5px 0;
@@ -254,7 +305,7 @@ header .buttons_container .signup_button:hover {
     width: 100%;
     height: 100%;
     border-radius: var(--default_border_radius);
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white_for_menu);
     margin: 5px 0;
     padding: 0 5px;
 
@@ -270,7 +321,7 @@ header .buttons_container .signup_button:hover {
     width: 100%;
     height: 100%;
     border-radius: var(--default_border_radius);
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white_for_menu);
     margin: 5px 0;
 
     display: flex;
@@ -284,12 +335,13 @@ header .buttons_container .signup_button:hover {
 .dropdown_box_rooms:hover,
 .dropdown_box_friends:hover,
 .create_room_button:hover,
+.create_private_room_button:hover,
 .add_friend_button:hover {
-    background-color: rgb(203, 203, 203);
+    background-color: var(--hover_for_menu);
 }
 
 .dropdown_box_rooms p {
-    color: rgb(47, 47, 47);
+    color: var(--always_black);
     font-family: var(--font_family);
     font-size: 16px;
     text-align: center;
@@ -313,7 +365,7 @@ header .buttons_container .signup_button:hover {
     width: 8vw;
     height: 8vw;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid var(--paragraph_color);
 
     background-image: url(../css/profile.png);
     background-size: cover;
@@ -322,19 +374,21 @@ header .buttons_container .signup_button:hover {
 .profile_info .username {
     font-size: 24px;
     font-family: var(--font_family);
+    color:var(--paragraph_color);
     margin-bottom: 0;
 }
 
 .profile_info .status {
     font-size: 22px;
     font-family: var(--font_family);
-    color: rgb(56, 56, 56);
+    color: var(--paragraph_color);
 }
 
 .middle_section_left, 
 .middle_section_right {
     font-size: 18px;
     font-family: var(--font_family);
+    color: var(--paragraph_color);
 }
 
 .bottom_section {
@@ -369,8 +423,8 @@ header .buttons_container .signup_button:hover {
     width: 40%;
     width: 100%;
     height: 40px;
-    background-color: #3e3e3e;
-    color: white;
+    background-color:var(--logout_button_color);
+    color: var(--always_white);
     border: none;
     border-radius: var(--default_border_radius);
     cursor: pointer;
