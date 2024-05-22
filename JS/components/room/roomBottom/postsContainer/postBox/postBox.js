@@ -1,9 +1,14 @@
 import {PubSub} from "../../../../../logic/PubSub.js";
+import * as state from "../../../../../logic/state.js";
 
 function renderPostBox(parent, data){
     const postBox = document.createElement("li");
     parent.appendChild(postBox);
-  /*   postBox.id = ""; */
+    postBox.id = "post_" + data.id; 
+
+    const likedCount = data.likedBy.length;
+    const dislikedCount = data.dislikedBy.length;
+    const sum = likedCount - dislikedCount;
 
     postBox.innerHTML = `<div class="post_content_box">
                             <div class="post_top">
@@ -18,14 +23,43 @@ function renderPostBox(parent, data){
                             </div>
                             <div class="post_bottom">
                                 <div class="react_box">
-                                    <div class="positive"> + </div>
-                                    <div class="negative"> - </div>
+                                    <div class="positive likeButton"> + </div>
+                                    <div class="negative dislikeButton"> - </div>
                                 </div>
                                 <div class="reaction_counter_box">
-                                    <span class="total_count">8p </span>(<span class="positive">+10</span>/<span class="negative">-2</span>)
+                                    <span class="total_count">${sum} </span>(<span class="positive">${+likedCount}</span>/<span class="negative">${-dislikedCount}</span>)
                                 </div>
                             </div>
                         <div>`;
+
+    const like = postBox.querySelector(".likeButton");
+    const dislike = postBox.querySelector(".dislikeButton");
+
+    like.addEventListener("click", (event) => {
+        const body = {
+            "token": localStorage.getItem("token"),
+            "id": data.id,
+            "like": "like"
+        }
+
+        PubSub.publish({
+            event: "patchPostItem",
+            details: {"ent": "posts", "body": body}
+        });
+    });
+
+    dislike.addEventListener("click", (event) => {
+        const body = {
+            "token": localStorage.getItem("token"),
+            "id": data.id,
+            "dislike": "dislike"
+        }
+
+        PubSub.publish({
+            event: "patchPostItem",
+            details: {"ent": "posts", "body": body}
+        });
+    });
 }
 
 PubSub.subscribe({
@@ -34,5 +68,21 @@ PubSub.subscribe({
         const {parent, data} = details;
         renderPostBox(parent, data);
     }
+});
+
+PubSub.subscribe({
+    event: "renderPostLikedCounter",
+    listener: (details) => {
+        const post = document.querySelector("#post_" + details.id);
+        const post_liked = post.querySelector(".reaction_counter_box > .positive");
+        const post_disliked = post.querySelector(".reaction_counter_box > .negative");
+        const post_sum = post.querySelector(".reaction_counter_box > .total_count");
+
+        post_liked.innerHTML = "+" + details.likedBy.length;
+        post_disliked.innerHTML = "-" + details.dislikedBy.length;
+        post_sum.innerHTML = details.likedBy.length - details.dislikedBy.length;
+    }
 })
+
+
 

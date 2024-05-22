@@ -3,12 +3,14 @@ import { fetcher } from "./helpFunctions.js";
 
 const State = {
   url: "http://localhost:8080/api/",
-  _state: {},
-  post: async function (ent, options) {
+  _state: {
+      "posts": []
+  },
+	post: async function (ent, options){
     const request = new Request(this.url + ent + ".php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: options.body,
+      body: JSON.stringify(options.body),
     });
     const response = await fetcher(request);
 
@@ -17,47 +19,55 @@ const State = {
     }
     //request okayed push new entity to state.
     this._state[ent].push(response.resource);
+
+    PubSub.publish({
+      event: "sendToPostParent",
+      details: response.resource
+    });
   },
+
   patch: async function (ent, options) {
-    const request = new Request(this.url + ent + ".php", {
+    const endpoint = ent === "thisUser" ? "users" : ent;
+
+    const request = new Request(this.url + endpoint + ".php", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: options.body,
+      body: JSON.stringify(options.body),
     });
+
     const response = await fetcher(request);
+
+    if (ent === "thisUser") {
+      this._state.thisUser = response.resource;
+      PubSub.publish({
+        event: "patchThisUserRender",
+        details: this._state.thisUser,
+      });
+      return;
+    }
+
     let id = response.resource["id"];
-    for (const obj of this._state[ent]) {
+    for (let obj of this._state[ent]) {
       if (obj["id"] === id) {
         obj = response.resource;
       }
     }
-    //fire pubsub event for updating front end.
-  },
-  destruct: async function (ent, options) {
-    const request = new Request(this.url + ent + ".php", {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: options.body,
+
+    PubSub.publish({
+      event:"renderPostLikedCounter",
+      details: response.resource
     });
-    const response = await fetcher(request);
-    let id = response.resource["id"];
-    for (const [i, obj] of this._state[ent].entries()) {
-      if (obj["id"] === id) {
-        this._state[ent].splice(i, 1);
-      }
-    }
+
     //fire pubsub event for updating front end.
   },
-  getCurrentUser: async function () {
-    if (!this._state.thisUser) {
-      return "no current user";
-    }
-    return this._state.thisUser;
-  },
-  getAllUsersInRoom: async function (options) {
-    const request = new Request(this.url + "private.php?id=" + options.id, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
+  
+  destruct: async function (ent, options){
+    const url = "http://localhost:8080/api/";
+    
+    const request = new Request(this.url + ent + ".php", {
+        method: "DELETE",
+        headers: {"Content-Type": "application/json"},
+        body: options.body
     });
     const response = await fetcher(request);
     let users = response.resource;
@@ -137,6 +147,7 @@ const State = {
     const resGenres = await fetcher(reqGenres);
     this._state.genres = resGenres.resource;
   },
+  updateFriends: async function () {},
 };
 
 PubSub.subscribe({
@@ -166,20 +177,16 @@ PubSub.subscribe({
     );
 
     const resPrivateRooms = await fetcher(reqPrivateRooms);
-    State._state.privateRooms = resPrivateRooms.resource;
+    State._state.privateRooms = resPrivateRooms.resource
+      ? resPrivateRooms.resource
+      : [];
     PubSub.publish({
       event: "loginComplete",
       details: {
         token: localStorage.getItem("token"),
         username: State._state.thisUser.name,
-      },
-    });
-    console.log(State._state);
-    PubSub.publish({
-      event: "loginComplete",
-      details: {
-        token: localStorage.getItem("token"),
-        username: State._state.thisUser.name,
+        status: State._state.thisUser.status,
+        score: State._state.thisUser.score
       },
     });
   },
@@ -272,8 +279,132 @@ PubSub.subscribe({
     const friendIds = State.getFriendIds();
     const friendArr = [];
     for (const friendId of friendIds) {
-      friendArr.push(State.getExternalUser(friendId));
+      const friend = await State.getExternalUser(friendId);
+      friendArr.push(friend);
     }
+
     PubSub.publish({ event: "foundFriends", details: friendArr });
   },
 });
+
+PubSub.subscribe({
+  event: "patchThisUser",
+  listener: async (newThisUserInfo) => {
+    const URL = "http://localhost:8080/api/";
+    const token = localStorage.getItem("token");
+    const { username, status } = newThisUserInfo;
+
+    State.patch("thisUser", {
+      body: { token, name: username, status },
+    });
+
+    if (newThisUserInfo.password) {
+      const { password } = newThisUserInfo;
+      console.log(password);
+      console.log(newThisUserInfo);
+      const reqToken = new Request(URL + "login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: username, password }),
+      });
+
+      const { resource } = await fetcher(reqToken);
+      const token = resource.token;
+      localStorage.removeItem("token");
+      localStorage.setItem("token", token);
+    }
+  },
+});
+
+PubSub.subscribe({
+  event: "patchThisUserRender",
+  listener: (thisUser) => {
+    PubSub.publish({ event: "foundUserInfo", details: thisUser });
+  },
+});
+
+PubSub.subscribe({
+  event: "confirmPassword",
+  listener: async (password) => {
+    const URL = "http://localhost:8080/api/";
+    const username = State._state.thisUser.name;
+    const reqToken = new Request(URL + "login.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: username, password }),
+    });
+
+    const { success } = await fetcher(reqToken);
+
+    if (success.ok) {
+      PubSub.publish({ event: "passwordConfirmed", details: null });
+    }
+  },
+});
+
+PubSub.subscribe({
+  event: "userLogout",
+  listener: () => {
+    State._state = {};
+    localStorage.removeItem("token");
+  },
+});
+
+PubSub.subscribe({
+  event: "getAlbums",
+  listener: () => {
+    const albums = State._state.genres;
+    PubSub.publish({ event: "foundAlbums", details: albums });
+  },
+});
+
+// Returnerar specifikt album
+// PubSub.subscribe({
+//   event: "getAlbum",
+//   listener: (details) => {
+//     const genre = details;
+//     console.log(State._state.genres[genre]);
+//     PubSub.publish({ event: "foundAlbum", details: albums });
+//   },
+// });
+
+PubSub.subscribe({
+  event: "getTopPosts",
+  listener: async (roomId) => {
+    const allPosts = State.getPostsFromRoom(roomId);
+    const allPostsSorted = allPosts.sort(
+      (a, b) =>
+        a.likedBy.length -
+        a.dislikedBy.length -
+        (b.likedBy.length - b.dislikedBy.length)
+    );
+    const topSixPosts = allPostsSorted.splice(0, 6);
+    PubSub.publish({ event: "foundTopPosts", details: topSixPosts.reverse() });
+  },
+});
+
+PubSub.subscribe({
+  event: "userLoggedOut",
+  listener: () => {
+    localStorage.removeItem("token");
+    PubSub.publish({
+      event: "renderHomepage",
+      details: document.querySelector("#wrapper"),
+    });
+  }
+})
+PubSub.subscribe({
+  event: "addPostItem",
+  listener: (details) => {
+    const {ent, body} = details;
+    State.post(ent, {body: body});
+  }
+})
+
+PubSub.subscribe({
+  event: "patchPostItem",
+  listener: (details) => {
+    const {ent, body} = details;
+    State.patch(ent, {body: body})
+  }
+})

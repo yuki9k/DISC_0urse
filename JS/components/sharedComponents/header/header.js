@@ -11,8 +11,9 @@ PubSub.subscribe({
 });
 
 function renderHeader() {
-  const header = document.createElement("header");
   let wrapper = document.querySelector("#header");
+  wrapper.innerHTML = "";
+  const header = document.createElement("header");
   wrapper.appendChild(header);
   header.innerHTML = `
     <div class="menu">
@@ -69,9 +70,10 @@ PubSub.subscribe({
       buttons_container.textContent = details.username;
 
       buttons_container.addEventListener("click", (e) => {
+        console.log(details);
         PubSub.publish({
           event: "renderProfileInfo",
-          details: { username: details.username },
+          details: { username: details.username, status: details.status, score: details.score },
         });
       });
     }

@@ -26,6 +26,10 @@ function renderRoomTop(parent, data){
         albumTrack.textContent = "song" + (i + 1);
         albumTracks.appendChild(albumTrack);
     }
+    PubSub.publish({
+        event: "initiateHeightToTopAnimation",
+        details: parent.offsetHeight
+    });
 }
 
 PubSub.subscribe({

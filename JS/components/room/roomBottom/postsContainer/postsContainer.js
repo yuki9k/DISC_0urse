@@ -6,14 +6,16 @@ function renderPostsContainer(parent, data){
     postsListContainer.id = "postsListContainer";
     parent.appendChild(postsListContainer);
 
-    for(let i = 0; i < 2; i++){
+
+
+/*     for(let i = 0; i < 2; i++){
         for(let chat of data){
             PubSub.publish({
                 event: "renderPostBox",
                 details: {"parent": postsListContainer, "data": chat}
             });
         }
-    }
+    } */
 }
 
 PubSub.subscribe({
@@ -21,6 +23,19 @@ PubSub.subscribe({
     listener: (details) => {
         const {parent, data} = details;
         renderPostsContainer(parent, data);
+    }
+});
+
+PubSub.subscribe({
+    event: "sendToPostParent",
+    listener:(details) => {
+        const postsListContainer = document.querySelector("#postsListContainer");
+
+        PubSub.publish({
+            event: "renderPostBox",
+            details: {"parent": postsListContainer, "data": details}
+        })
+
     }
 })
 

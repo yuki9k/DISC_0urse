@@ -9,5 +9,162 @@
         ],
         "dislikedBy": [],
         "id": 3
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "This is it",
+        "likedBy": [],
+        "dislikedBy": [
+            4
+        ],
+        "id": 4
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "Just trying some stuff",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 5
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "hello",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 6
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "THis is it",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 7
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "Another one",
+        "likedBy": [],
+        "dislikedBy": [
+            4
+        ],
+        "id": 8
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "This another test",
+        "likedBy": [],
+        "dislikedBy": [],
+        "id": 9
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "",
+        "likedBy": [],
+        "dislikedBy": [],
+        "id": 10
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "This album is god damn beautiful!!!",
+        "likedBy": [],
+        "dislikedBy": [],
+        "id": 11
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "I fucking hate this album it is so shiet that I puke each time I see it or listen to it.",
+        "likedBy": [],
+        "dislikedBy": [],
+        "id": 12
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "testing",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 13
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "testing",
+        "likedBy": [],
+        "dislikedBy": [
+            4
+        ],
+        "id": 14
+    },
+    {
+        "userID": 4,
+        "roomID": 2,
+        "time": "time",
+        "content": "testing",
+        "likedBy": [
+            4
+        ],
+        "dislikedBy": [],
+        "id": 15
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "Test post",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 16
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "Test post 2",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 17
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "Nice album testing",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 18
     }
 ]

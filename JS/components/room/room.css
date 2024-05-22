@@ -1,3 +1,8 @@
+:root{
+    --transition_duration: 3s;
+    --transition_delay: 3s;
+}
+
 *{
     box-sizing: border-box;
 }
@@ -35,7 +40,6 @@ body:has(#room_container){
 
 #room_top.makeSmall{
     height: 150px;
-
 }
 
 #room_top #album_container{
@@ -115,17 +119,6 @@ body:has(#room_container){
     width: 20%;
 }
 
-#room_bottom #send_post{
-    background-color: black;
-    height: 20px;
-    width: 20px;
-    display: none;
-}
-
-#room_bottom #send_post.display{
-    display: block;
-}
-
 #room_bottom #add_post_button{
     position: fixed;
     bottom:20px;
@@ -138,6 +131,7 @@ body:has(#room_container){
     display: flex;
     justify-content: center;
     align-items:center;
+
     font-size: 30px;
     border-radius: 50%;
     font-weight: bold;
@@ -147,6 +141,7 @@ body:has(#room_container){
     transition-duration: 300ms;
     transition-property: width, height, border-radius;
     transition-timing-function: ease-in-out;
+    overflow: hidden;
 }
 
 #room_bottom #filter_input{
@@ -155,6 +150,7 @@ body:has(#room_container){
 
 #room_bottom #add_post_button.border_rad_change{
     border-radius: 15px;
+    gap:3px;
 }
 
 #room_bottom #add_post_button:has(textarea.display){
@@ -166,13 +162,10 @@ body:has(#room_container){
 } 
 
 #room_bottom #add_post_button textarea{
-    position: absolute;
-    z-index: -1;
-
     width: 0%;
     height: 0;
     border: 0;
-    padding:10px;
+    padding:0px;
     border-radius: 10px;
 
     resize: none;
@@ -184,10 +177,8 @@ body:has(#room_container){
 }
 
 #room_bottom #add_post_button textarea.display{
-    position: static;
     opacity: 1;
-    z-index: 0;
-
+    padding: 10px;
     width: 100%;
     height: 200px;
 }
@@ -195,39 +186,44 @@ body:has(#room_container){
 #room_bottom #add_post_button #plus_sign{
     opacity: 1;
     transition-duration: 300ms;
-    transition-property: opacity;
+    transition-property: opacity, height, width, font-size;
     transition-timing-function: ease-in-out;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 100%;
+    height: 100%;
 }
 
-#room_bottom #add_post_button #vertical_line{
-    position: absolute;
-    height: 20px;
-    width: 3px;
-    background-color: black;
+#room_bottom #add_post_button #send_post{
+    width:0;
+    height: 0;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    transition-duration: 300ms;
+    transition-property: padding, height, font-size;
+    transition-timing-function: ease-in-out;
 }
 
-#room_bottom #add_post_button #horisontal_line{
-    position: absolute;
-    height: 20px;
-    width: 3px;
-    background-color: black;
-    transform: rotate(90deg);
-  
+#room_bottom #add_post_button #send_post.display{
+    padding:5px;
+    font-size: 15px;
+    width: 100%;
+    height: fit-content;
+    border-radius: 5px;
 }
 
 #room_bottom #add_post_button #plus_sign.undisplay{
     opacity: 0;
+    width: 0;
+    height: 0;
+    font-size:0;
 }
-
-#room_bottom #add_post_button .display_none{
-    display: none;
-}
-
-
 
 #room_bottom ul#postsListContainer{
     columns: 3;
@@ -294,8 +290,10 @@ body:has(#room_container){
 
 #room_bottom .post_content_box .positive{
     color: lime;
+    cursor: pointer;
 }
 
 #room_bottom .post_content_box .negative{
     color: tomato;
+    cursor: pointer;
 }
