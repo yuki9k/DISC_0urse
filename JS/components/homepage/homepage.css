@@ -4,8 +4,6 @@ body:has(#homepage_container){
     background-color: var(--background_color); 
 }
 
-
-
 #homepage_container{
     margin-top: 15vh;
     display: flex;
@@ -58,7 +56,8 @@ body:has(#homepage_container){
 #homepage_container .album_cover_container img{
     width: var(--album_width);
     height: auto;
-    box-shadow: 0px 0px 20px var(--paragraph_color);
+    box-shadow: 0px 0px 10px var(--paragraph_color);
+    border-radius: 10px;
 
     position: relative;
     left: 0;

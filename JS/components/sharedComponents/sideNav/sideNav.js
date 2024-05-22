@@ -3,12 +3,7 @@ import * as showProfile from "../showProfile/showProfile.js";
 import * as renderRoom from "../../room/room.js";
 import { PubSub } from "../../../logic/PubSub.js";
 //HERE
-PubSub.subscribe({
-  event: "renderSideNav",
-  listener: (details) => {
-    renderDropdownItems(details.parent, details.menuIcon, details.rooms);
-  },
-});
+
 
 PubSub.subscribe({
   event: "loginComplete",
@@ -23,6 +18,7 @@ PubSub.subscribe({
     });
   },
 });
+
 
 PubSub.subscribe({
   event: "foundFriends",
@@ -45,6 +41,13 @@ PubSub.subscribe({
     for (let room of rooms) {
       renderPrivateRooms(parent, icon, room);
     }
+  },
+});
+
+PubSub.subscribe({
+  event: "renderSideNav",
+  listener: (details) => {
+    renderDropdownItems(details.parent, details.menuIcon, details.rooms);
   },
 });
 

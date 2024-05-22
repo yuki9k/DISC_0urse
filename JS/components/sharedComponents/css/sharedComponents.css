@@ -23,12 +23,12 @@
     overflow: auto; 
     box-shadow: 0px 0px 5px rgb(162, 162, 162);
 }
-
-/* Login and signup CSS */
+/* 
+Login and signup CSS */
 
 /* Används denna? */
-/* .form_container.login_container,
-.form_container.signup_container {
+/* .form_container .login_container,
+.form_container .signup_container {
     text-align: center;
     font-family: var(--font_family);
     box-shadow: 0px 0px 10px rgb(146, 146, 146);
@@ -207,7 +207,7 @@ header .buttons_container .signup_button:hover {
     position: absolute;
     top: 50px;
     left: -20%; 
-    height: 100%;
+    height: fit-content;
     bottom: 0;
     background-color: var(--background_color);
     display: block; 
@@ -216,7 +216,7 @@ header .buttons_container .signup_button:hover {
     transition: left 0.3s ease; 
     box-sizing: border-box;
     border-radius: 0 10px 10px 0;
-    box-shadow: 0px 0px 5px var(--shadow_for_menu);
+    box-shadow: 0px 0px 10px var(--shadow_for_menu);
   }
   
   .dropdown.active {
