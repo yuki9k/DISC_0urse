@@ -133,5 +133,38 @@
         ],
         "dislikedBy": [],
         "id": 15
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "Test post",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 16
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "Test post 2",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 17
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "Nice album testing",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 18
     }
 ]

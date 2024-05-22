@@ -17,6 +17,10 @@ PubSub.subscribe({
       event: "getFriends",
       details: null,
     });
+    PubSub.publish({
+      event: "get PrivateRooms",
+      details: null,
+    });
   },
 });
 
@@ -28,6 +32,18 @@ PubSub.subscribe({
 
     for (let friend of friends) {
       renderFriends(parent, icon, friend);
+    }
+  },
+});
+
+PubSub.subscribe({
+  event: "foundRooms",
+  listener: (rooms) => {
+    const parent = document.querySelector(".dropdown");
+    const icon = document.querySelector(".menu_icon_container");
+
+    for (let room of rooms) {
+      renderPrivateRooms(parent, icon, room);
     }
   },
 });
@@ -77,11 +93,7 @@ function renderDropdownItems(parent, icon) {
         <div>+</div>
       </div>
     </div>
-    <div class="dropdown_rooms">
-      <div class="dropdown_box_rooms">
-        <p>Room</p>
-      </div>
-    </div>
+    <div class="dropdown_rooms"></div>
   `;
   parent.appendChild(roomsItem);
 
@@ -149,6 +161,30 @@ function renderFriends(dropdown, icon, friend) {
           details: details,
         });
       },
+    });
+  });
+}
+
+function renderPrivateRooms(dropdown, icon, room) {
+  let parent = document.querySelector(".dropdown_rooms");
+  let roomDom = document.createElement("div");
+  roomDom.className = "dropdown_box_rooms";
+  parent.appendChild(roomDom);
+  roomDom.innerHTML = `
+      <div>
+        <p>${room.name}</p>
+      </div>
+    `;
+
+  roomDom.addEventListener("click", (e) => {
+    const menuIcon = icon;
+    const parent = dropdown;
+    menuIcon.classList.toggle("change");
+    parent.classList.toggle("active");
+
+    PubSub.publish({
+      event: "renderRoom",
+      details: null
     });
   });
 }
