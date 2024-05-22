@@ -494,7 +494,7 @@ PubSub.subscribe({
     PubSub.publish({
       event: "sendRoomPosts",
       details: {"posts": posts, "id": details.id}
-    })
+    });
   }
 });
 

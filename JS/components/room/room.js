@@ -6,7 +6,7 @@ import * as roomTopAnimation from "./roomTop/roomTopAnimation/roomTopAnimation.j
 function renderRoom(details){
     let roomInfo = details.room;
     let parent = details.parent;
-    details.parent.innerHTML = `<div id="room_container" id=${roomInfo.id}> 
+    details.parent.innerHTML = `<div id="room_container" class=${roomInfo.id}> 
                                     <div id="room_top"></div>
                                     <div id="room_bottom"></div>
                                 </div>`;
@@ -25,12 +25,8 @@ function renderRoom(details){
         event: "getRoomPosts",
         details: details.room
     });
-
-    PubSub.publish({
-        event: "initiateHeightToTopAnimation",
-        details: roomContainer.offsetHeight
-    });
 }
+
 
 PubSub.subscribe({
     event:"renderRoom",
@@ -41,9 +37,10 @@ PubSub.subscribe({
 
 PubSub.subscribe({
     event: "roomHeight",
-    listener: (orgHeight) => {
+    listener: (padding) => {
         const roomContainer = document.querySelector("#room_container");
-        roomContainer.style.height = orgHeight + "px";
+        roomContainer.style.paddingBottom = padding;
+        console.log("cum")
     }
 })
 

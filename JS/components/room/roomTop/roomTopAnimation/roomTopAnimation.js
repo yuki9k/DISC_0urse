@@ -4,8 +4,8 @@ import * as room from "../../room.js";
 
 
 PubSub.subscribe({
-    event: "initiateHeightToTopAnimation",
-    listener: (orgHeight) => {
+    event: "initiateAnimation",
+    listener: () => {
 
         window.addEventListener("scroll", (event) => {
 
@@ -20,7 +20,7 @@ PubSub.subscribe({
 
                 PubSub.publish({
                     event: "roomHeight",
-                    details: orgHeight
+                    details: "200px" 
                 });
             }
             else{

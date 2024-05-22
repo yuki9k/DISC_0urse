@@ -59,8 +59,8 @@ function renderRoomTop(parent, data){
     });
 
     PubSub.publish({
-        event: "initiateHeightToTopAnimation",
-        details: parent.offsetHeight
+        event: "initiateAnimation",
+        details: null
     });
 
     PubSub.publish({
