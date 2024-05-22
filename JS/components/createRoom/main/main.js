@@ -65,8 +65,10 @@ function renderCreate() {
     const albumCover = document.querySelector(".create_room_album_cover");
     const albumInfo = document.querySelector(".create_room_album_info");
 
+    console.log(genre.value);
+
     // PubSub.publish({
-    //   event: "getAlbum",
+    //   event: "getAlbumInfo",
     //   details: genre.value
     // });
 
@@ -74,7 +76,6 @@ function renderCreate() {
     //     event: "foundAlbum",
     //     listener: (details) => {
     //         console.log(details); 
-    //         albumCover.style.backgroundImage = `url("${}.jpg")`;
     //     }
     //   })
   });

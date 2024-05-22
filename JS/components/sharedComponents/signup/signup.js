@@ -31,24 +31,19 @@ function renderSignupForm() {
   let wrapper = document.querySelector("#wrapper");
   wrapper.appendChild(modalContainer);
 
-  // Prevent scrolling of the underlying content while modal is open
   document.body.style.overflow = "hidden";
 
-  // Function to handle closing the modal when clicking outside the form
   function handleCloseModal() {
     modalContainer.remove();
-    // Restore scrolling of the underlying content
     document.body.style.overflow = "";
   }
 
-  // Add event listener to close modal when clicking outside the form
   modalContainer.addEventListener("click", (event) => {
     if (event.target === modalContainer) {
       handleCloseModal();
     }
   });
 
-  // Event listener for switching back to login form
   const switchToLoginButton = modalContainer.querySelector("#switch_to_login");
   switchToLoginButton.addEventListener("click", () => {
     handleCloseModal();
@@ -58,11 +53,10 @@ function renderSignupForm() {
     });
   });
 
-  // Event listener for signup button (you can implement signup logic here)
   const signupButton = modalContainer.querySelector("#signup_button");
   signupButton.addEventListener("click", async () => {
-    let username = signup_user.value;
-    let password = signup_password.value;
+    let username = signup_user.value.trim();
+    let password = signup_password.value.trim();
 
     let body = { name: username, password: password };
 

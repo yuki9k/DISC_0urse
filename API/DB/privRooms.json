@@ -37,5 +37,16 @@
         ],
         "name": "test room",
         "id": 9
+    },
+    {
+        "hostID": 2,
+        "style": "two",
+        "genre": "Indie Pop",
+        "users": [
+            1,
+            2
+        ],
+        "name": "Cool room",
+        "id": 10
     }
 ]
