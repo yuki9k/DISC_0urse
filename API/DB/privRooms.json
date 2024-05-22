@@ -15,5 +15,27 @@
         ],
         "name": "my first room",
         "id": 7
+    },
+    {
+        "hostID": 2,
+        "style": "one",
+        "genre": "Indie Pop",
+        "users": [
+            1,
+            2
+        ],
+        "name": "Theos room",
+        "id": 8
+    },
+    {
+        "hostID": 2,
+        "style": "six",
+        "genre": "Indie Folk",
+        "users": [
+            1,
+            2
+        ],
+        "name": "test room",
+        "id": 9
     }
 ]

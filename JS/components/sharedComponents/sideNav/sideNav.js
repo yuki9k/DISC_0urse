@@ -18,7 +18,7 @@ PubSub.subscribe({
       details: null,
     });
     PubSub.publish({
-      event: "get PrivateRooms",
+      event: "getPrivateRooms",
       details: null,
     });
   },
@@ -47,6 +47,7 @@ PubSub.subscribe({
     }
   },
 });
+
 function renderDropdownItems(parent, icon, roomsToRender) {
   const friendsItem = document.createElement("div");
   friendsItem.classList.add("dropdown_item");
@@ -94,21 +95,22 @@ function renderDropdownItems(parent, icon, roomsToRender) {
         <div>+</div>
       </div>
     </div>
-    <div class="dropdown_rooms" id="privateRoomDropdown">
+    <div class="dropdown_private_rooms" id="privateRoomDropdown">
       
     </div>
   `;
   parent.appendChild(roomsItem);
   const firstRoomDropDown = document.querySelector("#publicRoomDropdown");
   const secondRoomDropDown = document.querySelector("#privateRoomDropdown");
+  const menuIcon = icon;
+  const dropdown = parent;
+  
   for(const room of roomsToRender.public){
     let div = document.createElement("div");
     div.classList.add(`dropdown_box_rooms`,`room_${room.id}`);
     div.innerHTML = `<p>${room.genre}</p>`;
     firstRoomDropDown.appendChild(div);
     div.addEventListener("click", () => {
-      const menuIcon = icon;
-      const dropdown = parent;
       const wrapper = document.querySelector("#wrapper");
       menuIcon.classList.toggle("change");
       dropdown.classList.toggle("active");
@@ -164,6 +166,7 @@ function renderDropdownItems(parent, icon, roomsToRender) {
 }
 
 function renderFriends(dropdown, icon, friend) {
+  const menuIcon = icon;
   let parent = document.querySelector(".dropdown_friends");
   let friendDom = document.createElement("div");
   friendDom.className = "dropdown_box_friends";
@@ -201,12 +204,13 @@ function renderFriends(dropdown, icon, friend) {
 }
 
 function renderPrivateRooms(dropdown, icon, room) {
-  let parent = document.querySelector(".dropdown_rooms");
+  const menuIcon = icon;
+  let parent = document.querySelector(".dropdown_private_rooms");
   let roomDom = document.createElement("div");
   roomDom.className = "dropdown_box_rooms";
   parent.appendChild(roomDom);
   roomDom.innerHTML = `
-      <div>
+      <div class="dropdown_box_rooms">
         <p>${room.name}</p>
       </div>
     `;

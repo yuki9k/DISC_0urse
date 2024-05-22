@@ -225,7 +225,8 @@ header .buttons_container .signup_button:hover {
     border: .5px solid black;
 }
 
-.dropdown_rooms {
+.dropdown_rooms,
+.dropdown_private_rooms {
     display: grid;
     grid-template-columns: 120px 120px;
     grid-auto-rows: 40px;

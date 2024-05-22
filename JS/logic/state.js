@@ -126,6 +126,17 @@ const State = {
   getFriendIds: function () {
     return this._state.thisUser.friends;
   },
+  getPrivateRooms: async function () {
+    const request = new Request(this.url + `private.php`);
+    const response = await fetcher(request);
+    const rooms = response.resource;
+    const userId = this._state.thisUser.id;
+
+    return {
+      rooms: rooms,
+      userId: userId
+    };
+  },
   getAlbumInformation: function (genreId) {
     switch (genreId) {
       case 1:
@@ -311,6 +322,24 @@ PubSub.subscribe({
     }
 
     PubSub.publish({ event: "foundFriends", details: friendArr });
+  },
+});
+
+PubSub.subscribe({
+  event: "getPrivateRooms",
+  listener: async () => {
+    const data = await State.getPrivateRooms();
+    const rooms = data.rooms;
+    const userId = data.userId;
+    const roomArray = [];
+
+    for (let room of rooms) {
+      if(room.hostID === userId) {
+        roomArray.push(room);
+      }
+    }
+    
+    PubSub.publish({ event: "foundRooms", details: roomArray });
   },
 });
 
@@ -510,3 +539,18 @@ PubSub.subscribe({
     });
   }
 });
+
+PubSub.subscribe({
+  event: "userCreatedRoom",
+  listener: (details) => {
+    const token = localStorage.getItem("token");
+    const body = { token: token, genre: details.genre, style: details.style, name: details.name, users: [1] };
+    const request = new Request ("./api/private.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    })
+    fetcher(request);
+  }
+})
+

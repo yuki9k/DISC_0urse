@@ -8,11 +8,10 @@ PubSub.subscribe({
   },
 });
 
-
 function renderCreate() {
+  let wrapper = document.querySelector("#wrapper");
   let main = document.createElement("main");
   main.className = "main_container_create_room";
-  let wrapper = document.querySelector("#wrapper");
   wrapper.innerHTML = "";
   wrapper.appendChild(main);
 
@@ -28,12 +27,12 @@ function renderCreate() {
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
                             <option>Choose genre</option>
-                            <option value="Indie Pop">Pop</option>  
-                            <option value="Indie Rock">Rock</option>  
-                            <option value="Indie Singer-songwriter">Singer & Songwriter</option>  
-                            <option value="Indie Folk">Folk</option>  
-                            <option value="Indie R&b">R&B</option>  
-                            <option value="Indie Post-punk">Post Punk</option>  
+                            <option value="Indie Pop">Indie Pop</option>  
+                            <option value="Indie Rock">Indie Rock</option>  
+                            <option value="Indie Singer-songwriter">Indie Singer & Songwriter</option>  
+                            <option value="Indie Folk">Indie Folk</option>  
+                            <option value="Indie R&b">Indie R&B</option>  
+                            <option value="Indie Post-punk">Indie Post Punk</option>  
                         </select> 
                     <p class="room_theme">Theme</p>
                         <select class="choose_theme">  
