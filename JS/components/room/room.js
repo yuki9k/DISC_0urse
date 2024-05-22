@@ -6,10 +6,10 @@ import * as roomTopAnimation from "./roomTop/roomTopAnimation/roomTopAnimation.j
 function renderRoom(details){
     let roomInfo = details.room;
     let parent = details.parent;
-    details.parent.innerHTML = `<div id="room_container"> 
-                            <div id="room_top" class=${roomInfo.id}></div>
-                            <div id="room_bottom"></div>
-                        </div>`;
+    details.parent.innerHTML = `<div id="room_container" id=${roomInfo.id}> 
+                                    <div id="room_top"></div>
+                                    <div id="room_bottom"></div>
+                                </div>`;
     const roomTop = parent.querySelector("#room_top");
     const roomBottom = parent.querySelector("#room_bottom");
     const roomContainer = parent.querySelector("#room_container");
@@ -25,11 +25,6 @@ function renderRoom(details){
         event: "getRoomPosts",
         details: details.room
     });
-
-/*     PubSub.publish({
-        event: "renderRoomBottom",
-        details: roomBottom
-    }); */
 
     PubSub.publish({
         event: "initiateHeightToTopAnimation",

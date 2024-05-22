@@ -1,7 +1,7 @@
 import {PubSub} from "../../../../logic/PubSub.js";
 import * as state from "../../../../logic/state.js";
 
-function renderAddPostButton(parent){
+function renderAddPostButton(parent, id){
     parent.innerHTML = `<div id="add_post_button">
                             <div id="plus_sign">+</div>
                             <textarea id="post_input"></textarea>
@@ -48,7 +48,7 @@ function renderAddPostButton(parent){
 
         const body = {
             "token": localStorage.getItem("token"),
-            "roomID": 2,
+            "roomID": id,
             "time": "time",
             "content": inputValue
         }
@@ -63,5 +63,8 @@ function renderAddPostButton(parent){
 
 PubSub.subscribe({
     event: "renderAddPostButton",
-    listener: renderAddPostButton
+    listener: (details) =>{
+        const {parent, id} = details;
+        renderAddPostButton(parent, id)
+    }
 })

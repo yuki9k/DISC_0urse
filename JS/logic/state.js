@@ -493,9 +493,7 @@ PubSub.subscribe({
     const posts = await State.getPostsFromRoom(details.id);
     PubSub.publish({
       event: "sendRoomPosts",
-      details: {
-        posts
-      }
+      details: {"posts": posts, "id": details.id}
     })
   }
 });

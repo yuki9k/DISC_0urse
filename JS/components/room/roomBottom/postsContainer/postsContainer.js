@@ -6,19 +6,9 @@ function renderPostsContainer(parent, data){
     postsListContainer.id = "postsListContainer";
     parent.appendChild(postsListContainer);
     
+    console.log(data)
 
-
-
-/*     for(let i = 0; i < 2; i++){
-        for(let chat of data){
-            PubSub.publish({
-                event: "renderPostBox",
-                details: {"parent": postsListContainer, "data": chat}
-            });
-        }
-    } */
     for(let chat of data){
-        
         PubSub.publish({
             event: "renderPostBox|getUserData",
             details: {"parent": postsListContainer, "data": chat}
@@ -37,8 +27,6 @@ PubSub.subscribe({
 PubSub.subscribe({
     event: "sendToPostParent",
     listener:(details) => {
-        
-        
         const user = details.user;
         const postsListContainer = document.querySelector("#postsListContainer");
         const chat = {data: details.post, parent: postsListContainer}

@@ -48,10 +48,6 @@ function renderRoomTop(parent, data){
             `;
             const albumTracks = parent.querySelector("#album_tracks_container");
 
-    PubSub.publish({
-        event: "initiateHeightToTopAnimation",
-        details: parent.offsetHeight
-    });
             for(let i = 0; i < albumInfo.albumTotalTracks; i++){
                 const albumTrack = document.createElement("li");
                 albumTrack.classList.add("album_track");
@@ -61,6 +57,12 @@ function renderRoomTop(parent, data){
             }
         }
     });
+
+    PubSub.publish({
+        event: "initiateHeightToTopAnimation",
+        details: parent.offsetHeight
+    });
+
     PubSub.publish({
         event: "getAlbum",
         details: data.genre
