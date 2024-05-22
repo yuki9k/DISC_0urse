@@ -35,7 +35,6 @@ PubSub.subscribe({
     event: "renderSlide",
     listener: (details) => {
         //const {parent, chats, image} = details;
-        console.log(details.image);
         renderSlide(details.parent, {chats: details.posts, image: details.image});
         makeFirstSlideCurrent();
     }
