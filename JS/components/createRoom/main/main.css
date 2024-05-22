@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     
-    padding: 50px 0 0 0;
+    padding: 30px 0 0 0;
     box-sizing: border-box;
     background-color: var(--background_color);
 }
@@ -33,7 +33,7 @@
 
 .create_room_title {
     font-size: 40px;
-    font-family: var(--font_family);
+    font-family: var(--titles);
     letter-spacing: 1px;
     text-align: center;
     color:var(--paragraph_color);
@@ -162,6 +162,7 @@
     transition: background-color 0.3s ease;
     font-size: 16px;
     margin-top: 30px;
+    font-family: var(--font_family);
 }
 
 .create_room_button:hover {

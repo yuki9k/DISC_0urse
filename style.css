@@ -1,12 +1,23 @@
+@font-face {
+    font-family: "Titles";
+    src: url(./fonts/Bungee_Shade/BungeeShade-Regular.ttf);
+}
+
+@font-face {
+    font-family: "paragraph_font";
+    src: url(./fonts/static/Montserrat-Regular.ttf);
+}
+
 :root {
-    --font_family: sans-serif;
+    --titles: "titles";
+    --font_family: "paragraph_font";
     --default_border_radius: 10px;
     --album_width: 500px;
 
     --paragraph_color: #181818;
     --background_color: #ececec;
     --background_color_pop: #ffffff;
-    --shadow_for_menu:#bbbbbb;
+    --shadow_for_menu:#484848;
     --hover_for_menu:#cbcbcb;
     --white_for_menu: #fff;
     --always_black: #000;
@@ -14,7 +25,6 @@
     --logout_button_color:#3e3e3e;
     --text_area_color:#e9e9ed;
     --add_friends_container_color:#fff;
-    
 }
 
 :root:has(body .dark_mode) {
@@ -37,6 +47,12 @@ body {
     max-height: 100vh;
     background-color: var(--background_color);
     transition: 300ms background-color ease-in-out;
+}
+
+p,
+a,
+div {
+    font-family: var(--font_family);
 }
 
 /* CSS Classes that are commonly used */
