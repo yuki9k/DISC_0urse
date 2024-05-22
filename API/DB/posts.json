@@ -4,10 +4,10 @@
         "roomID": 2,
         "time": 10052024,
         "content": "heeeej yeah niceeee fuck yeah",
-        "likedBy": [
+        "likedBy": [],
+        "dislikedBy": [
             2
         ],
-        "dislikedBy": [],
         "id": 3
     },
     {
@@ -122,5 +122,82 @@
         ],
         "dislikedBy": [],
         "id": 13
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "hej jag \u00e4r Theo",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 14
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "Hej jag \u00e4r Theo",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 15
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "awoooo",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 16
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "hej jag \u00e4r Theo",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 17
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "Hej jag \u00e4r Theo",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 18
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "eeeh hall\u00e5???",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 19
+    },
+    {
+        "userID": 2,
+        "roomID": 2,
+        "time": "time",
+        "content": "N\u00c4MEN?!!!!",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 20
     }
 ]

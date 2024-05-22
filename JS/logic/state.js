@@ -19,10 +19,13 @@ const State = {
     }
     //request okayed push new entity to state.
     this._state[ent].push(response.resource);
-
+    console.log(response);
     PubSub.publish({
       event: "sendToPostParent",
-      details: response.resource
+      details: {
+        post: response.resource,
+        user: State._state.thisUser
+      }
     });
   },
 

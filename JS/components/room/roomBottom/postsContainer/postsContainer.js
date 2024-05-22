@@ -37,11 +37,16 @@ PubSub.subscribe({
 PubSub.subscribe({
     event: "sendToPostParent",
     listener:(details) => {
+        
+        
+        const user = details.user;
         const postsListContainer = document.querySelector("#postsListContainer");
-
+        const chat = {data: details.post, parent: postsListContainer}
+        console.log(chat);
+        chat.parent = postsListContainer;
         PubSub.publish({
             event: "renderPostBox",
-            details: {"parent": postsListContainer, "data": details}
+            details: {chat: chat, user: user}
         })
 
     }
