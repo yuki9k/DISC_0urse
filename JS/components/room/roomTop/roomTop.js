@@ -7,7 +7,6 @@ function renderRoomTop(parent, data){
         event: "sendAlbum",
         listener: (details) => {
             albumInfo = details;
-            console.log(albumInfo);
             switch (data.genre) {
                 case "Indie Pop":
                   albumInfo.image = "../../../../API/db/albumPics/indie_pop.jpeg";
@@ -49,6 +48,10 @@ function renderRoomTop(parent, data){
             `;
             const albumTracks = parent.querySelector("#album_tracks_container");
 
+    PubSub.publish({
+        event: "initiateHeightToTopAnimation",
+        details: parent.offsetHeight
+    });
             for(let i = 0; i < albumInfo.albumTotalTracks; i++){
                 const albumTrack = document.createElement("li");
                 albumTrack.classList.add("album_track");

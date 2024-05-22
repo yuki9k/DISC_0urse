@@ -13,7 +13,42 @@ function renderPostsContainer(parent, data) {
       details: { parent: postsListContainer, data: chat },
     });
   }
+
+  /*     for(let i = 0; i < 2; i++){
+        for(let chat of data){
+            PubSub.publish({
+                event: "renderPostBox",
+                details: {"parent": postsListContainer, "data": chat}
+            });
+        }
+    } */
+  for (let chat of data) {
+    PubSub.publish({
+      event: "renderPostBox|getUserData",
+      details: { parent: postsListContainer, data: chat },
+    });
+  }
 }
+
+PubSub.subscribe({
+  event: "renderPostsContainer",
+  listener: (details) => {
+    const { parent, data } = details;
+    renderPostsContainer(parent, data);
+  },
+});
+
+PubSub.subscribe({
+  event: "sendToPostParent",
+  listener: (details) => {
+    const postsListContainer = document.querySelector("#postsListContainer");
+
+    PubSub.publish({
+      event: "renderPostBox",
+      details: { parent: postsListContainer, data: details },
+    });
+  },
+});
 
 function sortPostsContainer({ dom, order }) {
   [...dom.children]
@@ -41,12 +76,4 @@ function sortPostsContainer({ dom, order }) {
 PubSub.subscribe({
   event: "sortPostsContainer",
   listener: sortPostsContainer,
-});
-
-PubSub.subscribe({
-  event: "renderPostsContainer",
-  listener: (details) => {
-    const { parent, data } = details;
-    renderPostsContainer(parent, data);
-  },
 });

@@ -1,6 +1,18 @@
 import { PubSub } from "../../../../logic/PubSub.js";
 import * as post from "./postItem/postItem.js";
 
+// PubSub.publish({
+//     event: "getAlbums",
+//     details: null,
+//   });
+
+//   PubSub.subscribe({
+//     event: "foundAlbums",
+//     listener: (details) => {
+//         renderPostsPreview
+//     } 
+//   })
+
 function renderPostsPreview(parent, posts){
     parent.innerHTML = `<h1 class="album_title"></h1>
                         <ul class="posts_container"></ul>`;

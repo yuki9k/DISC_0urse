@@ -40,7 +40,6 @@ function renderRoom(details){
 PubSub.subscribe({
     event:"renderRoom",
     listener: (details) => {
-        console.log(details);
         renderRoom(details);
     }
 });

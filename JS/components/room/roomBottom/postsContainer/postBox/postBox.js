@@ -1,21 +1,19 @@
 import { PubSub } from "../../../../../logic/PubSub.js";
+import * as state from "../../../../../logic/state.js";
 
 function renderPostBox(data, user) {
   const postBox = document.createElement("li");
-  const {
-    data: { dislikedBy, likedBy, time },
-  } = data;
+  const DATA = data.data;
+  const { likedBy, dislikedBy, time } = DATA;
   postBox.dataset.postScore = likedBy.length - dislikedBy.length;
-  postBox.dataset.postTime = time;
+  postBox.dataset.time = time;
   data.parent.appendChild(postBox);
-  /*   postBox.id = ""; */
-  /* PubSub.publish({
-        event: "getUserForPost",
-        details: {
-            id: data.userID
-        }
-    }); */
-  console.log(data);
+  postBox.id = "post_" + DATA.id;
+
+  /* const likedCount = data.likedBy.length;
+    const dislikedCount = data.dislikedBy.length;
+    const sum = likedCount - dislikedCount; */
+
   postBox.innerHTML = `<div class="post_content_box">
                     <div class="post_top">
                         <div class="profile_pic_name">
@@ -25,28 +23,72 @@ function renderPostBox(data, user) {
                         <div class="post_time">10 min ago</div>
                     </div>
                     <div class="post_middle">
-                        <p class="post_content">${data.data.content}</p>
+                        <p class="post_content">${DATA.content}</p>
                     </div>
                     <div class="post_bottom">
                         <div class="react_box">
-                            <div class="positive"> + </div>
-                            <div class="negative"> - </div>
+                            <div class="positive likeButton"> + </div>
+                            <div class="negative dislikeButton"> - </div>
                         </div>
                         <div class="reaction_counter_box">
                             <span class="total_count">${
-                              data.data.likedBy.length -
-                              data.data.dislikedBy.length
+                              DATA.likedBy.length - DATA.dislikedBy.length
                             }p </span>(<span class="positive">+${
-    data.data.likedBy.length
-  }</span>/<span class="negative">-${data.data.dislikedBy.length}</span>)
+    DATA.likedBy.length
+  }</span>/<span class="negative">-${DATA.dislikedBy.length}</span>)
                         </div>
                     </div>
                 <div>`;
+
+  const like = postBox.querySelector(".likeButton");
+  const dislike = postBox.querySelector(".dislikeButton");
+
+  like.addEventListener("click", (event) => {
+    const body = {
+      token: localStorage.getItem("token"),
+      id: DATA.id,
+      like: "like",
+    };
+
+    PubSub.publish({
+      event: "patchPostItem",
+      details: { ent: "posts", body: body },
+    });
+  });
+
+  dislike.addEventListener("click", (event) => {
+    const body = {
+      token: localStorage.getItem("token"),
+      id: DATA.id,
+      dislike: "dislike",
+    };
+
+    PubSub.publish({
+      event: "patchPostItem",
+      details: { ent: "posts", body: body },
+    });
+  });
 }
 
 PubSub.subscribe({
   event: "renderPostBox",
   listener: (details) => {
     renderPostBox(details.chat, details.user);
+  },
+});
+
+PubSub.subscribe({
+  event: "renderPostLikedCounter",
+  listener: (details) => {
+    const post = document.querySelector("#post_" + details.id);
+    const post_liked = post.querySelector(".reaction_counter_box > .positive");
+    const post_disliked = post.querySelector(
+      ".reaction_counter_box > .negative"
+    );
+    const post_sum = post.querySelector(".reaction_counter_box > .total_count");
+
+    post_liked.innerHTML = "+" + details.likedBy.length;
+    post_disliked.innerHTML = "-" + details.dislikedBy.length;
+    post_sum.innerHTML = details.likedBy.length - details.dislikedBy.length;
   },
 });

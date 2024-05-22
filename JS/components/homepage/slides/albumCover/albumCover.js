@@ -6,7 +6,6 @@ function renderAlbumCover(parent, data){
     
     albumCover.id = "album_cover";
     albumCover.classList.add("closed");
-    console.log(data);
     albumCover.setAttribute("src", data);
     parent.appendChild(albumCover);
 

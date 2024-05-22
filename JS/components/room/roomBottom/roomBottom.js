@@ -16,6 +16,11 @@ function renderRoomBottom(parent, data) {
   const filterPosts = parent.querySelector("#filter_posts");
   const addPosts = parent.querySelector("#add_posts");
 
+  PubSub.publish({
+    event: "renderAddPostButton",
+    details: addPosts,
+  });
+
   console.log(data);
   PubSub.publish({
     event: "renderAddPostButton",
@@ -36,8 +41,6 @@ function renderRoomBottom(parent, data) {
 PubSub.subscribe({
   event: "sendRoomPosts",
   listener: (details) => {
-    console.log("SEND ROOM POSTS!!!");
-    console.log("AWOOOOOOOOOOO", details);
     const roomBottom = document.querySelector("#room_bottom");
     renderRoomBottom(roomBottom, details.posts);
     /* PubSub.publish({

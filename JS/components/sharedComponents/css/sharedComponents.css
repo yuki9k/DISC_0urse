@@ -354,7 +354,8 @@ header .buttons_container .signup_button:hover {
     font-size: 12px;
 }
 
-.edit_container {
+.edit_container,
+.logout_container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -362,7 +363,8 @@ header .buttons_container .signup_button:hover {
     margin-top: 20px;
 }
 
-.edit_user {
+.edit_user,
+.logout_user {
     width: 40%;
     width: 100%;
     height: 40px;
