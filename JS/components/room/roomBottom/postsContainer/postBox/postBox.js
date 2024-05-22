@@ -89,6 +89,8 @@ PubSub.subscribe({
 
     post_liked.innerHTML = "+" + details.likedBy.length;
     post_disliked.innerHTML = "-" + details.dislikedBy.length;
-    post_sum.innerHTML = details.likedBy.length - details.dislikedBy.length;
+    post_sum.innerHTML = `${
+      details.likedBy.length - details.dislikedBy.length
+    }p `;
   },
 });

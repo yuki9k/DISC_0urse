@@ -13,21 +13,6 @@ function renderPostsContainer(parent, data) {
       details: { parent: postsListContainer, data: chat },
     });
   }
-
-  /*     for(let i = 0; i < 2; i++){
-        for(let chat of data){
-            PubSub.publish({
-                event: "renderPostBox",
-                details: {"parent": postsListContainer, "data": chat}
-            });
-        }
-    } */
-  for (let chat of data) {
-    PubSub.publish({
-      event: "renderPostBox|getUserData",
-      details: { parent: postsListContainer, data: chat },
-    });
-  }
 }
 
 PubSub.subscribe({

@@ -18,12 +18,6 @@ function renderFilterButton(parent) {
       details: { dom: postsContainerDom, order: filterSelectDom.value },
     });
   });
-  // parent.innerHTML = `<select id="filter_input">
-  //                           <option>Latest</option>
-  //                           <option>Most likes</option>
-  //                           <option>OLdest</option>
-  //                       </select>
-  //   `;
 }
 
 PubSub.subscribe({
