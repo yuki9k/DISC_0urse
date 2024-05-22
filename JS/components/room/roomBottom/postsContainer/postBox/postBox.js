@@ -1,17 +1,22 @@
-import {PubSub} from "../../../../../logic/PubSub.js";
+import { PubSub } from "../../../../../logic/PubSub.js";
 
-function renderPostBox(data, user){
-    const postBox = document.createElement("li");
-    data.parent.appendChild(postBox);
+function renderPostBox(data, user) {
+  const postBox = document.createElement("li");
+  const {
+    data: { dislikedBy, likedBy, time },
+  } = data;
+  postBox.dataset.postScore = likedBy.length - dislikedBy.length;
+  postBox.dataset.postTime = time;
+  data.parent.appendChild(postBox);
   /*   postBox.id = ""; */
-    /* PubSub.publish({
+  /* PubSub.publish({
         event: "getUserForPost",
         details: {
             id: data.userID
         }
     }); */
-    console.log(data);
-    postBox.innerHTML = `<div class="post_content_box">
+  console.log(data);
+  postBox.innerHTML = `<div class="post_content_box">
                     <div class="post_top">
                         <div class="profile_pic_name">
                             <img src="">
@@ -28,17 +33,20 @@ function renderPostBox(data, user){
                             <div class="negative"> - </div>
                         </div>
                         <div class="reaction_counter_box">
-                            <span class="total_count">${data.data.likedBy.length - data.data.dislikedBy.length}p </span>(<span class="positive">+${data.data.likedBy.length}</span>/<span class="negative">-${data.data.dislikedBy.length}</span>)
+                            <span class="total_count">${
+                              data.data.likedBy.length -
+                              data.data.dislikedBy.length
+                            }p </span>(<span class="positive">+${
+    data.data.likedBy.length
+  }</span>/<span class="negative">-${data.data.dislikedBy.length}</span>)
                         </div>
                     </div>
                 <div>`;
 }
-    
 
 PubSub.subscribe({
-    event: "renderPostBox",
-    listener: (details) => {
-        renderPostBox(details.chat, details.user);
-    }
-})
-
+  event: "renderPostBox",
+  listener: (details) => {
+    renderPostBox(details.chat, details.user);
+  },
+});
