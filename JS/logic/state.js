@@ -7,6 +7,7 @@ const State = {
       "posts": []
   },
 	post: async function (ent, options){
+    console.log(options.body);
     const request = new Request(this.url + ent + ".php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -17,15 +18,27 @@ const State = {
     if (!response.success.ok) {
       //throw error
     } else {
-      this._state[ent].push(response.resource);
-      console.log(response);
-      PubSub.publish({
-      event: "sendToPostParent",
-      details: {
-        post: response.resource,
-        user: State._state.thisUser
+      switch (ent){
+        case "posts":
+          this._state[ent].push(response.resource);
+          console.log(response);
+          PubSub.publish({
+            event: "sendToPostParent",
+            details: {
+              post: response.resource,
+              user: State._state.thisUser
+            }
+          });
+          break;
+        case "friends":
+          PubSub.publish({
+            event: "updateFriendsInfo",
+            details: {
+              response: response.resource
+            }
+          });
+            
       }
-    });
     }
     //request okayed push new entity to state.
     
@@ -275,7 +288,7 @@ PubSub.subscribe({
     let responsePosts = await fetcher(requestPosts);
     State._state.posts = responsePosts.resource;
 
-    // console.log(_state);
+    console.log(State._state.thisUser);
     PubSub.publish({
       event: "renderHomepageInfoRecived",
       details: {
@@ -309,7 +322,17 @@ PubSub.subscribe({
       const friend = await State.getExternalUser(friendId);
       friendArr.push(friend);
     }
-
+    if(State._state.thisUser.friendRequests.length > 0){
+      const reqUsers = [];
+      for(const reqId of State._state.thisUser.friendRequests){
+        reqUsers.push(await State.getExternalUser(reqId));
+      }
+      console.log(reqUsers);
+      PubSub.publish({
+        event: "foundFriendRequests",
+        details: reqUsers
+      });
+    }
     PubSub.publish({ event: "foundFriends", details: friendArr });
   },
 });
@@ -510,3 +533,19 @@ PubSub.subscribe({
     });
   }
 });
+
+PubSub.subscribe({
+  event: "sendFriendRequest",
+  listener: (details) => {
+    const user = details;
+    const token = localStorage.getItem("token");
+    const ent = "friends";
+    const options = {
+      body: {
+        token: token,
+        name: user
+      }
+    }
+    State.post(ent, options);
+  }
+})

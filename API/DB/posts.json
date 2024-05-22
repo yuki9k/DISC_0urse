@@ -243,5 +243,27 @@
         ],
         "dislikedBy": [],
         "id": 24
+    },
+    {
+        "userID": 1,
+        "roomID": 2,
+        "time": "time",
+        "content": "AJAJAJAJAJA",
+        "likedBy": [
+            1
+        ],
+        "dislikedBy": [],
+        "id": 25
+    },
+    {
+        "userID": 1,
+        "roomID": 2,
+        "time": "time",
+        "content": "HEJSAN",
+        "likedBy": [
+            1
+        ],
+        "dislikedBy": [],
+        "id": 26
     }
 ]

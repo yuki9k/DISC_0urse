@@ -383,3 +383,17 @@ header .buttons_container .signup_button:hover {
     margin-top: 21px;
     width: 130%;
 }
+.check{
+    color: gray;
+    aspect-ratio: 1;
+}
+.check:hover{
+    color:green
+}
+.cross{
+    color: gray;
+    aspect-ratio: 1;
+}
+.cross:hover{
+    color: red;
+}

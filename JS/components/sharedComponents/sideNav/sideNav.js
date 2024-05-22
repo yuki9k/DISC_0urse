@@ -35,6 +35,18 @@ PubSub.subscribe({
     }
   },
 });
+PubSub.subscribe({
+  event: "foundFriendRequests",
+  listener: (requests) => {
+    const parent = document.querySelector(".dropdown");
+    const icon = document.querySelector(".menu_icon_container");
+    console.log("helloooo friendreqyests");
+
+    for (let request of requests) {
+      renderFriendRequests(parent, request);
+    }
+  },
+});
 
 PubSub.subscribe({
   event: "foundRooms",
@@ -58,9 +70,54 @@ function renderDropdownItems(parent, icon, roomsToRender) {
       </div>
     </div>
     <div class="dropdown_friends"></div>
+    <div class="dropdown_friend_requests"></div>
   `;
   parent.appendChild(friendsItem);
+  const addFriendButton = document.querySelector(".add_friend_button");
+  addFriendButton.addEventListener("click", (e) => {
 
+    const modalContainer =  document.createElement("div");
+    modalContainer.classList.add("modal_container");
+    
+    document.body.style.overflow = "hidden";
+    const handleCloseModal = () => {
+      modalContainer.remove();
+      document.body.style.overflow = "";
+    };
+
+    modalContainer.addEventListener("click", (event) => {
+      if (event.target === modalContainer) {
+        handleCloseModal();
+      }
+    });
+
+    let wrapper =  document.querySelector("#wrapper");
+    let token = localStorage.getItem("token");
+    if(!token){
+      wrapper.appendChild(modalContainer);
+      modalContainer.innerHTML = `
+        <div class="modal_content">
+          <p style = "color: red">YOU MUST BE LOGGED IN TO ADD FRIENDS >:(</p>
+        </div>
+      `;
+    } else {
+      wrapper.appendChild(modalContainer);
+      modalContainer.innerHTML = `
+        <div class="modal_content">
+          <input style="width: 85%" id="new_friend" placeholder="your new friends username :)">
+          <button id="send_friend_request">add!</button>
+        </div>
+      `;
+      document.querySelector("#send_friend_request").addEventListener("click", (e) => {
+        const user = document.querySelector("#new_friend").value
+        PubSub.publish({
+          event: "sendFriendRequest",
+          details: user
+        });
+        handleCloseModal();
+      });
+    }
+  });
   const roomsItem = document.createElement("div");
   roomsItem.classList.add("dropdown_item_rooms");
 /*   <div class="dropdown_box_rooms room_pop">
@@ -159,6 +216,24 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     PubSub.publish({
       event: "renderCreateRoom",
       details: null,
+    });
+  });
+}
+function renderFriendRequests(dropdown, user){
+  let parent = document.querySelector(".dropdown_friend_requests");
+  let friendDom = document.createElement("div");
+  friendDom.className = "dropdown_box_friends";
+  parent.appendChild(friendDom);
+  friendDom.innerHTML = `
+      <img class="friend_image" src="${user.profilePicture}">
+      <div style="font-size: 12px" class="friend_username">New friend request from ${user.name}</div>
+      <div class="check" id="accept_request_${user.name}">&#9745;</div>
+      <div class="cross">&#9746;</div>
+    `;
+  friendDom.querySelector(".check").addEventListener("click", (e) => {
+    PubSub.publish({
+      event: "sendFriendRequest",
+      details: user.name
     });
   });
 }

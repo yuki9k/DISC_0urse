@@ -4,7 +4,12 @@
         "password": "admin",
         "profilePicture": "placeholder",
         "score": 0,
-        "friends": [],
+        "friends": [
+            3,
+            4,
+            5
+        ],
+        "friendRequests": [],
         "id": 1,
         "status": "hanging out"
     },
@@ -18,6 +23,7 @@
             3,
             4
         ],
+        "friendRequests": [],
         "id": 2,
         "status": "hej"
     },
@@ -26,7 +32,10 @@
         "password": "admin",
         "profilePicture": "placeholder",
         "score": 0,
-        "friends": [],
+        "friends": [
+            1
+        ],
+        "friendRequests": [],
         "id": 3,
         "status": 404
     },
@@ -35,8 +44,40 @@
         "password": "admin",
         "profilePicture": "placeholder",
         "score": 0,
-        "friends": [],
+        "friends": [
+            1,
+            5
+        ],
+        "friendRequests": [],
         "id": 4,
         "status": "jag vet inte"
+    },
+    {
+        "name": "rei",
+        "password": "test",
+        "profilePicture": "placeholder",
+        "score": 0,
+        "friends": [
+            6,
+            1,
+            4
+        ],
+        "status": "",
+        "friendRequests": [
+            3
+        ],
+        "id": 5
+    },
+    {
+        "name": "shinji",
+        "password": "test",
+        "profilePicture": "placeholder",
+        "score": 0,
+        "friends": [
+            5
+        ],
+        "status": "",
+        "friendRequests": [],
+        "id": 6
     }
 ]
