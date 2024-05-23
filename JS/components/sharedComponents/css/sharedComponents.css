@@ -507,3 +507,55 @@ header .buttons_container .signup_button:hover {
 .cross:hover{
     color: red;
 }
+
+/* New Friend CSS */
+
+.add_friend_container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    background-color: var(--background_color);
+    padding: 20px 20px 40px 20px;
+    border-radius: var(--default_border_radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 450px;
+    overflow: auto; 
+    box-shadow: 0px 0px 5px rgb(54, 54, 54);
+}
+
+#add_friend_logo {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "titles";
+    margin: 10px 0 -20px 0;
+}
+
+.add_friend_title {
+    text-align: center;
+    font-style: italic;
+}
+
+#new_friend {
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0px;
+    box-shadow: 0px 0px 5px var(--shadow_for_menu);
+    width: 80%;
+}
+
+#send_friend_request {
+    background-color: #62d464;
+    padding: 8px 20px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: white;
+    border: 0px;
+    width: 80%;
+    box-shadow: 0px 0px 5px var(--shadow_for_menu);
+}
