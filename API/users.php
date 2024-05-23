@@ -61,8 +61,8 @@ if ($requestMethod == "POST") {
     if ($user != false) {
         sendError(400, "Bad req, username taken");
     }
-    $userKeys = ["name", "password", "profilePicture", "score", "friends", "status"];
-    $userValues = ["name" => $name, "password" => $requestData["password"], "profilePicture" => "placeholder", "score" => 0, "friends" => [], "status" => ""];
+    $userKeys = ["name", "password", "profilePicture", "score", "friends", "status", "friendRequests"];
+    $userValues = ["name" => $name, "password" => $requestData["password"], "profilePicture" => "placeholder", "score" => 0, "friends" => [], "status" => "", "friendRequests" => []];
 
     $newUser = addItemByType("users", $userKeys, $userValues);
     unset($newUser["password"]);

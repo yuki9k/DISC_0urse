@@ -14,7 +14,7 @@
 
 .modal_content {
     position: relative;
-    background-color: white;
+    background-color: var(--background_color);
     padding: 20px;
     border-radius: var(--default_border_radius);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -51,6 +51,7 @@ Login and signup CSS */
 } */
 
 .form_container #form_title {
+    color:var(--paragraph_color);
     font-size: 32px;
     font-weight: bold;
     text-align: center;
@@ -60,6 +61,7 @@ Login and signup CSS */
 
 .form_container #form_text {
     font-style: italic;
+    color:var(--paragraph_color);
     margin-top: -16px;
     text-align: center;
     font-family: var(--font_family);
@@ -104,16 +106,24 @@ Login and signup CSS */
     background-color: transparent;
     text-decoration: underline;
     font-size: 14px;
-    color: rgb(18, 18, 18)
+    color: var(--paragraph_color);
 }
 
 /* Header CSS */
 header {
     display: grid;
     grid-template-columns: 60px auto auto 1fr;
+    grid-template-rows: 60px;
     padding: 0 10px;
     box-sizing: border-box;
     align-items: center;
+    background-color: var(--background_color);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 header #change_theme {
@@ -166,6 +176,16 @@ header .home_button {
     font-size: 24px;
     color: var(--paragraph_color);
     text-decoration: none;
+}
+
+header .profilepic_in_header {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    background-image: url(./profile.png);
+    background-size: contain;
+    background-position: center;
 }
 
 header .buttons_container {
@@ -474,4 +494,18 @@ header .buttons_container .signup_button:hover {
     height: 40px;
     margin-top: 21px;
     width: 130%;
+}
+.check{
+    color: gray;
+    aspect-ratio: 1;
+}
+.check:hover{
+    color:green
+}
+.cross{
+    color: gray;
+    aspect-ratio: 1;
+}
+.cross:hover{
+    color: red;
 }
