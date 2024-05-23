@@ -176,6 +176,16 @@ header .home_button {
     text-decoration: none;
 }
 
+header .profilepic_in_header {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    background-image: url(./profile.png);
+    background-size: contain;
+    background-position: center;
+}
+
 header .buttons_container {
     display: flex;
     gap: 16px;
