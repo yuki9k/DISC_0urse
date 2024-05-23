@@ -6,8 +6,6 @@ function renderPostsContainer(parent, data) {
   postsListContainer.id = "postsListContainer";
   parent.appendChild(postsListContainer);
 
-  console.log(data);
-
   for (let chat of data) {
     PubSub.publish({
       event: "renderPostBox|getUserData",
@@ -30,7 +28,6 @@ PubSub.subscribe({
     const user = details.user;
     const postsListContainer = document.querySelector("#postsListContainer");
     const chat = { data: details.post, parent: postsListContainer };
-    console.log(chat);
     chat.parent = postsListContainer;
     PubSub.publish({
       event: "renderPostBox",
@@ -43,11 +40,11 @@ function sortPostsContainer({ dom, order }) {
   [...dom.children]
     .sort((a, b) => {
       switch (order) {
-        case "Newest":
-          return a.dataset.postTime - b.dataset.postTime;
-
         case "Oldest":
-          return b.dataset.postTime - a.dataset.postTime;
+          return a.dataset.time - b.dataset.time;
+
+        case "Newest":
+          return b.dataset.time - a.dataset.time;
 
         case "Unpopular":
           return a.dataset.postScore - b.dataset.postScore;
@@ -57,7 +54,6 @@ function sortPostsContainer({ dom, order }) {
       }
     })
     .forEach((node) => {
-      console.log(node);
       dom.appendChild(node);
     });
 }

@@ -80,7 +80,9 @@
             2,
             4
         ],
-        "dislikedBy": [],
+        "dislikedBy": [
+            3
+        ],
         "id": 9
     },
     {
@@ -266,7 +268,8 @@
         "time": 1716457114,
         "content": "another",
         "likedBy": [
-            4
+            4,
+            3
         ],
         "dislikedBy": [],
         "id": 26
@@ -364,10 +367,10 @@
         "roomID": 1,
         "time": 1716457226,
         "content": "fixed?\n",
-        "likedBy": [
+        "likedBy": [],
+        "dislikedBy": [
             3
         ],
-        "dislikedBy": [],
         "id": 36
     },
     {
@@ -380,5 +383,38 @@
         ],
         "dislikedBy": [],
         "id": 37
+    },
+    {
+        "userID": 3,
+        "roomID": 1,
+        "time": 1716457507,
+        "content": "hejhej",
+        "likedBy": [],
+        "dislikedBy": [
+            3
+        ],
+        "id": 38
+    },
+    {
+        "userID": 3,
+        "roomID": 1,
+        "time": 1716458714,
+        "content": "cool",
+        "likedBy": [
+            3
+        ],
+        "dislikedBy": [],
+        "id": 39
+    },
+    {
+        "userID": 3,
+        "roomID": 1,
+        "time": 1716459353,
+        "content": "hehjejehjejehehe",
+        "likedBy": [
+            3
+        ],
+        "dislikedBy": [],
+        "id": 40
     }
 ]
