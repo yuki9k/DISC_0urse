@@ -1,36 +1,39 @@
-import {PubSub} from "../../../logic/PubSub.js";
+import { PubSub } from "../../../logic/PubSub.js";
 import * as roomTop from "./roomTopAnimation/roomTopAnimation.js";
+import { colorToHsl } from "../../../logic/helpFunctions.js";
 
-function renderRoomTop(parent, data){
-    let albumInfo;
-    PubSub.subscribe({
-        event: "sendAlbum",
-        listener: (details) => {
-            albumInfo = details;
-            switch (data.genre) {
-                case "Indie Pop":
-                  albumInfo.image = "../../../../API/db/albumPics/indie_pop.jpeg";
-                  break;
-                case "Indie Rock":
-                    albumInfo.image = "../../../../API/db/albumPics/indie_rock.jpeg";
-                    break;
-                case "Indie Singer-songwriter":
-                    albumInfo.image = "../../../../API/db/albumPics/indie_singer-songwriter.jpeg";
-                    break;
-                case "Indie Folk":
-                    albumInfo.image = "../../../../API/db/albumPics/indie_folk.jpeg";
-                    break;
-                case "Indie R&b":
-                    albumInfo.image = "../../../../API/db/albumPics/indie_r&b.jpeg";
-                    break;
-                case "Indie Post-punk":
-                    albumInfo.image = "../../../../API/db/albumPics/indie_post-punk.jpeg";
-                    break;
-                default:
-                  return;
-              }
+function renderRoomTop(parent, data) {
+  let albumInfo;
+  PubSub.unsubscribe("sendAlbum");
+  PubSub.subscribe({
+    event: "sendAlbum",
+    listener: (details) => {
+      albumInfo = details;
+      switch (data.genre) {
+        case "Indie Pop":
+          albumInfo.image = "../../../../API/db/albumPics/indie_pop.jpeg";
+          break;
+        case "Indie Rock":
+          albumInfo.image = "../../../../API/db/albumPics/indie_rock.jpeg";
+          break;
+        case "Indie Singer-songwriter":
+          albumInfo.image =
+            "../../../../API/db/albumPics/indie_singer-songwriter.jpeg";
+          break;
+        case "Indie Folk":
+          albumInfo.image = "../../../../API/db/albumPics/indie_folk.jpeg";
+          break;
+        case "Indie R&b":
+          albumInfo.image = "../../../../API/db/albumPics/indie_r&b.jpeg";
+          break;
+        case "Indie Post-punk":
+          albumInfo.image = "../../../../API/db/albumPics/indie_post-punk.jpeg";
+          break;
+        default:
+          return;
+      }
 
-            parent.innerHTML = `
+      parent.innerHTML = `
             <div id="album_container"> 
             <div id="album_cover">
                 <img src="${albumInfo.image}">
@@ -46,45 +49,46 @@ function renderRoomTop(parent, data){
                 <span> </span>
             </div>
             `;
-            const albumTracks = parent.querySelector("#album_tracks_container");
+      const albumTracks = parent.querySelector("#album_tracks_container");
 
-    PubSub.publish({
+      PubSub.publish({
         event: "initiateHeightToTopAnimation",
-        details: parent.offsetHeight
-    });
-            for(let i = 0; i < albumInfo.albumTotalTracks; i++){
-                const albumTrack = document.createElement("li");
-                albumTrack.classList.add("album_track");
-                albumTrack.textContent = (i+1) + " " + albumInfo.albumTracks[i].trackName;
-                
-                albumTracks.appendChild(albumTrack);
-            }
-        }
-    });
-    PubSub.publish({
-        event: "getAlbum",
-        details: data.genre
-    });
+        details: parent.offsetHeight,
+      });
+      for (let i = 0; i < albumInfo.albumTotalTracks; i++) {
+        const albumTrack = document.createElement("li");
+        albumTrack.classList.add("album_track");
+        albumTrack.textContent =
+          i + 1 + " " + albumInfo.albumTracks[i].trackName;
+
+        albumTracks.appendChild(albumTrack);
+      }
+    },
+  });
+
+  PubSub.publish({
+    event: "getAlbum",
+    details: data.genre,
+  });
 }
 
 PubSub.subscribe({
-    event: "renderRoomTop",
-    listener: (details) => {
-        renderRoomTop(details.parent, details.data);
-    }
+  event: "renderRoomTop",
+  listener: (details) => {
+    const { parent, data } = details;
+    renderRoomTop(parent, data);
+  },
 });
-
 
 PubSub.subscribe({
-    event: "addRoomTopAnimation",
-    listener:(detail) => {
-        const roomTop = document.querySelector("#room_top");
-        const albumContainer = document.querySelector("#album_container");
-        const albumTracks = document.querySelector("#album_tracks_container");
+  event: "addRoomTopAnimation",
+  listener: (detail) => {
+    const roomTop = document.querySelector("#room_top");
+    const albumContainer = document.querySelector("#album_container");
+    const albumTracks = document.querySelector("#album_tracks_container");
 
-        roomTop.classList[detail]("makeSmall");
-        albumContainer.classList[detail]("makeSmall");           
-        albumTracks.classList[detail]("display_none");
-    }
+    roomTop.classList[detail]("makeSmall");
+    albumContainer.classList[detail]("makeSmall");
+    albumTracks.classList[detail]("display_none");
+  },
 });
-

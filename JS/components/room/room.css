@@ -31,7 +31,7 @@ body:has(#room_container) {
   flex-direction: column;
   justify-content: center;
 
-  background: linear-gradient(to left, #97233e, #f33864);
+  /* background: linear-gradient(to left, #97233e, #f33864); */
 
   transition-property: height;
   transition-duration: 500ms;
@@ -87,7 +87,7 @@ body:has(#room_container) {
   padding: 8px 15px;
   margin: 0;
   list-style-position: inside;
-  background-color: #d43056;
+  /* background-color: #d43056; */
   border-radius: 5px;
 
   /*    box-shadow: inset 0px 0px 4px 2px black; */

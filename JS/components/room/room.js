@@ -2,6 +2,7 @@ import { PubSub } from "../../logic/PubSub.js";
 import * as roomTop from "./roomTop/roomTop.js";
 import * as roomBottom from "./roomBottom/roomBottom.js";
 import * as roomTopAnimation from "./roomTop/roomTopAnimation/roomTopAnimation.js";
+import { colorToHsl } from "../../logic/helpFunctions.js";
 
 function renderRoom(details) {
   let roomInfo = details.room;
@@ -30,6 +31,28 @@ function renderRoom(details) {
     event: "initiateHeightToTopAnimation",
     details: roomContainer.offsetHeight,
   });
+
+  PubSub.subscribe({
+    event: "sendAlbumHexColor",
+    listener: (cArr) => {
+      const c = cArr[0];
+      const accentColorHex = {
+        type: "hex",
+        value: c,
+      };
+
+      let { h, s, l } = colorToHsl(accentColorHex);
+
+      s = Math.min(s, 80);
+      l = Math.min(l, 80);
+
+      if (l < 50) {
+        roomTop.style.color = "var(--paragraph_color_white)";
+      }
+      roomTop.style.backgroundColor = `hsl(${h} ${s} ${l})`;
+    },
+  });
+  PubSub.publish({ event: "getAlbumHexColor", details: roomInfo.genre });
 }
 
 PubSub.subscribe({

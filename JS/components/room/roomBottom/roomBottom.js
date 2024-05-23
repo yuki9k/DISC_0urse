@@ -21,7 +21,6 @@ function renderRoomBottom(parent, data) {
     details: addPosts,
   });
 
-  console.log(data);
   PubSub.publish({
     event: "renderAddPostButton",
     details: addPosts,

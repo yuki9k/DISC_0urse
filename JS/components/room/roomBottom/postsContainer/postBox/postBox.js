@@ -52,7 +52,7 @@ function renderPostBox(data, user) {
   const like = postBox.querySelector(".likeButton");
   const dislike = postBox.querySelector(".dislikeButton");
 
-  like.addEventListener("click", (event) => {
+  like.addEventListener("click", () => {
     const body = {
       token: localStorage.getItem("token"),
       id: DATA.id,
@@ -65,7 +65,7 @@ function renderPostBox(data, user) {
     });
   });
 
-  dislike.addEventListener("click", (event) => {
+  dislike.addEventListener("click", () => {
     const body = {
       token: localStorage.getItem("token"),
       id: DATA.id,
@@ -77,6 +77,13 @@ function renderPostBox(data, user) {
       details: { ent: "posts", body: body },
     });
   });
+
+  // The below code is trash but I cba anymore
+
+  const inlineStyle =
+    document.querySelector("#room_top").attributes.style.value;
+
+  postBox.style = inlineStyle;
 }
 
 PubSub.subscribe({

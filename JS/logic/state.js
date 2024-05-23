@@ -4,9 +4,9 @@ import { fetcher } from "./helpFunctions.js";
 const State = {
   url: "http://localhost:8080/api/",
   _state: {
-      "posts": []
+    posts: [],
   },
-	post: async function (ent, options){
+  post: async function (ent, options) {
     const request = new Request(this.url + ent + ".php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -22,7 +22,7 @@ const State = {
 
     PubSub.publish({
       event: "sendToPostParent",
-      details: response.resource
+      details: response.resource,
     });
   },
 
@@ -54,20 +54,20 @@ const State = {
     }
 
     PubSub.publish({
-      event:"renderPostLikedCounter",
-      details: response.resource
+      event: "renderPostLikedCounter",
+      details: response.resource,
     });
 
     //fire pubsub event for updating front end.
   },
-  
-  destruct: async function (ent, options){
+
+  destruct: async function (ent, options) {
     const url = "http://localhost:8080/api/";
-    
+
     const request = new Request(this.url + ent + ".php", {
-        method: "DELETE",
-        headers: {"Content-Type": "application/json"},
-        body: options.body
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: options.body,
     });
     const response = await fetcher(request);
     let users = response.resource;
@@ -139,6 +139,11 @@ const State = {
         return;
     }
   },
+
+  getAlbumHexColor: function (genreId) {
+    return this._state.genres[genreId].albumImageHexColors;
+  },
+
   updateGenres: async function () {
     this._state.genres = [];
     const reqGenres = new Request(URL + "genres.php", {
@@ -147,6 +152,7 @@ const State = {
     const resGenres = await fetcher(reqGenres);
     this._state.genres = resGenres.resource;
   },
+
   updateFriends: async function () {},
   /* getUserRooms: async function () {
     const token = localStorage.getItem("token");
@@ -194,7 +200,7 @@ PubSub.subscribe({
         token: localStorage.getItem("token"),
         username: State._state.thisUser.name,
         status: State._state.thisUser.status,
-        score: State._state.thisUser.score
+        score: State._state.thisUser.score,
       },
     });
   },
@@ -278,12 +284,12 @@ PubSub.subscribe({
         users: State._state.users,
         genres: State._state.genres,
         pubRooms: State._state.publicRooms,
-        posts: State._state.posts
-      }
+        posts: State._state.posts,
+      },
     });
     PubSub.publish({
       event: "renderHeader",
-      details: null
+      details: null,
     });
   },
 });
@@ -413,23 +419,23 @@ PubSub.subscribe({
       event: "renderHomepage",
       details: document.querySelector("#wrapper"),
     });
-  }
-})
+  },
+});
 PubSub.subscribe({
   event: "addPostItem",
   listener: (details) => {
-    const {ent, body} = details;
-    State.post(ent, {body: body});
-  }
-})
+    const { ent, body } = details;
+    State.post(ent, { body: body });
+  },
+});
 
 PubSub.subscribe({
   event: "patchPostItem",
   listener: (details) => {
-    const {ent, body} = details;
-    State.patch(ent, {body: body})
-  }
-})
+    const { ent, body } = details;
+    State.patch(ent, { body: body });
+  },
+});
 PubSub.subscribe({
   event: "renderPostBox|getUserData",
   listener: async (details) => {
@@ -438,21 +444,23 @@ PubSub.subscribe({
       event: "renderPostBox",
       details: {
         chat: details,
-        user: user
-      }
+        user: user,
+      },
     });
-  }
+  },
 });
+
 PubSub.subscribe({
   event: "getUserForPost",
   listener: async (details) => {
     const user = await State.getExternalUser(details.id);
     PubSub.publish({
       event: "sendUserForPost",
-      details: user
-    })
-  }
-})
+      details: user,
+    });
+  },
+});
+
 PubSub.subscribe({
   event: "getRoomPosts",
   listener: async (details) => {
@@ -460,40 +468,48 @@ PubSub.subscribe({
     PubSub.publish({
       event: "sendRoomPosts",
       details: {
-        posts
-      }
-    })
-  }
+        posts,
+      },
+    });
+  },
 });
 
 PubSub.subscribe({
   event: "getRoomInfo",
-  listener: (details)=>{
+  listener: (details) => {
     const token = localStorage.getItem("token");
     let rooms = {
       public: State._state.publicRooms,
-      private: []
+      private: [],
     };
-    if(!token){
+    if (!token) {
       //publish with no private rooms
-      
+
       PubSub.publish({
         event: "renderSideNav",
-        details: {parent: details.parent, menuIcon: details.menuIcon, rooms: rooms}
+        details: {
+          parent: details.parent,
+          menuIcon: details.menuIcon,
+          rooms: rooms,
+        },
       });
     } else {
       //publish with private rooms
-      if(typeof State._state.privateRooms === "array"){
-        if(State._state.privateRooms.length > 0){
+      if (typeof State._state.privateRooms === "array") {
+        if (State._state.privateRooms.length > 0) {
           rooms.private = State._state.privateRooms;
         }
       }
       PubSub.publish({
         event: "renderSideNav",
-        details: {parent: details.parent, menuIcon: details.menuIcon, rooms: rooms}
+        details: {
+          parent: details.parent,
+          menuIcon: details.menuIcon,
+          rooms: rooms,
+        },
       });
     }
-  }
+  },
 });
 
 PubSub.subscribe({
@@ -501,7 +517,17 @@ PubSub.subscribe({
   listener: (details) => {
     PubSub.publish({
       event: "sendAlbum",
-      details: State._state.genres[details]
+      details: State._state.genres[details],
     });
-  }
+  },
+});
+
+PubSub.subscribe({
+  event: "getAlbumHexColor",
+  listener: (genreId) => {
+    PubSub.publish({
+      event: "sendAlbumHexColor",
+      details: State.getAlbumHexColor(genreId),
+    });
+  },
 });
