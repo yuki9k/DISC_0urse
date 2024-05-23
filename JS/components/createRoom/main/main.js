@@ -97,7 +97,6 @@ function renderCreate() {
     PubSub.subscribe({
         event: "foundAlbumInfo",
         listener: (details) => {
-          console.log(details);
           albumInfo.innerHTML = "";
           genrePlaceholder.textContent = details.albumLabel;
           const songs = details.albumTracks;

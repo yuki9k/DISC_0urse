@@ -6,7 +6,6 @@ function renderPostsContainer(parent, data) {
   postsListContainer.id = "postsListContainer";
   parent.appendChild(postsListContainer);
 
-  console.log(data);
 
   for (let chat of data) {
     PubSub.publish({
@@ -30,7 +29,6 @@ PubSub.subscribe({
     const user = details.user;
     const postsListContainer = document.querySelector("#postsListContainer");
     const chat = { data: details.post, parent: postsListContainer };
-    console.log(chat);
     chat.parent = postsListContainer;
     PubSub.publish({
       event: "renderPostBox",
@@ -57,7 +55,6 @@ function sortPostsContainer({ dom, order }) {
       }
     })
     .forEach((node) => {
-      console.log(node);
       dom.appendChild(node);
     });
 }

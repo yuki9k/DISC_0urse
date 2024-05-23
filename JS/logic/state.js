@@ -13,14 +13,12 @@ const State = {
       body: JSON.stringify(options.body),
     });
     const response = await fetcher(request);
-    console.log(response);
     if (!response.success.ok) {
       //throw error
     } else {
       switch (ent){
         case "posts":
           this._state[ent].push(response.resource);
-          console.log(response);
           PubSub.publish({
             event: "sendToPostParent",
             details: {
@@ -35,7 +33,6 @@ const State = {
           let id = user.id;
           for(let obj of this._state.users){
             if(obj.id === id){
-              console.log(obj, response.resource);
               obj = response.resource;
             }
           }
@@ -214,7 +211,6 @@ PubSub.subscribe({
     } else {
       State._state.thisUser = resThisUser.resource;
     }
-    console.log(State._state.thisUser);
 
     // Get private rooms that user has access too
     const reqPrivateRooms = new Request(
@@ -310,7 +306,6 @@ PubSub.subscribe({
     let responsePosts = await fetcher(requestPosts);
     State._state.posts = responsePosts.resource;
 
-    console.log(State._state.thisUser);
     PubSub.publish({
       event: "renderHomepageInfoRecived",
       details: {
@@ -349,7 +344,6 @@ PubSub.subscribe({
       for(const reqId of State._state.thisUser.friendRequests){
         reqUsers.push(await State.getExternalUser(reqId));
       }
-      console.log(reqUsers);
       PubSub.publish({
         event: "foundFriendRequests",
         details: reqUsers
@@ -390,8 +384,6 @@ PubSub.subscribe({
 
     if (newThisUserInfo.password) {
       const { password } = newThisUserInfo;
-      console.log(password);
-      console.log(newThisUserInfo);
       const reqToken = new Request(URL + "login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -616,7 +608,6 @@ PubSub.subscribe({
   event: "getAlbumInfo",
   listener: (details) => {
     const albumInfo = State.getAlbumInformation(details);
-    console.log("album info:", albumInfo);
     PubSub.publish({
       event: "foundAlbumInfo",
       details: albumInfo,

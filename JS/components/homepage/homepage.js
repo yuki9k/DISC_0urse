@@ -43,7 +43,6 @@ function renderHompageContainer(parent, data) {
         posts.push(post);
       }
     }
-    console.log(data.genres[data.pubRooms[i].genre].albumName);
     const topPosts = posts.sort(
         (a, b) =>
           a.likedBy.length -

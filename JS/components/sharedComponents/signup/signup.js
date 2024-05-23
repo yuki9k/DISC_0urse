@@ -69,7 +69,6 @@ function renderSignupForm() {
 
       let resource = await fetcher(request);
       handleCloseModal();
-      console.log(resource);
       PubSub.publish ({
         event: "signupComplete",
         details: username

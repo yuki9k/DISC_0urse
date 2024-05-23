@@ -36,7 +36,6 @@ PubSub.subscribe({
   listener: (requests) => {
     const parent = document.querySelector(".dropdown");
     const icon = document.querySelector(".menu_icon_container");
-    console.log("helloooo friendreqyests");
 
     for (let request of requests) {
       renderFriendRequests(parent, request);
@@ -68,12 +67,10 @@ PubSub.subscribe({
   listener: (details) => {
     const parent = document.querySelector(".dropdown");
     const icon = document.querySelector(".menu_icon_container");
-    console.log(details);
     renderFriends(parent, icon, details);
     let doms = document.querySelectorAll(".dropdown_friend_requests > div");
     for(let dom of doms){
       let checkID = Number(dom.id.replace("friend_request_", ""));
-      console.log(dom);
       if(checkID === details.id){
         dom.remove();
       }

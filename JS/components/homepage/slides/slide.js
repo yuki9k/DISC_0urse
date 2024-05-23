@@ -4,7 +4,6 @@ import * as postsPreview from "./postsPreview/postsPreview.js";
 
 function renderSlide(parent, data) {
   const { chats, image, genre, title } = data;
-  console.log(data);
   const slide = document.createElement("div");
   slide.id = "slide_" + data.image.id;
   slide.classList.add("slide");
