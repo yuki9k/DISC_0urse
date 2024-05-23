@@ -6,7 +6,6 @@ function renderPostsContainer(parent, data) {
   postsListContainer.id = "postsListContainer";
   parent.appendChild(postsListContainer);
 
-
   for (let chat of data) {
     PubSub.publish({
       event: "renderPostBox|getUserData",
@@ -41,11 +40,11 @@ function sortPostsContainer({ dom, order }) {
   [...dom.children]
     .sort((a, b) => {
       switch (order) {
-        case "Newest":
-          return a.dataset.postTime - b.dataset.postTime;
-
         case "Oldest":
-          return b.dataset.postTime - a.dataset.postTime;
+          return a.dataset.time - b.dataset.time;
+
+        case "Newest":
+          return b.dataset.time - a.dataset.time;
 
         case "Unpopular":
           return a.dataset.postScore - b.dataset.postScore;

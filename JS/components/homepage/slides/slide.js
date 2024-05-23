@@ -39,7 +39,7 @@ PubSub.subscribe({
       chats: details.posts,
       image: details.image,
       genre: details.genre,
-      title: details.title
+      title: details.title,
     });
     makeFirstSlideCurrent();
   },

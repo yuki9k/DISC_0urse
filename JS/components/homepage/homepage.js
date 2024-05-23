@@ -11,11 +11,11 @@ function renderHompageContainer(parent, data) {
   homepageContainer.id = "homepage_container";
   parent.appendChild(homepageContainer);
   homepageContainer.appendChild(slidesContainer);
+  const { posts: allPosts } = data;
 
   for (let i = 0; i < data.pubRooms.length; i++) {
     let image;
-    
-    const posts = [];
+
     switch (data.pubRooms[i].genre) {
       case "Indie Pop":
         image = "../../../../../API/db/albumPics/indie_pop.jpeg";
@@ -38,18 +38,19 @@ function renderHompageContainer(parent, data) {
       default:
         return;
     }
-    for (const post of data.posts) {
-      if (post.roomID === data.pubRooms[i].id) {
-        posts.push(post);
+
+    const albumPosts = [];
+    for (const post of allPosts) {
+      if (i + 1 === post.roomID) {
+        post.score = post.likedBy.length - post.dislikedBy.length;
+        albumPosts.push(post);
       }
     }
-    const topPosts = posts.sort(
-        (a, b) =>
-          a.likedBy.length -
-          a.dislikedBy.length -
-          (b.likedBy.length - b.dislikedBy.length)
-      );
-      const topSixPosts = topPosts.splice(0, 6);
+
+    const topSixPosts = albumPosts
+      .toSorted((a, b) => b.score - a.score)
+      .splice(0, 6);
+
     PubSub.publish({
       event: "renderSlide",
       details: {
@@ -57,21 +58,10 @@ function renderHompageContainer(parent, data) {
         posts: topSixPosts,
         image,
         genre: data.pubRooms[i].genre,
-        title: data.genres[data.pubRooms[i].genre].albumName
+        title: data.genres[data.pubRooms[i].genre].albumName,
       },
     });
   }
-
-  /*  for(let i = 0; i < dataBase.chats.length; i++){
-        //NOTE: Should be removed later, only simpulation
-        const chats = dataBase.chats;
-        const image = dataBase.images[i];
-
-        PubSub.publish({
-            event: "renderSlide",
-            details: {"parent": slidesContainer, chats, image}
-        });
-    } */
 
   const carousellScroll = document.createElement("div");
   carousellScroll.id = "carousell_scroll";
@@ -95,34 +85,5 @@ PubSub.subscribe({
     PubSub.publish({ event: "userLoggedIn", details: null });
   },
 });
-
-const dataBase = {
-  chats: [
-    {
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et gravida turpis, aliquam vestibulum sem. Maecenas vitae nisi urna. Aenean consequat lobortis turpis, a dapibus lacus porta luctus.",
-    },
-    {
-      content:
-        "Etiam pulvinar sit amet velit vitae faucibus. Nunc vel condimentum felis. Vestibulum sed laoreet risus.",
-    },
-    {
-      content:
-        "Nullam ac tellus sit amet urna posuere volutpat non eu tellus. Donec ex justo, bibendum vitae tincidunt sit amet, dictum ut urna.",
-    },
-    { content: "Morbi tincidunt dapibus enim." },
-    { content: "Praesent tincidunt auctor libero et laoreet." },
-    { content: "Fusce cursus velit in lectus lobortis gravida." },
-  ],
-
-  images: [
-    { id: 1, src: "./api/db/albumPics/indie_pop.jpeg" },
-    { id: 2, src: "./api/db/albumPics/indie_rock.jpeg" },
-    { id: 3, src: "./api/db/albumPics/indie_singer-songwriter.jpeg" },
-    { id: 4, src: "./api/db/albumPics/indie_folk.jpeg" },
-    { id: 5, src: "./api/db/albumPics/indie_r&b.jpeg" },
-    { id: 6, src: "./api/db/albumPics/indie_post-punk.jpeg" },
-  ],
-};
 
 //pubsub när jag trycker på karusellen så ska scrollern publisha och de andra komponenterna ska subscriba.

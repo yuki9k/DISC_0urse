@@ -18,7 +18,7 @@ body:has(#room_container) {
   top: 0;
   z-index: 3;
 
-  height: 350px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,6 +26,8 @@ body:has(#room_container) {
   transition-property: height;
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
+
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
 #room_top.makeSmall {
@@ -80,7 +82,7 @@ body:has(#room_container) {
   list-style-position: inside;
   border-radius: 5px;
 
-  /*    box-shadow: inset 0px 0px 4px 2px black; */
+  /* box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.3); */
 }
 
 #room_top #album_container #album_tracks_container.display_none {
@@ -98,7 +100,7 @@ body:has(#room_container) {
 
 #room_bottom #filter_add_post_container {
   position: sticky;
-  top:160px;
+  top: 160px;
   height: 50vh;
   width: 10%;
   display: flex;
@@ -137,6 +139,10 @@ body:has(#room_container) {
   overflow: hidden;
 }
 
+#room_bottom #filter_input {
+  position: fixed;
+  margin-top: 25px;
+}
 
 #room_bottom #add_post_button.border_rad_change {
   border-radius: 15px;
@@ -230,7 +236,7 @@ body:has(#room_container) {
 
 #room_bottom ul#postsListContainer > li {
   max-width: 300px;
-  background-color: #97233e;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
 
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
@@ -287,4 +293,9 @@ body:has(#room_container) {
 #room_bottom .post_content_box .negative {
   color: tomato;
   cursor: pointer;
+}
+
+.post_time {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.9);
 }
