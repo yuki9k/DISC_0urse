@@ -1,5 +1,6 @@
 import { PubSub } from "../../../../logic/PubSub.js";
 import * as state from "../../../../logic/state.js";
+import { colorToHsl } from "../../../../logic/helpFunctions.js";
 
 function renderAddPostButton(parent, id) {
   parent.innerHTML = `<div id="add_post_button">
@@ -14,6 +15,11 @@ function renderAddPostButton(parent, id) {
   const addPostButton = parent.querySelector("#add_post_button");
   const input = parent.querySelector("#post_input");
   const sendPost = parent.querySelector("#send_post");
+
+  const inlineStyle =
+    document.querySelector("#room_top").attributes.style.value;
+
+  addPostButton.style = inlineStyle;
 
   plusSign.addEventListener("click", (event) => {
     plusSign.classList.add("undisplay");
