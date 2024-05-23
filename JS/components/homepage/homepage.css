@@ -5,17 +5,25 @@ body:has(#homepage_container) {
 }
 
 #homepage_container {
-  margin-top: 15vh;
+  margin-top: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 30px;
 }
 
+#homepage_container > h2,
+#homepage_container > h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
 #homepage_container #carousell_scroll {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: -75px;
 }
 
 #homepage_container #carousell_scroll > div {
