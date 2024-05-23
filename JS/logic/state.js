@@ -214,7 +214,6 @@ PubSub.subscribe({
     } else {
       State._state.thisUser = resThisUser.resource;
     }
-    console.log(State._state.thisUser);
 
     // Get private rooms that user has access too
     const reqPrivateRooms = new Request(
@@ -310,7 +309,6 @@ PubSub.subscribe({
     let responsePosts = await fetcher(requestPosts);
     State._state.posts = responsePosts.resource;
 
-    console.log(State._state.thisUser);
     PubSub.publish({
       event: "renderHomepageInfoRecived",
       details: {

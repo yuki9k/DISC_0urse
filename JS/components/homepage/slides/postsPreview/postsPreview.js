@@ -36,7 +36,6 @@ PubSub.subscribe({
   event: "renderPosts",
   listener: (details) => {
     const { parent, data } = details;
-    console.log(data);
     renderPostsPreview(parent, data);
   },
 });
