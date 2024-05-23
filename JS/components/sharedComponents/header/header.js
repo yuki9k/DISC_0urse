@@ -75,9 +75,7 @@ function renderHeader() {
     });
   });
 
-  signupButton.addEventListener("click", () => {
-    console.log("hej");
-    
+  signupButton.addEventListener("click", () => {    
     PubSub.publish({
       event: "renderSignup",
       details: null,
@@ -94,7 +92,6 @@ PubSub.subscribe({
       buttonsContainer.textContent = details.username;
 
       buttonsContainer.addEventListener("click", (e) => {
-        console.log(details);
         PubSub.publish({
           event: "renderProfileInfo",
           details: { username: details.username, status: details.status, score: details.score },

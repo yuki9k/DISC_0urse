@@ -36,7 +36,6 @@ PubSub.subscribe({
   listener: (requests) => {
     const parent = document.querySelector(".dropdown");
     const icon = document.querySelector(".menu_icon_container");
-    console.log("helloooo friendreqyests");
 
     for (let request of requests) {
       renderFriendRequests(parent, request);
@@ -68,12 +67,10 @@ PubSub.subscribe({
   listener: (details) => {
     const parent = document.querySelector(".dropdown");
     const icon = document.querySelector(".menu_icon_container");
-    console.log(details);
     renderFriends(parent, icon, details);
     let doms = document.querySelectorAll(".dropdown_friend_requests > div");
     for(let dom of doms){
       let checkID = Number(dom.id.replace("friend_request_", ""));
-      console.log(dom);
       if(checkID === details.id){
         dom.remove();
       }
@@ -129,7 +126,7 @@ function renderDropdownItems(parent, icon, roomsToRender) {
         <div class="add_friend_container">
           <p id="add_friend_logo">DISC_ourse</p>
           <p id="form_text" class="add_friend_title">Add Friend</p>
-          <input id="new_friend" placeholder="your new friends username :)">
+          <input id="new_friend" placeholder="Your new friends username here:">
           <button id="send_friend_request">Send friend request</button>
         </div>
       `;
@@ -253,7 +250,7 @@ function renderFriendRequests(dropdown, user){
   parent.appendChild(friendDom);
   friendDom.innerHTML = `
       <img class="friend_image" src="${user.profilePicture}">
-      <div style="font-size: 12px" class="friend_username">New friend request from ${user.name}</div>
+      <div style="font-size: 14px" class="friend_username">New friend request from ${user.name}</div>
       <div class="check" id="accept_request_${user.name}">&#9745;</div>
       <div class="cross">&#9746;</div>
     `;

@@ -17,7 +17,8 @@
         "profilePicture": "placeholder",
         "score": 0,
         "friends": [
-            4
+            4,
+            3
         ],
         "friendRequests": [],
         "id": 2,
@@ -29,7 +30,8 @@
         "profilePicture": "placeholder",
         "score": 0,
         "friends": [
-            5
+            5,
+            2
         ],
         "friendRequests": [],
         "id": 3,
