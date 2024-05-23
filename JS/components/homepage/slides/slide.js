@@ -3,7 +3,7 @@ import * as albumCover from "./albumCover/albumCover.js";
 import * as postsPreview from "./postsPreview/postsPreview.js";
 
 function renderSlide(parent, data) {
-  const { chats, image, genre } = data;
+  const { chats, image, genre, title } = data;
   console.log(data);
   const slide = document.createElement("div");
   slide.id = "slide_" + data.image.id;
@@ -18,7 +18,7 @@ function renderSlide(parent, data) {
 
   PubSub.publish({
     event: "renderPosts",
-    details: { parent: postsPreview, data: { chats, genre } },
+    details: { parent: postsPreview, data: { chats, genre, title } },
   });
 
   PubSub.publish({
@@ -40,6 +40,7 @@ PubSub.subscribe({
       chats: details.posts,
       image: details.image,
       genre: details.genre,
+      title: details.title
     });
     makeFirstSlideCurrent();
   },
