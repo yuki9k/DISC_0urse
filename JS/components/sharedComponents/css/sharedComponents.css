@@ -241,7 +241,7 @@ header .buttons_container .signup_button:hover {
     position: absolute;
     top: 60px;
     left: -28%; 
-    height: fit-content;
+    height: calc(100vh - 60px);
     bottom: 0;
     background-color: var(--background_color);
     display: block; 
@@ -249,7 +249,7 @@ header .buttons_container .signup_button:hover {
     padding: 20px;
     transition: left 0.3s ease; 
     box-sizing: border-box;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 0 0;
     box-shadow: 0px 0px 10px var(--shadow_for_menu);
   }
   
