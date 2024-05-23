@@ -133,11 +133,13 @@ const State = {
     const res = await fetcher(req);
     console.log(res)
 
-    if (!res.success.ok) {
-      return;
+    if (res.success) {
+      if (res.success.ok) {
+        return res.resource;
+      }
+    } else {
+      return [];
     }
-
-    return res.resource;
   },
   getFriendIds: function () {
     return this._state.thisUser.friends;

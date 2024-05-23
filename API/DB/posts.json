@@ -406,5 +406,16 @@
         ],
         "dislikedBy": [],
         "id": 39
+    },
+    {
+        "userID": 1,
+        "roomID": 8,
+        "time": 1716487091,
+        "content": "Tjena!!!! jag postar massa i ett privat rum FAN VA SJUKT!!!!!!! YAYYYYYYY AWOOOOOOO ",
+        "likedBy": [
+            1
+        ],
+        "dislikedBy": [],
+        "id": 40
     }
 ]
