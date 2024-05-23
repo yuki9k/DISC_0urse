@@ -267,9 +267,8 @@ header .buttons_container .signup_button:hover {
 }
 
 .friend_image {
-    background-image: url(../css/profile.png);
-    background-position: center;
-    background-size: contain;
+    object-position: center;
+    object-fit: contain;
     width: 35px;
     height: 35px;
     border-radius: 50%;

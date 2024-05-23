@@ -269,7 +269,7 @@ function renderFriends(dropdown, icon, friend) {
   friendDom.className = "dropdown_box_friends";
   parent.appendChild(friendDom);
   friendDom.innerHTML = `
-      <img class="friend_image" src="${friend.profilePicture}">
+      <img class="friend_image" src="../../../../images/profile.png">
       <div class="friend_username">${friend.name}</div> 
     `;
 
