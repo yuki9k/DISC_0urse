@@ -44,7 +44,9 @@ if($requestMethod == "POST"){
         updateItemByType("users", $user);
         updateItemByType("users", $friend);
         unset($user["password"]);
-        send(200, $user);
+        unset($friend["password"]);
+        $sendBack = [$user, $friend];
+        send(200, $sendBack);
     } else {
         //new friend request add the request
         $friend["friendRequests"][] = $user["id"];

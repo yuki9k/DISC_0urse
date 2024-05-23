@@ -31,13 +31,19 @@ const State = {
           });
           break;
         case "friends":
+          let user = response.resource[0];
+          let friend = response.resource[1];
+          let id = user.id;
+          for(let obj of this._state.users){
+            if(obj.id === id){
+              console.log(obj, response.resource);
+              obj = response.resource;
+            }
+          }
           PubSub.publish({
             event: "updateFriendsInfo",
-            details: {
-              response: response.resource
-            }
-          });
-            
+            details: friend
+          });  
       }
     }
     //request okayed push new entity to state.
@@ -193,6 +199,7 @@ PubSub.subscribe({
     } else {
       State._state.thisUser = resThisUser.resource;
     }
+    console.log(State._state.thisUser);
 
     // Get private rooms that user has access too
     const reqPrivateRooms = new Request(

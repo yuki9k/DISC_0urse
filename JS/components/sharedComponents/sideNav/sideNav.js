@@ -59,6 +59,23 @@ PubSub.subscribe({
     }
   },
 });
+PubSub.subscribe({
+  event: "updateFriendsInfo",
+  listener: (details) => {
+    const parent = document.querySelector(".dropdown");
+    const icon = document.querySelector(".menu_icon_container");
+    console.log(details);
+    renderFriends(parent, icon, details);
+    let doms = document.querySelectorAll(".dropdown_friend_requests > div");
+    for(let dom of doms){
+      let checkID = Number(dom.id.replace("friend_request_", ""));
+      console.log(dom);
+      if(checkID === details.id){
+        dom.remove();
+      }
+    }
+  }
+});
 function renderDropdownItems(parent, icon, roomsToRender) {
   const friendsItem = document.createElement("div");
   friendsItem.classList.add("dropdown_item");
@@ -223,6 +240,7 @@ function renderFriendRequests(dropdown, user){
   let parent = document.querySelector(".dropdown_friend_requests");
   let friendDom = document.createElement("div");
   friendDom.className = "dropdown_box_friends";
+  friendDom.id = "friend_request_" + user.id;
   parent.appendChild(friendDom);
   friendDom.innerHTML = `
       <img class="friend_image" src="${user.profilePicture}">

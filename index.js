@@ -7,6 +7,12 @@ const token = localStorage.getItem("token");
 const username = localStorage.getItem("username");
 
 if (token) {
+  /* async () => {
+    reqThisUser = await fetch("http://localhost:8080/api/users.php?token="+token, {
+      method: "GET",
+      headers: {"Conte"}
+    });
+  } */
   PubSub.publish({
     event: "renderHomepage",
     details: document.querySelector("#wrapper"),
