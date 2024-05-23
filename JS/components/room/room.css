@@ -20,6 +20,7 @@ body:has(#room_container) {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   margin-top: 60px;
 
   transition-property: height;
@@ -228,7 +229,6 @@ body:has(#room_container) {
 }
 
 #room_bottom ul#postsListContainer > li {
-  color: var(--paragraph_color);
   max-width: 300px;
   background-color: #97233e;
 
