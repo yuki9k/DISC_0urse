@@ -85,16 +85,42 @@ function renderAddedFriends() {
       const createButton = document.querySelector(".create_room_button");
 
       createButton.addEventListener("click", (e) => {
-        const genre = document.querySelector(".choose_genre");
         const style = document.querySelector(".choose_theme");
-
         const token = localStorage.getItem("token");
         const name = document.querySelector(".input_room_name");
+        const genre = document.querySelector(".choose_genre");
+        let genreValue = "";
+
+        switch(genre.value){
+            case "1":
+              genreValue = "Indie Pop"
+              break;
+
+            case "2":
+              genreValue = "Indie Rock"
+              break;
+
+            case "3":
+              genreValue = "Indie Singer & Songwriter"
+              break;
+
+            case "4":
+              genreValue = "Indie Folk"
+              break;
+
+            case "5":
+              genreValue = "Indie R&B"
+              break;
+
+            case "6":
+              genreValue = "Indie Post Punk"
+              break;
+        }
 
         PubSub.publish({
           event: "userCreatedRoom",
           details: {
-            genre: genre.value,
+            genre: genreValue,
             style: style.value,
             name: name.value,
             users: friendsToInvite
@@ -108,5 +134,4 @@ function renderAddedFriends() {
       });
     }
   });
-
 }

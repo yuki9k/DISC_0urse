@@ -139,11 +139,6 @@ body:has(#room_container) {
   overflow: hidden;
 }
 
-#room_bottom #filter_input {
-  position: fixed;
-  margin-top: 25px;
-}
-
 #room_bottom #add_post_button.border_rad_change {
   border-radius: 15px;
   gap: 3px;

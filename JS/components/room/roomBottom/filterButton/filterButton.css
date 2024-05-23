@@ -1,6 +1,6 @@
 #filter_posts > label {
   display: block;
-  position: fixed;
+  color: var(--paragraph_color);
 }
 
 #filter_posts > p {

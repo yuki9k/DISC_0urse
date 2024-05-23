@@ -85,5 +85,26 @@
         ],
         "name": "kolla!!!!",
         "id": 13
+    },
+    {
+        "hostID": 4,
+        "style": "one",
+        "genre": "Indie Rock",
+        "users": [
+            2,
+            4
+        ],
+        "name": "this is a new test",
+        "id": 14
+    },
+    {
+        "hostID": 4,
+        "style": "Choose theme",
+        "genre": "Indie Folk",
+        "users": [
+            4
+        ],
+        "name": "new Testing room",
+        "id": 15
     }
 ]

@@ -173,6 +173,8 @@ function renderDropdownItems(parent, icon, roomsToRender) {
       const wrapper = document.querySelector("#wrapper");
       menuIcon.classList.toggle("change");
       dropdown.classList.toggle("active");
+
+      console.log(room)
       PubSub.publish({
         event: "renderRoom",
         details: {
@@ -187,8 +189,7 @@ function renderDropdownItems(parent, icon, roomsToRender) {
       secondRoomDropDown.innerHTML += `
       <div class="dropdown_box_rooms room_${room.id}">
         <p>${room.genre}</p>
-      </div>
-    `;
+      </div>`;
     }
   }
   
@@ -292,6 +293,8 @@ function renderPrivateRooms(dropdown, icon, room) {
         <p>${room.name}</p>
       </div>
     `;
+
+    console.log(room)
 
   roomDom.addEventListener("click", (e) => {
     const wrapper = document.querySelector("#wrapper");

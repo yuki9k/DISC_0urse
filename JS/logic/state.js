@@ -131,6 +131,8 @@ const State = {
   getPostsFromRoom: async function (roomId) {
     const req = new Request(this.url + `posts.php?roomID=${roomId}`);
     const res = await fetcher(req);
+    console.log(res)
+
     if (!res.success.ok) {
       return;
     }
@@ -233,7 +235,6 @@ PubSub.subscribe({
         score: State._state.thisUser.score,
       },
     });
-    console.log("priv rooms:", State._state.privateRooms);
   },
 });
 
