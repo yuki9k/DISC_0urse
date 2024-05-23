@@ -142,25 +142,6 @@ function renderDropdownItems(parent, icon, roomsToRender) {
   });
   const roomsItem = document.createElement("div");
   roomsItem.classList.add("dropdown_item_rooms");
-/*   <div class="dropdown_box_rooms room_pop">
-        <p>Pop</p>
-      </div>
-      <div class="dropdown_box_rooms room_rock">
-        <p>Rock</p>
-      </div>
-      <div class="dropdown_box_rooms room_singer">
-        <p>Singer Songwriter</p>
-      </div>
-      <div class="dropdown_box_rooms room_folk">
-        <p>Folk</p>
-      </div>
-      <div class="dropdown_box_rooms room_rb">
-        <p>R&B</p>
-      </div>
-      <div class="dropdown_box_rooms room_pp">
-        <p>Post Punk</p>
-      </div> */
-
   roomsItem.innerHTML = `
     <div class="dropdown_title">Rooms</div>
     <div class="dropdown_title_two">Public Rooms</div>
@@ -313,6 +294,7 @@ function renderPrivateRooms(dropdown, icon, room) {
     `;
 
   roomDom.addEventListener("click", (e) => {
+    const wrapper = document.querySelector("#wrapper");
     const menuIcon = icon;
     const parent = dropdown;
     menuIcon.classList.toggle("change");
@@ -320,7 +302,10 @@ function renderPrivateRooms(dropdown, icon, room) {
 
     PubSub.publish({
       event: "renderRoom",
-      details: null
+      details: {
+        parent: wrapper,
+        room: room
+      }
     });
   });
 }
