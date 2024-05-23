@@ -1,22 +1,5 @@
 [
     {
-        "hostID": 1,
-        "style": [
-            "test",
-            "test",
-            "test"
-        ],
-        "genre": "rock",
-        "users": [
-            3,
-            2,
-            10,
-            1
-        ],
-        "name": "my first room",
-        "id": 7
-    },
-    {
         "hostID": 2,
         "style": "one",
         "genre": "Indie Pop",
@@ -48,43 +31,6 @@
         ],
         "name": "Cool room",
         "id": 10
-    },
-    {
-        "hostID": 1,
-        "style": "Choose theme",
-        "genre": "1",
-        "users": [
-            3,
-            2,
-            1
-        ],
-        "name": "hej",
-        "id": 11
-    },
-    {
-        "hostID": 1,
-        "style": "Choose theme",
-        "genre": "0",
-        "users": [
-            5,
-            2,
-            1
-        ],
-        "name": "ett test rum yahoooo",
-        "id": 12
-    },
-    {
-        "hostID": 1,
-        "style": "Choose theme",
-        "genre": "3",
-        "users": [
-            5,
-            2,
-            3,
-            1
-        ],
-        "name": "kolla!!!!",
-        "id": 13
     },
     {
         "hostID": 4,
