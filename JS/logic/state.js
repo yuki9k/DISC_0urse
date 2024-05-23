@@ -16,7 +16,7 @@ const State = {
     if (!response.success.ok) {
       //throw error
     } else {
-      switch (ent){
+      switch (ent) {
         case "posts":
           this._state[ent].push(response.resource);
           PubSub.publish({
@@ -31,15 +31,15 @@ const State = {
           let user = response.resource[0];
           let friend = response.resource[1];
           let id = user.id;
-          for(let obj of this._state.users){
-            if(obj.id === id){
+          for (let obj of this._state.users) {
+            if (obj.id === id) {
               obj = response.resource;
             }
           }
           PubSub.publish({
             event: "updateFriendsInfo",
             details: friend
-          });  
+          });
       }
     }
     //request okayed push new entity to state.
@@ -183,7 +183,7 @@ const State = {
     this._state.genres = resGenres.resource;
   },
 
-  updateFriends: async function () {},
+  updateFriends: async function () { },
   /* getUserRooms: async function () {
     const token = localStorage.getItem("token");
     const userRooms = new Request(URL + `private.php?token=${token}`, {
@@ -324,6 +324,22 @@ PubSub.subscribe({
 });
 
 PubSub.subscribe({
+  event: "getInfo|renderAddedFriends|createRoom",
+  listener: async (details) => {
+    let friends = [];
+    let friendIds = State._state.thisUser.friends;
+
+    for (let friendId of friendIds) {
+      let friend = await State.getExternalUser(friendId);
+      friends.push(friend);
+    }
+    PubSub.publish({
+      event: "recievedInfo|renderAddedFriends|createRoom",
+      details: friends
+    });
+  }
+})
+PubSub.subscribe({
   event: "getThisUser",
   listener: async () => {
     State.getCurrentUser();
@@ -339,9 +355,9 @@ PubSub.subscribe({
       const friend = await State.getExternalUser(friendId);
       friendArr.push(friend);
     }
-    if(State._state.thisUser.friendRequests.length > 0){
+    if (State._state.thisUser.friendRequests.length > 0) {
       const reqUsers = [];
-      for(const reqId of State._state.thisUser.friendRequests){
+      for (const reqId of State._state.thisUser.friendRequests) {
         reqUsers.push(await State.getExternalUser(reqId));
       }
       PubSub.publish({
@@ -593,7 +609,7 @@ PubSub.subscribe({
       genre: details.genre,
       style: details.style,
       name: details.name,
-      users: [1],
+      users: details.users,
     };
     const request = new Request("./api/private.php", {
       method: "POST",
