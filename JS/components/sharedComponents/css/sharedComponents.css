@@ -178,6 +178,16 @@ header .home_button {
     text-decoration: none;
 }
 
+header .profilepic_in_header {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    background-image: url(./profile.png);
+    background-size: contain;
+    background-position: center;
+}
+
 header .buttons_container {
     display: flex;
     gap: 16px;
@@ -484,4 +494,18 @@ header .buttons_container .signup_button:hover {
     height: 40px;
     margin-top: 21px;
     width: 130%;
+}
+.check{
+    color: gray;
+    aspect-ratio: 1;
+}
+.check:hover{
+    color:green
+}
+.cross{
+    color: gray;
+    aspect-ratio: 1;
+}
+.cross:hover{
+    color: red;
 }

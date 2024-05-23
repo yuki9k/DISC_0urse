@@ -85,16 +85,15 @@ function renderHeader() {
   });
 }
 
-
 PubSub.subscribe({
   event: "loginComplete",
   listener: (details) => {
-    const buttons_container = document.querySelector(".buttons_container");
+    const buttonsContainer = document.querySelector(".buttons_container");
     if (details.token) {
-      buttons_container.innerHTML = "";
-      buttons_container.textContent = details.username;
+      buttonsContainer.innerHTML = "";
+      buttonsContainer.textContent = details.username;
 
-      buttons_container.addEventListener("click", (e) => {
+      buttonsContainer.addEventListener("click", (e) => {
         console.log(details);
         PubSub.publish({
           event: "renderProfileInfo",
