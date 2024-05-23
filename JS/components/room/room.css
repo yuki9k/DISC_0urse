@@ -9,11 +9,11 @@ body:has(#room_container) {
   flex-direction: column;
   gap: 20px;
   position: relative;
+  transform: translate(0, 60px);
 }
 
 #room_top {
   position: sticky;
-  transform: translate(0, 60px);
 
   top: 0;
   z-index: 3;
