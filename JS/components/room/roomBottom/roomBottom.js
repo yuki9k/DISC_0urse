@@ -22,11 +22,6 @@ function renderRoomBottom(parent, data, id) {
   });
 
   PubSub.publish({
-    event: "renderAddPostButton",
-    details: addPosts,
-  });
-
-  PubSub.publish({
     event: "renderFilterButton",
     details: filterPosts,
   });
