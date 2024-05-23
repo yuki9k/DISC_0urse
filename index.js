@@ -12,7 +12,7 @@ if (token) {
     });
 
     PubSub.publish({
-        event: "loginComplete",
+        event: "userLoggedIn",
         details: {token, username}
     });
 } else {

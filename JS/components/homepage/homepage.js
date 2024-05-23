@@ -79,6 +79,7 @@ PubSub.subscribe({
             pubRooms: details.pubRooms,
             posts: details.posts
         });
+        PubSub.publish({ event: "userLoggedIn", details: null });
     }
 })
 
