@@ -181,7 +181,7 @@ header .profilepic_in_header {
   width: 40px;
   border-radius: 50%;
 
-  background-image: url(./profile.png);
+  background-image: url(../../../../images/profile.png);
   background-size: contain;
   background-position: center;
 }
@@ -258,7 +258,7 @@ header .buttons_container .signup_button:hover {
   transition: left 0.3s ease;
   box-sizing: border-box;
   border-radius: 0 10px 0 0;
-  box-shadow: 0px 0px 10px var(--shadow_for_menu);
+  box-shadow: 0px 0px 5px var(--shadow_for_menu);
 }
 
 .dropdown.active {
@@ -275,12 +275,11 @@ header .buttons_container .signup_button:hover {
 }
 
 .friend_image {
-  background-image: url(../css/profile.png);
-  background-position: center;
-  background-size: contain;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+    object-position: center;
+    object-fit: contain;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
 }
 
 .friend_username {
@@ -412,7 +411,7 @@ header .buttons_container .signup_button:hover {
   border-radius: 50%;
   border: 1px solid var(--paragraph_color);
 
-  background-image: url(../css/profile.png);
+  background-image: url(../../../../images/profile.png);
   background-size: cover;
 }
 
@@ -427,6 +426,11 @@ header .buttons_container .signup_button:hover {
   font-size: 22px;
   font-family: var(--font_family);
   color: var(--paragraph_color);
+}
+
+.profile_info .status_text {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .middle_section_left,

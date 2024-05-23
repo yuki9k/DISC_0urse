@@ -99,8 +99,13 @@ body:has(#room_container) {
 }
 
 #room_bottom #filter_add_post_container {
-  position: relative;
-  width: 5%;
+  position: sticky;
+  top: 160px;
+  height: 50vh;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
@@ -112,9 +117,6 @@ body:has(#room_container) {
 }
 
 #room_bottom #add_post_button {
-  position: fixed;
-  bottom: 20px;
-
   width: 50px;
   height: 50px;
 
@@ -284,13 +286,30 @@ body:has(#room_container) {
 }
 
 #room_bottom .post_content_box .positive {
-  color: lime;
+  color: rgb(255, 255, 255);
   cursor: pointer;
+  font-size: 12px;
+  padding: 4px;
 }
 
 #room_bottom .post_content_box .negative {
-  color: tomato;
-  cursor: pointer;
+  color: rgb(255, 255, 255);
+  cursor: pointer;  
+  font-size: 12px;
+}
+
+#room_bottom .post_content_box .like_button,
+#room_bottom .post_content_box .dislike_button {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;  
+  margin-top: -2px;
+  padding: 0 4px;
+}
+
+#room_bottom .post_content_box .dislike_button {
+  margin-left: 5px;
+  margin-top: -4px;
 }
 
 .post_time {
