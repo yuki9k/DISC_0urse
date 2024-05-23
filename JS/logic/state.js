@@ -38,7 +38,7 @@ const State = {
           }
           PubSub.publish({
             event: "updateFriendsInfo",
-            details: friend,
+            details: friend
           });
       }
     }
@@ -183,7 +183,7 @@ const State = {
     this._state.genres = resGenres.resource;
   },
 
-  updateFriends: async function () {},
+  updateFriends: async function () { },
   /* getUserRooms: async function () {
     const token = localStorage.getItem("token");
     const userRooms = new Request(URL + `private.php?token=${token}`, {
@@ -323,6 +323,22 @@ PubSub.subscribe({
   },
 });
 
+PubSub.subscribe({
+  event: "getInfo|renderAddedFriends|createRoom",
+  listener: async (details) => {
+    let friends = [];
+    let friendIds = State._state.thisUser.friends;
+
+    for (let friendId of friendIds) {
+      let friend = await State.getExternalUser(friendId);
+      friends.push(friend);
+    }
+    PubSub.publish({
+      event: "recievedInfo|renderAddedFriends|createRoom",
+      details: friends
+    });
+  }
+})
 PubSub.subscribe({
   event: "getThisUser",
   listener: async () => {
@@ -593,7 +609,7 @@ PubSub.subscribe({
       genre: details.genre,
       style: details.style,
       name: details.name,
-      users: [1],
+      users: details.users,
     };
     const request = new Request("./api/private.php", {
       method: "POST",
