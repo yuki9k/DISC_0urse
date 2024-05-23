@@ -5,7 +5,7 @@ body:has(#homepage_container) {
 }
 
 #homepage_container {
-  margin-top: 15vh;
+  margin-top: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,6 +16,7 @@ body:has(#homepage_container) {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: -75px;
 }
 
 #homepage_container #carousell_scroll > div {
