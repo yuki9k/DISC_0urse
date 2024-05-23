@@ -2,7 +2,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "heeeej yeah niceeee fuck yeah",
         "likedBy": [],
         "dislikedBy": [
@@ -13,7 +13,7 @@
     {
         "userID": 1,
         "roomID": 2,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "N\u00e4 ass\u00e5 det albumet var ju typ det v\u00e4rsta jag har h\u00f6rt, bandet borde ge upp, \u00e5k hem, sluta. USCH",
         "likedBy": [],
         "dislikedBy": [
@@ -24,21 +24,24 @@
     {
         "userID": 3,
         "roomID": 2,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
         "likedBy": [
             2
         ],
-        "dislikedBy": [],
+        "dislikedBy": [
+            3
+        ],
         "id": 5
     },
     {
         "userID": 3,
         "roomID": 2,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "Jaha okej, jag kommer till skolan s\u00e5 fort jag kan!",
         "likedBy": [
-            2
+            2,
+            3
         ],
         "dislikedBy": [],
         "id": 6
@@ -46,7 +49,7 @@
     {
         "userID": 4,
         "roomID": 2,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "I wanna hear you going psycho, if you're going psycho I wanna hear. every conversation ends with you screaming, not even word just AAAH AAAAAA AAAAAAAAAAHHHHHHHHHHH",
         "likedBy": [
             2
@@ -57,7 +60,7 @@
     {
         "userID": 1,
         "roomID": 2,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "I GET TO KNOW MYSELF EVERYWEEKEND, AND I'M WEAK. hangovers feel good when I know it's the last one. then I feel so good that I have another one.",
         "likedBy": [
             3,
@@ -71,7 +74,7 @@
     {
         "userID": 5,
         "roomID": 1,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
         "likedBy": [
             2,
@@ -83,7 +86,7 @@
     {
         "userID": 2,
         "roomID": 3,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
         "likedBy": [
             2
@@ -94,7 +97,7 @@
     {
         "userID": 2,
         "roomID": 4,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
         "likedBy": [
             2,
@@ -106,7 +109,7 @@
     {
         "userID": 2,
         "roomID": 5,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
         "likedBy": [
             2
@@ -117,7 +120,7 @@
     {
         "userID": 2,
         "roomID": 6,
-        "time": 10052024,
+        "time": 1716457114,
         "content": "WTF this album suck!!!!! hahahahahahahhaha who would even think to make music this shitty???? LOOLLLLL",
         "likedBy": [
             2
@@ -128,7 +131,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "hej jag \u00e4r Theo",
         "likedBy": [
             2
@@ -139,7 +142,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "Hej jag \u00e4r Theo",
         "likedBy": [
             2
@@ -150,7 +153,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "awoooo",
         "likedBy": [
             2
@@ -161,7 +164,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "hej jag \u00e4r Theo",
         "likedBy": [
             2
@@ -172,7 +175,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "Hej jag \u00e4r Theo",
         "likedBy": [
             2
@@ -183,7 +186,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "eeeh hall\u00e5???",
         "likedBy": [
             2
@@ -194,7 +197,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "N\u00c4MEN?!!!!",
         "likedBy": [
             2
@@ -205,7 +208,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "wtf??",
         "likedBy": [
             2
@@ -216,7 +219,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "HEEEEj",
         "likedBy": [
             2
@@ -227,7 +230,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "YOOOOOOOOOOOOOOOOO",
         "likedBy": [
             2
@@ -238,7 +241,7 @@
     {
         "userID": 1,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "DET FUNKAR JU",
         "likedBy": [
             1
@@ -249,7 +252,7 @@
     {
         "userID": 2,
         "roomID": 2,
-        "time": "time",
+        "time": 1716457114,
         "content": "Testing to comment\n",
         "likedBy": [
             2
@@ -260,7 +263,7 @@
     {
         "userID": 4,
         "roomID": 1,
-        "time": "time",
+        "time": 1716457114,
         "content": "another",
         "likedBy": [
             4
@@ -271,7 +274,7 @@
     {
         "userID": 4,
         "roomID": 4,
-        "time": "time",
+        "time": 1716457114,
         "content": "another",
         "likedBy": [
             4
@@ -282,7 +285,7 @@
     {
         "userID": 4,
         "roomID": 4,
-        "time": "time",
+        "time": 1716457114,
         "content": "another",
         "likedBy": [
             4
@@ -293,7 +296,7 @@
     {
         "userID": 4,
         "roomID": 4,
-        "time": "time",
+        "time": 1716457114,
         "content": "another",
         "likedBy": [
             4
@@ -304,7 +307,7 @@
     {
         "userID": 4,
         "roomID": 4,
-        "time": "time",
+        "time": 1716457114,
         "content": "another",
         "likedBy": [
             4
@@ -315,7 +318,7 @@
     {
         "userID": 4,
         "roomID": 4,
-        "time": "time",
+        "time": 1716457114,
         "content": "another",
         "likedBy": [
             4
@@ -326,7 +329,7 @@
     {
         "userID": 4,
         "roomID": 4,
-        "time": "time",
+        "time": 1716457114,
         "content": "another",
         "likedBy": [
             4
@@ -337,7 +340,7 @@
     {
         "userID": 4,
         "roomID": 4,
-        "time": "time",
+        "time": 1716457114,
         "content": "another",
         "likedBy": [
             4
@@ -348,7 +351,7 @@
     {
         "userID": 4,
         "roomID": 4,
-        "time": "time",
+        "time": 1716457114,
         "content": "another\n",
         "likedBy": [
             4
@@ -357,14 +360,25 @@
         "id": 34
     },
     {
-        "userID": 2,
-        "roomID": 3,
-        "time": "time",
-        "content": "Fan va roligt",
+        "userID": 3,
+        "roomID": 1,
+        "time": 1716457226,
+        "content": "fixed?\n",
         "likedBy": [
-            2
+            3
         ],
         "dislikedBy": [],
-        "id": 35
+        "id": 36
+    },
+    {
+        "userID": 3,
+        "roomID": 1,
+        "time": 1716457273,
+        "content": "Thisshit is fixed now",
+        "likedBy": [
+            3
+        ],
+        "dislikedBy": [],
+        "id": 37
     }
 ]
