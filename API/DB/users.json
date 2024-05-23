@@ -35,7 +35,7 @@
         "password": "admin",
         "profilePicture": "placeholder",
         "score": 0,
-        "friends": [],
+        "friends": [5, 1, 2, 3],
         "id": 4,
         "status": "jag vet inte"
     },

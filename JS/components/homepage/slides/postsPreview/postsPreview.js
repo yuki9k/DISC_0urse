@@ -10,29 +10,32 @@ import * as post from "./postItem/postItem.js";
 //     event: "foundAlbums",
 //     listener: (details) => {
 //         renderPostsPreview
-//     } 
+//     }
 //   })
 
-function renderPostsPreview(parent, posts){
-    parent.innerHTML = `<h1 class="album_title"></h1>
+function renderPostsPreview(parent, data) {
+  const { chats: posts, genre } = data;
+  parent.innerHTML = `<h1 class="album_title"></h1>
                         <ul class="posts_container"></ul>`;
 
-    const postsContainer = parent.querySelector(".posts_container");
+  const postsContainer = parent.querySelector(".posts_container");
 
-    //get copy of state
+  //get copy of state
 
-    for(let post of posts){
-        PubSub.publish({
-            event: "renderPost",
-            details: {"parent": postsContainer, "data": post.content}
-        })
-    }; 
+  for (let post of posts) {
+    const { content } = post;
+    PubSub.publish({
+      event: "renderPost",
+      details: { parent: postsContainer, data: { content, genre } },
+    });
+  }
 }
 
 PubSub.subscribe({
-    event: "renderPosts",
-    listener: (details) => {
-        const {parent, data} = details;
-        renderPostsPreview(parent, data);
-    }
+  event: "renderPosts",
+  listener: (details) => {
+    const { parent, data } = details;
+    console.log(data);
+    renderPostsPreview(parent, data);
+  },
 });

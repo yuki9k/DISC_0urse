@@ -1,0 +1,12 @@
+#filter_posts > label {
+  display: block;
+}
+
+#filter_posts > p {
+  margin: 5px 0;
+  cursor: default;
+}
+
+#filter_posts > select {
+  cursor: pointer;
+}
