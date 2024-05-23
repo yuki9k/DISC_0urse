@@ -355,5 +355,16 @@
         ],
         "dislikedBy": [],
         "id": 34
+    },
+    {
+        "userID": 2,
+        "roomID": 3,
+        "time": "time",
+        "content": "Fan va roligt",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 35
     }
 ]

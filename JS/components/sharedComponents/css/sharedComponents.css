@@ -114,6 +114,13 @@ header {
     padding: 0 10px;
     box-sizing: border-box;
     align-items: center;
+    background-color: var(--background_color);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 header #change_theme {
