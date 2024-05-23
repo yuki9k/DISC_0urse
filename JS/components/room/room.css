@@ -16,12 +16,12 @@ body:has(#room_container) {
   top: 0;
   z-index: 3;
 
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    margin-top: 60px;
+  margin-top: 60px;
 
   transition-property: height;
   transition-duration: 500ms;
