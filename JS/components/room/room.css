@@ -314,5 +314,9 @@ body:has(#room_container) {
 
 .post_time {
   font-style: italic;
-  color: rgba(0, 0, 0, 0.9);
+  font-size: 0.9rem;
+}
+
+.profile_name {
+  font-size: 1.1rem;
 }

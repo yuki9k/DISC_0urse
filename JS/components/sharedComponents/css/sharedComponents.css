@@ -112,7 +112,7 @@ header {
   display: grid;
   grid-template-columns: 60px auto auto 1fr;
   grid-template-rows: 60px;
-  padding: 0 10px;
+  padding: 5px 20px;
   box-sizing: border-box;
   align-items: center;
   background-color: var(--background_color);
@@ -122,7 +122,7 @@ header {
   left: 0;
   right: 0;
   z-index: 999;
-  /* box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
 header #change_theme {
@@ -191,7 +191,7 @@ header .buttons_container {
   gap: 16px;
   justify-self: end;
   font-family: var(--font_family);
-  font-size: 18px;
+  font-size: 1.4rem;
   cursor: pointer;
   color: var(--paragraph_color);
 }
@@ -275,11 +275,11 @@ header .buttons_container .signup_button:hover {
 }
 
 .friend_image {
-    object-position: center;
-    object-fit: contain;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+  object-position: center;
+  object-fit: contain;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
 }
 
 .friend_username {
