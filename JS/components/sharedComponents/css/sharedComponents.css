@@ -428,6 +428,11 @@ header .buttons_container .signup_button:hover {
   color: var(--paragraph_color);
 }
 
+.profile_info .status_text {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .middle_section_left,
 .middle_section_right {
   font-size: 18px;

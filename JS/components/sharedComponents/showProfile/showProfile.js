@@ -25,7 +25,7 @@ function renderFriendProfile(username, status, score) {
         <div class="upper_section">
             <div class="profile_info">
                 <p class="username">${username}</p>
-                <p class="status">${status}</p>
+                <p class="status"><span class="status_text">Status:</span> ${status}</p>
             </div>
             <div class="profile_picture"></div>
         </div>
@@ -71,7 +71,7 @@ function renderProfile(username, status, score) {
             <div class="profile_info">
                 <p class="username">${username}</p>
                 <input class="change_username" placeholder="change username">
-                <p class="status">${status}</p>
+                <p class="status"><span class="status_text">Status:</span> ${status}</p>
                 <input class="change_status" placeholder="change status">
             </div>
             <div class="profile_picture"></div>
