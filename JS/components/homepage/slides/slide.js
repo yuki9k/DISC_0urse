@@ -5,7 +5,6 @@ import * as postsPreview from "./postsPreview/postsPreview.js";
 
 function renderSlide(parent, data){
     const slide = document.createElement("div");
-    slide.id = "slide_" + data.image.id;
     slide.classList.add("slide");
     parent.appendChild(slide);
 

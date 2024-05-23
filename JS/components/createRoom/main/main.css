@@ -111,10 +111,6 @@
     text-align: center;
 }
 
-.album_information_create {
-    overflow: scroll;
-}
-
 .album_info_title {
     font-weight: bold;
     text-decoration: underline;
