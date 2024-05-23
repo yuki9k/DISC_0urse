@@ -23,8 +23,6 @@ body:has(#room_container) {
 
     margin-top: 60px;
 
-    background: linear-gradient(to left, #97233e, #f33864);
-
   transition-property: height;
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
@@ -231,7 +229,6 @@ body:has(#room_container) {
 }
 
 #room_bottom ul#postsListContainer > li {
-  color: var(--paragraph_color);
   max-width: 300px;
   background-color: #97233e;
 
