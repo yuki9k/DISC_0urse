@@ -5,6 +5,7 @@ function renderPostItem(parent, data) {
   const { content, genre } = data;
   const postItem = document.createElement("li");
   parent.appendChild(postItem);
+  postItem.style.overflow = "hidden";
   postItem.id = "post_id_";
   postItem.innerHTML = content;
 
