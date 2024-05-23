@@ -40,7 +40,6 @@ PubSub.subscribe({
     listener: (padding) => {
         const roomContainer = document.querySelector("#room_container");
         roomContainer.style.paddingBottom = padding;
-        console.log("cum")
     }
 })
 
