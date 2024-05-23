@@ -6,7 +6,8 @@
         "content": "heeeej yeah niceeee fuck yeah",
         "likedBy": [],
         "dislikedBy": [
-            2
+            2,
+            4
         ],
         "id": 3
     },
@@ -381,5 +382,16 @@
         ],
         "dislikedBy": [],
         "id": 37
+    },
+    {
+        "userID": 5,
+        "roomID": 6,
+        "time": 1716458259,
+        "content": "lol, even",
+        "likedBy": [
+            5
+        ],
+        "dislikedBy": [],
+        "id": 38
     }
 ]
