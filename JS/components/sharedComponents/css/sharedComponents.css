@@ -376,6 +376,10 @@ header .buttons_container .signup_button:hover {
   transition: 0.2s;
 }
 
+.dropdown_box_rooms.roomActive{
+  border: 3px solid limegreen;
+}
+
 .dropdown_box_rooms:hover,
 .dropdown_box_friends:hover,
 .create_room_button:hover,
