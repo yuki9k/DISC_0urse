@@ -247,7 +247,7 @@ header .buttons_container .signup_button:hover {
 /* dropdown CSS */
 .dropdown {
   position: absolute;
-  top: 60px;
+  top: 70px;
   left: -28%;
   height: calc(100vh - 60px);
   bottom: 0;
