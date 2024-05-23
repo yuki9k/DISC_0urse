@@ -181,7 +181,7 @@ header .profilepic_in_header {
   width: 40px;
   border-radius: 50%;
 
-  background-image: url(./profile.png);
+  background-image: url(../../../../images/profile.png);
   background-size: contain;
   background-position: center;
 }
@@ -411,7 +411,7 @@ header .buttons_container .signup_button:hover {
   border-radius: 50%;
   border: 1px solid var(--paragraph_color);
 
-  background-image: url(../css/profile.png);
+  background-image: url(../../../../images/profile.png);
   background-size: cover;
 }
 
