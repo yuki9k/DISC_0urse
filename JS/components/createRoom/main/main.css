@@ -14,6 +14,7 @@
     background-color: var(--add_friends_container_color);
     border-radius: 10px 10px 0 0;
     padding: 0 30px;
+    margin-top: 7.5vh;
 }
 
 .bottom {

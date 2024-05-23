@@ -20,6 +20,8 @@ body:has(#room_container){
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    margin-top: 60px;
     
     background: linear-gradient(to left, #97233e, #f33864);
 
