@@ -2,12 +2,26 @@ import { PubSub } from "../../../../../logic/PubSub.js";
 import { colorToHsl } from "../../../../../logic/helpFunctions.js";
 
 function renderPostItem(parent, data) {
-  const { content, genre } = data;
+  const { post, genre } = data;
+  const { content, time, score, id } = post;
+  console.log(post);
   const postItem = document.createElement("li");
   parent.appendChild(postItem);
-  postItem.style.overflow = "hidden";
-  postItem.id = "post_id_";
-  postItem.innerHTML = content;
+  postItem.id = `post_id_${id}`;
+
+  const timeSincePost = function () {
+    const sTimeDiff = Math.floor(Date.now() / 1000) - time;
+    const mTimeDiff = sTimeDiff / 60;
+    const hPostTime = Math.floor(mTimeDiff / 60);
+    const mPostTime = Math.floor(mTimeDiff % 60);
+    return hPostTime > 0
+      ? `${hPostTime}h ${mPostTime}min ago`
+      : `${mPostTime}min ago`;
+  };
+
+  postItem.innerHTML = `
+    <p style="font-style: italic">${timeSincePost()}</p><p>${content}</p><p>${score}p</p>
+`;
 
   if (postItem.offsetWidth >= 400) {
     postItem.style.width = `${postItem.offsetWidth - 300}px`;

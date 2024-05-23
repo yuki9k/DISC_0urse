@@ -24,10 +24,9 @@ function renderPostsPreview(parent, data) {
   //get copy of state
 
   for (let post of posts) {
-    const { content } = post;
     PubSub.publish({
       event: "renderPost",
-      details: { parent: postsContainer, data: { content, genre } },
+      details: { parent: postsContainer, data: { post, genre } },
     });
   }
 }
