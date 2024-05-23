@@ -9,10 +9,12 @@ body:has(#room_container) {
   flex-direction: column;
   gap: 20px;
   position: relative;
+  transform: translate(0, 60px);
 }
 
 #room_top {
   position: sticky;
+
   top: 0;
   z-index: 3;
 
@@ -20,8 +22,6 @@ body:has(#room_container) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  margin-top: 60px;
 
   transition-property: height;
   transition-duration: 500ms;
@@ -32,6 +32,7 @@ body:has(#room_container) {
 
 #room_top.makeSmall {
   height: 150px;
+  margin-top: 60px;
 }
 
 #room_top #album_container {

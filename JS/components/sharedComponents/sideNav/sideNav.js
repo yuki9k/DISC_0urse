@@ -117,16 +117,20 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     if(!token){
       wrapper.appendChild(modalContainer);
       modalContainer.innerHTML = `
-        <div class="modal_content">
+        <div class="add_friend_container">
+          <p id="add_friend_logo">DISC_ourse</p>
+          <p id="form_text" class="add_friend_title">Add Friend</p>
           <p style = "color: red">YOU MUST BE LOGGED IN TO ADD FRIENDS >:(</p>
         </div>
       `;
     } else {
       wrapper.appendChild(modalContainer);
       modalContainer.innerHTML = `
-        <div class="modal_content">
-          <input style="width: 85%" id="new_friend" placeholder="your new friends username :)">
-          <button id="send_friend_request">add!</button>
+        <div class="add_friend_container">
+          <p id="add_friend_logo">DISC_ourse</p>
+          <p id="form_text" class="add_friend_title">Add Friend</p>
+          <input id="new_friend" placeholder="your new friends username :)">
+          <button id="send_friend_request">Send friend request</button>
         </div>
       `;
       document.querySelector("#send_friend_request").addEventListener("click", (e) => {

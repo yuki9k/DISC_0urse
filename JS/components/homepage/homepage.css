@@ -75,6 +75,13 @@ body:has(#homepage_container){
     left: 60%;
 }
 
+#homepage_container h1,
+#homepage_container h2{
+    text-align: center;
+    color: var(--paragraph_color);
+}
+
+
 #homepage_container .posts_preview{
 
    position: relative;
