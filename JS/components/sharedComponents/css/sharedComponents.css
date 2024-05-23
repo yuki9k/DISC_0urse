@@ -406,8 +406,8 @@ header .buttons_container .signup_button:hover {
 }
 
 .profile_picture {
-  width: 8vw;
-  height: 8vw;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 1px solid var(--paragraph_color);
 
