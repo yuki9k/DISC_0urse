@@ -40,11 +40,7 @@ function renderPostBox(data, user) {
                             <div class="negative dislikeButton"> - </div>
                         </div>
                         <div class="reaction_counter_box">
-                            <span class="total_count">${
-                              DATA.likedBy.length - DATA.dislikedBy.length
-                            }p </span>(<span class="positive">+${
-    DATA.likedBy.length
-  }</span>/<span class="negative">-${DATA.dislikedBy.length}</span>)
+                            <span class="total_count">${DATA.likedBy.length - DATA.dislikedBy.length}p </span>(<span class="positive">+${DATA.likedBy.length}</span>/<span class="negative">-${DATA.dislikedBy.length}</span>)
                         </div>
                     </div>
                 <div>`;
