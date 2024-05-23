@@ -51,7 +51,6 @@ Login and signup CSS */
 } */
 
 .form_container #form_title {
-    color:var(--paragraph_color);
     font-size: 32px;
     font-weight: bold;
     text-align: center;
@@ -61,7 +60,6 @@ Login and signup CSS */
 
 .form_container #form_text {
     font-style: italic;
-    color:var(--paragraph_color);
     margin-top: -16px;
     text-align: center;
     font-family: var(--font_family);
@@ -106,7 +104,7 @@ Login and signup CSS */
     background-color: transparent;
     text-decoration: underline;
     font-size: 14px;
-    color: var(--paragraph_color);
+    color: rgb(18, 18, 18)
 }
 
 /* Header CSS */
@@ -242,7 +240,7 @@ header .buttons_container .signup_button:hover {
 .dropdown {
     position: absolute;
     top: 60px;
-    left: -22%; 
+    left: -28%; 
     height: fit-content;
     bottom: 0;
     background-color: var(--background_color);
@@ -498,16 +496,18 @@ header .buttons_container .signup_button:hover {
 .check{
     color: gray;
     aspect-ratio: 1;
+    font-size: 24px;
 }
 .check:hover{
-    color:green
+    color:rgb(85, 255, 85)
 }
 .cross{
     color: gray;
     aspect-ratio: 1;
+    font-size: 24px;
 }
 .cross:hover{
-    color: red;
+    color: rgb(255, 90, 90);
 }
 
 /* New Friend CSS */

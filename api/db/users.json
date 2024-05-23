@@ -19,7 +19,9 @@
         "friends": [
             4
         ],
-        "friendRequests": [],
+        "friendRequests": [
+            3
+        ],
         "id": 2,
         "status": "418 im a teapot"
     },
