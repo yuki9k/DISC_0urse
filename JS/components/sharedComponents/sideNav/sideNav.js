@@ -294,8 +294,6 @@ function renderPrivateRooms(dropdown, icon, room) {
       </div>
     `;
 
-    console.log(room)
-
   roomDom.addEventListener("click", (e) => {
     const wrapper = document.querySelector("#wrapper");
     const menuIcon = icon;

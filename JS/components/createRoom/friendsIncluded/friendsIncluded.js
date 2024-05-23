@@ -62,7 +62,7 @@ function renderAddedFriends() {
           div.id = `invite_friend_${friends[i].id}`;
           div.innerHTML = `
               <div class="friend_username">${friends[i].name}</div>
-              <img class="friend_image" src="#">
+              <img class="friend_image" src="../../../../images/profile.png">
           `;
           friendContainer.appendChild(div);
           console.log(friendContainer.querySelector(`#invite_friend_${friends[i].id}`));

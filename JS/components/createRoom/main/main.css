@@ -56,7 +56,7 @@
     border: none;
     box-shadow: 0px 0px 5px var(--shadow_for_menu);
     background-color: transparent;
-    color: var(--paragraph_color);
+    color: var(--always_black);
 }
 
 .album_title_in_div {
