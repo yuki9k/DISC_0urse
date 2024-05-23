@@ -7,7 +7,7 @@ function renderPostBox(data, user) {
   const { likedBy, dislikedBy, time } = DATA;
   postBox.dataset.postScore = likedBy.length - dislikedBy.length;
   postBox.dataset.time = time;
-  data.parent.appendChild(postBox);
+  data.parent.prepend(postBox);
   postBox.id = "post_" + DATA.id;
   const timeSincePost = function () {
     const sTimeDiff = Math.floor(Date.now() / 1000) - time;
@@ -27,7 +27,7 @@ function renderPostBox(data, user) {
                     <div class="post_top">
                         <div class="profile_pic_name">
                             <img src="">
-                            <span id="profile_name">${user.name}</span>
+                            <span class="profile_name">${user.name}</span>
                         </div>
                         <div class="post_time">${timeSincePost()}</div>
                     </div>
@@ -92,6 +92,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "renderPostLikedCounter",
   listener: (details) => {
+    const totalScore = details.likedBy.length - details.dislikedBy.length;
     const post = document.querySelector("#post_" + details.id);
     const post_liked = post.querySelector(".reaction_counter_box > .positive");
     const post_disliked = post.querySelector(
@@ -101,8 +102,7 @@ PubSub.subscribe({
 
     post_liked.innerHTML = "+" + details.likedBy.length;
     post_disliked.innerHTML = "-" + details.dislikedBy.length;
-    post_sum.innerHTML = `${
-      details.likedBy.length - details.dislikedBy.length
-    }p `;
+    post_sum.innerHTML = `${totalScore}p `;
+    post.dataset.postScore = totalScore;
   },
 });
