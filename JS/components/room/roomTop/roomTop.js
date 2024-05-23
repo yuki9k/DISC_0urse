@@ -50,6 +50,7 @@ function renderRoomTop(parent, data) {
             </div>
             `;
       const albumTracks = parent.querySelector("#album_tracks_container");
+      const albumDataContainer = parent.querySelector("#album_data");
 
       PubSub.subscribe({
         event: "sendAlbumHexColor",
@@ -66,9 +67,11 @@ function renderRoomTop(parent, data) {
           l = Math.min(l, 80);
 
           if (l < 50) {
-            albumTracks.style.color = "var(--paragraph_color_white)";
+            albumDataContainer.style.color = "var(--paragraph_color_white)";
           }
-          albumTracks.style.backgroundColor = `hsl(${h} ${s - 5} ${l + 5})`;
+          albumDataContainer.style.backgroundColor = `hsl(${h} ${s - 5} ${
+            l + 5
+          })`;
         },
       });
       PubSub.publish({ event: "getAlbumHexColor", details: data.genre });

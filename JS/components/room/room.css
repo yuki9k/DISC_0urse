@@ -38,6 +38,7 @@ body:has(#room_container) {
 #room_top #album_container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2vw;
   height: 250px;
 
@@ -52,8 +53,10 @@ body:has(#room_container) {
 }
 
 #room_top #album_container img {
-  width: 250px;
-  box-shadow: 0px 0px 6px 3px black;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px var(--paragraph_color);
 }
 
 #room_top #album_container span {
@@ -66,23 +69,25 @@ body:has(#room_container) {
 }
 
 #room_top #album_container #album_data {
-  height: 250px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr 1fr 3fr;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 #room_top #album_container #album_tracks_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 2.5vw;
+  /* column-gap: 2.5vw; */
   row-gap: 5px;
   padding: 8px 15px;
   margin: 0;
   list-style-position: inside;
   border-radius: 5px;
 
-  /* box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.3); */
+  /* box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3); */
 }
 
 #room_top #album_container #album_tracks_container.display_none {
@@ -120,8 +125,9 @@ body:has(#room_container) {
   width: 50px;
   height: 50px;
 
-  background-color: var(--background_color_pop);
-  border: 2px solid var(--paragraph_color);
+  /* background-color: var(--background_color_pop); */
+  /* border: 2px solid var(--paragraph_color); */
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
 
   display: flex;
   justify-content: center;
@@ -155,6 +161,9 @@ body:has(#room_container) {
   padding: 15px;
   align-items: end;
   cursor: default;
+
+  display: flex;
+  flex-direction: column;
 }
 
 #room_bottom #add_post_button textarea {
@@ -170,14 +179,15 @@ body:has(#room_container) {
   transition-duration: 300ms;
   transition-property: opacity, width;
   transition-timing-function: ease-in-out;
-  background-color: var(--text_area_color);
+  /* background-color: var(--text_area_color); */
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 #room_bottom #add_post_button textarea.display {
   opacity: 1;
   padding: 10px;
   width: 100%;
-  height: 200px;
+  height: 100%;
 }
 
 #room_bottom #add_post_button #plus_sign {
@@ -210,6 +220,7 @@ body:has(#room_container) {
 }
 
 #room_bottom #add_post_button #send_post.display {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
   padding: 5px;
   font-size: 15px;
   width: 100%;
@@ -294,7 +305,7 @@ body:has(#room_container) {
 
 #room_bottom .post_content_box .negative {
   color: rgb(255, 255, 255);
-  cursor: pointer;  
+  cursor: pointer;
   font-size: 12px;
 }
 
@@ -302,7 +313,7 @@ body:has(#room_container) {
 #room_bottom .post_content_box .dislike_button {
   font-size: 24px;
   color: rgb(255, 255, 255);
-  cursor: pointer;  
+  cursor: pointer;
   margin-top: -2px;
   padding: 0 4px;
 }

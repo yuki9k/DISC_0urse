@@ -171,7 +171,7 @@ header #change_theme:has(#ball.dark_mode) {
 
 header .home_button {
   font-family: "titles";
-  font-size: 24px;
+  font-size: 2rem;
   color: var(--paragraph_color);
   text-decoration: none;
 }
@@ -247,7 +247,7 @@ header .buttons_container .signup_button:hover {
 /* dropdown CSS */
 .dropdown {
   position: absolute;
-  top: 60px;
+  top: 80px;
   left: -28%;
   height: calc(100vh - 60px);
   bottom: 0;
