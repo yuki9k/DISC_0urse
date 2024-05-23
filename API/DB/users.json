@@ -19,7 +19,7 @@
             4
         ],
         "id": 2,
-        "status": "hej"
+        "status": "418 im a teapot"
     },
     {
         "name": "freja",
@@ -38,5 +38,14 @@
         "friends": [],
         "id": 4,
         "status": "jag vet inte"
+    },
+    {
+        "name": "Yoda",
+        "password": "hej",
+        "profilePicture": "placeholder",
+        "score": 0,
+        "friends": [],
+        "status": "",
+        "id": 5
     }
 ]
