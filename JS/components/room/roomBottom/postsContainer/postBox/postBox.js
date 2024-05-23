@@ -36,8 +36,8 @@ function renderPostBox(data, user) {
                     </div>
                     <div class="post_bottom">
                         <div class="react_box">
-                            <div class="positive likeButton"> + </div>
-                            <div class="negative dislikeButton"> - </div>
+                            <div class="like_button"> + </div>
+                            <div class="dislike_button"> - </div>
                         </div>
                         <div class="reaction_counter_box">
                             <span class="total_count">${DATA.likedBy.length - DATA.dislikedBy.length}p </span>(<span class="positive">+${DATA.likedBy.length}</span>/<span class="negative">-${DATA.dislikedBy.length}</span>)
@@ -45,8 +45,8 @@ function renderPostBox(data, user) {
                     </div>
                 <div>`;
 
-  const like = postBox.querySelector(".likeButton");
-  const dislike = postBox.querySelector(".dislikeButton");
+  const like = postBox.querySelector(".like_button");
+  const dislike = postBox.querySelector(".dislike_button");
 
   like.addEventListener("click", () => {
     const body = {

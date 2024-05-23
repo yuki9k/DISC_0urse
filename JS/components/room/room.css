@@ -286,13 +286,30 @@ body:has(#room_container) {
 }
 
 #room_bottom .post_content_box .positive {
-  color: lime;
+  color: rgb(0, 0, 0);
   cursor: pointer;
+  font-size: 12px;
+  padding: 4px;
 }
 
 #room_bottom .post_content_box .negative {
-  color: tomato;
-  cursor: pointer;
+  color: rgb(0, 0, 0);
+  cursor: pointer;  
+  font-size: 12px;
+}
+
+#room_bottom .post_content_box .like_button,
+#room_bottom .post_content_box .dislike_button {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;  
+  margin-top: -2px;
+  padding: 4px;
+}
+
+#room_bottom .post_content_box .dislike_button {
+  margin-left: 5px;
+  margin-top: -4px;
 }
 
 .post_time {
