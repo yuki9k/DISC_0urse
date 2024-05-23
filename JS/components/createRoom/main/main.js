@@ -8,11 +8,10 @@ PubSub.subscribe({
   },
 });
 
-
 function renderCreate() {
+  let wrapper = document.querySelector("#wrapper");
   let main = document.createElement("main");
   main.className = "main_container_create_room";
-  let wrapper = document.querySelector("#wrapper");
   wrapper.innerHTML = "";
   wrapper.appendChild(main);
 
@@ -27,13 +26,13 @@ function renderCreate() {
                 <div class="genre_theme_container">
                     <p class="room_genre">Genre</p>
                         <select class="choose_genre">  
-                            <option>Choose genre</option>
-                            <option value="Indie Pop">Pop</option>  
-                            <option value="Indie Rock">Rock</option>  
-                            <option value="Indie Singer-songwriter">Singer & Songwriter</option>  
-                            <option value="Indie Folk">Folk</option>  
-                            <option value="Indie R&b">R&B</option>  
-                            <option value="Indie Post-punk">Post Punk</option>  
+                            <option value="0">Choose genre</option>
+                            <option value="1">Indie Pop</option>  
+                            <option value="2">Indie Rock</option>  
+                            <option value="3">Indie Singer & Songwriter</option>  
+                            <option value="4">Indie Folk</option>  
+                            <option value="5">Indie R&B</option>  
+                            <option value="6">Indie Post Punk</option>  
                         </select> 
                     <p class="room_theme">Theme</p>
                         <select class="choose_theme">  
@@ -49,9 +48,12 @@ function renderCreate() {
                 <div class="placeholders">
                     <div class="create_room_album_cover"></div>
                     <div class="two">
-                        <p class="album_title_in_div">Genre here</p>
+                        <p class="album_title_in_div">Album here:</p>
                     </div>
-                    <div class="create_room_album_info"></div>
+                    <div class="create_room_album_info">
+                      <div class="album_info_title">Songs in the album:</div>
+                      <div class="album_information_create"></div>
+                    </div>
                 </div>
             </div>
             <div class="underline"></div>
@@ -59,28 +61,56 @@ function renderCreate() {
     `;
 
   const genre = document.querySelector(".choose_genre");
-  genre.addEventListener("change", (e) => {
+  genre.addEventListener("click", (e) => {
     const genrePlaceholder = document.querySelector(".album_title_in_div");
-    genrePlaceholder.textContent = genre.value;
-
     const albumCover = document.querySelector(".create_room_album_cover");
-    const albumInfo = document.querySelector(".create_room_album_info");
+    const albumInfo = document.querySelector(".album_information_create");
+    const number = Number(genre.value);
 
-    // PubSub.publish({
-    //   event: "getAlbum",
-    //   details: genre.value
-    // });
+    if(number === 1) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_pop.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 2) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_rock.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 3) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_singer-songwriter.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 4) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_folk.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 5) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_r&b.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else if (number === 6) {
+      albumCover.style.backgroundImage = "url(./api/db/albumPics/indie_post-punk.jpeg)";
+      albumCover.style.backgroundSize = "contain";
+    } else {
+      albumCover.style.backgroundImage = "";
+    }
 
-    // PubSub.subscribe({
-    //     event: "foundAlbum",
-    //     listener: (details) => {
-    //         console.log(details); 
-    //         albumCover.style.backgroundImage = `url("${}.jpg")`;
-    //     }
-    //   })
+    PubSub.publish({
+      event: "getAlbumInfo",
+      details: number
+    });
+
+    PubSub.subscribe({
+        event: "foundAlbumInfo",
+        listener: (details) => {
+          console.log(details);
+          albumInfo.innerHTML = "";
+          genrePlaceholder.textContent = details.albumLabel;
+          const songs = details.albumTracks;
+
+          for (let song of songs) {
+            const infoDom = document.createElement("div");
+            infoDom.className = "info_container";
+            albumInfo.appendChild(infoDom);
+            infoDom.textContent = song.trackName;
+          }
+        }
+      })
   });
-
-
 
   PubSub.publish({
     event: "renderAddedFriends",

@@ -13,17 +13,21 @@ const State = {
       body: JSON.stringify(options.body),
     });
     const response = await fetcher(request);
-
-    if (!response.ok) {
+    console.log(response);
+    if (!response.success.ok) {
       //throw error
+    } else {
+      this._state[ent].push(response.resource);
+      console.log(response);
+      PubSub.publish({
+        event: "sendToPostParent",
+        details: {
+          post: response.resource,
+          user: State._state.thisUser,
+        },
+      });
     }
     //request okayed push new entity to state.
-    this._state[ent].push(response.resource);
-
-    PubSub.publish({
-      event: "sendToPostParent",
-      details: response.resource,
-    });
   },
 
   patch: async function (ent, options) {
@@ -120,6 +124,17 @@ const State = {
   },
   getFriendIds: function () {
     return this._state.thisUser.friends;
+  },
+  getPrivateRooms: async function () {
+    const request = new Request(this.url + `private.php`);
+    const response = await fetcher(request);
+    const rooms = response.resource;
+    const userId = this._state.thisUser.id;
+
+    return {
+      rooms: rooms,
+      userId: userId,
+    };
   },
   getAlbumInformation: function (genreId) {
     switch (genreId) {
@@ -316,6 +331,24 @@ PubSub.subscribe({
 });
 
 PubSub.subscribe({
+  event: "getPrivateRooms",
+  listener: async () => {
+    const data = await State.getPrivateRooms();
+    const rooms = data.rooms;
+    const userId = data.userId;
+    const roomArray = [];
+
+    for (let room of rooms) {
+      if (room.hostID === userId) {
+        roomArray.push(room);
+      }
+    }
+
+    PubSub.publish({ event: "foundRooms", details: roomArray });
+  },
+});
+
+PubSub.subscribe({
   event: "patchThisUser",
   listener: async (newThisUserInfo) => {
     const URL = "http://localhost:8080/api/";
@@ -467,9 +500,7 @@ PubSub.subscribe({
     const posts = await State.getPostsFromRoom(details.id);
     PubSub.publish({
       event: "sendRoomPosts",
-      details: {
-        posts,
-      },
+      details: { posts, id: details.id },
     });
   },
 });
@@ -528,6 +559,38 @@ PubSub.subscribe({
     PubSub.publish({
       event: "sendAlbumHexColor",
       details: State.getAlbumHexColor(genreId),
+    });
+  },
+});
+
+PubSub.subscribe({
+  event: "userCreatedRoom",
+  listener: (details) => {
+    const token = localStorage.getItem("token");
+    const body = {
+      token: token,
+      genre: details.genre,
+      style: details.style,
+      name: details.name,
+      users: [1],
+    };
+    const request = new Request("./api/private.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    fetcher(request);
+  },
+});
+
+PubSub.subscribe({
+  event: "getAlbumInfo",
+  listener: (details) => {
+    const albumInfo = State.getAlbumInformation(details);
+    console.log("album info:", albumInfo);
+    PubSub.publish({
+      event: "foundAlbumInfo",
+      details: albumInfo,
     });
   },
 });

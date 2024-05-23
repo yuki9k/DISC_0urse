@@ -25,9 +25,13 @@ function renderHeader() {
       <div class="dropdown"></div>
     </div>
     <a class="home_button" href="index.html">DISC_ourse</a>
+
+    <div id="change_theme">
+      <div id="ball"></div>
+    </div> 
     <div class="buttons_container">
-      <div class="login_button">Log in</div>
-      <div class="signup_button">Sign up</div>
+      <div class="login_button">Sign in</div>
+      <div class="signup_button">Join here</div>
     </div>
   `;
 
@@ -35,6 +39,14 @@ function renderHeader() {
   const dropdown = document.querySelector(".dropdown");
   const loginButton = document.querySelector(".login_button");
   const signupButton = document.querySelector(".signup_button");
+  const changeTheme = document.querySelector("#change_theme");
+  const ball = document.querySelector("#ball");
+
+
+  changeTheme.addEventListener("click", () =>{
+    ball.classList.toggle("dark_mode");
+  });
+
 
   PubSub.publish({
     event: "getRoomInfo",

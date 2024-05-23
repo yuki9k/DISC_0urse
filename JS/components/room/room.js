@@ -7,10 +7,10 @@ import { colorToHsl } from "../../logic/helpFunctions.js";
 function renderRoom(details) {
   let roomInfo = details.room;
   let parent = details.parent;
-  details.parent.innerHTML = `<div id="room_container"> 
-                            <div id="room_top" class=${roomInfo.id}></div>
-                            <div id="room_bottom"></div>
-                        </div>`;
+  details.parent.innerHTML = `<div id="room_container" class=${roomInfo.id}> 
+                                    <div id="room_top"></div>
+                                    <div id="room_bottom"></div>
+                                </div>`;
   const roomTop = parent.querySelector("#room_top");
   const roomBottom = parent.querySelector("#room_bottom");
   const roomContainer = parent.querySelector("#room_container");
@@ -64,8 +64,8 @@ PubSub.subscribe({
 
 PubSub.subscribe({
   event: "roomHeight",
-  listener: (orgHeight) => {
+  listener: (padding) => {
     const roomContainer = document.querySelector("#room_container");
-    roomContainer.style.height = orgHeight + "px";
+    roomContainer.style.paddingBottom = padding;
   },
 });

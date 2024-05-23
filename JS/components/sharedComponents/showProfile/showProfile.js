@@ -47,16 +47,13 @@ function renderFriendProfile(username, status, score) {
     </div>
   `;
 
-  // Prevent scrolling of the underlying content while modal is open
   document.body.style.overflow = "hidden";
 
-  // Function to handle closing the modal when clicking outside the form
-  const handleCloseModal = () => {
+  function handleCloseModal() {
     modalContainer.remove();
     document.body.style.overflow = "";
-  };
+  }
 
-  // Add event listener to close modal when clicking outside the form
   modalContainer.addEventListener("click", (event) => {
     if (event.target === modalContainer) {
       handleCloseModal();
@@ -94,11 +91,13 @@ function renderProfile(username, status, score) {
                 <p class="post_container_points">Points here</p>
             </div>
         </div>
-        <div class="edit_container">
-          <button class="edit_user">Edit information</button>
-        </div>
-        <div class="logout_container">
-          <button class="logout_user">Logout</button>
+        <div class="settings">
+          <div class="edit_container">
+            <button class="edit_user">Edit information</button>
+          </div>
+          <div class="logout_container">
+            <button class="logout_user">Logout</button>
+          </div>
         </div>
     </div>
   `;
@@ -110,10 +109,10 @@ function renderProfile(username, status, score) {
 
   document.body.style.overflow = "hidden";
 
-  const handleCloseModal = () => {
+  function handleCloseModal() {
     modalContainer.remove();
     document.body.style.overflow = "";
-  };
+  }
 
   modalContainer.addEventListener("click", (event) => {
     if (event.target === modalContainer) {

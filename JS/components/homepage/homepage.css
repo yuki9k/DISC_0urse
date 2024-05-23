@@ -1,23 +1,11 @@
-:root{
-    --album_width: 500px;
-}
-
-
-
 body:has(#homepage_container){
     margin:0;
     overflow-x: hidden;
     background-color: var(--background_color); 
-
-  /*   background:linear-gradient(to bottom, black 60%, #822448) ; */
-  /*   background-color: #822448; */
-
 }
 
-
-
 #homepage_container{
-    margin-top: 15vh;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,6 +37,7 @@ body:has(#homepage_container){
 #homepage_container #slides_container{
     display: flex;
     width: 600%;
+    align-items: center;
 }
 
 #homepage_container #slides_container.transition{
@@ -68,7 +57,8 @@ body:has(#homepage_container){
 #homepage_container .album_cover_container img{
     width: var(--album_width);
     height: auto;
-    box-shadow: 0px 0px 20px rgb(41, 41, 41);
+    box-shadow: 0px 0px 10px var(--paragraph_color);
+    border-radius: 10px;
 
     position: relative;
     left: 0;
@@ -128,10 +118,6 @@ body:has(#homepage_container){
     display: flex;
     border-radius: 5px;
 }
-
-/* #homepage_container .posts_container li:nth-child(1){
-
-} */
 
 #homepage_container .slide:nth-child(1) .posts_container li{background-color: #822448;}
 

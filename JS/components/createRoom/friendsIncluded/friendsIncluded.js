@@ -41,21 +41,19 @@ function renderAddedFriends() {
 
     const token = localStorage.getItem("token");
     const name = document.querySelector(".input_room_name");
-    
-    const body = { token: token, genre: genre.value, style: style.value, name: name.value, users: [1] };
-    const request = new Request ("./api/private.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body)
+
+    PubSub.publish({
+      event: "userCreatedRoom",
+      details: {
+        genre: genre.value, 
+        style: style.value,
+        name: name.value
+      }
+    });
+
+    PubSub.publish({
+      event: "renderHomepage",
+      details: null
     })
-
-    let resource = fetcher(request);
-
-
-    // Pubsub for later
-    // PubSub.publish({
-    //   event: "createNewRoom",
-    //   details: { genre: genre.value, theme: theme.value },
-    // });
   });
 }

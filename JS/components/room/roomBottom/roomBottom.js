@@ -3,7 +3,7 @@ import * as postFiltering from "./filterButton/filterButton.js";
 import * as addPostButton from "./addPostButton/addPostButton.js";
 import * as postsContainer from "./postsContainer/postsContainer.js";
 
-function renderRoomBottom(parent, data) {
+function renderRoomBottom(parent, data, id) {
   parent.innerHTML = `<div id="posts_container"></div>
                         <div id="filter_add_post_container">
                             <div id="filter_posts">
@@ -18,7 +18,7 @@ function renderRoomBottom(parent, data) {
 
   PubSub.publish({
     event: "renderAddPostButton",
-    details: addPosts,
+    details: { parent: addPosts, id: id },
   });
 
   PubSub.publish({
@@ -40,8 +40,16 @@ function renderRoomBottom(parent, data) {
 PubSub.subscribe({
   event: "sendRoomPosts",
   listener: (details) => {
+    const { posts, id } = details;
     const roomBottom = document.querySelector("#room_bottom");
-    renderRoomBottom(roomBottom, details.posts);
+    renderRoomBottom(roomBottom, posts, id);
+    /* PubSub.publish({
+            event: "renderRoomBottom",
+            details: {
+                parent: roomBottom,
+                data: details.posts
+            }
+        }); */
   },
 });
 
