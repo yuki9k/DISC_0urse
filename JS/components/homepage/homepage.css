@@ -37,6 +37,7 @@ body:has(#homepage_container){
 #homepage_container #slides_container{
     display: flex;
     width: 600%;
+    align-items: center;
 }
 
 #homepage_container #slides_container.transition{
