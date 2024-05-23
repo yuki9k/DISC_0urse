@@ -286,14 +286,14 @@ body:has(#room_container) {
 }
 
 #room_bottom .post_content_box .positive {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   font-size: 12px;
   padding: 4px;
 }
 
 #room_bottom .post_content_box .negative {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   cursor: pointer;  
   font-size: 12px;
 }
@@ -304,7 +304,7 @@ body:has(#room_container) {
   color: rgb(255, 255, 255);
   cursor: pointer;  
   margin-top: -2px;
-  padding: 4px;
+  padding: 0 4px;
 }
 
 #room_bottom .post_content_box .dislike_button {
