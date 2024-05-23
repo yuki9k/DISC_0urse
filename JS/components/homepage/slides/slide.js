@@ -10,7 +10,7 @@ function renderSlide(parent, data) {
   parent.appendChild(slide);
 
   slide.innerHTML += `<div class="album_cover_container"></div>
-                        <div class="posts_preview closed"></div>`;
+                        <div class="posts_preview"></div>`;
 
   const albumCover = slide.querySelector(".album_cover_container");
   const postsPreview = slide.querySelector(".posts_preview");
@@ -67,6 +67,6 @@ PubSub.subscribe({
     const posts_preview = document.querySelector(
       ".slide.current .posts_preview"
     );
-    posts_preview.classList.toggle("closed");
+    // posts_preview.classList.toggle("closed");
   },
 });
