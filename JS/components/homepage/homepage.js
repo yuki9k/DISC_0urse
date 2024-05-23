@@ -14,6 +14,7 @@ function renderHompageContainer(parent, data) {
 
   for (let i = 0; i < data.pubRooms.length; i++) {
     let image;
+    
     const posts = [];
     switch (data.pubRooms[i].genre) {
       case "Indie Pop":
@@ -42,13 +43,22 @@ function renderHompageContainer(parent, data) {
         posts.push(post);
       }
     }
+    console.log(data.genres[data.pubRooms[i].genre].albumName);
+    const topPosts = posts.sort(
+        (a, b) =>
+          a.likedBy.length -
+          a.dislikedBy.length -
+          (b.likedBy.length - b.dislikedBy.length)
+      );
+      const topSixPosts = topPosts.splice(0, 6);
     PubSub.publish({
       event: "renderSlide",
       details: {
         parent: slidesContainer,
-        posts,
+        posts: topSixPosts,
         image,
         genre: data.pubRooms[i].genre,
+        title: data.genres[data.pubRooms[i].genre].albumName
       },
     });
   }
