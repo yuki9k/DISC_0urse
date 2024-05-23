@@ -12,6 +12,13 @@ body:has(#homepage_container) {
   gap: 30px;
 }
 
+#homepage_container > h2,
+#homepage_container > h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
 #homepage_container #carousell_scroll {
   display: flex;
   justify-content: center;
