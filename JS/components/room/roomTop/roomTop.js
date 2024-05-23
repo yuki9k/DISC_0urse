@@ -51,6 +51,28 @@ function renderRoomTop(parent, data) {
             `;
       const albumTracks = parent.querySelector("#album_tracks_container");
 
+      PubSub.subscribe({
+        event: "sendAlbumHexColor",
+        listener: (cArr) => {
+          const c = cArr[0];
+          const accentColorHex = {
+            type: "hex",
+            value: c,
+          };
+
+          let { h, s, l } = colorToHsl(accentColorHex);
+
+          s = Math.min(s, 80);
+          l = Math.min(l, 80);
+
+          if (l < 50) {
+            albumTracks.style.color = "var(--paragraph_color_white)";
+          }
+          albumTracks.style.backgroundColor = `hsl(${h} ${s - 5} ${l + 5})`;
+        },
+      });
+      PubSub.publish({ event: "getAlbumHexColor", details: data.genre });
+
       for (let i = 0; i < albumInfo.albumTotalTracks; i++) {
         const albumTrack = document.createElement("li");
         albumTrack.classList.add("album_track");

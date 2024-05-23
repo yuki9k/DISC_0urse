@@ -17,7 +17,7 @@ const State = {
     if (!response.success.ok) {
       //throw error
     } else {
-      switch (ent){
+      switch (ent) {
         case "posts":
           this._state[ent].push(response.resource);
           console.log(response);
@@ -25,24 +25,24 @@ const State = {
             event: "sendToPostParent",
             details: {
               post: response.resource,
-              user: State._state.thisUser
-            }
+              user: State._state.thisUser,
+            },
           });
           break;
         case "friends":
           let user = response.resource[0];
           let friend = response.resource[1];
           let id = user.id;
-          for(let obj of this._state.users){
-            if(obj.id === id){
+          for (let obj of this._state.users) {
+            if (obj.id === id) {
               console.log(obj, response.resource);
               obj = response.resource;
             }
           }
           PubSub.publish({
             event: "updateFriendsInfo",
-            details: friend
-          });  
+            details: friend,
+          });
       }
     }
     //request okayed push new entity to state.
@@ -344,15 +344,15 @@ PubSub.subscribe({
       const friend = await State.getExternalUser(friendId);
       friendArr.push(friend);
     }
-    if(State._state.thisUser.friendRequests.length > 0){
+    if (State._state.thisUser.friendRequests.length > 0) {
       const reqUsers = [];
-      for(const reqId of State._state.thisUser.friendRequests){
+      for (const reqId of State._state.thisUser.friendRequests) {
         reqUsers.push(await State.getExternalUser(reqId));
       }
       console.log(reqUsers);
       PubSub.publish({
         event: "foundFriendRequests",
-        details: reqUsers
+        details: reqUsers,
       });
     }
     PubSub.publish({ event: "foundFriends", details: friendArr });
@@ -390,8 +390,6 @@ PubSub.subscribe({
 
     if (newThisUserInfo.password) {
       const { password } = newThisUserInfo;
-      console.log(password);
-      console.log(newThisUserInfo);
       const reqToken = new Request(URL + "login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -633,9 +631,9 @@ PubSub.subscribe({
     const options = {
       body: {
         token: token,
-        name: user
-      }
-    }
+        name: user,
+      },
+    };
     State.post(ent, options);
-  }
-})
+  },
+});

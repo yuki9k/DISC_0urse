@@ -4,7 +4,6 @@ import { PubSub } from "../../../logic/PubSub.js";
 PubSub.subscribe({
   event: "renderFriendProfile",
   listener: (details) => {
-    console.log(details);
     renderFriendProfile(details.username, details.status, details.score);
   },
 });
@@ -123,6 +122,9 @@ function renderProfile(username, status, score) {
   let editButton = document.querySelector(".edit_user");
   editButton.addEventListener("click", async (e) => {
     let username = document.querySelector(".change_username");
+    username.value = document.querySelector(
+      ".profile_info > .username"
+    ).textContent;
     let status = document.querySelector(".change_status");
 
     if (editButton.textContent === "Save changes") {
@@ -174,7 +176,7 @@ function renderProfile(username, status, score) {
   logoutButton.addEventListener("click", () => {
     PubSub.publish({
       event: "userLoggedOut",
-      details: null
-    })
+      details: null,
+    });
   });
 }
