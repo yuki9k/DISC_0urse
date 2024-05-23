@@ -214,7 +214,7 @@ PubSub.subscribe({
 
     // Get private rooms that user has access too
     const reqPrivateRooms = new Request(
-      URL + `private.php?hostID=${State._state.thisUser.id}`,
+      URL + `private.php?token=${token}`,
       {
         method: "GET",
       }
@@ -233,6 +233,7 @@ PubSub.subscribe({
         score: State._state.thisUser.score,
       },
     });
+    console.log("priv rooms:", State._state.privateRooms);
   },
 });
 
@@ -379,6 +380,8 @@ PubSub.subscribe({
 
     for (let room of rooms) {
       if (room.hostID === userId) {
+        roomArray.push(room);
+      } else if (room.users.includes(userId)) {
         roomArray.push(room);
       }
     }
