@@ -12,19 +12,13 @@ body:has(#homepage_container) {
   gap: 30px;
 }
 
-<<<<<<< Updated upstream
-=======
-#homepage_container h2,
-#homepage_container h1 {
+#homepage_container > h2,
+#homepage_container > h1 {
   margin: 0;
   padding: 0;
+  line-height: 0;
 }
 
-#homepage_container .album_title {
-  margin-bottom: 15px;
-}
-
->>>>>>> Stashed changes
 #homepage_container #carousell_scroll {
   display: flex;
   justify-content: center;
@@ -137,7 +131,7 @@ body:has(#homepage_container) {
   margin-bottom: 10px;
 
   display: flex;
-  border-radius: 10px;
+  border-radius: 5px;
   gap: 10px;
 
   word-break: break-word;

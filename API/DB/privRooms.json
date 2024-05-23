@@ -48,5 +48,42 @@
         ],
         "name": "Cool room",
         "id": 10
+    },
+    {
+        "hostID": 1,
+        "style": "Choose theme",
+        "genre": "1",
+        "users": [
+            3,
+            2,
+            1
+        ],
+        "name": "hej",
+        "id": 11
+    },
+    {
+        "hostID": 1,
+        "style": "Choose theme",
+        "genre": "0",
+        "users": [
+            5,
+            2,
+            1
+        ],
+        "name": "ett test rum yahoooo",
+        "id": 12
+    },
+    {
+        "hostID": 1,
+        "style": "Choose theme",
+        "genre": "3",
+        "users": [
+            5,
+            2,
+            3,
+            1
+        ],
+        "name": "kolla!!!!",
+        "id": 13
     }
 ]
