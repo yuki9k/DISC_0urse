@@ -1,5 +1,5 @@
 import * as login from "../login/login.js";
-import { fetcher } from "../../../logic/helpFunctions.js"
+import { fetcher } from "../../../logic/helpFunctions.js";
 import { PubSub } from "../../../logic/PubSub.js";
 
 PubSub.subscribe({
@@ -53,14 +53,19 @@ function renderSignupForm() {
     });
   });
 
+  const inputUsername = document.querySelector("#signup_user");
+  const inputPassword = document.querySelector("#signup_password");
+  const inputPassword2 = document.querySelector("#rewrite_signup_password");
+
   const signupButton = modalContainer.querySelector("#signup_button");
   signupButton.addEventListener("click", async () => {
-    let username = signup_user.value.trim();
-    let password = signup_password.value.trim();
+    let username = inputUsername.value.trim();
+    let password = inputPassword.value.trim();
+    let password2 = inputPassword2.value.trim();
 
-    let body = { name: username, password: password };
+    if (password === password2 && password.length > 1 && username.length > 1) {
+      let body = { name: username, password: password };
 
-    if (username.length > 1 && password.length > 1) {
       let request = new Request("./api/users.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -69,10 +74,14 @@ function renderSignupForm() {
 
       let resource = await fetcher(request);
       handleCloseModal();
-      PubSub.publish ({
+      PubSub.publish({
         event: "signupComplete",
-        details: username
+        details: username,
       });
+    } else {
+        inputUsername.style.border = "1.5px solid red";
+        inputPassword.style.border = "1.5px solid red";
+        inputPassword2.style.border = "1.5px solid red";
     }
   });
 }
