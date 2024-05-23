@@ -14,8 +14,9 @@ import * as post from "./postItem/postItem.js";
 //   })
 
 function renderPostsPreview(parent, data) {
-  const { chats: posts, genre } = data;
-  parent.innerHTML = `<h1 class="album_title"></h1>
+  const { chats: posts, genre, title } = data;
+  parent.innerHTML = `<h2>talk about:</h2>
+                        <h1 class="album_title">${title}</h1>
                         <ul class="posts_container"></ul>`;
 
   const postsContainer = parent.querySelector(".posts_container");
