@@ -364,6 +364,11 @@ header .buttons_container .signup_button:hover {
   position: relative;
 }
 
+.dropdown_box_rooms.roomActive{
+  border: 3px solid limegreen;
+}
+
+
 .remove_friends {
   justify-self: end;
   padding: 5px;
@@ -380,6 +385,7 @@ header .buttons_container .signup_button:hover {
   text-align: center;
   position: absolute;
 }
+
 
 .remove_friend_button:hover {
   opacity: 0.8;

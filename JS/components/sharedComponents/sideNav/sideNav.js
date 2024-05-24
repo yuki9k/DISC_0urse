@@ -170,6 +170,10 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     div.innerHTML = `<p>${room.genre}</p>`;
     firstRoomDropDown.appendChild(div);
     div.addEventListener("click", () => {
+      const every_room = document.querySelectorAll(".dropdown_box_rooms");
+      every_room.forEach((room) => room.classList.remove("roomActive"));
+      div.classList.add("roomActive");
+
       const wrapper = document.querySelector("#wrapper");
       menuIcon.classList.toggle("change");
       dropdown.classList.toggle("active");
@@ -309,13 +313,13 @@ function renderPrivateRooms(dropdown, icon, room) {
   let roomDom = document.createElement("div");
   roomDom.className = "dropdown_box_rooms";
   parent.appendChild(roomDom);
-  roomDom.innerHTML = `
-      <div class="dropdown_box_rooms">
-        <p>${room.name}</p>
-      </div>
-    `;
+  roomDom.innerHTML = `<p>${room.name}</p>`;
 
   roomDom.addEventListener("click", (e) => {
+    const every_room = document.querySelectorAll(".dropdown_box_rooms");
+    every_room.forEach((room) => room.classList.remove("roomActive"));
+    roomDom.classList.add("roomActive");
+
     const wrapper = document.querySelector("#wrapper");
     const menuIcon = icon;
     const parent = dropdown;
