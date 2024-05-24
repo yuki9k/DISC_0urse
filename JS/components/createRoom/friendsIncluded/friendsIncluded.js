@@ -13,6 +13,8 @@ function renderAddedFriends() {
     event: "getInfo|renderAddedFriends|createRoom",
     details: null,
   });
+
+  PubSub.unsubscribe("recievedInfo|renderAddedFriends|createRoom");
   PubSub.subscribe({
     event: "recievedInfo|renderAddedFriends|createRoom",
     listener: (details) => {
