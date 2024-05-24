@@ -85,5 +85,66 @@
         ],
         "name": "kolla!!!!",
         "id": 13
+    },
+    {
+        "hostID": 4,
+        "style": "one",
+        "genre": "2",
+        "users": [
+            4
+        ],
+        "name": "dsajf\u00f6lkj",
+        "id": 14
+    },
+    {
+        "hostID": 4,
+        "style": "one",
+        "genre": "2",
+        "users": [
+            2,
+            4
+        ],
+        "name": "dsajf\u00f6lkj",
+        "id": 15
+    },
+    {
+        "hostID": 4,
+        "style": "one",
+        "genre": "1",
+        "users": [
+            4
+        ],
+        "name": "asfddsaf",
+        "id": 16
+    },
+    {
+        "hostID": 4,
+        "style": "one",
+        "genre": "1",
+        "users": [
+            4
+        ],
+        "name": "asfddsaf",
+        "id": 17
+    },
+    {
+        "hostID": 4,
+        "style": "one",
+        "genre": "1",
+        "users": [
+            4
+        ],
+        "name": "asfddsaf",
+        "id": 18
+    },
+    {
+        "hostID": 4,
+        "style": "Choose theme",
+        "genre": "Indie Singer & Songwriter",
+        "users": [
+            4
+        ],
+        "name": "testRooom",
+        "id": 19
     }
 ]
