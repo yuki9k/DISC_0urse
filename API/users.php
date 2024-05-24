@@ -109,6 +109,19 @@ if ($requestMethod == "PATCH") {
                     array_splice($user["friends"], $index, 1);
                 }
             }
+
+            // Make sure you're removed from the person you're removing as well
+            $extUsers = getDatabase("users");
+                foreach ($extUsers as $extUser) {
+                    if ($extUser["id"] == $requestData["friendID"]) {
+                        foreach ($extUser["friends"] as $idx => $fId) {
+                            if ($fId == $user["id"]){
+                                array_splice($extUser["friends"], $idx, 1);
+                                updateItemByType("users", $extUser);
+                            }
+                        }
+                    }
+                }
         } else { //ID not in friend array, add friend to array
             $user["friends"][] = $requestData["friendID"];
         }
