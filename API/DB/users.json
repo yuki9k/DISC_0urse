@@ -79,5 +79,35 @@
         "status": "",
         "friendRequests": [],
         "id": 6
+    },
+    {
+        "name": "Messi",
+        "password": "test",
+        "profilePicture": "placeholder",
+        "score": 0,
+        "friends": [],
+        "status": "",
+        "friendRequests": [],
+        "id": 7
+    },
+    {
+        "name": "User99999",
+        "password": "test",
+        "profilePicture": "placeholder",
+        "score": 0,
+        "friends": [],
+        "status": "",
+        "friendRequests": [],
+        "id": 8
+    },
+    {
+        "name": "Julia",
+        "password": "test",
+        "profilePicture": "placeholder",
+        "score": 0,
+        "friends": [],
+        "status": "",
+        "friendRequests": [],
+        "id": 9
     }
 ]

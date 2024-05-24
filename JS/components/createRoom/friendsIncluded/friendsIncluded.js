@@ -71,7 +71,6 @@ function renderAddedFriends() {
           friendContainer
             .querySelector(`#invite_friend_${friends[i].id}`)
             .addEventListener("click", () => {
-              console.log(friends, friendsToInvite);
               let container = document.querySelector(
                 ".added_friends_container"
               );
