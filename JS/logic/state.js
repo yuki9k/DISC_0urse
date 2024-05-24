@@ -647,10 +647,22 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "removeFriend",
   listener: (details) => {
+
+    const friendID = details.friendID;
+    const token = details.token;
+
+    const body = {
+      friendID,
+      token
+    }
+
+    console.log("from state body:",body);
+
     const request = new Request("./api/users.php", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: details
+      body: JSON.stringify(body)
     })
+    fetcher(request);
   }
 })

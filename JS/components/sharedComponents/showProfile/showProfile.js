@@ -4,7 +4,7 @@ import { PubSub } from "../../../logic/PubSub.js";
 PubSub.subscribe({
   event: "renderFriendProfile",
   listener: (details) => {
-    renderFriendProfile(details.username, details.status, details.score);
+    renderFriendProfile(details.username, details.status, details.score, details.friendID, details.friendDomID);
   },
 });
 
@@ -15,7 +15,7 @@ PubSub.subscribe({
   },
 });
 
-function renderFriendProfile(username, status, score) {
+function renderFriendProfile(username, status, score, friendID, friendDomID) {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
@@ -43,6 +43,11 @@ function renderFriendProfile(username, status, score) {
                 <p class="post_container_points">Points here</p>
             </div>
         </div>
+        <div class="settings">
+          <div class="remove_friend_container">
+            <button class="remove_friend_button">Remove friend</button>
+          </div>
+        </div>
     </div>
   `;
 
@@ -58,6 +63,20 @@ function renderFriendProfile(username, status, score) {
       handleCloseModal();
     }
   });
+
+  const removeFriend = document.querySelector(".remove_friend_button");
+  removeFriend.addEventListener("click", (e) => {
+    const token = localStorage.getItem("token");
+
+    const body = {friendID: friendID, token: token};
+    PubSub.publish({
+      event: "removeFriend",
+      details: body
+    })
+
+    friendDomID.remove();
+    handleCloseModal();
+  })
 }
 
 function renderProfile(username, status, score) {

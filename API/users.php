@@ -103,7 +103,7 @@ if ($requestMethod == "PATCH") {
     }
     if (isset($requestData["friendID"])) {
         //if friend ID is in friend array remove said friend
-        if (in_array($user["friends"], $requestData["friendID"])) {
+        if (in_array($requestData["friendID"], $user["friends"])) {
             foreach ($user["friends"] as $index => $id) {
                 if ($id == $requestData["friendID"]) {
                     array_splice($user["friends"], $index, 1);
