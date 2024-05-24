@@ -34,16 +34,6 @@ function renderCreate() {
                             <option value="5">Indie R&B</option>  
                             <option value="6">Indie Post Punk</option>  
                         </select> 
-                    <p class="room_theme">Theme</p>
-                        <select class="choose_theme">  
-                            <option>Choose theme</option>  
-                            <option value="one">Theme One</option>  
-                            <option value="two">Theme Two</option>  
-                            <option value="three">Theme Three</option>  
-                            <option value="four">Theme Four</option>  
-                            <option value="five">Theme Five</option>  
-                            <option value="six">Theme Six</option>  
-                        </select> 
                 </div>
                 <div class="placeholders">
                     <div class="create_room_album_cover"></div>

@@ -141,7 +141,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   width: 60vw;
   background-color: var(--add_friends_container_color);
   border-radius: 0 0 10px 10px;
@@ -161,7 +161,7 @@
   justify-content: center;
   align-items: center;
 
-  font-size: 40px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
 }

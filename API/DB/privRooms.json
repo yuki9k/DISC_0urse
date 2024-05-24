@@ -38,5 +38,17 @@
         ],
         "name": "three",
         "id": 10
+    },
+    {
+        "hostID": 2,
+        "style": "three",
+        "genre": "Indie Singer-songwriter",
+        "users": [
+            3,
+            4,
+            2
+        ],
+        "name": "Cool room",
+        "id": 11
     }
 ]

@@ -276,15 +276,15 @@ function renderFriends(dropdown, icon, friend) {
       }
     });
 
-    PubSub.subscribe({
-      event: "foundUserInfo",
-      listener: (details) => {
-        PubSub.publish({
-          event: "renderFriendProfile",
-          details: details,
-        });
-      },
-    });
+    // PubSub.subscribe({
+    //   event: "foundUserInfo",
+    //   listener: (details) => {
+    //     PubSub.publish({
+    //       event: "renderFriendProfile",
+    //       details: details,
+    //     });
+    //   },
+    // });
   });
 }
 
