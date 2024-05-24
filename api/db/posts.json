@@ -301,10 +301,10 @@
         "roomID": 4,
         "time": 1716457114,
         "content": "another",
-        "likedBy": [
+        "likedBy": [],
+        "dislikedBy": [
             4
         ],
-        "dislikedBy": [],
         "id": 29
     },
     {
