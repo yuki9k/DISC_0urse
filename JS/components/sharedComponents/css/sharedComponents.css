@@ -353,8 +353,7 @@ header .buttons_container .signup_button:hover {
   margin: 5px 0;
   padding: 0 5px;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 4fr;
+  display: flex;
   align-items: center;
   gap: 5px;
 
