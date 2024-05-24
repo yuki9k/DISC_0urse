@@ -646,3 +646,14 @@ PubSub.subscribe({
     State.post(ent, options);
   },
 });
+
+PubSub.subscribe({
+  event: "removeFriend",
+  listener: (details) => {
+    const request = new Request("./api/users.php", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: details
+    })
+  }
+})

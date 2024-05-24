@@ -252,8 +252,29 @@ function renderFriends(dropdown, icon, friend) {
   friendDom.innerHTML = `
       <img class="friend_image" src="../../../../images/profile.png">
       <div class="friend_username">${friend.name}</div> 
-      <div class="remove_friends">X</div>
+      <div class="remove_friends">
+        <div class="remove_friend_button">X</div>
+      </div>
     `;
+
+  const clickedFriend = document.querySelector(".friend_username");
+  const removeFriend = document.querySelector(".remove_friend_button");
+
+  // removeFriend.addEventListener("click", (e) => {
+  //   //skicka request till user patch request med friend id
+  //   //skicka till user.php
+  //   //skicka friendID, token
+  //   const friendID = friend.id;
+  //   const token = localStorage.getItem("token");
+
+  //   const body = {friendID: friendID, token: token};
+  //   PubSub.publish({
+  //     event: "removeFriend",
+  //     details: body
+  //   })
+
+  //   console.log(e);
+  // })
 
   friendDom.addEventListener("click", (e) => {
     const menuIcon = icon;
