@@ -12,8 +12,8 @@ if (token) {
     });
 
     PubSub.publish({
-        event: "userLoggedIn",
-        details: {token, username}
+        event: "userLogin",
+        details: { token, username }
     });
 } else {
     PubSub.publish({

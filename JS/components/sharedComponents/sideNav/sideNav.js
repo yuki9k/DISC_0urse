@@ -4,7 +4,6 @@ import * as renderRoom from "../../room/room.js";
 import { PubSub } from "../../../logic/PubSub.js";
 //HERE
 
-
 PubSub.subscribe({
   event: "loginComplete",
   listener: () => {
@@ -18,7 +17,6 @@ PubSub.subscribe({
     });
   },
 });
-
 
 PubSub.subscribe({
   event: "foundFriends",
@@ -69,13 +67,13 @@ PubSub.subscribe({
     const icon = document.querySelector(".menu_icon_container");
     renderFriends(parent, icon, details);
     let doms = document.querySelectorAll(".dropdown_friend_requests > div");
-    for(let dom of doms){
+    for (let dom of doms) {
       let checkID = Number(dom.id.replace("friend_request_", ""));
-      if(checkID === details.id){
+      if (checkID === details.id) {
         dom.remove();
       }
     }
-  }
+  },
 });
 function renderDropdownItems(parent, icon, roomsToRender) {
   const friendsItem = document.createElement("div");
@@ -93,10 +91,9 @@ function renderDropdownItems(parent, icon, roomsToRender) {
   parent.appendChild(friendsItem);
   const addFriendButton = document.querySelector(".add_friend_button");
   addFriendButton.addEventListener("click", (e) => {
-
-    const modalContainer =  document.createElement("div");
+    const modalContainer = document.createElement("div");
     modalContainer.classList.add("modal_container");
-    
+
     document.body.style.overflow = "hidden";
     const handleCloseModal = () => {
       modalContainer.remove();
@@ -109,9 +106,9 @@ function renderDropdownItems(parent, icon, roomsToRender) {
       }
     });
 
-    let wrapper =  document.querySelector("#wrapper");
+    let wrapper = document.querySelector("#wrapper");
     let token = localStorage.getItem("token");
-    if(!token){
+    if (!token) {
       wrapper.appendChild(modalContainer);
       modalContainer.innerHTML = `
         <div class="add_friend_container">
@@ -130,14 +127,16 @@ function renderDropdownItems(parent, icon, roomsToRender) {
           <button id="send_friend_request">Send friend request</button>
         </div>
       `;
-      document.querySelector("#send_friend_request").addEventListener("click", (e) => {
-        const user = document.querySelector("#new_friend").value
-        PubSub.publish({
-          event: "sendFriendRequest",
-          details: user
+      document
+        .querySelector("#send_friend_request")
+        .addEventListener("click", (e) => {
+          const user = document.querySelector("#new_friend").value;
+          PubSub.publish({
+            event: "sendFriendRequest",
+            details: user,
+          });
+          handleCloseModal();
         });
-        handleCloseModal();
-      });
     }
   });
   const roomsItem = document.createElement("div");
@@ -163,10 +162,10 @@ function renderDropdownItems(parent, icon, roomsToRender) {
   const secondRoomDropDown = document.querySelector("#privateRoomDropdown");
   const menuIcon = icon;
   const dropdown = parent;
-  
-  for(const room of roomsToRender.public){
+
+  for (const room of roomsToRender.public) {
     let div = document.createElement("div");
-    div.classList.add(`dropdown_box_rooms`,`room_${room.id}`);
+    div.classList.add(`dropdown_box_rooms`, `room_${room.id}`);
     div.innerHTML = `<p>${room.genre}</p>`;
     firstRoomDropDown.appendChild(div);
     div.addEventListener("click", () => {
@@ -181,13 +180,13 @@ function renderDropdownItems(parent, icon, roomsToRender) {
         event: "renderRoom",
         details: {
           parent: wrapper,
-          room: room
-        }
+          room: room,
+        },
       });
     });
   }
-  if(roomsToRender.private.length > 0){
-    for(const room of roomsToRender.private){
+  if (roomsToRender.private.length > 0) {
+    for (const room of roomsToRender.private) {
       secondRoomDropDown.innerHTML += `
       <div class="dropdown_box_rooms room_${room.id}">
         <p>${room.genre}</p>
@@ -195,7 +194,6 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     `;
     }
   }
-  
 
   const createPrivateRoom = document.querySelector(
     ".create_private_room_button"
@@ -227,7 +225,7 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     });
   });
 }
-function renderFriendRequests(dropdown, user){
+function renderFriendRequests(dropdown, user) {
   let parent = document.querySelector(".dropdown_friend_requests");
   let friendDom = document.createElement("div");
   friendDom.className = "dropdown_box_friends";
@@ -242,7 +240,7 @@ function renderFriendRequests(dropdown, user){
   friendDom.querySelector(".check").addEventListener("click", (e) => {
     PubSub.publish({
       event: "sendFriendRequest",
-      details: user.name
+      details: user.name,
     });
   });
 }
@@ -272,8 +270,9 @@ function renderFriends(dropdown, icon, friend) {
         status: friend.status,
         score: friend.score,
         friendID: friend.id,
-        friendDomID: friendDom
-      }
+        friendDomID: friendDom,
+        post: friend.post,
+      },
     });
 
     PubSub.subscribe({
@@ -311,8 +310,8 @@ function renderPrivateRooms(dropdown, icon, room) {
       event: "renderRoom",
       details: {
         parent: wrapper,
-        room: room
-      }
+        room: room,
+      },
     });
   });
 }

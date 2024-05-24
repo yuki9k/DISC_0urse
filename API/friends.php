@@ -55,6 +55,21 @@ if($requestMethod == "POST"){
         send(200, $friend);
     }
 }
-
+if($requestMethod == "DELETE"){
+    $requiredKeys = ["name", "token"];
+    if(!requestContainsAllKeys($requestData, $requiredKeys)){
+        sendError(400, "missing keys");
+    }
+    $user = getUserFromToken($requestData["token"]);
+    $friend = findItemByKey("users", "name", $requestData["name"]);
+    foreach($user["friendRequests"] as $index => $id){
+        if($friend["id"] == $id){
+            array_splice($user["friendRequests"], $index, 1);
+        }
+    }
+    updateItemByType("users", $user);
+    unset($user["password"]);
+    send(200, $user);
+}
 
 ?>

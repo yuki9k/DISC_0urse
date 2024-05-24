@@ -2,7 +2,7 @@ import { PubSub } from "./PubSub.js";
 import { fetcher } from "./helpFunctions.js";
 
 const State = {
-  url: "http://localhost:8080/api/",
+  url: "./api/",
   _state: {
     posts: [],
   },
@@ -81,7 +81,7 @@ const State = {
   },
 
   destruct: async function (ent, options) {
-    const url = "http://localhost:8080/api/";
+    const url = "./api/";
 
     const request = new Request(this.url + ent + ".php", {
       method: "DELETE",
@@ -97,8 +97,8 @@ const State = {
     }
     return users;
   },
-  getUsersPosts: async function (options) {
-    const request = new Request(this.url + "posts.php?userID=" + options.id, {
+  getUsersPosts: async function (id) {
+    const request = new Request(this.url + "posts.php?userID=" + id, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
@@ -194,7 +194,7 @@ const State = {
 PubSub.subscribe({
   event: "userLoggedIn",
   listener: async () => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
 
     // Get logged in user detals
     const token = localStorage.getItem("token");
@@ -236,7 +236,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "userLogin",
   listener: async (details) => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
 
     // Gets token
     const username = details.name;
@@ -261,7 +261,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "renderHomepage",
   listener: async () => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
 
     // Get public users
     const reqUsers = new Request(URL + "users.php", {
@@ -350,6 +350,11 @@ PubSub.subscribe({
     const friendArr = [];
     for (const friendId of friendIds) {
       const friend = await State.getExternalUser(friendId);
+      const friendPosts = await State.getUsersPosts(friendId);
+      const topPost = friendPosts
+        .toSorted((a, b) => b.time - a.time)
+        .splice(0, 1);
+      friend.post = topPost[0];
       friendArr.push(friend);
     }
     if (State._state.thisUser.friendRequests.length > 0) {
@@ -387,7 +392,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "patchThisUser",
   listener: async (newThisUserInfo) => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
     const token = localStorage.getItem("token");
     const { username, status } = newThisUserInfo;
 
@@ -421,7 +426,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "confirmPassword",
   listener: async (password) => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
     const username = State._state.thisUser.name;
     const reqToken = new Request(URL + "login.php", {
       method: "POST",
@@ -647,22 +652,19 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "removeFriend",
   listener: (details) => {
-
     const friendID = details.friendID;
     const token = details.token;
 
     const body = {
       friendID,
-      token
-    }
-
-    console.log("from state body:",body);
+      token,
+    };
 
     const request = new Request("./api/users.php", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body)
-    })
+      body: JSON.stringify(body),
+    });
     fetcher(request);
   }
 })
