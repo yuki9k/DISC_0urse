@@ -4,7 +4,6 @@ import { colorToHsl } from "../../../../../logic/helpFunctions.js";
 function renderPostItem(parent, data) {
   const { post, genre } = data;
   const { content, time, score, id } = post;
-  console.log(post);
   const postItem = document.createElement("li");
   parent.appendChild(postItem);
   postItem.id = `post_id_${id}`;
