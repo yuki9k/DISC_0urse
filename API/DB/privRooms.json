@@ -50,5 +50,16 @@
         ],
         "name": "Cool room",
         "id": 11
+    },
+    {
+        "hostID": 4,
+        "style": "Choose theme",
+        "genre": "Indie Pop",
+        "users": [
+            2,
+            4
+        ],
+        "name": "al\u00f6kjfdlka\u00f6djfl\u00f6",
+        "id": 12
     }
 ]
