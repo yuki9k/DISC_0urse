@@ -38,7 +38,7 @@ const State = {
           }
           PubSub.publish({
             event: "updateFriendsInfo",
-            details: friend
+            details: friend,
           });
       }
     }
@@ -131,9 +131,6 @@ const State = {
   getPostsFromRoom: async function (roomId) {
     const req = new Request(this.url + `posts.php?roomID=${roomId}`);
     const res = await fetcher(req);
-    if (!res.success.ok) {
-      return;
-    }
 
     return res.resource;
   },
@@ -183,7 +180,7 @@ const State = {
     this._state.genres = resGenres.resource;
   },
 
-  updateFriends: async function () { },
+  updateFriends: async function () {},
   /* getUserRooms: async function () {
     const token = localStorage.getItem("token");
     const userRooms = new Request(URL + `private.php?token=${token}`, {
@@ -335,10 +332,10 @@ PubSub.subscribe({
     }
     PubSub.publish({
       event: "recievedInfo|renderAddedFriends|createRoom",
-      details: friends
+      details: friends,
     });
-  }
-})
+  },
+});
 PubSub.subscribe({
   event: "getThisUser",
   listener: async () => {
