@@ -180,7 +180,7 @@ const State = {
     this._state.genres = resGenres.resource;
   },
 
-  updateFriends: async function () { },
+  updateFriends: async function () {},
   /* getUserRooms: async function () {
     const token = localStorage.getItem("token");
     const userRooms = new Request(URL + `private.php?token=${token}`, {
@@ -652,22 +652,19 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "removeFriend",
   listener: (details) => {
-
     const friendID = details.friendID;
     const token = details.token;
 
     const body = {
       friendID,
-      token
-    }
-
-    console.log("from state body:", body);
+      token,
+    };
 
     const request = new Request("./api/users.php", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body)
-    })
+      body: JSON.stringify(body),
+    });
     fetcher(request);
-  }
-})
+  },
+});

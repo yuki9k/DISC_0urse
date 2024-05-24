@@ -23,4 +23,3 @@ const topSixPosts = allPostsSorted.splice(0, allPosts.length - 1);
 for (const e of topSixPosts) {
   e.score = e.likedBy.length - e.disLikedBy.length;
 }
-console.log(topSixPosts.reverse());

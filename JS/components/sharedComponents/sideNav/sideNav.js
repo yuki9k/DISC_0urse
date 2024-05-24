@@ -4,7 +4,6 @@ import * as renderRoom from "../../room/room.js";
 import { PubSub } from "../../../logic/PubSub.js";
 //HERE
 
-
 PubSub.subscribe({
   event: "loginComplete",
   listener: () => {
@@ -19,17 +18,14 @@ PubSub.subscribe({
   },
 });
 
-
 PubSub.subscribe({
   event: "foundFriends",
   listener: (friends) => {
-    console.log(friends);
     const parent = document.querySelector(".dropdown");
     const icon = document.querySelector(".menu_icon_container");
 
     for (let friend of friends) {
       renderFriends(parent, icon, friend);
-      console.log(friend);
     }
   },
 });
@@ -77,7 +73,7 @@ PubSub.subscribe({
         dom.remove();
       }
     }
-  }
+  },
 });
 function renderDropdownItems(parent, icon, roomsToRender) {
   const friendsItem = document.createElement("div");
@@ -95,7 +91,6 @@ function renderDropdownItems(parent, icon, roomsToRender) {
   parent.appendChild(friendsItem);
   const addFriendButton = document.querySelector(".add_friend_button");
   addFriendButton.addEventListener("click", (e) => {
-
     const modalContainer = document.createElement("div");
     modalContainer.classList.add("modal_container");
 
@@ -132,14 +127,16 @@ function renderDropdownItems(parent, icon, roomsToRender) {
           <button id="send_friend_request">Send friend request</button>
         </div>
       `;
-      document.querySelector("#send_friend_request").addEventListener("click", (e) => {
-        const user = document.querySelector("#new_friend").value
-        PubSub.publish({
-          event: "sendFriendRequest",
-          details: user
+      document
+        .querySelector("#send_friend_request")
+        .addEventListener("click", (e) => {
+          const user = document.querySelector("#new_friend").value;
+          PubSub.publish({
+            event: "sendFriendRequest",
+            details: user,
+          });
+          handleCloseModal();
         });
-        handleCloseModal();
-      });
     }
   });
   const roomsItem = document.createElement("div");
@@ -183,8 +180,8 @@ function renderDropdownItems(parent, icon, roomsToRender) {
         event: "renderRoom",
         details: {
           parent: wrapper,
-          room: room
-        }
+          room: room,
+        },
       });
     });
   }
@@ -197,7 +194,6 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     `;
     }
   }
-
 
   const createPrivateRoom = document.querySelector(
     ".create_private_room_button"
@@ -244,7 +240,7 @@ function renderFriendRequests(dropdown, user) {
   friendDom.querySelector(".check").addEventListener("click", (e) => {
     PubSub.publish({
       event: "sendFriendRequest",
-      details: user.name
+      details: user.name,
     });
   });
 }
@@ -275,8 +271,8 @@ function renderFriends(dropdown, icon, friend) {
         score: friend.score,
         friendID: friend.id,
         friendDomID: friendDom,
-        post: friend.post
-      }
+        post: friend.post,
+      },
     });
 
     PubSub.subscribe({
@@ -314,8 +310,8 @@ function renderPrivateRooms(dropdown, icon, room) {
       event: "renderRoom",
       details: {
         parent: wrapper,
-        room: room
-      }
+        room: room,
+      },
     });
   });
 }
