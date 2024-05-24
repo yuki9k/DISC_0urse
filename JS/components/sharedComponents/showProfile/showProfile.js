@@ -4,7 +4,7 @@ import { PubSub } from "../../../logic/PubSub.js";
 PubSub.subscribe({
   event: "renderFriendProfile",
   listener: (details) => {
-    renderFriendProfile(details.username, details.status, details.score, details.friendID, details.friendDomID);
+    renderFriendProfile(details.username, details.status, details.score, details.friendID, details.friendDomID, details.post);
   },
 });
 
@@ -15,7 +15,7 @@ PubSub.subscribe({
   },
 });
 
-function renderFriendProfile(username, status, score, friendID, friendDomID) {
+function renderFriendProfile(username, status, score, friendID, friendDomID, post) {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
@@ -35,12 +35,8 @@ function renderFriendProfile(username, status, score, friendID, friendDomID) {
         </div>
         <div class="bottom_section">
             <div class="post_container">
-                <div class="upper">
-                    <p class="post_container_genre">Genre here</p>
-                    <p class="post_container_timestamp">seconds ago</p>
-                </div>
-                <p class="post_container_text">Text here</p>
-                <p class="post_container_points">Points here</p>
+                <p class="post_container_text">${post.content}</p>
+                <p class="post_container_points">${post.likedBy.length - post.dislikedBy.length} points</p>
             </div>
         </div>
         <div class="settings">
@@ -68,7 +64,7 @@ function renderFriendProfile(username, status, score, friendID, friendDomID) {
   removeFriend.addEventListener("click", (e) => {
     const token = localStorage.getItem("token");
 
-    const body = {friendID: friendID, token: token};
+    const body = { friendID: friendID, token: token };
     PubSub.publish({
       event: "removeFriend",
       details: body
