@@ -107,7 +107,7 @@ function renderAddedFriends() {
             break;
 
           case "3":
-            genreValue = "Indie Singer & Songwriter";
+            genreValue = "Indie Singer-songwriter";
             break;
 
           case "4":
@@ -115,11 +115,11 @@ function renderAddedFriends() {
             break;
 
           case "5":
-            genreValue = "Indie R&B";
+            genreValue = "Indie R&b";
             break;
 
           case "6":
-            genreValue = "Indie Post Punk";
+            genreValue = "Indie Post-punk";
             break;
         }
 
