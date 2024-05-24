@@ -380,7 +380,7 @@ PubSub.subscribe({
     const roomArray = [];
 
     for (let room of rooms) {
-      if (room.hostID === userId) {
+      if (room.hostID === userId || room.users.includes(userId)) {
         roomArray.push(room);
       }
     }
@@ -666,8 +666,8 @@ PubSub.subscribe({
       body: JSON.stringify(body),
     });
     fetcher(request);
-  }
-})
+  },
+});
 
 PubSub.subscribe({
   event: "doSignup",
@@ -678,11 +678,11 @@ PubSub.subscribe({
       body: JSON.stringify(details),
     });
 
-   fetcher(request);
+    fetcher(request);
 
-   PubSub.publish({
-    event: "renderLogin",
-    details: null
-   })
-  }
-})
+    PubSub.publish({
+      event: "renderLogin",
+      details: null,
+    });
+  },
+});
