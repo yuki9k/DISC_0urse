@@ -86,16 +86,36 @@ const State = {
     const request = new Request(this.url + ent + ".php", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
-      body: options.body,
+      body: JSON.stringify(options.body),
     });
     const response = await fetcher(request);
-    let users = response.resource;
-    for (const user of users) {
-      if (!this._state["users"].includes(user)) {
-        this._state["users"].push(user);
-      }
+    switch (ent) {
+      case "users":
+        let users = response.resource;
+        for (const user of users) {
+          if (!this._state["users"].includes(user)) {
+            this._state["users"].push(user);
+          }
+        }
+        return users;
+        break;
+      case "friends":
+        let user = response.resource[0];
+        let friend = response.resource[1];
+        let id = user.id;
+        for (let obj of this._state.users) {
+          if (obj.id === id) {
+            obj = response.resource;
+          }
+        }
+        PubSub.publish({
+          event: "updateFriendsInfoDecline",
+          details: friend,
+        });
+        break;
+
     }
-    return users;
+
   },
   getUsersPosts: async function (id) {
     const request = new Request(this.url + "posts.php?userID=" + id, {
@@ -633,7 +653,21 @@ PubSub.subscribe({
     });
   },
 });
-
+PubSub.subscribe({
+  event: "declineFriendRequest",
+  listener: (details) => {
+    const user = details;
+    const token = localStorage.getItem("token");
+    const ent = "friends";
+    const options = {
+      body: {
+        token: token,
+        name: user,
+      },
+    };
+    State.destruct(ent, options);
+  }
+});
 PubSub.subscribe({
   event: "sendFriendRequest",
   listener: (details) => {

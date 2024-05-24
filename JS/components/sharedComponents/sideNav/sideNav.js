@@ -67,9 +67,23 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "updateFriendsInfo",
   listener: (details) => {
+    console.log(details);
     const parent = document.querySelector(".dropdown");
     const icon = document.querySelector(".menu_icon_container");
     renderFriends(parent, icon, details);
+    let doms = document.querySelectorAll(".dropdown_friend_requests > div");
+    for (let dom of doms) {
+      let checkID = Number(dom.id.replace("friend_request_", ""));
+      if (checkID === details.id) {
+        dom.remove();
+      }
+    }
+  }
+});
+PubSub.subscribe({
+  event: "updateFriendsInfoDecline",
+  listener: (details) => {
+    console.log(details);
     let doms = document.querySelectorAll(".dropdown_friend_requests > div");
     for (let dom of doms) {
       let checkID = Number(dom.id.replace("friend_request_", ""));
@@ -244,6 +258,12 @@ function renderFriendRequests(dropdown, user) {
   friendDom.querySelector(".check").addEventListener("click", (e) => {
     PubSub.publish({
       event: "sendFriendRequest",
+      details: user.name
+    });
+  });
+  friendDom.querySelector(".cross").addEventListener("click", (e) => {
+    PubSub.publish({
+      event: "declineFriendRequest",
       details: user.name
     });
   });

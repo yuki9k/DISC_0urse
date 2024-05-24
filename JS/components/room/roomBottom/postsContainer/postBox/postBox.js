@@ -9,15 +9,7 @@ function renderPostBox(data, user) {
   postBox.dataset.time = time;
   data.parent.prepend(postBox);
   postBox.id = "post_" + DATA.id;
-  const timeSincePost = function () {
-    const sTimeDiff = Math.floor(Date.now() / 1000) - time;
-    const mTimeDiff = sTimeDiff / 60;
-    const hPostTime = Math.floor(mTimeDiff / 60);
-    const mPostTime = Math.floor(mTimeDiff % 60);
-    return hPostTime > 0
-      ? `${hPostTime}h ${mPostTime}min ago`
-      : `${mPostTime}min ago`;
-  };
+
 
   /* const likedCount = data.likedBy.length;
     const dislikedCount = data.dislikedBy.length;
@@ -92,6 +84,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "renderPostLikedCounter",
   listener: (details) => {
+    console.log(details);
     const totalScore = details.likedBy.length - details.dislikedBy.length;
     const post = document.querySelector("#post_" + details.id);
     const post_liked = post.querySelector(".reaction_counter_box > .positive");

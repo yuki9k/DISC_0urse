@@ -69,7 +69,9 @@ if($requestMethod == "DELETE"){
     }
     updateItemByType("users", $user);
     unset($user["password"]);
-    send(200, $user);
+    unset($friend["password"]);
+    $sendBack = [$user, $friend];
+    send(200, $sendBack);
 }
 
 ?>
