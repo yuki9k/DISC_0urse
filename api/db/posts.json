@@ -460,5 +460,16 @@
         ],
         "dislikedBy": [],
         "id": 44
+    },
+    {
+        "userID": 2,
+        "roomID": 12,
+        "time": 1716544085,
+        "content": "This is the first post in this room :)",
+        "likedBy": [
+            2
+        ],
+        "dislikedBy": [],
+        "id": 45
     }
 ]
