@@ -1,7 +1,7 @@
 <?php
 require_once "httpHandlers.php";
 require_once "getTopHexColors.php";
-require_once "demoAuth.php"; // <-- REMOVE THIS LATER, ONLY FOR DEV TESTING
+require_once "demoAuth.php";
 
 function generateRandomQueryStr()
 {

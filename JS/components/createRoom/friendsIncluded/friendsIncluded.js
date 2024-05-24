@@ -11,7 +11,7 @@ PubSub.subscribe({
 function renderAddedFriends() {
   PubSub.publish({
     event: "getInfo|renderAddedFriends|createRoom",
-    details: null
+    details: null,
   });
   PubSub.subscribe({
     event: "recievedInfo|renderAddedFriends|createRoom",
@@ -22,7 +22,6 @@ function renderAddedFriends() {
       container.className = "added_friends";
       let wrapper = document.querySelector("#wrapper");
       wrapper.appendChild(container);
-      console.log(details);
       container.innerHTML = `
     <div class="added_friends_container">
         <div class="add_container">
@@ -54,7 +53,9 @@ function renderAddedFriends() {
       <h3>Invite friends:</h3>
     </div>
       `;
-        let friendContainer = modalContainer.querySelector(".add_friend_container");
+        let friendContainer = modalContainer.querySelector(
+          ".add_friend_container"
+        );
         //const friend of friends
         for (let i = 0; i < friends.length; i++) {
           let div = document.createElement("div");
@@ -65,20 +66,23 @@ function renderAddedFriends() {
               <img class="friend_image" src="#">
           `;
           friendContainer.appendChild(div);
-          console.log(friendContainer.querySelector(`#invite_friend_${friends[i].id}`));
-          friendContainer.querySelector(`#invite_friend_${friends[i].id}`).addEventListener("click", () => {
-            console.log(friends, friendsToInvite);
-            let container = document.querySelector(".added_friends_container");
-            let friendDiv = document.createElement("div");
-            friendDiv.className = "friend_container";
-            friendDiv.classList.add("friend_image");
-            friendDiv.textContent = friends[i].name;
-            container.appendChild(friendDiv);
-            friendsToInvite.push(friends[i].id);
-            friends.splice(i, 1);
+          friendContainer
+            .querySelector(`#invite_friend_${friends[i].id}`)
+            .addEventListener("click", () => {
+              console.log(friends, friendsToInvite);
+              let container = document.querySelector(
+                ".added_friends_container"
+              );
+              let friendDiv = document.createElement("div");
+              friendDiv.className = "friend_container";
+              friendDiv.classList.add("friend_image");
+              friendDiv.textContent = friends[i].name;
+              container.appendChild(friendDiv);
+              friendsToInvite.push(friends[i].id);
+              friends.splice(i, 1);
 
-            handleCloseModal();
-          });
+              handleCloseModal();
+            });
         }
       });
 
@@ -93,30 +97,30 @@ function renderAddedFriends() {
         const genre = document.querySelector(".choose_genre");
         let genreValue = "";
 
-        switch(genre.value){
-            case "1":
-              genreValue = "Indie Pop"
-              break;
+        switch (genre.value) {
+          case "1":
+            genreValue = "Indie Pop";
+            break;
 
-            case "2":
-              genreValue = "Indie Rock"
-              break;
+          case "2":
+            genreValue = "Indie Rock";
+            break;
 
-            case "3":
-              genreValue = "Indie Singer & Songwriter"
-              break;
+          case "3":
+            genreValue = "Indie Singer-songwriter";
+            break;
 
-            case "4":
-              genreValue = "Indie Folk"
-              break;
+          case "4":
+            genreValue = "Indie Folk";
+            break;
 
-            case "5":
-              genreValue = "Indie R&B"
-              break;
+          case "5":
+            genreValue = "Indie R&b";
+            break;
 
-            case "6":
-              genreValue = "Indie Post Punk"
-              break;
+          case "6":
+            genreValue = "Indie Post-punk";
+            break;
         }
 
         PubSub.publish({
@@ -125,16 +129,15 @@ function renderAddedFriends() {
             genre: genreValue,
             style: style.value,
             name: name.value,
-            users: friendsToInvite
-          }
+            users: friendsToInvite,
+          },
         });
 
         PubSub.publish({
           event: "renderHomepage",
-          details: null
-        })
+          details: null,
+        });
       });
-    }
+    },
   });
-
 }

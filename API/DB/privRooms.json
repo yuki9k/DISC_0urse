@@ -1,12 +1,12 @@
 [
     {
-        "hostID": 2,
+        "hostID": 3,
         "style": "Choose theme",
         "genre": "Indie Rock",
         "users": [
-            2
+            3
         ],
-        "name": "tets",
+        "name": "testRoom",
         "id": 7
     }
 ]
