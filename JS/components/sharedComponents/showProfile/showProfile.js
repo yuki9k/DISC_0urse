@@ -4,18 +4,37 @@ import { PubSub } from "../../../logic/PubSub.js";
 PubSub.subscribe({
   event: "renderFriendProfile",
   listener: (details) => {
-    renderFriendProfile(details.username, details.status, details.score, details.friendID, details.friendDomID, details.post);
+    renderFriendProfile(
+      details.username,
+      details.status,
+      details.score,
+      details.friendID,
+      details.friendDomID,
+      details.post
+    );
   },
 });
 
 PubSub.subscribe({
   event: "renderProfileInfo",
   listener: (details) => {
-    renderProfile(details.username, details.status, details.score, details.post);
+    renderProfile(
+      details.username,
+      details.status,
+      details.score,
+      details.post
+    );
   },
 });
 
-function renderFriendProfile(username, status, score, friendID, friendDomID, post) {
+function renderFriendProfile(
+  username,
+  status,
+  score,
+  friendID,
+  friendDomID,
+  post
+) {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
@@ -36,7 +55,9 @@ function renderFriendProfile(username, status, score, friendID, friendDomID, pos
         <div class="bottom_section">
             <div class="post_container">
                 <p class="post_container_text">${post.content}</p>
-                <p class="post_container_points">${post.likedBy.length - post.dislikedBy.length} points</p>
+                <p class="post_container_points">${
+                  post.likedBy.length - post.dislikedBy.length
+                } points</p>
             </div>
         </div>
         <div class="settings">
@@ -67,20 +88,20 @@ function renderFriendProfile(username, status, score, friendID, friendDomID, pos
     const body = { friendID: friendID, token: token };
     PubSub.publish({
       event: "removeFriend",
-      details: body
-    })
+      details: body,
+    });
 
     friendDomID.remove();
     handleCloseModal();
-  })
+  });
 }
 
 function renderProfile(username, status, score, post) {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
-  wrapper.appendChild(modalContainer);
-  modalContainer.innerHTML = `
+  if (post) {
+    modalContainer.innerHTML = `
     <div class="modal_content">  
         <div class="upper_section">
             <div class="profile_info">
@@ -98,7 +119,9 @@ function renderProfile(username, status, score, post) {
         <div class="bottom_section">
           <div class="post_container">
             <p class="post_container_text">${post.content}</p>
-            <p class="post_container_points">${post.likedBy.length - post.dislikedBy.length} points</p>
+            <p class="post_container_points">${
+              post.likedBy.length - post.dislikedBy.length
+            } points</p>
           </div>
         </div>
         <div class="settings">
@@ -111,6 +134,40 @@ function renderProfile(username, status, score, post) {
         </div>
     </div>
   `;
+  } else {
+    modalContainer.innerHTML = `
+    <div class="modal_content">  
+        <div class="upper_section">
+            <div class="profile_info">
+                <p class="username">${username}</p>
+                <input class="change_username" placeholder="change username">
+                <p class="status"><span class="status_text">Status:</span> ${status}</p>
+                <input class="change_status" placeholder="change status">
+            </div>
+            <div class="profile_picture"></div>
+        </div>
+        <div class="middle_section">
+            <p class="middle_section_left">Latest post:</p>
+            <p class="middle_section_right">Score: ${score}</p>
+        </div>
+        <div class="bottom_section">
+          <div class="post_container">
+            <p class="post_container_text">No recent post.</p>
+            <p class="post_container_points">0 points</p>
+          </div>
+        </div>
+        <div class="settings">
+          <div class="edit_container">
+            <button class="edit_user">Edit information</button>
+          </div>
+          <div class="logout_container">
+            <button class="logout_user">Logout</button>
+          </div>
+        </div>
+    </div>
+  `;
+  }
+  wrapper.appendChild(modalContainer);
 
   const changeUsername = document.querySelector(".change_username");
   changeUsername.classList.add("display_none");

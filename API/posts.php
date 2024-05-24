@@ -38,7 +38,7 @@ if($requestMethod == "GET"){//Get posts
     }
     else {
         $postsToSend = $posts;
-    }
+    } 
     send(200, $postsToSend);
 }
 if($requestMethod == "POST"){//TOKEN REQUIRED
