@@ -11,7 +11,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "renderProfileInfo",
   listener: (details) => {
-    renderProfile(details.username, details.status, details.score);
+    renderProfile(details.username, details.status, details.score, details.post);
   },
 });
 
@@ -75,7 +75,7 @@ function renderFriendProfile(username, status, score, friendID, friendDomID, pos
   })
 }
 
-function renderProfile(username, status, score) {
+function renderProfile(username, status, score, post) {
   const modalContainer = document.createElement("div");
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
@@ -96,14 +96,10 @@ function renderProfile(username, status, score) {
             <p class="middle_section_right">Score: ${score}</p>
         </div>
         <div class="bottom_section">
-            <div class="post_container">
-                <div class="upper">
-                    <p class="post_container_genre">Genre here</p>
-                    <p class="post_container_timestamp">seconds ago</p>
-                </div>
-                <p class="post_container_text">Text here</p>
-                <p class="post_container_points">Points here</p>
-            </div>
+          <div class="post_container">
+            <p class="post_container_text">${post.content}</p>
+            <p class="post_container_points">${post.likedBy.length - post.dislikedBy.length} points</p>
+          </div>
         </div>
         <div class="settings">
           <div class="edit_container">

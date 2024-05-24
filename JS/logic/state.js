@@ -200,7 +200,7 @@ const State = {
     this._state.genres = resGenres.resource;
   },
 
-  updateFriends: async function () {},
+  updateFriends: async function () { },
   /* getUserRooms: async function () {
     const token = localStorage.getItem("token");
     const userRooms = new Request(URL + `private.php?token=${token}`, {
@@ -236,6 +236,12 @@ PubSub.subscribe({
         method: "GET",
       }
     );
+    ///DO SHIT HERE
+    const posts = await State.getUsersPosts(State._state.thisUser.id);
+    const topPost = posts
+      .toSorted((a, b) => b.time - a.time)
+      .splice(0, 1);
+    let post = topPost[0];
 
     const resPrivateRooms = await fetcher(reqPrivateRooms);
     State._state.privateRooms = resPrivateRooms.resource
@@ -248,6 +254,7 @@ PubSub.subscribe({
         username: State._state.thisUser.name,
         status: State._state.thisUser.status,
         score: State._state.thisUser.score,
+        post: post
       },
     });
   },

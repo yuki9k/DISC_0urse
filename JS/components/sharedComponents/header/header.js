@@ -43,14 +43,14 @@ function renderHeader() {
   const ball = document.querySelector("#ball");
 
 
-  changeTheme.addEventListener("click", () =>{
+  changeTheme.addEventListener("click", () => {
     ball.classList.toggle("dark_mode");
   });
 
 
   PubSub.publish({
     event: "getRoomInfo",
-    details: {parent: dropdown, menuIcon: menuIcon},
+    details: { parent: dropdown, menuIcon: menuIcon },
   });
   /* PubSub.subscribe({
     event: "sendRoomInfo",
@@ -75,7 +75,7 @@ function renderHeader() {
     });
   });
 
-  signupButton.addEventListener("click", () => {    
+  signupButton.addEventListener("click", () => {
     PubSub.publish({
       event: "renderSignup",
       details: null,
@@ -94,7 +94,7 @@ PubSub.subscribe({
       buttonsContainer.addEventListener("click", (e) => {
         PubSub.publish({
           event: "renderProfileInfo",
-          details: { username: details.username, status: details.status, score: details.score },
+          details: { username: details.username, status: details.status, score: details.score, post: details.post },
         });
       });
     }
