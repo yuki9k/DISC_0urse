@@ -32,7 +32,7 @@ body:has(#room_container) {
 
 #room_top.makeSmall {
   height: 150px;
-  margin-top: 60px;
+  transform: translate(0, 10px);
 }
 
 #room_top #album_container {
@@ -110,7 +110,7 @@ body:has(#room_container) {
 #room_bottom #filter_add_post_container {
   position: sticky;
   top: 160px;
-  height: 50vh;
+  height: 30vh;
   width: 10%;
   display: flex;
   flex-direction: column;
@@ -146,10 +146,6 @@ body:has(#room_container) {
   transition-property: width, height, border-radius;
   transition-timing-function: ease-in-out;
   overflow: hidden;
-}
-
-#room_bottom #filter_input {
-  margin-top: 25px;
 }
 
 #room_bottom #add_post_button.border_rad_change {

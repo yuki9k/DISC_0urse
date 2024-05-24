@@ -12,7 +12,7 @@ PubSub.subscribe({
             const htmlDomScroll = document.documentElement.scrollTop;
             const bodyDomScroll = document.body.scrollTop;
 
-            if (bodyDomScroll > 80 || htmlDomScroll > 80) {
+            if (bodyDomScroll > 60 || htmlDomScroll > 60) {
                 PubSub.publish({
                     event: "addRoomTopAnimation",
                     details: "add"
@@ -20,7 +20,7 @@ PubSub.subscribe({
 
                 PubSub.publish({
                     event: "roomHeight",
-                    details: "200px" 
+                    details: "250px" 
                 });
             }
             else{
