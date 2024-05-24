@@ -23,11 +23,13 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "foundFriends",
   listener: (friends) => {
+    console.log(friends);
     const parent = document.querySelector(".dropdown");
     const icon = document.querySelector(".menu_icon_container");
 
     for (let friend of friends) {
       renderFriends(parent, icon, friend);
+      console.log(friend);
     }
   },
 });
@@ -69,9 +71,9 @@ PubSub.subscribe({
     const icon = document.querySelector(".menu_icon_container");
     renderFriends(parent, icon, details);
     let doms = document.querySelectorAll(".dropdown_friend_requests > div");
-    for(let dom of doms){
+    for (let dom of doms) {
       let checkID = Number(dom.id.replace("friend_request_", ""));
-      if(checkID === details.id){
+      if (checkID === details.id) {
         dom.remove();
       }
     }
@@ -94,9 +96,9 @@ function renderDropdownItems(parent, icon, roomsToRender) {
   const addFriendButton = document.querySelector(".add_friend_button");
   addFriendButton.addEventListener("click", (e) => {
 
-    const modalContainer =  document.createElement("div");
+    const modalContainer = document.createElement("div");
     modalContainer.classList.add("modal_container");
-    
+
     document.body.style.overflow = "hidden";
     const handleCloseModal = () => {
       modalContainer.remove();
@@ -109,9 +111,9 @@ function renderDropdownItems(parent, icon, roomsToRender) {
       }
     });
 
-    let wrapper =  document.querySelector("#wrapper");
+    let wrapper = document.querySelector("#wrapper");
     let token = localStorage.getItem("token");
-    if(!token){
+    if (!token) {
       wrapper.appendChild(modalContainer);
       modalContainer.innerHTML = `
         <div class="add_friend_container">
@@ -163,10 +165,10 @@ function renderDropdownItems(parent, icon, roomsToRender) {
   const secondRoomDropDown = document.querySelector("#privateRoomDropdown");
   const menuIcon = icon;
   const dropdown = parent;
-  
-  for(const room of roomsToRender.public){
+
+  for (const room of roomsToRender.public) {
     let div = document.createElement("div");
-    div.classList.add(`dropdown_box_rooms`,`room_${room.id}`);
+    div.classList.add(`dropdown_box_rooms`, `room_${room.id}`);
     div.innerHTML = `<p>${room.genre}</p>`;
     firstRoomDropDown.appendChild(div);
     div.addEventListener("click", () => {
@@ -186,8 +188,8 @@ function renderDropdownItems(parent, icon, roomsToRender) {
       });
     });
   }
-  if(roomsToRender.private.length > 0){
-    for(const room of roomsToRender.private){
+  if (roomsToRender.private.length > 0) {
+    for (const room of roomsToRender.private) {
       secondRoomDropDown.innerHTML += `
       <div class="dropdown_box_rooms room_${room.id}">
         <p>${room.genre}</p>
@@ -195,7 +197,7 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     `;
     }
   }
-  
+
 
   const createPrivateRoom = document.querySelector(
     ".create_private_room_button"
@@ -227,7 +229,7 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     });
   });
 }
-function renderFriendRequests(dropdown, user){
+function renderFriendRequests(dropdown, user) {
   let parent = document.querySelector(".dropdown_friend_requests");
   let friendDom = document.createElement("div");
   friendDom.className = "dropdown_box_friends";
@@ -272,7 +274,8 @@ function renderFriends(dropdown, icon, friend) {
         status: friend.status,
         score: friend.score,
         friendID: friend.id,
-        friendDomID: friendDom
+        friendDomID: friendDom,
+        post: friend.post
       }
     });
 

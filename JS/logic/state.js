@@ -97,8 +97,8 @@ const State = {
     }
     return users;
   },
-  getUsersPosts: async function (options) {
-    const request = new Request(this.url + "posts.php?userID=" + options.id, {
+  getUsersPosts: async function (id) {
+    const request = new Request(this.url + "posts.php?userID=" + id, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
@@ -180,7 +180,7 @@ const State = {
     this._state.genres = resGenres.resource;
   },
 
-  updateFriends: async function () {},
+  updateFriends: async function () { },
   /* getUserRooms: async function () {
     const token = localStorage.getItem("token");
     const userRooms = new Request(URL + `private.php?token=${token}`, {
@@ -350,6 +350,11 @@ PubSub.subscribe({
     const friendArr = [];
     for (const friendId of friendIds) {
       const friend = await State.getExternalUser(friendId);
+      const friendPosts = await State.getUsersPosts(friendId);
+      const topPost = friendPosts
+        .toSorted((a, b) => b.time - a.time)
+        .splice(0, 1);
+      friend.post = topPost[0];
       friendArr.push(friend);
     }
     if (State._state.thisUser.friendRequests.length > 0) {
@@ -656,7 +661,7 @@ PubSub.subscribe({
       token
     }
 
-    console.log("from state body:",body);
+    console.log("from state body:", body);
 
     const request = new Request("./api/users.php", {
       method: "PATCH",
