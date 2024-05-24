@@ -2,7 +2,7 @@ import { PubSub } from "./PubSub.js";
 import { fetcher } from "./helpFunctions.js";
 
 const State = {
-  url: "http://localhost:8080/api/",
+  url: "./api/",
   _state: {
     posts: [],
   },
@@ -81,7 +81,7 @@ const State = {
   },
 
   destruct: async function (ent, options) {
-    const url = "http://localhost:8080/api/";
+    const url = "./api/";
 
     const request = new Request(this.url + ent + ".php", {
       method: "DELETE",
@@ -194,7 +194,7 @@ const State = {
 PubSub.subscribe({
   event: "userLoggedIn",
   listener: async () => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
 
     // Get logged in user detals
     const token = localStorage.getItem("token");
@@ -236,7 +236,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "userLogin",
   listener: async (details) => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
 
     // Gets token
     const username = details.name;
@@ -261,7 +261,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "renderHomepage",
   listener: async () => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
 
     // Get public users
     const reqUsers = new Request(URL + "users.php", {
@@ -387,7 +387,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "patchThisUser",
   listener: async (newThisUserInfo) => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
     const token = localStorage.getItem("token");
     const { username, status } = newThisUserInfo;
 
@@ -421,7 +421,7 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "confirmPassword",
   listener: async (password) => {
-    const URL = "http://localhost:8080/api/";
+    const URL = "./api/";
     const username = State._state.thisUser.name;
     const reqToken = new Request(URL + "login.php", {
       method: "POST",
