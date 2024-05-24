@@ -129,7 +129,6 @@ function renderAddedFriends() {
           event: "userCreatedRoom",
           details: {
             genre: genreValue,
-            style: style.value,
             name: name.value,
             users: friendsToInvite,
           },
