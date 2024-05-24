@@ -363,10 +363,9 @@ header .buttons_container .signup_button:hover {
   position: relative;
 }
 
-.dropdown_box_rooms.roomActive{
+.dropdown_box_rooms.roomActive {
   border: 3px solid limegreen;
 }
-
 
 .remove_friends {
   justify-self: end;
@@ -384,7 +383,6 @@ header .buttons_container .signup_button:hover {
   position: absolute;
   width: 100%;
 }
-
 
 .remove_friend_button:hover {
   opacity: 0.8;
@@ -579,6 +577,7 @@ header .buttons_container .signup_button:hover {
 }
 
 #add_friend_logo {
+  color: var(--paragraph_color);
   font-size: 32px;
   font-weight: bold;
   text-align: center;
@@ -587,6 +586,7 @@ header .buttons_container .signup_button:hover {
 }
 
 .add_friend_title {
+  color: var(--paragraph_color);
   text-align: center;
   font-style: italic;
 }
