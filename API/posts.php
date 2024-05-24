@@ -39,9 +39,6 @@ if($requestMethod == "GET"){//Get posts
     else {
         $postsToSend = $posts;
     }
-    if(empty($postsToSend)){
-        sendError(400, "no posts found");
-    }
     send(200, $postsToSend);
 }
 if($requestMethod == "POST"){//TOKEN REQUIRED

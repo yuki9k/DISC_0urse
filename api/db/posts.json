@@ -473,23 +473,23 @@
         "id": 48
     },
     {
-        "userID": 4,
+        "userID": 3,
         "roomID": 2,
-        "time": 1716550056,
-        "content": "new post",
+        "time": 1716550087,
+        "content": "cool",
         "likedBy": [
-            4
+            3
         ],
         "dislikedBy": [],
         "id": 49
     },
     {
-        "userID": 4,
-        "roomID": 12,
-        "time": 1716550116,
-        "content": "wawawowy",
+        "userID": 3,
+        "roomID": 11,
+        "time": 1716550101,
+        "content": "private",
         "likedBy": [
-            4
+            3
         ],
         "dislikedBy": [],
         "id": 50

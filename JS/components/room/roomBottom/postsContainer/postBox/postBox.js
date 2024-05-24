@@ -27,7 +27,7 @@ function renderPostBox(data, user) {
   postBox.innerHTML = `<div class="post_content_box">
                     <div class="post_top">
                         <div class="profile_pic_name">
-                            <img src="../../../../../../images/profile.png">
+                            <img src="images/profile.png">
                             <span id="profile_name">${user.name}</span>
                         </div>
                         <div class="post_time">${timeSincePost()}</div>
