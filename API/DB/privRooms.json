@@ -8,5 +8,35 @@
         ],
         "name": "testRoom",
         "id": 7
+    },
+    {
+        "hostID": 4,
+        "style": "one",
+        "genre": "Indie Rock",
+        "users": [
+            4
+        ],
+        "name": "one",
+        "id": 8
+    },
+    {
+        "hostID": 4,
+        "style": "Choose theme",
+        "genre": "Indie Singer-songwriter",
+        "users": [
+            4
+        ],
+        "name": "two",
+        "id": 9
+    },
+    {
+        "hostID": 4,
+        "style": "Choose theme",
+        "genre": "Indie Singer-songwriter",
+        "users": [
+            4
+        ],
+        "name": "three",
+        "id": 10
     }
 ]

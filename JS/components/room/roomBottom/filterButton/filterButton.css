@@ -1,6 +1,5 @@
 #filter_posts > label {
   display: block;
-  position: fixed;
 }
 
 #filter_posts > p {

@@ -13,6 +13,8 @@ function renderAddedFriends() {
     event: "getInfo|renderAddedFriends|createRoom",
     details: null,
   });
+
+  PubSub.unsubscribe("recievedInfo|renderAddedFriends|createRoom");
   PubSub.subscribe({
     event: "recievedInfo|renderAddedFriends|createRoom",
     listener: (details) => {
@@ -63,7 +65,7 @@ function renderAddedFriends() {
           div.id = `invite_friend_${friends[i].id}`;
           div.innerHTML = `
               <div class="friend_username">${friends[i].name}</div>
-              <img class="friend_image" src="#">
+              <img class="friend_image" src="../../../../images/profile.png">
           `;
           friendContainer.appendChild(div);
           friendContainer
