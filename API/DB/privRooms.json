@@ -50,17 +50,5 @@
         ],
         "name": "Cool room",
         "id": 11
-    },
-    {
-        "hostID": 2,
-        "style": "three",
-        "genre": "Indie Singer-songwriter",
-        "users": [
-            3,
-            4,
-            2
-        ],
-        "name": "theos new room",
-        "id": 12
     }
 ]

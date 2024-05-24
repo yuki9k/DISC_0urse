@@ -23,13 +23,11 @@ PubSub.subscribe({
 PubSub.subscribe({
   event: "foundFriends",
   listener: (friends) => {
-    console.log(friends);
     const parent = document.querySelector(".dropdown");
     const icon = document.querySelector(".menu_icon_container");
 
     for (let friend of friends) {
       renderFriends(parent, icon, friend);
-      console.log(friend);
     }
   },
 });
@@ -172,9 +170,9 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     div.innerHTML = `<p>${room.genre}</p>`;
     firstRoomDropDown.appendChild(div);
     div.addEventListener("click", () => {
-      const every_room = document.querySelectorAll(".dropdown_box_rooms");
+/*       const every_room = document.querySelectorAll(".dropdown_box_rooms");
       every_room.forEach((room) => room.classList.remove("roomActive"));
-      div.classList.add("roomActive");
+      div.classList.add("roomActive"); */
 
       const wrapper = document.querySelector("#wrapper");
       menuIcon.classList.toggle("change");
@@ -236,7 +234,7 @@ function renderFriendRequests(dropdown, user) {
   friendDom.id = "friend_request_" + user.id;
   parent.appendChild(friendDom);
   friendDom.innerHTML = `
-      <img class="friend_image" src="${user.profilePicture}">
+      <img class="friend_image" src="../../../../images/profile.png">
       <div style="font-size: 14px" class="friend_username">New friend request from ${user.name}</div>
       <div class="check" id="accept_request_${user.name}">&#9745;</div>
       <div class="cross">&#9746;</div>
@@ -300,9 +298,9 @@ function renderPrivateRooms(dropdown, icon, room) {
   roomDom.innerHTML = `<p>${room.name}</p>`;
 
   roomDom.addEventListener("click", (e) => {
-    const every_room = document.querySelectorAll(".dropdown_box_rooms");
+   /*  const every_room = document.querySelectorAll(".dropdown_box_rooms");
     every_room.forEach((room) => room.classList.remove("roomActive"));
-    roomDom.classList.add("roomActive");
+    roomDom.classList.add("roomActive"); */
 
     const wrapper = document.querySelector("#wrapper");
     const menuIcon = icon;
