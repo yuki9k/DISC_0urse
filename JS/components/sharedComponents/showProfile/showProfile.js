@@ -39,7 +39,8 @@ function renderFriendProfile(
   modalContainer.classList.add("modal_container");
   let wrapper = document.querySelector("#wrapper");
   wrapper.appendChild(modalContainer);
-  modalContainer.innerHTML = `
+  if (post) {
+    modalContainer.innerHTML = `
     <div class="modal_content">  
         <div class="upper_section">
             <div class="profile_info">
@@ -67,6 +68,34 @@ function renderFriendProfile(
         </div>
     </div>
   `;
+  } else {
+    modalContainer.innerHTML = `
+    <div class="modal_content">  
+        <div class="upper_section">
+            <div class="profile_info">
+                <p class="username">${username}</p>
+                <p class="status"><span class="status_text">Status:</span> ${status}</p>
+            </div>
+            <div class="profile_picture"></div>
+        </div>
+        <div class="middle_section">
+            <p class="middle_section_left">Latest post:</p>
+            <p class="middle_section_right">Score: ${score}</p>
+        </div>
+        <div class="bottom_section">
+            <div class="post_container">
+                <p class="post_container_text">No recent post.</p>
+                <p class="post_container_points">0 points</p>
+            </div>
+        </div>
+        <div class="settings">
+          <div class="remove_friend_container">
+            <button class="remove_friend_button">Remove friend</button>
+          </div>
+        </div>
+    </div>
+  `;
+  }
 
   document.body.style.overflow = "hidden";
 
