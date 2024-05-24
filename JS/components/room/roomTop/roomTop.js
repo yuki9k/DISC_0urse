@@ -11,23 +11,22 @@ function renderRoomTop(parent, data) {
       albumInfo = details;
       switch (data.genre) {
         case "Indie Pop":
-          albumInfo.image = "../../../../API/db/albumPics/indie_pop.jpeg";
+          albumInfo.image = "api/db/albumPics/indie_pop.jpeg";
           break;
         case "Indie Rock":
-          albumInfo.image = "../../../../API/db/albumPics/indie_rock.jpeg";
+          albumInfo.image = "api/db/albumPics/indie_rock.jpeg";
           break;
         case "Indie Singer-songwriter":
-          albumInfo.image =
-            "../../../../API/db/albumPics/indie_singer-songwriter.jpeg";
+          albumInfo.image = "api/db/albumPics/indie_singer-songwriter.jpeg";
           break;
         case "Indie Folk":
-          albumInfo.image = "../../../../API/db/albumPics/indie_folk.jpeg";
+          albumInfo.image = "api/db/albumPics/indie_folk.jpeg";
           break;
         case "Indie R&b":
-          albumInfo.image = "../../../../API/db/albumPics/indie_r&b.jpeg";
+          albumInfo.image = "api/db/albumPics/indie_r&b.jpeg";
           break;
         case "Indie Post-punk":
-          albumInfo.image = "../../../../API/db/albumPics/indie_post-punk.jpeg";
+          albumInfo.image = "api/db/albumPics/indie_post-punk.jpeg";
           break;
         default:
           return;

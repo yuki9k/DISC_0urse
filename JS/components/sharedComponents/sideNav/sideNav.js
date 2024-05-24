@@ -87,7 +87,7 @@ PubSub.subscribe({
         dom.remove();
       }
     }
-  }
+  },
 });
 function renderDropdownItems(parent, icon, roomsToRender) {
   const friendsItem = document.createElement("div");
@@ -183,7 +183,7 @@ function renderDropdownItems(parent, icon, roomsToRender) {
     div.innerHTML = `<p>${room.genre}</p>`;
     firstRoomDropDown.appendChild(div);
     div.addEventListener("click", () => {
-/*       const every_room = document.querySelectorAll(".dropdown_box_rooms");
+      /*       const every_room = document.querySelectorAll(".dropdown_box_rooms");
       every_room.forEach((room) => room.classList.remove("roomActive"));
       div.classList.add("roomActive"); */
 
@@ -246,7 +246,7 @@ function renderFriendRequests(dropdown, user) {
   friendDom.id = "friend_request_" + user.id;
   parent.appendChild(friendDom);
   friendDom.innerHTML = `
-      <img class="friend_image" src="../../../../images/profile.png">
+      <img class="friend_image" src="images/profile.png">
       <div style="font-size: 14px" class="friend_username">New friend request from ${user.name}</div>
       <div class="check" id="accept_request_${user.name}">&#9745;</div>
       <div class="cross">&#9746;</div>
@@ -260,7 +260,7 @@ function renderFriendRequests(dropdown, user) {
   friendDom.querySelector(".cross").addEventListener("click", (e) => {
     PubSub.publish({
       event: "declineFriendRequest",
-      details: user.name
+      details: user.name,
     });
   });
 }
@@ -273,7 +273,7 @@ function renderFriends(dropdown, icon, friend) {
   friendDom.className = `dropdown_box_friends friend_id_${friendID}`;
   parent.appendChild(friendDom);
   friendDom.innerHTML = `
-      <img class="friend_image" src="../../../../images/profile.png">
+      <img class="friend_image" src="images/profile.png">
       <div class="friend_username">${friend.name}</div> 
     `;
 
@@ -316,7 +316,7 @@ function renderPrivateRooms(dropdown, icon, room) {
   roomDom.innerHTML = `<p>${room.name}</p>`;
 
   roomDom.addEventListener("click", (e) => {
-   /*  const every_room = document.querySelectorAll(".dropdown_box_rooms");
+    /*  const every_room = document.querySelectorAll(".dropdown_box_rooms");
     every_room.forEach((room) => room.classList.remove("roomActive"));
     roomDom.classList.add("roomActive"); */
 

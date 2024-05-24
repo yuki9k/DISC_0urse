@@ -23,7 +23,7 @@ function getRequestData(){
 }
 function getDatabase($type){
 
-    $DB = "DB/$type.json";
+    $DB = "db/$type.json";
     if(file_exists($DB) == false){
         //DB NOT REAL BAD STUFF
     }
@@ -60,7 +60,7 @@ function addItemByType($type, $keys, $data){
     $newItem["id"] = $id + 1;
     $DB[] = $newItem;
     $json = json_encode($DB, JSON_PRETTY_PRINT);
-    file_put_contents("DB/$type.json", $json);
+    file_put_contents("db/$type.json", $json);
     return $newItem;
     //add keys
     //add ID
@@ -85,7 +85,7 @@ function updateItemByType($type, $updatedItem){
         }
     }
     $json = json_encode($DB, JSON_PRETTY_PRINT);
-    file_put_contents("DB/$type.json", $json);
+    file_put_contents("db/$type.json", $json);
     return $updatedItem;
 }
 function deleteItemByType($type, $itemToDelete){
@@ -96,7 +96,7 @@ function deleteItemByType($type, $itemToDelete){
         }
     }
     $json = json_encode($DB, JSON_PRETTY_PRINT);
-    file_put_contents("DB/$type.json", $json);
+    file_put_contents("db/$type.json", $json);
     return $itemToDelete;
 }
 function requestContainsSomeKeys($data, $keys)
@@ -131,7 +131,7 @@ function removeRoomPosts($room){
         }
     }
     $jsonPosts = json_encode($posts, JSON_PRETTY_PRINT);
-    file_put_contents("DB/posts.json", $jsonPosts);
+    file_put_contents("db/posts.json", $jsonPosts);
 }
 function removeUserRoomsLikesPosts($user){
     $privateRooms = getDatabase("privRooms");
@@ -152,7 +152,7 @@ function removeUserRoomsLikesPosts($user){
             }
         }
         $jsonRooms = json_encode($privateRooms, JSON_PRETTY_PRINT);
-        file_put_contents("DB/privRooms.json", $jsonRooms);
+        file_put_contents("db/privRooms.json", $jsonRooms);
         
     }
     //delete users posted posts and likes/dislikes to posts
@@ -175,6 +175,6 @@ function removeUserRoomsLikesPosts($user){
         } 
     }
     $jsonPosts = json_encode($posts, JSON_PRETTY_PRINT);
-    file_put_contents("DB/posts.json", $jsonPosts);
+    file_put_contents("db/posts.json", $jsonPosts);
 }
 ?>

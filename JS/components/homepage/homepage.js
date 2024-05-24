@@ -18,22 +18,22 @@ function renderHompageContainer(parent, data) {
 
     switch (data.pubRooms[i].genre) {
       case "Indie Pop":
-        image = "../../../../../API/db/albumPics/indie_pop.jpeg";
+        image = "api/db/albumPics/indie_pop.jpeg";
         break;
       case "Indie Rock":
-        image = "../../../../../API/db/albumPics/indie_rock.jpeg";
+        image = "api/db/albumPics/indie_rock.jpeg";
         break;
       case "Indie Singer-songwriter":
-        image = "../../../../../API/db/albumPics/indie_singer-songwriter.jpeg";
+        image = "api/db/albumPics/indie_singer-songwriter.jpeg";
         break;
       case "Indie Folk":
-        image = "../../../../../API/db/albumPics/indie_folk.jpeg";
+        image = "api/db/albumPics/indie_folk.jpeg";
         break;
       case "Indie R&b":
-        image = "../../../../../API/db/albumPics/indie_r&b.jpeg";
+        image = "api/db/albumPics/indie_r&b.jpeg";
         break;
       case "Indie Post-punk":
-        image = "../../../../../API/db/albumPics/indie_post-punk.jpeg";
+        image = "api/db/albumPics/indie_post-punk.jpeg";
         break;
       default:
         return;
