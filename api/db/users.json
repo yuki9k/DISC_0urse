@@ -34,11 +34,10 @@
         "score": 0,
         "friends": [
             2,
-            1
-        ],
-        "friendRequests": [
+            1,
             4
         ],
+        "friendRequests": [],
         "id": 3,
         "status": 404
     },
@@ -48,7 +47,8 @@
         "profilePicture": "placeholder",
         "score": 0,
         "friends": [
-            2
+            2,
+            3
         ],
         "friendRequests": [],
         "id": 4,
