@@ -247,7 +247,7 @@ header .buttons_container .signup_button:hover {
 /* dropdown CSS */
 .dropdown {
   position: absolute;
-  top: 80px;
+  top: 72px;
   left: -28%;
   height: calc(100vh - 60px);
   bottom: 0;
@@ -358,6 +358,7 @@ header .buttons_container .signup_button:hover {
 
   box-sizing: border-box;
   cursor: pointer;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown_box_rooms {
@@ -374,6 +375,7 @@ header .buttons_container .signup_button:hover {
 
   cursor: pointer;
   transition: 0.2s;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown_box_rooms:hover,
