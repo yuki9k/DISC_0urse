@@ -66,13 +66,11 @@ function renderSignupForm() {
     if (password === password2 && password.length > 1 && username.length > 1) {
       let body = { name: username, password: password };
 
-      let request = new Request("./api/users.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-
-      let resource = await fetcher(request);
+      PubSub.publish({
+        event: "doSignup",
+        details: body
+      })
+      
       handleCloseModal();
       PubSub.publish({
         event: "signupComplete",

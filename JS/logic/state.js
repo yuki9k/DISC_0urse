@@ -666,3 +666,21 @@ PubSub.subscribe({
     fetcher(request);
   }
 })
+
+PubSub.subscribe({
+  event: "doSignup",
+  listener: (details) => {
+    let request = new Request("./api/users.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(details),
+    });
+
+   fetcher(request);
+
+   PubSub.publish({
+    event: "renderLogin",
+    details: null
+   })
+  }
+})
