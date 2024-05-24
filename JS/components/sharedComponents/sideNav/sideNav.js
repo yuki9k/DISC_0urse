@@ -252,6 +252,7 @@ function renderFriends(dropdown, icon, friend) {
   friendDom.innerHTML = `
       <img class="friend_image" src="../../../../images/profile.png">
       <div class="friend_username">${friend.name}</div> 
+      <div class="remove_friends">X</div>
     `;
 
   friendDom.addEventListener("click", (e) => {

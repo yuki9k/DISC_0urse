@@ -21,7 +21,8 @@
         "friends": [
             4,
             3,
-            1
+            1,
+            5
         ],
         "friendRequests": [],
         "id": 2,
@@ -33,7 +34,6 @@
         "profilePicture": "placeholder",
         "score": 0,
         "friends": [
-            5,
             2,
             1
         ],
@@ -58,7 +58,9 @@
         "password": "test",
         "profilePicture": "placeholder",
         "score": 0,
-        "friends": [],
+        "friends": [
+            2
+        ],
         "status": "",
         "friendRequests": [],
         "id": 5

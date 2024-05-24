@@ -87,6 +87,7 @@
         "id": 13
     },
     {
+<<<<<<< Updated upstream
         "hostID": 4,
         "style": "one",
         "genre": "2",
@@ -146,5 +147,26 @@
         ],
         "name": "testRooom",
         "id": 19
+=======
+        "hostID": 2,
+        "style": "two",
+        "genre": "3",
+        "users": [
+            4,
+            2
+        ],
+        "name": "Theos nya rum",
+        "id": 14
+    },
+    {
+        "hostID": 2,
+        "style": "three",
+        "genre": "4",
+        "users": [
+            2
+        ],
+        "name": "Nice room yo",
+        "id": 15
+>>>>>>> Stashed changes
     }
 ]
